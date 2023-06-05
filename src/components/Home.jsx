@@ -2,6 +2,7 @@ import React from "react";
 import "animate.css";
 import AnimatedLetters from "./AnimatedLetters";
 import RenderizadorTexto from "./RenderizadorTexto";
+import Doris from "./Doris";
 
 export default function Home() {
 
@@ -21,14 +22,24 @@ export default function Home() {
             text={work}
             time={21}
           /> */}
-          <RenderizadorTexto
+          <Doris
             texto={name}
             start={0}
           />
+          <br />
+          <Doris
+            texto={work}
+            start={23}
+          />
+          {/* <RenderizadorTexto
+            texto={name}
+            start={0}
+          />
+          <br />
           <RenderizadorTexto
             texto={work}
-            start={21}
-          />
+            start={23}
+          /> */}
         </h1>
         <h2 className="text-gray-500 text-2xl mt-4 font-semibold md:text-lg sm:text-lg">
           Front End Developer / JavaScript Expert / Youtuber

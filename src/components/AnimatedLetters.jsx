@@ -20,7 +20,8 @@ export default function AnimatedLetters({ text, time }) {
         words.map((letra, index) => (
           <span
             key={letra + index}
-            className={`inline-block transition delay-${time + index}`}
+            className={`inline-block transition duration-300 animate__animated animate__fadeInDown delay-${time + index}`}
+            // className={`inline-block transition delay-${time + index}`}
             // onMouseEnter={() => handleHover(uniqueId)}
             // onMouseLeave={handleHoverOut}
           >
@@ -39,7 +40,7 @@ export default function AnimatedLetters({ text, time }) {
     //             return (
     //               <span
     //                 key={uniqueId}
-    //                 className={`inline-block ${uniqueId === isHovered ? "animate__animated animate__rubberBand text-blue-500" : ""}`}
+    //                 className={`inline-block transition duration-300 animate__animated animate__fadeInDown delay-${time + letterIndex} ${uniqueId === isHovered ? "animate__animated animate__rubberBand text-blue-500" : ""}`}
     //                 onMouseEnter={() => handleHover(uniqueId)}
     //                 onMouseLeave={handleHoverOut}
     //               >
