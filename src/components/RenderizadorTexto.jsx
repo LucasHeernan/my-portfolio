@@ -60,15 +60,16 @@ export default function RenderizadorTexto({ texto, start }) {
         letras.map((letra, idx) => {
           const uniqueId = `${letra}-${idx}`;
           return (
-            // <span
-            //   key={idx}
-            //   // className={`${shown ? "inline-block" : "hidden"} transition duration-300 animate__animated animate__fadeInDown delay-${start + idx}`}
-            //   // className={`${shown ? "inline-block" : "hidden"} transition duration-300 ${getAnimationClasses(idx, uniqueId === isHovered)} delay-${start + idx} hover:text-blue-500`}
-            //   className={`${ shown ? "inline-block" : "hidden"} transition duration-300 animate__animated animate__fadeInDown delay-${start + idx} ${uniqueId === isHovered ? "animate__animated animate__rubberBand text-blue-500" : ""}`}
-            //   onMouseEnter={() => handleHover(uniqueId)}
-            //   onMouseLeave={handleHoverOut}
-            // >
             <span
+              key={idx}
+              // animate-[letters_1000ms_ease-in-out]
+              // className={`${shown ? "inline-block" : "hidden"} transition duration-300 animate__animated animate__fadeInDown delay-${start + idx}`}
+              // className={`${shown ? "inline-block" : "hidden"} transition duration-300 ${getAnimationClasses(idx, uniqueId === isHovered)} delay-${start + idx} hover:text-blue-500`}
+              className={`${ shown ? "inline-block" : "hidden"} transition duration-300 animate-[letters_1000ms_ease-in] delay-${start + idx} ${uniqueId === isHovered ? "animate-[bounceIn_1000ms_ease-in] text-blue-500" : ""}`}
+              onMouseEnter={() => handleHover(uniqueId)}
+              onMouseLeave={handleHoverOut}
+            >
+            {/* <span
               key={idx}
               className={`${shown ? "inline-block" : "hidden"} ${uniqueId === isHovered ? "text-blue-500" : ""}`}
               onAnimationEnd={(e) => {
@@ -87,7 +88,7 @@ export default function RenderizadorTexto({ texto, start }) {
                 document.querySelector(`.${uniqueId}`).classList.remove('animate__animated', 'animate__rubberBand');
               }}
               style={{ animation: `animate__fadeInDown ${start + idx}s` }}
-            >
+            > */}
               {letra}
             </span>
           )

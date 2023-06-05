@@ -22,7 +22,7 @@ export default function Home() {
             text={work}
             time={21}
           /> */}
-          <Doris
+          {/* <Doris
             texto={name}
             start={0}
           />
@@ -30,16 +30,16 @@ export default function Home() {
           <Doris
             texto={work}
             start={23}
-          />
-          {/* <RenderizadorTexto
+          /> */}
+          <RenderizadorTexto
             texto={name}
             start={0}
           />
           <br />
           <RenderizadorTexto
             texto={work}
-            start={23}
-          /> */}
+            start={21}
+          />
         </h1>
         <h2 className="text-gray-500 text-2xl mt-4 font-semibold md:text-lg sm:text-lg">
           Front End Developer / JavaScript Expert / Youtuber
