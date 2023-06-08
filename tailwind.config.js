@@ -59,8 +59,19 @@ export default {
       50: '5000ms'
     },
     extend: {
+      fontFamily: {
+        'sansita': ['Sansita', 'sans-serif'],
+      },
       keyframes: {
-        letters: {
+        fadeIn: {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
+          },
+        },
+        fadeInDown: {
           '0%': {
             opacity: '0',
             transform: 'translate3d(0, -100%, 0)',
@@ -98,8 +109,7 @@ export default {
             'animation-timing-function': 'cubic-bezier(0.215, 0.61, 0.355, 1)',
           },
           '0%': {
-            opacity: '0',
-            transform: 'scale3d(0.3, 0.3, 0.3)',
+            transform: 'scale3d(0.5, 0.5, 0.5)',
           },
           '20%': {
             transform: 'scale3d(1.1, 1.1, 1.1)',
@@ -108,20 +118,23 @@ export default {
             transform: 'scale3d(0.9, 0.9, 0.9)',
           },
           '60%': {
-            opacity: '1',
             transform: 'scale3d(1.03, 1.03, 1.03)',
           },
           '80%': {
             transform: 'scale3d(0.97, 0.97, 0.97)',
           },
           to: {
-            opacity: '1',
             transform: 'scale3d(1, 1, 1)',
           },
         }
       },
+      animation: {
+        fadeIn: 'fadeIn 1000ms ease-in-out forwards',
+        fadeInDown: 'fadeInDown 1000ms ease-in-out forwards',
+        rubberBand: 'rubberBand 1000ms ease-in-out none',
+        bounceIn: 'bounceIn 1000ms ease-in-out forwards'
+      }
     },
   },
   plugins: [],
 }
-

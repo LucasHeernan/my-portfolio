@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "animate.css";
 
-export default function RenderizadorTexto({ texto, start }) {
+export default function RenderizadorTexto({ text, time }) {
+  const [first, setFirts] = useState("animate-fadeInDown");
   const [letras, setLetras] = useState([]);
   const [indice, setIndice] = useState(0);
   const [shown, setShown] = useState(false);
@@ -10,27 +11,11 @@ export default function RenderizadorTexto({ texto, start }) {
   const handleHover = (index) => setIsHovered(index);
   const handleHoverOut = () => setIsHovered(null);
 
-  const getAnimationClasses = (index, isHovered) => {
-    const baseClasses = "animate__animated";
-
-    // Clase para la animación de aparición (fadeInDown)
-    let animationClasses = `${baseClasses} animate__fadeInDown`;
-
-    // Si el caracter está siendo hovereado, se agrega la clase de la animación de caucho (rubberBand)
-    if (isHovered) { animationClasses += ` animate__rubberBand`; }
-
-    // Se agrega el delay para cada caracter
-    // animationClasses += ` delay-${start + index}`;
-
-    return animationClasses;
-  };
-
-
   useEffect(() => {
     setTimeout(() => {
       const intervalId = setInterval(() => {
         setLetras((prevLetras) => {
-          if (prevLetras.length === texto.length) {
+          if (prevLetras.length === text.length) {
             clearInterval(intervalId);
             return prevLetras;
           }
@@ -38,20 +23,26 @@ export default function RenderizadorTexto({ texto, start }) {
           const nextIndex = prevLetras.length + 1;
           setIndice(nextIndex);
   
-          return [...prevLetras, texto[nextIndex - 1]];
+          return [...prevLetras, text[nextIndex - 1]];
         });
       }, 100);
   
       return () => {
         clearInterval(intervalId);
       };
-    }, start * 100);
-  }, [texto]);
+    }, time * 100);
+  }, [text]);
 
   useEffect(() => {
     setTimeout(() => {
       setShown(true);
-    }, start * 100)
+    }, time * 100)
+  }, [])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFirts("")
+    }, 4800)
   }, [])
 
   return (
@@ -62,33 +53,10 @@ export default function RenderizadorTexto({ texto, start }) {
           return (
             <span
               key={idx}
-              // animate-[letters_1000ms_ease-in-out]
-              // className={`${shown ? "inline-block" : "hidden"} transition duration-300 animate__animated animate__fadeInDown delay-${start + idx}`}
-              // className={`${shown ? "inline-block" : "hidden"} transition duration-300 ${getAnimationClasses(idx, uniqueId === isHovered)} delay-${start + idx} hover:text-blue-500`}
-              className={`${ shown ? "inline-block" : "hidden"} transition duration-300 animate-[letters_1000ms_ease-in] delay-${start + idx} ${uniqueId === isHovered ? "animate-[bounceIn_1000ms_ease-in] text-blue-500" : ""}`}
+              className={`${shown ? "inline-block" : "hidden"} transition ${first} delay-${time + idx} ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-2" : "animate-bounceIn delay-3"}`}
               onMouseEnter={() => handleHover(uniqueId)}
               onMouseLeave={handleHoverOut}
             >
-            {/* <span
-              key={idx}
-              className={`${shown ? "inline-block" : "hidden"} ${uniqueId === isHovered ? "text-blue-500" : ""}`}
-              onAnimationEnd={(e) => {
-                if (e.animationName === 'fadeInDown') {
-                  e.target.classList.remove('animate__animated', 'animate__fadeInDown');
-                } else if (uniqueId === isHovered) {
-                  e.target.classList.remove('animate__animated', 'animate__rubberBand');
-                }
-              }}
-              onMouseEnter={() => {
-                handleHover(uniqueId);
-                document.querySelector(`.${uniqueId}`).classList.add('animate__animated', 'animate__rubberBand');
-              }}
-              onMouseLeave={() => {
-                handleHoverOut();
-                document.querySelector(`.${uniqueId}`).classList.remove('animate__animated', 'animate__rubberBand');
-              }}
-              style={{ animation: `animate__fadeInDown ${start + idx}s` }}
-            > */}
               {letra}
             </span>
           )
@@ -97,6 +65,3 @@ export default function RenderizadorTexto({ texto, start }) {
     </div>
   );
 };
-
-// ${uniqueId === isHovered ? "animate__animated animate__rubberBand text-blue-500" : ""}
-// className={`${ shown ? "inline-block" : "hidden"} transition duration-300 animate__animated animate__fadeInDown delay-${start + idx} ${uniqueId === isHovered ? "animate__animated animate__rubberBand text-blue-500" : ""}`}

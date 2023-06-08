@@ -1,58 +1,66 @@
-import React, { useState } from "react";
-import "animate.css";
+import React, { useEffect, useState } from "react";
 
 export default function AnimatedLetters({ text, time }) {
-
+  const [first, setFirts] = useState("animate-fadeInDown");
+  const [letras, setLetras] = useState([]);
+  const [indice, setIndice] = useState(0);
+  const [shown, setShown] = useState(false);
   const [isHovered, setIsHovered] = useState(null);
 
   const handleHover = (index) => setIsHovered(index);
   const handleHoverOut = () => setIsHovered(null);
 
-  const words = text.split("");
+  useEffect(() => {
+    setTimeout(() => {
+      const intervalId = setInterval(() => {
+        setLetras((prevLetras) => {
+          if (prevLetras.length === text.length) {
+            clearInterval(intervalId);
+            return prevLetras;
+          }
+  
+          const nextIndex = prevLetras.length + 1;
+          setIndice(nextIndex);
+  
+          return [...prevLetras, text[nextIndex - 1]];
+        });
+      }, 100);
+  
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, time * 100);
+  }, [text]);
 
-  // Tengo que lograr tener el indice de cada caracter
-  // Y además plasmar los espacios entre palabras
-  // Y la independencia de cada letra al renderizarse
+  useEffect(() => {
+    setTimeout(() => {
+      setShown(true);
+    }, time * 100)
+  }, [])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFirts("")
+    }, 4800)
+  }, [])
 
   return (
     <div>
       {
-        words.map((letra, index) => (
-          <span
-            key={letra + index}
-            className={`inline-block transition duration-300 animate__animated animate__fadeInDown delay-${time + index}`}
-            // className={`inline-block transition delay-${time + index}`}
-            // onMouseEnter={() => handleHover(uniqueId)}
-            // onMouseLeave={handleHoverOut}
-          >
-            {letra}
-          </span>
-        ))
+        letras.map((letra, idx) => {
+          const uniqueId = `${letra}-${idx}`;
+          return (
+            <span
+              key={idx}
+              className={`${shown ? "inline-block" : "hidden"} transition ${first} delay-${time + idx} ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-2" : "animate-bounceIn delay-3"}`}
+              onMouseEnter={() => handleHover(uniqueId)}
+              onMouseLeave={handleHoverOut}
+            >
+              {letra}
+            </span>
+          )
+        })
       }
     </div>
-    // <div>
-    //   {
-    //     words.map((word, index) => (
-    //       <span key={index}>
-    //         {
-    //           word.split('').map((letter, letterIndex) => {
-    //             const uniqueId = `${index}-${letterIndex}`;
-    //             return (
-    //               <span
-    //                 key={uniqueId}
-    //                 className={`inline-block transition duration-300 animate__animated animate__fadeInDown delay-${time + letterIndex} ${uniqueId === isHovered ? "animate__animated animate__rubberBand text-blue-500" : ""}`}
-    //                 onMouseEnter={() => handleHover(uniqueId)}
-    //                 onMouseLeave={handleHoverOut}
-    //               >
-    //                 {letter}
-    //               </span>
-    //             );
-    //           })
-    //         }
-    //         {" "}
-    //       </span>
-    //     ))
-    //   }
-    // </div>
-  )
-}
+  );
+};
