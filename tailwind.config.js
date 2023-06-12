@@ -59,9 +59,6 @@ export default {
       50: '5000ms'
     },
     extend: {
-      fontFamily: {
-        'sansita': ['Sansita', 'sans-serif'],
-      },
       keyframes: {
         fadeIn: {
           '0%': {

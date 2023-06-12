@@ -41,7 +41,7 @@ export default function AnimatedLetters({ text, time }) {
   useEffect(() => {
     setTimeout(() => {
       setFirts("")
-    }, 4800)
+    }, 4400)
   }, [])
 
   return (
@@ -52,7 +52,7 @@ export default function AnimatedLetters({ text, time }) {
           return (
             <span
               key={idx}
-              className={`${shown ? "inline-block" : "hidden"} transition ${first} delay-${time + idx} ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-2" : "animate-bounceIn delay-3"}`}
+              className={`${shown ? "inline-block" : "hidden"} min-w-[12px] transition ${first} delay-${time + idx} ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-2" : "animate-bounceIn delay-3"}`}
               onMouseEnter={() => handleHover(uniqueId)}
               onMouseLeave={handleHoverOut}
             >
