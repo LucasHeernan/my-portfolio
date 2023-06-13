@@ -45,14 +45,14 @@ export default function AnimatedLetters({ text, time }) {
   }, [])
 
   return (
-    <div>
+    <div className="mb-7">
       {
         letras.map((letra, idx) => {
           const uniqueId = `${letra}-${idx}`;
           return (
             <span
               key={idx}
-              className={`${shown ? "inline-block" : "hidden"} min-w-[12px] transition ${first} delay-${time + idx} ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-2" : "animate-bounceIn delay-3"}`}
+              className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition ${first} delay-${time + idx} ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-2" : "animate-bounceIn delay-3"} sm:min-w-[10px] lg:min-w-[17px]`}
               onMouseEnter={() => handleHover(uniqueId)}
               onMouseLeave={handleHoverOut}
             >

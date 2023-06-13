@@ -18,37 +18,36 @@ export default function Home() {
 
   return (
     <div className="relative w-full h-screen z-10"> {/* container home-page */}
-      <div className="absolute left-[15%] top-[30%] w-3/4 md:w-4/5 sm:w-4/5"> {/* text-zone */}
-        {/* <h1 className={`text-blue-900 text-9xl font-['Alegreya'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-blue-900 text-9xl font-['Alegreya_SC'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Alegreya_Sans_SC'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Philosopher'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Poppins'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Lexend_Deca'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-blue-900 text-9xl font-['Besley'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-blue-900 text-9xl font-['Libre_Bodoni'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-blue-900 text-9xl font-['Bodoni_Moda'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        <h1 className={`text-black text-9xl font-['EB_Garamond'] font-bold ${start} md:text-6xl sm:text-6xl`}>
-        {/* <h1 className={`text-black text-9xl font-['Cormorant_Garamond'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-blue-900 text-9xl font-['Sansita'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
+      <div className="absolute left-[15%] top-[30%] w-3/4 md:w-4/5 sm:left-[10%] sm:w-11/12"> {/* text-zone */}
+        {/* <h1 className={`text-blue-900 font-['Alegreya'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-blue-900 font-['Alegreya_SC'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-blue-900 font-['Alegreya_Sans_SC'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['Philosopher'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        <h1 className={`absolute text-black text-2xl font-['Poppins'] font-extrabold ${start} lg:text-7xl md:text-6xl sm:text-5xl`}>
+        {/* <h1 className={`text-black font-['Lexend_Deca'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-blue-900 font-['Besley'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-blue-900 font-['Libre_Bodoni'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-blue-900 font-['Bodoni_Moda'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['EB_Garamond'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-blue-900 font-['Cormorant_Garamond'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-blue-900 text-3xl font-['Sansita'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
           <AnimatedLetters
             text={name}
             time={0}
             />
-        </h1>
-        {/* <h1 className={`text-black text-9xl font-['Alegreya'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Alegreya_SC'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Alegreya_Sans_SC'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Philosopher'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Poppins'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Lexend_Deca'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Besley'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Libre_Bodoni'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['Bodoni_Moda'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        {/* <h1 className={`text-black text-9xl font-['EB_Garamond'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-        <h1 className={`text-black text-9xl font-['Cormorant_Garamond'] font-bold ${start} md:text-6xl sm:text-6xl`}>
-        {/* <h1 className={`text-black text-9xl font-['Sansita'] font-bold ${start} md:text-6xl sm:text-6xl`}> */}
-          <br />
+        {/* </h1> */}
+        {/* <h1 className={`text-black font-['Alegreya'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['Alegreya_SC'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['Alegreya_Sans_SC'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['Philosopher'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['Poppins'] font-extrabold ${start} lg:text-7xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['Lexend_Deca'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['Besley'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['Libre_Bodoni'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['Bodoni_Moda'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['EB_Garamond'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black font-['Cormorant_Garamond'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
+        {/* <h1 className={`text-black text-3xl font-['Sansita'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
           <AnimatedLetters
             text={work}
             time={21}

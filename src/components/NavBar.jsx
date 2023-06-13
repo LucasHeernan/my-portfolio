@@ -20,11 +20,11 @@ export default function NavBar() {
     <header className="fixed shadow-xl w-full z-50 items-center py-3 px-6 bg-white backdrop-blur-sm">
       <nav className="flex justify-between items-center mx-3">
 
-        {/* <div className="hidden text-base font-['Poppins'] font-medium items-center gap-5 md:flex"> */}
+        <div className="hidden text-base font-['Poppins'] font-medium items-center gap-5 md:flex">
         {/* <div className="hidden text-lg font-['Alegreya_Sans_SC'] font-medium items-center gap-5 md:flex"> */}
         {/* <div className="hidden text-base font-['Philosopher'] font-bold items-center gap-5 md:flex"> */}
         {/* <div className="hidden text-base font-['Lexend_Deca'] font-normal items-center gap-5 md:flex"> */}
-        <div className="hidden text-xl font-['Sansita'] font-medium items-center gap-5 md:flex">
+        {/* <div className="hidden text-xl font-['Sansita'] font-medium items-center gap-5 md:flex"> */}
           <CustomLink title="Acerca de mi" />
           <CustomLink title="Tecnologías" />
           <CustomLink title="Proyectos" />
