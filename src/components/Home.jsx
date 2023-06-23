@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import AnimatedLetters from "./AnimatedLetters";
-import RenderizadorTexto from "./RenderizadorTexto";
-import "animate.css";
 
 export default function Home() {
 
   const [start, setStart] = useState("animate-fadeIn")
 
-  const name = "Hi, I'm Lucas Benitez";  /* emp 0 hasta 20 */
-  const work = "Full Stack Web Developer.";  /* emp 21 hasta 45 */
+  const name = "Hi, I'm Lucas Benitez";
+  const work = "Full Stack Web Developer.";
 
   useEffect(() => {
     setTimeout(() => {
@@ -17,13 +15,13 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="relative w-full h-screen z-10"> {/* container home-page */}
-      <div className="absolute left-[15%] top-[30%] w-3/4 md:w-4/5 sm:left-[10%] sm:w-11/12"> {/* text-zone */}
+    <div className="w-full h-screen z-10 flex flex-col bg-violet-300"> {/* container home-page */}
+      <div className="mx-auto h-1/3 mt-40 md:w-4/5 bg-yellow-200 sm:left-[10%] sm:w-11/12"> {/* text-zone */}
         {/* <h1 className={`text-blue-900 font-['Alegreya'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-blue-900 font-['Alegreya_SC'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-blue-900 font-['Alegreya_Sans_SC'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-black font-['Philosopher'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
-        <h1 className={`absolute text-black text-2xl font-['Poppins'] font-extrabold ${start} lg:text-7xl md:text-6xl sm:text-5xl`}>
+        <h1 className={`text-black text-2xl font-['Poppins'] font-extrabold ${start} bg-red-500 lg:text-7xl md:text-6xl sm:text-5xl`}>
         {/* <h1 className={`text-black font-['Lexend_Deca'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-blue-900 font-['Besley'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-blue-900 font-['Libre_Bodoni'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
@@ -53,10 +51,10 @@ export default function Home() {
             time={21}
           />
         </h1>
-        <h2 className="text-gray-500 text-2xl mt-4 font-['Alegreya_SC'] font-medium md:text-lg sm:text-lg">
-          Front End Developer / JavaScript Expert / Youtuber
-        </h2>
       </div>
+      <h2 className="mx-auto text-black text-2xl mt-4 font-['Alegreya_SC'] font-medium md:text-lg sm:text-lg">
+        Front End Developer / JavaScript Expert / Youtuber
+      </h2>
     </div>
   )
 }
