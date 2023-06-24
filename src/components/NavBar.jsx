@@ -82,15 +82,16 @@ export default function NavBar() {
           </button>
         </div>
 
-        <nav className="flex md:hidden">                {/* MOBILE MENU */}
+        {/* MOBILE MENU */}
+        <nav className="flex md:hidden">
           <button className="flex flex-col justify-center items-center md:hidden" onClick={() => setMenu(!menu)}>
             <span className={`bg-black block transition-all duration-500 ease-out h-0.5 w-6 rounded-full -translate-y-0.5 ${menu ? "rotate-45 translate-y-[10px]" : "-translate-y-0.5"}`}></span>
             <span className={`bg-black block transition-all duration-500 ease-out h-0.5 w-6 rounded-full my-0.5 ${menu ? "opacity-0" : "opacity-100"}`}></span>
             <span className={`bg-black block transition-all duration-500 ease-out h-0.5 w-6 rounded-full translate-y-0.5 ${menu ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}></span>
           </button>
 
-          <div className={menu ? "fixed right-0 top-[60px] w-full h-screen bg-black/50 transition-all duration-500 ease-out" : ""}>
-            <div className={menu ? "fixed flex flex-col justify-evenly items-center right-0 top-14 w-3/4 h-screen bg-white p-10 ease-in duration-500 sm:w-2/3 md:w-1/2" : "fixed -right-full h-full top-14 p-10 ease-in duration-500"}>
+          <div className={menu ? "fixed right-0 top-[55px] w-full h-screen bg-black/50 transition-all duration-500 ease-out" : ""}>
+            <div className={menu ? "fixed flex flex-col justify-evenly items-center right-0 top-[54px] w-3/4 h-screen bg-white p-10 ease-in duration-500 sm:w-2/3 md:w-1/2" : "fixed -right-full h-full top-14 p-10 ease-in duration-500"}>
               <ul className="w-full text-lg font-bold text-black uppercase tracking-widest m-4">
                 <li className="p-4 border-b border-gray-600">Acerca de mi</li>
                 <li className="p-4 border-b border-gray-600">Tecnologías</li>

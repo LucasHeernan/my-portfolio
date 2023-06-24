@@ -16,12 +16,12 @@ export default function Home() {
 
   return (
     <div className="w-full h-screen z-10 flex flex-col bg-violet-300"> {/* container home-page */}
-      <div className="mx-auto h-1/3 mt-40 md:w-4/5 bg-yellow-200 sm:left-[10%] sm:w-11/12"> {/* text-zone */}
+      <div className="mx-auto w-[85%] h-32 mt-40 bg-violet-700 sm:w-[95%] sm:h-36 sm:text-white md:w-4/5"> {/* text-zone */}
         {/* <h1 className={`text-blue-900 font-['Alegreya'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-blue-900 font-['Alegreya_SC'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-blue-900 font-['Alegreya_Sans_SC'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-black font-['Philosopher'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
-        <h1 className={`text-black text-2xl font-['Poppins'] font-extrabold ${start} bg-red-500 lg:text-7xl md:text-6xl sm:text-5xl`}>
+        <h1 className={`text-[31px] font-['Poppins'] font-black ${start} bg-rose-500 sm:text-[44px] md:text-6xl lg:text-7xl`}>
         {/* <h1 className={`text-black font-['Lexend_Deca'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-blue-900 font-['Besley'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-blue-900 font-['Libre_Bodoni'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
@@ -32,7 +32,7 @@ export default function Home() {
           <AnimatedLetters
             text={name}
             time={0}
-            />
+          />
         {/* </h1> */}
         {/* <h1 className={`text-black font-['Alegreya'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
         {/* <h1 className={`text-black font-['Alegreya_SC'] font-bold ${start} lg:text-8xl md:text-6xl sm:text-5xl`}> */}
@@ -52,7 +52,7 @@ export default function Home() {
           />
         </h1>
       </div>
-      <h2 className="mx-auto text-black text-2xl mt-4 font-['Alegreya_SC'] font-medium md:text-lg sm:text-lg">
+      <h2 className="mx-auto w-[85%] text-lg text-black mt-2 font-['Alegreya_SC'] font-semibold bg-white sm:mt-6 sm:text-orange-500 md:text-lg">
         Front End Developer / JavaScript Expert / Youtuber
       </h2>
     </div>

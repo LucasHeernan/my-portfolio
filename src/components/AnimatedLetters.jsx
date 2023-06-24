@@ -45,7 +45,7 @@ export default function AnimatedLetters({ text, time }) {
   }, [])
 
   return (
-    <div className="mb-7 bg-rose-300">
+    <div className="mb-3">
       {
         letras.map((letra, idx) => {
           const uniqueId = `${letra}-${idx}`;
