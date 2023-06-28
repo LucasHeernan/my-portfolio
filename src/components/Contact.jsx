@@ -1,5 +1,7 @@
 import React from "react";
-import { Github, Linkedin, Whatsapp, Email, Moon, Sun } from "./Icons";
+import Lottie from "lottie-react";
+import animationData from "../assets/contact-animation.json";
+import { Github, Linkedin, Whatsapp, Email } from "./Icons";
 
 export default function Contact() {
 
@@ -12,11 +14,12 @@ export default function Contact() {
         <h2 className="py-4">Get In Touch</h2>
         <div className="grid lg:grid-cols-5 gap-8">
           {/* left */}
-          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4">
-            <div className="lg:p-4 h-full ">
-              <div>
-                <div className="rounded-xl bg-rose-300 hover:scale-105 hover:bg-violet-400 ease-in duration-300" />
-              </div>
+          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl">
+            <div className="lg:p-4 h-full">
+              {/* <div>
+                <div className="w-96 h-96 rounded-xl bg-rose-300 hover:scale-105 hover:bg-violet-400 ease-in duration-300" />
+              </div> */}
+              <Lottie animationData={animationData} />
               <div>
                 <h2 className="py-2">Clint Briley</h2>
                 <p>Front-End Developer</p>
