@@ -21,14 +21,14 @@ export default function Home() {
         {/* <h1 className={`text-[28px] text-blue-900 font-['Alegreya'] font-bold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
         {/* <h1 className={`text-[28px] text-blue-900 font-['Alegreya_SC'] font-bold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
         {/* <h1 className={`text-[28px] text-blue-900 font-['Alegreya_Sans_SC'] font-bold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
-        {/* <h1 className={`text-[28px] font-['Poppins'] font-black ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
+        <h1 className={`text-[27px] font-['Poppins'] font-black ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}>
         {/* <h1 className={`text-[28px] text-black font-['Lexend_Deca'] font-bold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
         {/* <h1 className={`text-[28px] text-blue-900 font-['Besley'] font-bold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
         {/* <h1 className={`text-[28px] text-blue-900 font-['Libre_Bodoni'] font-bold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
         {/* <h1 className={`text-[28px] text-blue-900 font-['Bodoni_Moda'] font-bold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
         {/* <h1 className={`text-[28px] text-black font-['EB_Garamond'] font-bold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
         {/* <h1 className={`text-[28px] text-blue-900 font-['Cormorant_Garamond'] font-bold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
-        <h1 className={`text-[33px] font-['Sansita'] font-extrabold ${start} sm:text-[44px] md:text-[53px] lg:text-[70px] xl:text-[89px]`}>
+        {/* <h1 className={`text-[33px] font-['Sansita'] font-extrabold ${start} sm:text-[44px] md:text-[53px] lg:text-[70px] xl:text-[89px]`}> */}
           <AnimatedLetters
             text={name}
             time={0}

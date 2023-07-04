@@ -1,133 +1,50 @@
 import React from "react";
-import Lottie from "lottie-react";
-import animationData from "../assets/contact-animation.json";
-import { Github, Linkedin, Whatsapp, Email } from "./Icons";
+import Lottie from "lottie-react"
+import contactAnimation from "../assets/contact-animation.json";
 
-export default function Contact() {
+export default function ContactHand() {
 
   return (
-    <div className="w-full lg:h-screen">
-      <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
-        <p className="text-xl tracking-widest uppercase text-[#5651e5]">
-          Contact
-        </p>
-        <h2 className="py-4">Get In Touch</h2>
-        <div className="grid lg:grid-cols-5 gap-8">
-          {/* left */}
-          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl">
-            <div className="lg:p-4 h-full">
-              {/* <div>
-                <div className="w-96 h-96 rounded-xl bg-rose-300 hover:scale-105 hover:bg-violet-400 ease-in duration-300" />
-              </div> */}
-              <Lottie animationData={animationData} />
-              <div>
-                <h2 className="py-2">Clint Briley</h2>
-                <p>Front-End Developer</p>
-                <p className="py-4">
-                  I am available for freelance or full-time positions. Contact
-                  me and let&apos;s talk.
-                </p>
-              </div>
-              <div>
-                <p className="uppercase pt-8">Connect With Me</p>
-                <div className="flex items-center justify-between py-4">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                      <Github className="w-8 h-8"/>
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                      <Linkedin className="w-8 h-8"/>
-                    </div>
-                  </a>
-
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <Whatsapp className="w-8 h-8"/>
-                  </div>
-                  <a>
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                      <Email className="w-8 h-8"/>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* right */}
-          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
-            <div className="p-4">
-              <form
-                action="https://getform.io/f/08ebcd37-f5b5-45be-8c13-714f011ce060"
-                method="POST"
-                encType="multipart/form-data"
-              >
-                <div className="grid md:grid-cols-2 gap-4 w-full py-2">
-                  <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">Name</label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
-                      name="name"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">
-                      Phone Number
-                    </label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
-                      name="phone"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Email</label>
-                  <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
-                    type="email"
-                    name="email"
-                  />
-                </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Subject</label>
-                  <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
-                    type="text"
-                    name="subject"
-                  />
-                </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Message</label>
-                  <textarea
-                    className="border-2 rounded-lg p-3 border-gray-300"
-                    rows="10"
-                    name="message"
-                  ></textarea>
-                </div>
-                <button className="w-full p-4 text-black mt-4">
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
+    <div className="w-full py-4 px-2 bg-red-300 md:h-screen">
+      <div className="md:flex md:w-full md:h-full">
+        <div className="md:w-[55%] xl:w-3/5">
+          <h2 className="text-[27px] font-['Poppins'] font-black pl-7 py-1 lg:pl-14">Contact</h2>
+          <Lottie className="mb-12 md:mb-0 md:mt-24 lg:mt-16 xl:mt-10" animationData={contactAnimation} />
         </div>
-        <div className="flex justify-center py-12">
-          <a>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <div className="w-3 h-3 bg-black" />
+        <div className="flex flex-col items-center md:justify-center md:w-[45%] xl:w-2/5">
+          <div className="w-5/6 sm:flex sm:justify-between md:flex-col md:w-11/12 lg:flex lg:flex-row lg:justify-between">
+            <div className="relative w-full mb-6 overflow-hidden border-2 border-gray-600 rounded-2xl sm:my-3 sm:w-[47%] md:w-full lg:w-[47%]">
+              <input
+                className="w-full py-3 px-5 text-base font-medium focus:outline-none peer/contact"
+                type="text"
+                placeholder="Name"
+              />
+              <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
             </div>
-          </a>
+            <div className="relative w-full my-3 overflow-hidden border-2 border-gray-600 rounded-2xl sm:w-1/2 md:w-full lg:w-1/2">
+              <input
+                className="w-full py-3 px-5 text-base font-medium focus:outline-none peer/contact"
+                type="email"
+                placeholder="Email Address"
+              />
+              <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
+            </div>
+          </div>
+          <div className="relative w-5/6 my-3 overflow-hidden border-2 border-gray-600 rounded-2xl md:w-11/12">
+            <input
+              className="w-full py-3 px-5 text-base font-medium focus:outline-none peer/contact"
+              type="text"
+              placeholder="Subject"
+            />
+            <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
+          </div>
+          <div className="flex flex-col w-5/6 md:w-11/12">
+            <div className="relative w-full my-3 overflow-hidden border-2 border-gray-600 rounded-2xl">
+              <textarea className="w-full p-3 px-5 text-base font-medium focus:outline-none peer/contact" name="Message" placeholder="Message" rows="6" />
+              <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
+            </div>
+            <button className="self-center w-2/5 my-3 py-3 text-base border-2 border-gray-600 rounded-2xl font-semibold md:self-end" type="submit">Send Message</button>
+          </div>
         </div>
       </div>
     </div>

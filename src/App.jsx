@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import "tailwindcss/tailwind.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
       <Home />
       <Contact />
+      <Footer />
     </div>
   )
 }
