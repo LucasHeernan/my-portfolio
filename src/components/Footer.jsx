@@ -1,7 +1,6 @@
 import React from "react";
 import IconContainer from "./InconContainer";
-import { Sequelize, PostgreSQL, HTML, CSS } from "./Icons";
-// import { Github, Linkedin, Whatsapp, Email } from "./Icons";
+import { Github, Linkedin, Whatsapp, Email } from "./Icons";
 import { motion } from "framer-motion";
 import profilePicture from "../assets/profile-picture.jpg";
 
@@ -21,8 +20,7 @@ export default function Footer() {
             whileTap={{scale: 0.8}}
           >
             <IconContainer custom={"w-7 h-7 mr-[5px] top-[0.5px] md:w-9 md:h-9 md:mr-2 lg:mr-3"}>
-              <Sequelize className="w-3/4 z-10 mr-[1px]" />
-              {/* <Github className="w-3/4 z-10 mr-[1px]" /> */}
+              <Github className="w-3/4 z-10 mr-[1px]" />
             </IconContainer>
           </motion.a>
           <motion.a
@@ -31,8 +29,7 @@ export default function Footer() {
             whileTap={{scale: 0.8}}
           >
             <IconContainer custom={"w-7 h-7 mr-[5px] mt-[1px] md:w-9 md:h-9 md:mr-2 lg:mr-3"}>
-              <PostgreSQL className="w-[63%] z-10 ml-[1px] mb-[1px] md:w-3/5" />
-              {/* <Linkedin className="w-[63%] z-10 ml-[1px] mb-[1px] md:w-3/5" /> */}
+              <Linkedin className="w-[63%] z-10 ml-[1px] mb-[1px] md:w-3/5" />
             </IconContainer>
           </motion.a>
           <motion.a
@@ -41,8 +38,7 @@ export default function Footer() {
             whileTap={{scale: 0.8}}
           >
             <IconContainer custom={"w-7 h-7 mr-[5px] top-[1px] md:w-9 md:h-9 md:mr-2 lg:mr-3"}>
-              <HTML className="w-4/5 z-10 ml-[0.5px]" />
-              {/* <Whatsapp className="w-4/5 z-10 ml-[0.5px]" /> */}
+              <Whatsapp className="w-4/5 z-10 ml-[0.5px]" />
             </IconContainer>
           </motion.a>
           <motion.a
@@ -51,8 +47,7 @@ export default function Footer() {
             whileTap={{scale: 0.8}}
           >
             <IconContainer custom={"w-7 h-7 mr-1 mt-[1px] md:mr-0 md:w-9 md:h-9 md:mr-2"}>
-              <CSS className="w-2/3 z-10 ml-[1px] mt-[2px]" />
-              {/* <Email className="w-2/3 z-10 ml-[1px] mt-[2px]" /> */}
+              <Email className="w-2/3 z-10 ml-[1px] mt-[2px]" />
             </IconContainer>
           </motion.a>
         </div>
