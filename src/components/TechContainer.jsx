@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function TechContainer({ custom, children }) {
+export default function TechContainer({ children }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
@@ -10,20 +10,10 @@ export default function TechContainer({ custom, children }) {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative ${custom ? custom : "w-8 h-8"} inline-flex rounded-full items-center justify-center overflow-hidden border-[2px] border-black hover:border-0 group`}
+      className={`relative w-10 h-10 inline-flex items-center justify-center overflow-hidden rounded-full`}
     >
-      {/* <span
-        className={`absolute w-full h-full transition-all duration-500 ease-out
-        ${
-          isHovered ? "bg-white" : "bg-transparent"
-        } rounded-full group-hover:w-12 group-hover:h-12`}
-      ></span> */}
-      {
-        React.cloneElement(children, {
-          isHovered: isHovered,
-          fill: isHovered ? "none" : "white"
-        })
-      }
+      <span className={`absolute w-full h-full opacity-50 ${isHovered ? "bg-white" : "bg-transparent"} rounded-full`} />
+      { React.cloneElement(children, { isHovered: isHovered }) }
     </div>
   );
 }
