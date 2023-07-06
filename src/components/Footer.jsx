@@ -1,6 +1,5 @@
 import React from "react";
 import IconContainer from "./InconContainer";
-import TechContainer from "./TechContainer";
 import { Github, Linkedin, Whatsapp, Email } from "./Icons";
 import { JS, HTML, CSS, ReactJS, PostgreSQL, Git, Expo } from "./Icons";
 import { motion } from "framer-motion";
@@ -9,7 +8,7 @@ import profilePicture from "../assets/profile-picture.jpg";
 export default function Footer() {
 
   return (
-    <footer className="w-full pb-7 pt-14 px-2 bg-fuchsia-300 sm:px-3 md:px-4 lg:px-8 lg:pt-28">
+    <footer className="w-full pb-7 pt-14 px-2 bg-fuchsia-200 sm:px-3 md:px-4 lg:px-8 lg:pt-28">
       <div className="flex justify-between items-center pl-1 md:pl-8">
         <div className="flex items-center">
           <img className="w-10 h-10 rounded-full -rotate-[18deg] object-scale-down bg-indigo-300 shadow-sm shadow-black lg:w-14 lg:h-14" src={profilePicture} alt="profile picture" />
@@ -21,36 +20,36 @@ export default function Footer() {
             target="_blank"
             whileTap={{scale: 0.8}}
           >
-            <TechContainer custom={"w-7 h-7 mr-[5px] top-[0.5px] md:w-9 md:h-9 md:mr-2 lg:mr-3"}>
-              <JS className="w-3/4 z-10 mr-[1px]" />
-            </TechContainer>
+            <IconContainer custom={"w-7 h-7 mr-[5px] top-[0.5px] md:w-9 md:h-9 md:mr-2 lg:mr-3"}>
+              <Github className="w-3/4 z-10 mr-[1px]" />
+            </IconContainer>
           </motion.a>
           <motion.a
             href="#"
             target="_blank"
             whileTap={{scale: 0.8}}
           >
-            <TechContainer custom={"w-7 h-7 mr-[5px] mt-[1px] md:w-9 md:h-9 md:mr-2 lg:mr-3"}>
-              <HTML className="w-[63%] z-10 ml-[1px] mb-[1px] md:w-3/5" />
-            </TechContainer>
+            <IconContainer custom={"w-7 h-7 mr-[5px] mt-[1px] md:w-9 md:h-9 md:mr-2 lg:mr-3"}>
+              <Linkedin className="w-[63%] z-10 ml-[1px] mb-[1px] md:w-3/5" />
+            </IconContainer>
           </motion.a>
           <motion.a
             href="#"
             target="_blank"
             whileTap={{scale: 0.8}}
           >
-            <TechContainer custom={"w-7 h-7 mr-[5px] top-[1px] md:w-9 md:h-9 md:mr-2 lg:mr-3"}>
-              <CSS className="w-4/5 z-10 ml-[0.5px]" />
-            </TechContainer>
+            <IconContainer custom={"w-7 h-7 mr-[5px] top-[1px] md:w-9 md:h-9 md:mr-2 lg:mr-3"}>
+              <Whatsapp className="w-4/5 z-10 ml-[0.5px]" />
+            </IconContainer>
           </motion.a>
           <motion.a
             href="#"
             target="_blank"
             whileTap={{scale: 0.8}}
           >
-            <TechContainer custom={"w-7 h-7 mr-1 mt-[1px] md:mr-0 md:w-9 md:h-9 md:mr-2"}>
-              <PostgreSQL className="w-2/3 z-10 ml-[1px] mt-[2px]" />
-            </TechContainer>
+            <IconContainer custom={"w-7 h-7 mr-1 mt-[1px] md:mr-0 md:w-9 md:h-9 md:mr-2"}>
+              <Email className="w-2/3 z-10 ml-[1px] mt-[2px]" />
+            </IconContainer>
           </motion.a>
         </div>
       </div>

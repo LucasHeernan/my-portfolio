@@ -5,7 +5,7 @@ import contactAnimation from "../assets/contact-animation.json";
 export default function ContactHand() {
 
   return (
-    <div className="w-full py-4 px-2 bg-red-300 md:h-screen">
+    <div className="w-full py-4 px-2 bg-fuchsia-100 md:h-screen">
       <div className="md:flex md:w-full md:h-full">
         <div className="md:w-[55%] xl:w-3/5">
           <h2 className="text-[27px] font-['Poppins'] font-black pl-7 py-1 lg:pl-14">Contact</h2>
@@ -43,7 +43,7 @@ export default function ContactHand() {
               <textarea className="w-full p-3 px-5 text-base font-medium focus:outline-none peer/contact" name="Message" placeholder="Message" rows="6" />
               <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
             </div>
-            <button className="self-center w-2/5 my-3 py-3 text-base border-2 border-gray-600 rounded-2xl font-semibold md:self-end" type="submit">Send Message</button>
+            <button className="self-center w-2/5 my-3 py-3 text-base text-gray-600 border-2 border-gray-600 rounded-2xl font-semibold md:self-end" type="submit">Send Message</button>
           </div>
         </div>
       </div>
