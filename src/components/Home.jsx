@@ -15,7 +15,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="w-full h-screen z-10 flex flex-col bg-violet-200"> {/* container home-page */}
+    <div className="w-full h-screen max-w-7xl mx-auto flex flex-col bg-violet-200"> {/* container home-page */}
       <div className="mx-auto w-[88%] h-28 mt-40 sm:w-5/6 sm:h-32 md:h-40 lg:h-52 xl:h-64 xl:mt-32"> {/* text-zone */}
       {/* <div className="mx-auto w-[88%] h-28 sm:w-5/6 sm:h-32 md:h-40 lg:h-52 xl:h-64"> text-zone */}
         {/* <h1 className={`text-[28px] text-blue-900 font-['Alegreya'] font-bold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}

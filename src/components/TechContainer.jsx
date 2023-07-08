@@ -10,9 +10,9 @@ export default function TechContainer({ children }) {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative w-20 h-20 inline-flex items-center justify-center overflow-hidden rounded-full bg-green-900`}
+      className="w-24 h-24 flex items-center justify-center overflow-hidden transition-all"
     >
-      <span className={`absolute w-full h-full opacity-50 ${isHovered ? "bg-white" : "bg-transparent"} rounded-full`} />
+      {/* <span className={`absolute w-full h-full opacity-50 ${isHovered ? "bg-white" : "bg-transparent"} rounded-full`} /> */}
       { React.cloneElement(children, { isHovered: isHovered }) }
     </div>
   );

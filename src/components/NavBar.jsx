@@ -17,8 +17,8 @@ export default function NavBar() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <header className="fixed shadow-xl w-full z-50 items-center py-3 px-6 bg-white backdrop-blur-sm">
-      <nav className="flex justify-between items-center mx-3">
+    <header className="fixed shadow-xl w-full z-50 items-center py-3 px-6 backdrop-blur-3xl">
+      <nav className="flex max-w-7xl mx-auto justify-between items-center">
 
         <div className="hidden text-base font-['Poppins'] font-medium items-center gap-5 md:flex">
         {/* <div className="hidden text-lg font-['Alegreya_Sans_SC'] font-medium items-center gap-5 md:flex"> */}
@@ -38,7 +38,7 @@ export default function NavBar() {
             whileTap={{scale: 0.8}}
           >
             <IconContainer>
-              <Github className="w-2/3 z-10 mb-[0.5px]" />
+              <Github className="w-2/3 z-10 mb-[0.5px] mr-[1px]" />
             </IconContainer>
           </motion.a>
           <motion.a
@@ -47,7 +47,7 @@ export default function NavBar() {
             whileTap={{scale: 0.8}}
           >
             <IconContainer>
-              <Linkedin className="w-7/12 z-10 ml-[1px] mb-[1px]" />
+              <Linkedin className="w-7/12 z-10 ml-[2px] mb-[1px]" />
             </IconContainer>
           </motion.a>
           <motion.a
@@ -56,7 +56,7 @@ export default function NavBar() {
             whileTap={{scale: 0.8}}
           >
             <IconContainer>
-              <Whatsapp className="w-3/4 z-10 ml-[1px]" />
+              <Whatsapp className="w-3/4 z-10 mb-[0.5px]" />
             </IconContainer>
           </motion.a>
           <motion.a
@@ -65,7 +65,7 @@ export default function NavBar() {
             whileTap={{scale: 0.8}}
           >
             <IconContainer>
-              <Email className="w-2/3 z-10 ml-[2px] mt-[1px]" />
+              <Email className="w-2/3 z-10 ml-[1px] mt-[1px]" />
             </IconContainer>
           </motion.a>
           <div className="hidden md:flex items-center justify-center">

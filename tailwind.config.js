@@ -123,13 +123,18 @@ export default {
           to: {
             transform: 'scale3d(1, 1, 1)',
           },
+        },
+        slide: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' }
         }
       },
       animation: {
         fadeIn: 'fadeIn 1000ms ease-in-out forwards',
         fadeInDown: 'fadeInDown 1000ms ease-in-out forwards',
         rubberBand: 'rubberBand 1000ms ease-in-out none',
-        bounceIn: 'bounceIn 1000ms ease-in-out forwards'
+        bounceIn: 'bounceIn 1000ms ease-in-out forwards',
+        slide: 'slide 35s infinite linear'
       }
     },
   },
