@@ -56,7 +56,7 @@ export default function NavBar() {
             whileTap={{scale: 0.8}}
           >
             <IconContainer>
-              <Whatsapp className="w-3/4 z-10 mb-[0.5px]" />
+              <Whatsapp className="w-3/4 z-10 mb-[0.5px] ml-[1px]" />
             </IconContainer>
           </motion.a>
           <motion.a
@@ -65,7 +65,7 @@ export default function NavBar() {
             whileTap={{scale: 0.8}}
           >
             <IconContainer>
-              <Email className="w-2/3 z-10 ml-[1px] mt-[1px]" />
+              <Email className="w-2/3 z-10 ml-[2px] mt-[1px]" />
             </IconContainer>
           </motion.a>
           <div className="hidden md:flex items-center justify-center">
