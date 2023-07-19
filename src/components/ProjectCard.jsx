@@ -1,12 +1,31 @@
 import React from "react";
 
-export default function ProjectCard() {
+export default function ProjectCard({ title, bgImage, description, techs }) {
+
+  // TITULO - BG-IMG - DESCRIPCIÓN - TECHS
 
   return (
-    <div className="w-full h-screen max-w-7xl mx-auto bg-slate-300">
-      <div className="relative w-64 h-72 rounded-3xl overflow-hidden m-auto my-auto bg-yellow-100
-        before:absolute before:bg-gradient-to-b before:from-gray-200 before:to-white before:opacity-75 before:w-full before:h-0 before:transition-all before:duration-700 before:ease-in-out before:hover:h-full"
-      >
+    <div className="group relative block rounded-3xl overflow-hidden bg-teal-800">
+      <img
+        alt="Developer"
+        src="https://images.unsplash.com/photo-1603871165848-0aa92c869fa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
+        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+      />
+      <div className="relative p-4 sm:p-6 lg:p-8">
+        {/* <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Developer</p> */}
+        <p className="text-xl font-bold text-white sm:text-2xl">{title}</p>
+        <div className="mt-32 sm:mt-48 lg:mt-64">
+          <div className="translate-y-4 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+            <p className="text-sm text-white">{description}</p>
+            <div className="flex mt-1">
+              {
+                techs.map(el => {
+                  return <span className="bg-teal-900 p-2 rounded-md mr-2 text-white text-sm font-semibold">{el}</span>
+                })
+              }
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
