@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function ProjectCard({ title, bgImage, description, techs }) {
+export default function ProjectCard({ title, description, techs, images }) {
 
-  // TITULO - BG-IMG - DESCRIPCIÓN - TECHS
+  const [currentImg, setCurrentImg] = useState(0);
+
+  const prevImg = () => {
+    const isFirstImg = currentImg === 0;
+    const newIndex = isFirstImg ? images.length - 1 : currentImg - 1;
+    setCurrentImg(newIndex);
+  };
+
+  const nextImg = () => {
+    const isLastImg = currentImg === images.length - 1;
+    const newIndex = isLastImg ? 0 : currentImg + 1;
+    setCurrentImg(newIndex);
+  }
 
   return (
-    <div className="group relative block rounded-3xl overflow-hidden bg-teal-800">
-      <img
-        alt="Developer"
-        src="https://images.unsplash.com/photo-1603871165848-0aa92c869fa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
-        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+    <div className="group relative rounded-3xl overflow-hidden bg-black">
+      <div
+        style={{ backgroundImage: `url(${images[currentImg]})` }}
+        alt="image"
+        // className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+        className="absolute w-full h-full bg-center bg-contain bg-no-repeat duration-500 opacity-75 transition-opacity group-hover:opacity-20"
       />
+      <button className="hidden group-hover:block group-hover:z-50 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <span onClick={prevImg} className="text-xl">&lt;</span>
+      </button>
+      <button className="hidden group-hover:block group-hover:z-50 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <span onClick={nextImg} className="text-xl">&gt;</span>
+      </button>
       <div className="relative p-4 sm:p-6 lg:p-8">
         {/* <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Developer</p> */}
         <p className="text-xl font-bold text-white sm:text-2xl">{title}</p>
