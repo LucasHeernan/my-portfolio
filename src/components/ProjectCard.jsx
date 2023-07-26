@@ -18,11 +18,16 @@ export default function ProjectCard({ title, description, techs, images }) {
 
   return (
     <div className="group relative rounded-3xl overflow-hidden bg-black">
-      <div
+      {/* <div
         style={{ backgroundImage: `url(${images[currentImg]})` }}
         alt="image"
         // className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
         className="absolute w-full h-full bg-center bg-contain bg-no-repeat duration-500 opacity-75 transition-opacity group-hover:opacity-20"
+      /> */}
+      <img
+        src={images[currentImg]}
+        alt="image"
+        className="absolute w-full h-full object-contain duration-500 opacity-75 transition-opacity group-hover:opacity-20"
       />
       <button className="hidden group-hover:block group-hover:z-50 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
         <span onClick={prevImg} className="text-xl">&lt;</span>
