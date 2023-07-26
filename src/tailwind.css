@@ -7,34 +7,4 @@
   .carousel:hover .carousel-stop {
     animation-play-state: paused;
   }
-
-  .project {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-  }
-  
-  .project::before,
-  .project::after {
-    content: "";
-    position: absolute;
-    width: 128px;
-    height: 100%;
-    opacity: 0.5;
-  }
-
-  .project::before {
-    left: 0;
-    background: linear-gradient(to left, white, gray);
-    transition: opacity 0.3s ease;
-  }
-
-  .project::after {
-    right: 0;
-    background: linear-gradient(to right, white, gray);
-    transition: opacity 0.3s ease;
-  }
-
-  .project:hover::before { opacity: 0.8; }
-  .project:hover::after { opacity: 0.8; }
 }
