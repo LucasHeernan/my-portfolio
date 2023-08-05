@@ -127,6 +127,30 @@ export default {
         slide: {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-100%)' }
+        },
+        leftDown: {
+          '0%': { transform: 'rotate(-35deg)' },
+          '25%': { transform: 'rotate(-65deg)' },
+          '50%': { transform: 'rotate(-92deg)' },
+          '100%': { transform: 'translateY(-15px) translateX(-350px)' }
+        },
+        leftUp: {
+          '0%': { transform: 'rotate(-110deg)' },
+          '25%': { transform: 'rotate(-95deg)' },
+          '50%': { transform: 'rotate(-90deg)' },
+          '100%': { transform: 'translateY(-15px) translateX(-350px)' }
+        },
+        rightDown: {
+          '0%': { transform: 'rotate(35deg)' },
+          '25%': { transform: 'rotate(65deg)' },
+          '50%': { transform: 'rotate(92deg)' },
+          '100%': { transform: 'translateY(-15px) translateX(350px)' }
+        },
+        rightUp: {
+          '0%': { transform: 'rotate(110deg)' },
+          '25%': { transform: 'rotate(95deg)' },
+          '50%': { transform: 'rotate(90deg)' },
+          '100%': { transform: 'translateY(-15px) translateX(350px)' }
         }
       },
       animation: {
@@ -134,7 +158,11 @@ export default {
         fadeInDown: 'fadeInDown 1000ms ease-in-out forwards',
         rubberBand: 'rubberBand 1000ms ease-in-out none',
         bounceIn: 'bounceIn 1000ms ease-in-out forwards',
-        slide: 'slide 35s infinite linear'
+        slide: 'slide 35s infinite linear',
+        leftDown: 'leftDown 500ms ease-out none',
+        leftUp: 'leftUp 500ms ease-out none',
+        rightDown: 'rightDown 500ms ease-out none',
+        rightUp: 'rightUp 500ms ease-out none',
       }
     },
   },

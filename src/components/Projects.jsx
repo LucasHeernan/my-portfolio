@@ -5,10 +5,10 @@ import { projectsData } from "../assets/projects/projectsData";
 export default function ProjectsContent() {
 
   return (
-    <section className="w-full bg-amber-200">
-      <div className="max-w-7xl mx-auto px-10 py-20 bg-green-200">
-        <p className="text-xl tracking-widest">PROJECTS</p>
-        <h2 className="pt-4">What I've built</h2>
+    <section className="w-full">
+      <div className="max-w-7xl mx-auto px-10 py-20 font-['Poppins']">
+        <p className="text-4xl font-bold tracking-widest">PROJECTS</p>
+        <h2 className="text-xl font-medium pt-4">What I've built</h2>
         <div className="flex flex-col">
           {
             projectsData?.map((project, index) => (

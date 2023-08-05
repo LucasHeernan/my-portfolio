@@ -19,7 +19,7 @@ import dpower8 from "../projectsImages/DpowerProfile.png";
 export const projectsData = [
   {
     title: "Instagram clone",
-    description: "Proyecto que replica la interfaz visual de Instagram en la que puedes hacer un recorrido por todas las pantallas y ver lo similar que es al original. La aplicación fue construida completamente con React Native.",
+    description: "Proyecto que replica la interfaz visual de Instagram en la se puede hacer un recorrido por todas las pantallas y ver lo similar que es al original. La aplicación fue construida completamente con React Native.",
     techs: ["React Native", "CSS"],
     images: [insta1, insta2, insta3, insta4, insta5, insta6],
     repository: "https://github.com/LucasHeernan/my-instagram",
@@ -42,7 +42,7 @@ export const projectsData = [
     phone: true,
   },
   {
-    title: "PokeApp",
+    title: "Poke App",
     description: "Diseñar y desarrollar una App de pokemon que incluía: búsquedas, filtrados combinados, ordenamientos y creación",
     techs: ["ReactJS", "Redux", "NodeJS", "Express", "Sequelize", "PostgreSQL"],
     images: [pokemon1, pokemon2, pokemon3],
