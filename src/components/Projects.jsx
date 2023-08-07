@@ -2,7 +2,7 @@ import React from "react";
 import ProjectCard from "./ProjectCard";
 import { projectsData } from "../assets/projects/projectsData";
 
-export default function ProjectsContent() {
+export default function Projects() {
 
   return (
     <section className="w-full">

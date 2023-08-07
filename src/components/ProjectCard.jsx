@@ -3,10 +3,27 @@ import ProjectImage from "./ProjectImage";
 import { Github } from "./Icons";
 import { motion } from "framer-motion";
 
-export default function ProjectItem({ title, description, techs, images, repository, phone }) {
+export default function ProjectCard({ title, description, techs, images, repository, phone }) {
 
   return (
-    <article className="w-full pb-20">
+    <motion.div
+      initial={{
+        opacity: 0.3,
+        translateX: phone ? -300 : 300,
+        scale: 0.7
+      }}
+      whileInView={{
+        opacity: 1,
+        translateX: 0,
+        scale: 1
+      }}
+      transition={{
+        duration: 1,
+        ease: "easeInOut",
+        type: "spring"
+      }}
+      className="w-full pb-20"
+    >
       <div className={`max-w-7xl w-full ${phone ? "h-[480px]" : "h-96"} flex justify-between cursor-default text-black bg-white`}>
         {
           phone ?
@@ -88,7 +105,7 @@ export default function ProjectItem({ title, description, techs, images, reposit
           </>
         }
       </div>
-    </article>
+    </motion.div>
   );
 }
 
