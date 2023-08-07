@@ -7,11 +7,11 @@ export default function ContactHand() {
   return (
     <div className="w-full py-4 px-2 max-w-7xl mx-auto bg-fuchsia-100 md:h-screen">
       <div className="md:flex md:w-full md:h-full">
-        <div className="md:w-[55%] xl:w-3/5">
+        <section className="md:w-[55%] xl:w-3/5">
           <h2 className="text-[27px] font-['Poppins'] font-black pl-7 py-1 lg:pl-14">Contact</h2>
           <Lottie className="mb-12 md:mb-0 md:mt-24 lg:mt-16 xl:mt-10" animationData={contactAnimation} />
-        </div>
-        <div className="flex flex-col items-center md:justify-center md:w-[45%] xl:w-2/5">
+        </section>
+        <section className="flex flex-col items-center md:justify-center md:w-[45%] xl:w-2/5">
           <div className="w-5/6 sm:flex sm:justify-between md:flex-col md:w-11/12 lg:flex lg:flex-row lg:justify-between">
             <div className="relative w-full mb-6 overflow-hidden border-2 border-gray-600 rounded-xl sm:my-3 sm:w-[47%] md:w-full lg:w-[47%]">
               <input
@@ -45,7 +45,7 @@ export default function ContactHand() {
             </div>
             <button className="self-center w-2/5 my-3 py-3 text-base text-gray-600 border-2 border-gray-600 rounded-xl font-semibold md:self-end" type="submit">Send Message</button>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   )

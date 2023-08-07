@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full pb-7 pt-14 px-2 max-w-7xl mx-auto bg-fuchsia-200 sm:px-3 md:px-4 lg:px-8 lg:pt-28">
-      <div className="flex justify-between items-center pl-1 md:pl-8">
+      <section className="flex justify-between items-center pl-1 md:pl-8">
         <div className="flex items-center">
           <img className="w-10 h-10 rounded-full -rotate-[18deg] object-scale-down bg-indigo-300 shadow-sm shadow-black lg:w-14 lg:h-14" src={profilePicture} alt="profile picture" />
           <p className="text-base font-['Poppins'] font-medium uppercase pl-2 lg:font-semibold lg:text-2xl lg:pl-2">Lucas Benitez</p>
@@ -51,9 +51,9 @@ export default function Footer() {
             </IconContainer>
           </motion.a>
         </div>
-      </div>
+      </section>
 
-      <div className="flex justify-between items-center py-1 px-1 text-xs font-medium font-['Poppins'] md:pl-8 lg:text-sm">
+      <section className="flex justify-between items-center py-1 px-1 text-xs font-medium font-['Poppins'] md:pl-8 lg:text-sm">
         <div>
           <p>Copyright © 2023 | All rights reserved.</p>
         </div>
@@ -61,7 +61,7 @@ export default function Footer() {
           <p className="pr-[3px] lg:pr-[5px]">Contact me</p>
           <p className="relative text-base bottom-[2px] lg:text-lg">☝🏻</p>
         </div>
-      </div>
+      </section>
     </footer>
   )
 }

@@ -14,79 +14,79 @@ export default function Technologies() {
       >
         <div className="carousel-stop animate-slide flex">
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <HTML />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">HTML</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <JS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">Javascript</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <CSS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">CSS</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <ReactJS/>
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">ReactJS</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <TailwindCSS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">TailwindCSS</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <Redux />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">Redux</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <ReactNative />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">React Native</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <NodeJS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">NodeJS</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <PostgreSQL />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">PostgreSQL</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <ExpressJS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">ExpressJS</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <Sequelize />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">Sequelize</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <Git />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">Git</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <Expo/>
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">Expo</span>
@@ -95,79 +95,79 @@ export default function Technologies() {
 
         <div className="carousel-stop animate-slide flex bg-white">
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <ReactJS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">ReactJS</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <JS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">Javascript</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <NodeJS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">NodeJS</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <Redux />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">Redux</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <PostgreSQL />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">PostgreSQL</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <ReactNative />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">React Native</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <Sequelize />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">Sequelize</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <CSS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">CSS</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <TailwindCSS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">TailwindCSS</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <HTML />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">HTML</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <ExpressJS />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">ExpressJS</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <Git />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">Git</span>
           </div>
           <div className="flex flex-col items-center mx-3 sm:mx-5 md:mx-7 lg:mx-8">
-            <TechContainer className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20`}>
+            <TechContainer>
               <Expo />
             </TechContainer>
             <span className="font-medium text-sm mt-1 sm:text-base md:font-semibold md:mt-2 lg:mt-4">Expo</span>

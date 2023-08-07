@@ -5,7 +5,7 @@ import { projectsData } from "../assets/projects/projectsData";
 export default function Projects() {
 
   return (
-    <section className="w-full">
+    <section className="w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-10 py-20 font-['Poppins']">
         <p className="text-4xl font-bold tracking-widest">PROJECTS</p>
         <h2 className="text-xl font-medium pt-4">What I've built</h2>
