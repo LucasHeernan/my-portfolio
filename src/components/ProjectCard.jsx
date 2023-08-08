@@ -11,7 +11,10 @@ const techAnimations = {
   animate: (index) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.05 * index }
+    transition: {
+      delay: 0.05 * index,
+      duration: 0.2 * index
+    }
   })
 }
 
@@ -21,23 +24,23 @@ export default function ProjectCard({ title, description, techs, images, reposit
     <motion.div
       initial={{
         opacity: 0.3,
-        translateX: phone ? -300 : 300,
+        translateY: 100,
         scale: 0.7
       }}
       whileInView={{
         opacity: 1,
-        translateX: 0,
+        translateY: 0,
         scale: 1
       }}
       transition={{
-        duration: 1,
+        duration: 2,
         ease: "easeInOut",
         type: "spring"
       }}
       viewport={{ once: true }}
       className="w-full pb-20"
     >
-      <div className={`max-w-7xl w-full ${phone ? "h-[480px]" : "h-96"} flex justify-between cursor-default text-black bg-white`}>
+      <div className={`max-w-7xl w-full ${phone ? "h-[480px]" : "h-96"} flex justify-between px-6 py-4 cursor-default text-black bg-slate-200`}>
         {
           phone ?
           <>
@@ -71,11 +74,11 @@ export default function ProjectCard({ title, description, techs, images, reposit
                   <motion.a
                     href={`${repository}`}
                     target="_blank"
-                    className="w-10 h-10 rounded-full flex justify-center items-center mr-5 cursor-pointer bg-[#666666]
-                    hover:border-solid hover:border-t-0 hover:border-r-[3px] hover:border-b-4 hover:border-l-0 hover:border-gray-700 hover:bg-gradient-to-br from-black to-slate-500 hover:shadow hover:shadow-fuchsia-400"
+                    className="w-11 h-11 rounded-full flex justify-center items-center mr-4 cursor-pointer bg-slate-800
+                    hover:border-solid hover:border-t-0 hover:border-r-[3px] hover:border-b-4 hover:border-l-0 hover:border-gray-700 hover:bg-gradient-to-br from-black to-slate-500 hover:shadow hover:shadow-gray-500"
                     transition={{ duration: 0.2 }}
                     whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.8 }}
+                    whileTap={{ scale: 0.9 }}
                   >
                     <Github
                       fill={"white"}
@@ -104,11 +107,11 @@ export default function ProjectCard({ title, description, techs, images, reposit
                   <motion.a
                     href={`${repository}`}
                     target="_blank"
-                    className="w-10 h-10 rounded-full flex justify-center items-center mr-5 cursor-pointer bg-[#666666]
-                    hover:border-solid hover:border-t-0 hover:border-r-[3px] hover:border-b-4 hover:border-l-0 hover:border-gray-700 hover:bg-gradient-to-br from-black to-slate-500 hover:shadow hover:shadow-fuchsia-400"
+                    className="w-11 h-11 rounded-full flex justify-center items-center cursor-pointer bg-slate-800
+                    hover:border-solid hover:border-t-0 hover:border-r-[3px] hover:border-b-4 hover:border-l-0 hover:border-gray-700 hover:bg-gradient-to-br from-black to-slate-500 hover:shadow hover:shadow-gray-500"
                     transition={{ duration: 0.2 }}
                     whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.8 }}
+                    whileTap={{ scale: 0.9 }}
                   >
                     <Github
                       fill={"white"}

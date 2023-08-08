@@ -31,7 +31,7 @@ export default function ProjectImage({ images, phone }) {
   return (
     <div className="relative z-10 overflow-hidden flex w-full h-full shadow-black shadow-md">
       <button
-        className={`absolute block cursor-pointer w-1/4 h-full z-20 left-0 bg-gradient-to-l from-transparent to-slate-700 transition-opacity duration-700 ease-out opacity-[${left ? 0.7 : 0.2}]`}
+        className={`absolute block cursor-pointer w-1/4 h-full z-20 left-0 bg-gradient-to-l from-transparent to-slate-700 transition-opacity duration-700 ease-out opacity-[${left ? 0.5 : 0.1}]`}
         onClick={prevImg}
         onMouseEnter={() => setLeft(true)}
         onMouseLeave={() => setLeft(false)}
@@ -43,7 +43,7 @@ export default function ProjectImage({ images, phone }) {
         />
       </button>
       <button
-        className={`absolute block cursor-pointer w-1/4 h-full z-20 right-0 bg-gradient-to-r from-transparent to-slate-700 transition-opacity duration-700 ease-out opacity-[${right ? 0.7 : 0.2}]`}
+        className={`absolute block cursor-pointer w-1/4 h-full z-20 right-0 bg-gradient-to-r from-transparent to-slate-700 transition-opacity duration-700 ease-out opacity-[${right ? 0.5 : 0.1}]`}
         onClick={nextImg}
         onMouseEnter={() => setRight(true)}
         onMouseLeave={() => setRight(false)}

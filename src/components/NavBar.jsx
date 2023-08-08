@@ -70,7 +70,7 @@ export default function NavBar() {
           </motion.a>
           <div className="hidden md:flex items-center justify-center">
             <a href="#" className="relative bg-transparent text-black px-3 py-1 rounded-sm overflow-hidden border-[2px] border-black group hover:text-white duration-700">
-              <span className="absolute w-0 group-hover:w-[98%] transition-all ease-out duration-700 h-[95%] bg-black top-[1px] left-[1px]"></span>
+              <span className="absolute w-0 group-hover:w-[99%] transition-all ease-out duration-700 h-[95%] bg-black top-[1px] left-[1px]"></span>
               <span className="relative uppercase font-semibold">Contacto</span>
             </a>
           </div>
