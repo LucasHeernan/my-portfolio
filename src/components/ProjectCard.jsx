@@ -44,7 +44,6 @@ export default function ProjectCard({ title, description, techs, images, reposit
         {
           phone ?
           <>
-            {/* CUADRO DE TEXTO E ÍCONOS */}
             <div className={`${phone ? "w-3/5" : "w-[55%]"} h-full flex flex-col justify-evenly p-10`}>
               <h3 className="text-4xl font-bold tracking-wide">{title}</h3>
               <p className="text-lg font-medium pr-10">{description}</p>
@@ -61,7 +60,7 @@ export default function ProjectCard({ title, description, techs, images, reposit
                             whileInView="animate"
                             custom={index}
                             viewport={{ once: true }}
-                            className="inline-block p-1 bg-blue-600 text-black border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-blue-950 rounded uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] ml-2 relative overflow-hidden box-border
+                            className="inline-block p-1 bg-blue-600 text-black border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-blue-950 rounded uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] mr-2 relative overflow-hidden box-border
                             before:bg-blue-400 before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                             after:bg-blue-500 after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-1"
                           >
@@ -74,31 +73,28 @@ export default function ProjectCard({ title, description, techs, images, reposit
                   <motion.a
                     href={`${repository}`}
                     target="_blank"
-                    className="w-11 h-11 rounded-full flex justify-center items-center mr-4 cursor-pointer bg-slate-800
-                    hover:border-solid hover:border-t-0 hover:border-r-[3px] hover:border-b-4 hover:border-l-0 hover:border-gray-700 hover:bg-gradient-to-br from-black to-slate-500 hover:shadow hover:shadow-gray-500"
+                    className="w-11 h-11 rounded-full flex justify-center items-center mr-4 cursor-pointer bg-slate-800 border-solid border-t-0 border-r-[3px] border-b-4 border-l-0 border-slate-900
+                    hover:bg-gradient-to-br from-black to-slate-500 hover:shadow hover:shadow-gray-500"
                     transition={{ duration: 0.2 }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <Github
                       fill={"white"}
-                      className="w-7 h-w-7"
+                      className="w-7 h-w-7 ml-[3px]"
                     />
                   </motion.a>
                 </div>
               </div>
             </div>
-            {/* CUADRO DE IMÁGENES */}
             <div className={`${phone ? "w-2/5" : "w-[45%]" } relative h-full before:w-full before:h-full before:absolute before:left-2 before:top-2 before:bg-slate-700`}>
               <ProjectImage images={images} phone={phone} />
             </div>
           </> :
           <>
-            {/* CUADRO DE IMÁGENES */}
             <div className={`${phone ? "w-2/5" : "w-[45%]" } relative h-full before:w-full before:h-full before:absolute before:left-2 before:top-2 before:bg-slate-700`}>
               <ProjectImage images={images} phone={phone} />
             </div>
-            {/* CUADRO DE TEXTO E ÍCONOS */}
             <div className={`${phone ? "w-3/5" : "w-[55%]"} h-full flex flex-col justify-around p-10 text-right`}>
               <h3 className="text-4xl font-bold tracking-wide">{title}</h3>
               <p className="text-lg font-medium pl-6">{description}</p>
@@ -107,15 +103,15 @@ export default function ProjectCard({ title, description, techs, images, reposit
                   <motion.a
                     href={`${repository}`}
                     target="_blank"
-                    className="w-11 h-11 rounded-full flex justify-center items-center cursor-pointer bg-slate-800
-                    hover:border-solid hover:border-t-0 hover:border-r-[3px] hover:border-b-4 hover:border-l-0 hover:border-gray-700 hover:bg-gradient-to-br from-black to-slate-500 hover:shadow hover:shadow-gray-500"
+                    className="w-11 h-11 rounded-full flex justify-center items-center cursor-pointer bg-slate-800 border-solid border-t-0 border-r-[3px] border-b-4 border-l-0 border-slate-900
+                    hover:bg-gradient-to-br from-black to-slate-500 hover:shadow hover:shadow-gray-500"
                     transition={{ duration: 0.2 }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <Github
                       fill={"white"}
-                      className="w-7 h-w-7"
+                      className="w-7 h-w-7 ml-[3px]"
                     />
                   </motion.a>
                   <div className="flex items-center">
