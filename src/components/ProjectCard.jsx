@@ -25,7 +25,7 @@ export default function ProjectCard({ title, description, techs, images, reposit
       initial={{
         opacity: 0.3,
         translateY: 100,
-        scale: 0.7
+        scale: 0.8
       }}
       whileInView={{
         opacity: 1,
@@ -62,7 +62,7 @@ export default function ProjectCard({ title, description, techs, images, reposit
                             viewport={{ once: true }}
                             className="inline-block p-1 bg-blue-600 text-black border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-blue-950 rounded uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] mr-2 relative overflow-hidden box-border
                             before:bg-blue-400 before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
-                            after:bg-blue-500 after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-1"
+                            after:bg-blue-500 after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
                           >
                             <span className="relative z-20">{el}</span>
                           </motion.div>
@@ -127,7 +127,7 @@ export default function ProjectCard({ title, description, techs, images, reposit
                             viewport={{ once: true }}
                             className="inline-block p-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] ml-2 relative overflow-hidden box-border
                             before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
-                            after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-1"
+                            after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
                           >
                             <span className="relative z-20">{el}</span>
                           </motion.div>

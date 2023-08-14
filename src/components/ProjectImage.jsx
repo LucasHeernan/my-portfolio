@@ -36,7 +36,7 @@ export default function ProjectImage({ images, phone }) {
         onMouseEnter={() => setLeft(true)}
         onMouseLeave={() => setLeft(false)}
       >
-        <em className={`absolute block h-7 w-7 top-1/2 left-7 transition-transform duration-200 ease-out delay-2
+        <em className={`absolute block h-7 w-7 top-1/2 left-7 transition-transform duration-200 ease-out delay-200
         before:-rotate-${left ? "[25deg]" : 45} before:absolute before:left-0 before:h-full before:w-1 before:bottom-[1px] before:bg-black before:opacity-75 before:origin-top before:duration-200 before:ease-out
         after:-rotate-${left ? "[155deg]" : "[135deg]"} after:absolute after:left-0 after:h-full after:w-1 after:bg-black after:opacity-75 after:origin-top after:duration-300 after:ease-out
         ${arrowL ? "before:animate-leftDown before:bottom-0 after:animate-leftUp" : ""}`}
@@ -48,7 +48,7 @@ export default function ProjectImage({ images, phone }) {
         onMouseEnter={() => setRight(true)}
         onMouseLeave={() => setRight(false)}
       >
-        <em className={`absolute block h-7 w-7 top-1/2 right-7 transition-transform duration-200 ease-out delay-2
+        <em className={`absolute block h-7 w-7 top-1/2 right-7 transition-transform duration-200 ease-out delay-200
         before:rotate-${right ? "[25deg]" : 45} before:absolute before:right-0 before:h-full before:w-1 before:bottom-[1px] before:bg-black before:origin-top before:duration-200 before:ease-out
         after:rotate-${right ? "[155deg]" : "[135deg]"} after:absolute after:right-0 after:h-full after:w-1 after:bg-black after:origin-top after:duration-300 after:ease-out
         ${arrowR ? "before:animate-rightDown before:bottom-0 after:animate-rightUp" : ""}`}

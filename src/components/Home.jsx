@@ -21,7 +21,7 @@ export default function Home() {
         {/* <h1 className={`text-[27px] uppercase font-['Poppins'] font-black ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[77px]`}> */}
         {/* <h1 className={`text-[28px] uppercase font-['Lexend_Deca'] font-black ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[72px]`}> */}
         {/* <h1 className={`text-[28px] uppercase font-['EB_Garamond'] font-extrabold ${start} sm:text-[39px] md:text-[46px] lg:text-[61px] xl:text-[76px]`}> */}
-        <h1 className={`text-[33px] uppercase font-['Sansita'] font-extrabold ${start} sm:text-[44px] md:text-[53px] lg:text-[70px] xl:text-[90px]`}>
+        <h1 className={`text-[33px] uppercase font-['Sansita'] font-bold ${start} sm:text-[44px] md:text-[53px] lg:text-[70px] xl:text-[96px]`}>
           <AnimatedLetters
             text={name}
             time={0}
