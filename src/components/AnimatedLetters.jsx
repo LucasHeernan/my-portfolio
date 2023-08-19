@@ -41,7 +41,7 @@ export default function AnimatedLetters({ text, time }) {
   useEffect(() => {
     setTimeout(() => {
       setFirts("");
-    }, 4400)
+    }, 4000)
   }, [])
 
   return (

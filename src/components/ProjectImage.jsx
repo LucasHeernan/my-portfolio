@@ -9,8 +9,7 @@ export default function ProjectImage({ images, phone }) {
   const [arrowR, setArrowR] = useState(false);
 
   const prevImg = () => {
-    const isFirstImg = currentImg === 0;
-    const newIndex = isFirstImg ? images.length - 1 : currentImg - 1;
+    const newIndex = currentImg === 0 ? images.length - 1 : currentImg - 1;
     setCurrentImg(newIndex);
     setArrowL(true);
     setTimeout(() => {
@@ -19,8 +18,7 @@ export default function ProjectImage({ images, phone }) {
   }
 
   const nextImg = () => {
-    const isLastImg = currentImg === images.length - 1;
-    const newIndex = isLastImg ? 0 : currentImg + 1;
+    const newIndex = currentImg === images.length - 1 ? 0 : currentImg + 1;
     setCurrentImg(newIndex);
     setArrowR(true);
     setTimeout(() => {

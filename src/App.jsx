@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Technologies from "./components/Technologies";
 import Projects from "./components/Projects";
+import Carousel from "./components/Carousel";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./tailwind.css";
@@ -13,8 +14,9 @@ export default function App() {
     <div>
       <NavBar />
       <Home />
-      <Technologies />
-      <Projects />
+      {/* <Projects /> */}
+      <Carousel />
+      {/* <Technologies /> */}
       <Contact />
       <Footer />
     </div>
