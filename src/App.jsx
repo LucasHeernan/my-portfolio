@@ -14,7 +14,7 @@ export default function App() {
     <div>
       <NavBar />
       <Home />
-      {/* <Projects /> */}
+      <Projects />
       <Carousel />
       {/* <Technologies /> */}
       <Contact />

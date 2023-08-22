@@ -40,7 +40,7 @@ export default function ProjectCard({ title, description, techs, images, reposit
       viewport={{ once: true }}
       className="w-full pb-20"
     >
-      <div className={`max-w-7xl w-full ${phone ? "h-[480px]" : "h-96"} flex justify-between px-6 py-4 cursor-default text-black bg-slate-200`}>
+      <div className={`max-w-7xl w-full ${phone ? "h-[480px]" : "h-96"} flex px-6 py-4 cursor-default bg-slate-200`}>
         {
           phone ?
           <>
