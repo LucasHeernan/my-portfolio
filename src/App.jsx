@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Technologies from "./components/Technologies";
-import Projects from "./components/Projects";
+import ProjectsTwo from "./components/ProjectsTwo";
 import Carousel from "./components/Carousel";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -14,8 +14,8 @@ export default function App() {
     <div>
       <NavBar />
       <Home />
-      <Projects />
-      <Carousel />
+      <ProjectsTwo />
+      {/* <Carousel /> */}
       {/* <Technologies /> */}
       <Contact />
       <Footer />
