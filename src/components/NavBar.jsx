@@ -17,7 +17,7 @@ export default function NavBar() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <header className="fixed shadow-xl w-full z-50 items-center py-3 px-6 backdrop-blur-3xl">
+    <header className="fixed shadow-xl w-full z-50 items-center py-2 px-6 backdrop-blur-3xl">
       <nav className="flex max-w-7xl mx-auto justify-between items-center">
 
         <div className="hidden text-base font-['Poppins'] font-medium items-center gap-5 md:flex">
@@ -25,9 +25,11 @@ export default function NavBar() {
         {/* <div className="hidden text-base font-['Philosopher'] font-bold items-center gap-5 md:flex"> */}
         {/* <div className="hidden text-base font-['Lexend_Deca'] font-normal items-center gap-5 md:flex"> */}
         {/* <div className="hidden text-xl font-['Sansita'] font-normal items-center gap-5 md:flex"> */}
-          <CustomLink title="Acerca de mi" />
+          <CustomLink title="Inicio" />
+          <CustomLink title="Sobre mi" />
           <CustomLink title="Tecnologías" />
           <CustomLink title="Proyectos" />
+          <CustomLink title="Contacto" />
         </div>
 
         <div className="flex items-center gap-4">
@@ -68,12 +70,12 @@ export default function NavBar() {
               <Email className="w-2/3 z-10 ml-[2px] mt-[1px]" />
             </IconContainer>
           </motion.a>
-          <div className="hidden md:flex items-center justify-center">
+          {/* <div className="hidden md:flex items-center justify-center">
             <a href="#" className="relative bg-transparent text-black px-3 py-1 rounded-sm overflow-hidden border-[2px] border-black group hover:text-white duration-700">
               <span className="absolute w-0 group-hover:w-[99%] transition-all ease-out duration-700 h-[95%] bg-black top-[1px] left-[1px]"></span>
               <span className="relative uppercase font-semibold">Contacto</span>
             </a>
-          </div>
+          </div> */}
           <button
             className={`flex rounded-full w-[30px] p-1 ${dark ? "bg-black" : "bg-blue-400"}`}
             onClick={() => setDark(!dark)}
