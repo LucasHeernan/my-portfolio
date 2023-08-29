@@ -5,7 +5,7 @@ import contactAnimation from "../assets/contact-animation.json";
 export default function ContactHand() {
 
   return (
-    <div className="w-full py-4 px-2 max-w-7xl mx-auto bg-fuchsia-500 md:h-screen">
+    <div className="w-full py-4 px-2 max-w-7xl mx-auto bg-green-400 md:h-screen">
       <div className="md:flex md:w-full md:h-full">
         <section className="md:w-[55%] xl:w-3/5">
           <h2 className="text-[27px] font-['Poppins'] font-black pl-7 py-1 lg:pl-14">Contact</h2>
