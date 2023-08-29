@@ -24,20 +24,17 @@ export default function Slides({ title, description, techs, image, images, repos
       style={{ transform: `translateX(-${curr * 1280}px)` }}
     >
       <div className="absolute flex inset-y-4 pb-4 lg:inset-x-16 lg:inset-y-5 lg:px-3 lg:pb-3 bg-white">
-        {/* <div className="hidden lg:block absolute w-[98%] h-[97%] left-[23px] top-[12px] bg-gray-600 rounded-sm" /> */}
+        <div className="hidden lg:block absolute w-[98%] h-[97%] left-[23px] top-[12px] bg-gray-600 rounded-sm" />
         <div className="w-full h-full flex z-10 shadow-lg shadow-black rounded-sm overflow-hidden">
-          <section className="relative w-full h-full inline-block lg:w-[45%] lg:pl-3 bg-indigo-400">
-            {/* <div className="top-0 left-0 flex w-full h-0 z-20 transition-all duration-500 ease-out transform translate-y-0 bg-purple-600 group-hover:h-full group-hover:opacity-50"></div> */}
-            <div className="w-full h-full p-5 bg-white">
-              <h3 className="text-lg font-semibold uppercase text-black">{title}</h3>
-              <p className="pt-5">{description}</p>
+          <section className="relative w-full h-full group overflow-hidden lg:w-[45%] lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500">
+            <img src={image} alt="pepe" className="w-full h-full object-contain transition-all duration-75 group-hover:scale-105 lg:group-hover:scale-100" />
+            <div className="w-full h-0 grid absolute z-20 -top-1/4 opacity-0 transition-opacity duration-300 ease-in-out items-center text-center bg-slate-900 group-hover:overflow-hidden group-hover:opacity-80 group-hover:h-[150%] lg:group-hover:opacity-0 lg:group-hover:h-0">
+              <div className="group-hover:animate-fadeInDown">
+                <h3 className="text-lg font-semibold uppercase text-white">{title}</h3>
+                <p className="text-emerald-600">CLIENT - JET BLUE</p>
+              </div>
             </div>
-            <img src={image} alt="pepe" className="w-full h-full object-contain" />
           </section>
-          {/* <a href="#_" className="px-5 py-2.5 relative rounded group overflow-hidden font-medium bg-purple-50 text-purple-600 inline-block">
-            <div className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-500 ease-out transform translate-y-0 bg-purple-600 group-hover:h-full opacity-90" />
-            <span className="relative group-hover:text-white">Button Text</span>
-          </a> */}
           {/* <section className="w-full h-full pt-1 px-2 lg:w-[45%] lg:pl-3 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500">
             <img src={image} alt="pepe" className="w-full h-full object-contain" />
           </section> */}
