@@ -12,24 +12,12 @@ export default {
           '100%': { opacity: '1' }
         },
         fadeInDown: {
-          '0%': {
-            opacity: '0',
-            transform: 'translate3d(0, -100%, 0)',
-          },
-          '100%': {
-            opacity: '1',
-            transform: 'translate3d(0, 0, 0)',
-          },
+          '0%': { opacity: '0', transform: 'translate3d(0, -100%, 0)' },
+          '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' },
         },
         fadeInUp: {
-          '0%': {
-            opacity: '0',
-            transform: 'translate3d(0, 100%, 0)',
-          },
-          '100%': {
-            opacity: '1',
-            transform: 'translate3d(0, 0, 0)',
-          },
+          '0%': { opacity: '0', transform: 'translate3d(0, 100%, 0)' },
+          '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' },
         },
         rubberBand: {
           '0%': { transform: 'scale3d(1, 1, 1)' },
@@ -50,21 +38,12 @@ export default {
           to: { transform: 'scale3d(1, 1, 1)' }
         },
         bounceInUp: {
-          '0%': {
-            opacity: '0',
-            transform: 'translate3d(0, 100%, 0)'
-          },
-          '30%': { opacity: '0.3' },
-          '50%': { opacity: '0.6' },
-          '70%': {
-            opacity: '0.8',
-            transform: 'translate3d(0, -7px, 0)'
-          },
-          '90%': { opacity: '0.9' },
-          '100%': {
-            opacity: '1',
-            transform: 'translate3d(0, 0, 0)'
-          }
+          '0%': { opacity: '0', transform: 'translate3d(0, 100%, 0) translateX(-50%)' },
+          '30%': { opacity: '0.3', transform: 'translateX(-50%)' },
+          '50%': { opacity: '0.6', transform: 'translate3d(0, -2px, 0) translateX(-50%)' },
+          '70%': { opacity: '0.8', transform: 'translate3d(0, -4px, 0) translateX(-50%)' },
+          '90%': { opacity: '0.9', transform: 'translate3d(0, 1px, 0) translateX(-50%)' },
+          '100%': { opacity: '1', transform: 'translate3d(0, 0, 0) translateX(-50%)' }
         },
         slide: {
           from: { transform: 'translateX(0)' },
@@ -101,7 +80,7 @@ export default {
         fadeInUp: 'fadeInUp 1000ms ease-in-out forwards',
         rubberBand: 'rubberBand 1000ms ease-in-out none',
         bounce: 'bounce 1000ms ease-in-out forwards',
-        bounceInUp: 'bounceInUp 400ms ease-out none',
+        bounceInUp: 'bounceInUp 500ms ease-out none',
         slide: 'slide 35s infinite linear',
         leftDown: 'leftDown 500ms ease-out none',
         leftUp: 'leftUp 500ms ease-out none',

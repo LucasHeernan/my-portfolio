@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const techAnimations = {
@@ -18,24 +18,41 @@ const techAnimations = {
 
 export default function Slides({ title, description, techs, image, images, repository, curr }) {
 
+  const carouselRef = useRef(null);
+  const [currentWidth, setCurrentWidth] = useState(0);
+
+  const updateCarouselWidth = () => {
+    const carouselWidth = carouselRef.current.getBoundingClientRect().width;
+    setCurrentWidth(carouselWidth);
+  };
+
+  useEffect(() => {
+    updateCarouselWidth();
+    window.addEventListener('resize', updateCarouselWidth);
+    return () => {
+      window.removeEventListener('resize', updateCarouselWidth);
+    };
+  }, []);
+  
   return (
     <article
       className="relative w-full h-full lg:h-[95%] flex shrink-0 transition-transform ease-in-out duration-700"
-      style={{ transform: `translateX(-${curr * 1280}px)` }}
+      ref={carouselRef}
+      style={{ transform: `translateX(-${curr * currentWidth}px)` }}
     >
       <div className="absolute flex inset-y-4 pb-4 lg:inset-x-16 lg:inset-y-5 lg:px-3 lg:pb-3 bg-white">
         <div className="hidden lg:block absolute w-[98%] h-[97%] left-[23px] top-[12px] bg-gray-600 rounded-sm" />
         <div className="w-full h-full flex z-10 shadow-lg shadow-black rounded-sm overflow-hidden">
-          <section className="relative w-full h-full px-2 overflow-hidden group lg:w-[45%] lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500">
+          <section className="relative w-full h-full overflow-hidden group lg:w-[45%] lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500">
             <h3 className="absolute top-0 left-0 p-3 z-10 text-xl font-semibold uppercase text-white blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] lg:hidden">{title}</h3>
-            <img src={image} alt="pepe" className="w-full h-full object-contain blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] lg:group-hover:blur-0"/>
+            <img src={image} alt="pepe" className="w-full h-full object-contain px-2 blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] lg:group-hover:blur-0"/>
             <div className="absolute w-full h-full flex -top-full opacity-100 transition-all duration-200 ease-in-out justify-center items-center text-center bg-slate-700 group-hover:overflow-hidden group-hover:opacity-80 group-hover:top-0 lg:group-hover:hidden">
               <div className="group-hover:animate-fadeInDown">
                 <h3 className="text-xl font-semibold uppercase text-white">{title}</h3>
                 <p className="text-emerald-600">CLIENT - JET BLUE</p>
               </div>
             </div>
-            <div className="hidden absolute bottom-4 left-[39%] z-10 group-hover:block group-hover:animate-bounceInUp lg:group-hover:hidden">
+            <div className="hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-10 group-hover:block group-hover:animate-bounceInUp lg:group-hover:hidden">
               <div
                 className="inline-block p-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] ml-2 relative overflow-hidden box-border
                 before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
