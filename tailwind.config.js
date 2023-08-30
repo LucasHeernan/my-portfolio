@@ -8,12 +8,8 @@ export default {
     extend: {
       keyframes: {
         fadeIn: {
-          '0%': {
-            opacity: '0',
-          },
-          '100%': {
-            opacity: '1',
-          },
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
         },
         fadeInDown: {
           '0%': {
@@ -25,51 +21,50 @@ export default {
             transform: 'translate3d(0, 0, 0)',
           },
         },
-        rubberBand: {
+        fadeInUp: {
           '0%': {
-            transform: 'scale3d(1, 1, 1)',
-          },
-          '30%': {
-            transform: 'scale3d(1.25, 0.75, 1)',
-          },
-          '40%': {
-            transform: 'scale3d(0.75, 1.25, 1)',
-          },
-          '50%': {
-            transform: 'scale3d(1.15, 0.85, 1)',
-          },
-          '65%': {
-            transform: 'scale3d(0.95, 1.05, 1)',
-          },
-          '75%': {
-            transform: 'scale3d(1.05, 0.95, 1)',
+            opacity: '0',
+            transform: 'translate3d(0, 100%, 0)',
           },
           '100%': {
-            transform: 'scale3d(1, 1, 1)',
+            opacity: '1',
+            transform: 'translate3d(0, 0, 0)',
           },
         },
-        bounceIn: {
-          'from, 20%, 40%, 60%, 80%, to': {
-            'animation-timing-function': 'cubic-bezier(0.215, 0.61, 0.355, 1)',
-          },
+        rubberBand: {
+          '0%': { transform: 'scale3d(1, 1, 1)' },
+          '30%': { transform: 'scale3d(1.25, 0.75, 1)' },
+          '40%': { transform: 'scale3d(0.75, 1.25, 1)' },
+          '50%': { transform: 'scale3d(1.15, 0.85, 1)' },
+          '65%': { transform: 'scale3d(0.95, 1.05, 1)' },
+          '75%': { transform: 'scale3d(1.05, 0.95, 1)' },
+          '100%': { transform: 'scale3d(1, 1, 1)' }
+        },
+        bounce: {
+          'from, 20%, 40%, 60%, 80%, to': { 'animation-timing-function': 'cubic-bezier(0.215, 0.61, 0.355, 1)' },
+          '0%': { transform: 'scale3d(0.5, 0.5, 0.5)' },
+          '20%': { transform: 'scale3d(1.1, 1.1, 1.1)' },
+          '40%': { transform: 'scale3d(0.9, 0.9, 0.9)' },
+          '60%': { transform: 'scale3d(1.03, 1.03, 1.03)' },
+          '80%': { transform: 'scale3d(0.97, 0.97, 0.97)' },
+          to: { transform: 'scale3d(1, 1, 1)' }
+        },
+        bounceInUp: {
           '0%': {
-            transform: 'scale3d(0.5, 0.5, 0.5)',
+            opacity: '0',
+            transform: 'translate3d(0, 100%, 0)'
           },
-          '20%': {
-            transform: 'scale3d(1.1, 1.1, 1.1)',
+          '30%': { opacity: '0.3' },
+          '50%': { opacity: '0.6' },
+          '70%': {
+            opacity: '0.8',
+            transform: 'translate3d(0, -7px, 0)'
           },
-          '40%': {
-            transform: 'scale3d(0.9, 0.9, 0.9)',
-          },
-          '60%': {
-            transform: 'scale3d(1.03, 1.03, 1.03)',
-          },
-          '80%': {
-            transform: 'scale3d(0.97, 0.97, 0.97)',
-          },
-          to: {
-            transform: 'scale3d(1, 1, 1)',
-          },
+          '90%': { opacity: '0.9' },
+          '100%': {
+            opacity: '1',
+            transform: 'translate3d(0, 0, 0)'
+          }
         },
         slide: {
           from: { transform: 'translateX(0)' },
@@ -103,8 +98,10 @@ export default {
       animation: {
         fadeIn: 'fadeIn 1000ms ease-in-out forwards',
         fadeInDown: 'fadeInDown 1000ms ease-in-out forwards',
+        fadeInUp: 'fadeInUp 1000ms ease-in-out forwards',
         rubberBand: 'rubberBand 1000ms ease-in-out none',
-        bounceIn: 'bounceIn 1000ms ease-in-out forwards',
+        bounce: 'bounce 1000ms ease-in-out forwards',
+        bounceInUp: 'bounceInUp 400ms ease-out none',
         slide: 'slide 35s infinite linear',
         leftDown: 'leftDown 500ms ease-out none',
         leftUp: 'leftUp 500ms ease-out none',

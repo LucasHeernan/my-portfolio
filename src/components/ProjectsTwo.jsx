@@ -59,7 +59,7 @@ export default function ProjectsTwo() {
 
           <button
             onClick={prev}
-            className="absolute h-full w-12 lg:w-[70px]"
+            className="hidden lg:block absolute h-full w-12 lg:w-[70px]"
             onMouseEnter={() => setLeft(true)}
             onMouseLeave={() => setLeft(false)}
           >
@@ -71,7 +71,7 @@ export default function ProjectsTwo() {
           </button>
           <button
             onClick={next}
-            className="absolute h-full w-12 lg:w-[70px] right-0"
+            className="hidden lg:block absolute h-full w-12 lg:w-[70px] right-0"
             onMouseEnter={() => setRight(true)}
             onMouseLeave={() => setRight(false)}
           >
@@ -82,12 +82,12 @@ export default function ProjectsTwo() {
             />
           </button>
 
-          <div className="absolute bottom-[6px] lg:bottom-3 right-0 left-0">
+          <div className="absolute bottom-[5px] lg:bottom-3 right-0 left-0">
             <div className="flex items-center justify-center gap-5 lg:gap-6">
               {
                 slides.map((_, i) => (
                   <div
-                    className={`w-3 h-3 rounded-full cursor-pointer transition-all bg-gray-600 lg:w-4 lg:h-4 ${curr === i ? "p-2 lg:p-3" : "bg-opacity-50"}`}
+                    className={`w-3 h-3 rounded-full cursor-pointer transition-all bg-gray-600 lg:w-4 lg:h-4 ${curr === i ? "p-[10px] lg:p-3" : "bg-opacity-50"}`}
                     onClick={() => goToSlide(i)}
                     key={i}
                   />

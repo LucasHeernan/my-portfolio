@@ -52,7 +52,7 @@ export default function AnimatedLetters({ text, time }) {
           return (
             <span
               key={idx}
-              className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-200" : "animate-bounceIn delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
+              className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
               onMouseEnter={ first === "" ? () => handleHover(uniqueId) : null }
               onMouseLeave={handleHoverOut}
             >
