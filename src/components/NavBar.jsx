@@ -17,8 +17,8 @@ export default function NavBar() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <header className="fixed shadow-xl w-full z-50 items-center py-2 px-5 backdrop-blur-3xl xl:px-10">
-      <nav className="flex max-w-7xl mx-auto justify-between items-center">
+    <header className="fixed shadow-xl w-full z-50 items-center py-2 backdrop-blur-3xl">
+      <nav className="flex max-w-7xl mx-auto justify-between items-center px-5 lg:px-7 xl:px-10">
 
         <div className="hidden text-base font-['Poppins'] font-medium items-center gap-5 md:flex">
         {/* <div className="hidden text-lg font-['Alegreya_Sans_SC'] font-medium items-center gap-5 md:flex"> */}

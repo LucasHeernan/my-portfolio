@@ -29,3 +29,10 @@ export default function App() {
 // Hola! Soy Lucas, desarrollador en Javascript, con fluidez tanto en frontend como en backend.
 // Uso principalmente React, React Native, Redux, Node, Express y Sequalize. Pero me encanta 
 // aprender cosas nuevas!
+
+// Let's talk
+// Wanna get in touch or talk about a project?
+// Feel free to contact me via email at
+// rafael@caferati.me
+// or drop a line in the form at the
+// contact page

@@ -36,8 +36,8 @@ export default function ProjectsTwo() {
   const goToSlide = (slideIndex) => setCurr(slideIndex);
 
   return (
-    <section className="w-full h-screen cursor-default font-['Poppins']">
-      <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-5">
+    <section className="w-full h-screen cursor-default font-['Poppins'] md:bg-yellow-300 lg:bg-violet-300 xl:bg-white">
+      <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-5 lg:px-7 xl:px-10">
         <h2 className="text-2xl font-bold pt-14 sm:text-3xl tracking-widest uppercase lg:text-4xl lg:pt-14">Proyectos</h2>
         <p className="text-base font-normal md:pt-1 lg:text-lg lg:font-normal lg:pr-20">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore sint dolorum dolor. Recusandae, quam! Est alias aliquam labore doloribus, ducimus facere ullam corporis recusandae reprehenderit quaerat consectetur vitae ipsum accusamus!</p>
         <div className="w-full h-full flex relative overflow-hidden">
@@ -60,11 +60,11 @@ export default function ProjectsTwo() {
 
           <button
             onClick={prev}
-            className="hidden lg:block absolute h-full w-12 lg:w-[70px]"
+            className="hidden absolute h-full w-[70px] lg:block"
             onMouseEnter={() => setLeft(true)}
             onMouseLeave={() => setLeft(false)}
           >
-            <em className={`absolute block h-7 w-7 lg:h-8 lg:w-8 top-1/2 left-3 lg:left-5 transition-transform duration-200 ease-out delay-200
+            <em className={`absolute block h-8 w-8 top-1/2 left-3 transition-transform duration-200 ease-out delay-200 xl:left-5 xl:h-9 xl:w-9
             before:-rotate-${left ? "[25deg]" : 45} before:absolute before:left-0 before:h-full before:w-[5px] before:bg-slate-700 before:origin-top-left before:duration-200 before:ease-out
             after:-rotate-${left ? "[155deg]" : "[135deg]"} after:absolute after:-left-[5px] after:h-full after:w-[5px] after:bg-slate-700 after:origin-top-right after:duration-200 after:ease-out
             ${arrowL ? "before:animate-leftDown after:bottom-[5px] after:animate-leftUp" : ""}`}
@@ -72,11 +72,11 @@ export default function ProjectsTwo() {
           </button>
           <button
             onClick={next}
-            className="hidden lg:block absolute h-full w-12 lg:w-[70px] right-0"
+            className="hidden absolute right-0 h-full w-[70px] lg:block"
             onMouseEnter={() => setRight(true)}
             onMouseLeave={() => setRight(false)}
           >
-            <em className={`absolute block h-7 w-7 lg:h-8 lg:w-8 top-1/2 right-3 lg:right-5 transition-transform duration-200 ease-out delay-200
+            <em className={`absolute block h-8 w-8 top-1/2 right-3 transition-transform duration-200 ease-out delay-200 xl:right-5 xl:h-9 xl:w-9
             before:rotate-${right ? "[25deg]" : 45} before:absolute before:right-0 before:h-full before:w-[5px] before:bg-slate-700 before:origin-top-right before:duration-200 before:ease-out
             after:rotate-${right ? "[155deg]" : "[135deg]"} after:absolute after:-right-[5px] after:h-full after:w-[5px] after:bg-slate-700 after:origin-top-left after:duration-200 after:ease-out
             ${arrowR ? "before:animate-rightDown after:bottom-[5px] after:animate-rightUp" : ""}`}

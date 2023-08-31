@@ -144,11 +144,3 @@ export default function ProjectCard({ title, description, techs, images, reposit
     </motion.div>
   );
 }
-
-
-// Let's talk
-// Wanna get in touch or talk about a project?
-// Feel free to contact me via email at
-// rafael@caferati.me
-// or drop a line in the form at the
-// contact page
