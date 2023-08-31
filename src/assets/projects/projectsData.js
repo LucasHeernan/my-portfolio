@@ -20,7 +20,7 @@ export const projectsData = [
   {
     title: "Instagram clone",
     description: "Proyecto que replica la interfaz visual de Instagram en la se puede hacer un recorrido por todas las pantallas y ver lo similar que es al original. La aplicación fue construida completamente con React Native.",
-    techs: ["React Native", "CSS"],
+    techs: ["Javascript", "React Native", "CSS"],
     images: [insta1, insta2, insta3, insta4, insta5, insta6],
     repository: "https://github.com/LucasHeernan/my-instagram",
     phone: true,
@@ -28,7 +28,7 @@ export const projectsData = [
   {
     title: "Portfolio",
     description: "",
-    techs: ["ReactJS", "TailwindCSS"],
+    techs: ["Javascript", "ReactJS", "TailwindCSS"],
     images: [pokemon1, pokemon2, pokemon3],
     repository: "https://github.com/LucasHeernan/my-portfolio",
     phone: false,

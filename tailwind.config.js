@@ -38,12 +38,12 @@ export default {
           to: { transform: 'scale3d(1, 1, 1)' }
         },
         bounceInUp: {
-          '0%': { opacity: '0', transform: 'translate3d(0, 100%, 0) translateX(-50%)' },
-          '30%': { opacity: '0.3', transform: 'translateX(-50%)' },
-          '50%': { opacity: '0.6', transform: 'translate3d(0, -2px, 0) translateX(-50%)' },
-          '70%': { opacity: '0.8', transform: 'translate3d(0, -4px, 0) translateX(-50%)' },
-          '90%': { opacity: '0.9', transform: 'translate3d(0, 1px, 0) translateX(-50%)' },
-          '100%': { opacity: '1', transform: 'translate3d(0, 0, 0) translateX(-50%)' }
+          '0%': { opacity: '0', transform: 'translate3d(0, 100%, 0)' },
+          '30%': { opacity: '0.3' },
+          '50%': { opacity: '0.6', transform: 'translate3d(0, -2px, 0)' },
+          '70%': { opacity: '0.8', transform: 'translate3d(0, -4px, 0)' },
+          '90%': { opacity: '0.9', transform: 'translate3d(0, 1px, 0)' },
+          '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' }
         },
         slide: {
           from: { transform: 'translateX(0)' },

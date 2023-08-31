@@ -36,11 +36,11 @@ export default function ProjectsTwo() {
   const goToSlide = (slideIndex) => setCurr(slideIndex);
 
   return (
-    <section className="w-full h-screen cursor-default font-['Poppins'] bg-orange-400">
-      <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-5 lg:px-0 bg-red-400">
+    <section className="w-full h-screen cursor-default font-['Poppins'] sm:bg-yellow-300 md:bg-orange-400 lg:bg-red-500 xl:bg-fuchsia-500">
+      <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-5 lg:px-0">
         <h2 className="text-2xl font-semibold pt-14 tracking-widest uppercase lg:text-4xl lg:font-bold lg:pt-14">Proyectos</h2>
         <p className="text-base font-normal lg:text-lg lg:font-medium lg:pt-2 lg:pr-20">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore sint dolorum dolor. Recusandae, quam! Est alias aliquam labore doloribus, ducimus facere ullam corporis recusandae reprehenderit quaerat consectetur vitae ipsum accusamus!</p>
-        <div className="w-full h-full flex relative overflow-hidden bg-orange-300">
+        <div className="w-full h-full flex relative overflow-hidden">
 
           {
             projectsData?.map((project, index) => (
