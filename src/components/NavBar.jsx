@@ -17,7 +17,7 @@ export default function NavBar() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <header className="fixed shadow-xl w-full z-50 items-center py-2 px-6 backdrop-blur-3xl">
+    <header className="fixed shadow-xl w-full z-50 items-center py-2 px-5 backdrop-blur-3xl xl:px-10">
       <nav className="flex max-w-7xl mx-auto justify-between items-center">
 
         <div className="hidden text-base font-['Poppins'] font-medium items-center gap-5 md:flex">
@@ -36,7 +36,8 @@ export default function NavBar() {
           <motion.a
             href="https://github.com/LucasHeernan"
             target="_blank"
-            className="hidden md:inline-block"
+            // className="hidden md:inline-block"
+            className="hidden"
             whileTap={{scale: 0.8}}
           >
             <IconContainer>
@@ -45,7 +46,8 @@ export default function NavBar() {
           </motion.a>
           <motion.a
             href="#"
-            className="hidden md:inline-block"
+            // className="hidden md:inline-block"
+            className="hidden"
             whileTap={{scale: 0.8}}
           >
             <IconContainer>
@@ -54,7 +56,8 @@ export default function NavBar() {
           </motion.a>
           <motion.a
             href="#"
-            className="hidden md:inline-block"
+            // className="hidden md:inline-block"
+            className="hidden"
             whileTap={{scale: 0.8}}
           >
             <IconContainer>
@@ -63,7 +66,8 @@ export default function NavBar() {
           </motion.a>
           <motion.a
             href="#"
-            className="hidden md:inline-block"
+            // className="hidden md:inline-block"
+            className="hidden"
             whileTap={{scale: 0.8}}
           >
             <IconContainer>

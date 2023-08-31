@@ -35,7 +35,7 @@ export const projectsData = [
   },
   {
     title: "Dpower App",
-    description: "Aplicación móvil estilo red social hecha con React Native con funcionalidades de Autentificación, MarketPlace, Pasarela de pago, publicar desde galería, entre otras",
+    description: "Aplicación móvil estilo red social hecha con React Native con funcionalidades de Autentificación, MarketPlace, Pasarela de pago, publicar desde galería, entre otras.",
     techs: ["React Native", "Redux", "NodeJS", "Express", "Sequelize", "PostgreSQL"],
     images: [dpower1, dpower2, dpower3, dpower4, dpower5, dpower6, dpower7, dpower8],
     repository: "https://github.com/LucasHeernan/dpowerFront",
@@ -43,7 +43,7 @@ export const projectsData = [
   },
   {
     title: "Poke App",
-    description: "Diseñar y desarrollar una App de pokemon que incluía: búsquedas, filtrados combinados, ordenamientos y creación",
+    description: "Diseñar y desarrollar una App de pokemon que incluía: búsquedas, filtrados combinados, ordenamientos y creación.",
     techs: ["ReactJS", "Redux", "NodeJS", "Express", "Sequelize", "PostgreSQL"],
     images: [pokemon1, pokemon2, pokemon3],
     repository: "https://github.com/LucasHeernan/PI-Pokemon",

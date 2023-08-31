@@ -36,10 +36,10 @@ export default function ProjectsTwo() {
   const goToSlide = (slideIndex) => setCurr(slideIndex);
 
   return (
-    <section className="w-full h-screen cursor-default font-['Poppins'] sm:bg-yellow-300 md:bg-orange-400 lg:bg-red-500 xl:bg-fuchsia-500">
-      <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-5 lg:px-0">
-        <h2 className="text-2xl font-semibold pt-14 tracking-widest uppercase lg:text-4xl lg:font-bold lg:pt-14">Proyectos</h2>
-        <p className="text-base font-normal lg:text-lg lg:font-medium lg:pt-2 lg:pr-20">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore sint dolorum dolor. Recusandae, quam! Est alias aliquam labore doloribus, ducimus facere ullam corporis recusandae reprehenderit quaerat consectetur vitae ipsum accusamus!</p>
+    <section className="w-full h-screen cursor-default font-['Poppins']">
+      <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-5">
+        <h2 className="text-2xl font-bold pt-14 sm:text-3xl tracking-widest uppercase lg:text-4xl lg:pt-14">Proyectos</h2>
+        <p className="text-base font-normal md:pt-1 lg:text-lg lg:font-normal lg:pr-20">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore sint dolorum dolor. Recusandae, quam! Est alias aliquam labore doloribus, ducimus facere ullam corporis recusandae reprehenderit quaerat consectetur vitae ipsum accusamus!</p>
         <div className="w-full h-full flex relative overflow-hidden">
 
           {
@@ -52,6 +52,7 @@ export default function ProjectsTwo() {
                 image={slides[index]}
                 images={project.images}
                 repository={project.repository}
+                phone={project.phone}
                 curr={curr}
               />
             ))
@@ -82,12 +83,12 @@ export default function ProjectsTwo() {
             />
           </button>
 
-          <div className="absolute bottom-[5px] lg:bottom-3 right-0 left-0">
+          <div className="absolute bottom-[10px] sm:bottom-2 md:bottom-3 right-0 left-0">
             <div className="flex items-center justify-center gap-5 lg:gap-6">
               {
                 slides.map((_, i) => (
                   <div
-                    className={`w-3 h-3 rounded-full cursor-pointer transition-all bg-gray-600 lg:w-4 lg:h-4 ${curr === i ? "p-[10px] lg:p-3" : "bg-opacity-50"}`}
+                    className={`w-3 h-3 rounded-full cursor-pointer transition-all bg-gray-600 md:w-4 md:h-4 ${curr === i ? "p-[10px] md:p-3" : "bg-opacity-50"}`}
                     onClick={() => goToSlide(i)}
                     key={i}
                   />
