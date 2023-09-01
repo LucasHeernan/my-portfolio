@@ -30,6 +30,12 @@ export default function App() {
 // Uso principalmente React, React Native, Redux, Node, Express y Sequalize. Pero me encanta 
 // aprender cosas nuevas!
 
+// Full Stack developer orientado al Front end 
+// con experiencia en desarrollo de 
+// aplicaciones web y mobile en Javascript
+// con ReactJS, React Native, Redux, 
+// NodeJS, Express, PostgreSQL
+
 // Let's talk
 // Wanna get in touch or talk about a project?
 // Feel free to contact me via email at

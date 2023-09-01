@@ -117,27 +117,6 @@ export default function Slides({ title, description, techs, image, images, repos
               >
                 <span className="relative z-20">repositorio</span>
               </div>
-              {/* <div className="flex items-center">
-                {
-                  techs.map((el, index) => {
-                    return (
-                      <motion.div
-                        key={index}
-                        variants={techAnimations}
-                        initial="initial"
-                        whileInView="animate"
-                        custom={index}
-                        viewport={{ once: true }}
-                        className="inline-block p-1 bg-blue-600 text-black border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-blue-950 rounded uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] mr-3 relative overflow-hidden box-border
-                        before:bg-blue-400 before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
-                        after:bg-blue-500 after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
-                      >
-                        <span className="relative z-20">{el}</span>
-                      </motion.div>
-                    )
-                  })
-                }
-              </div> */}
             </div>
           </section>
 
