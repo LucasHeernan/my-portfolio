@@ -4,11 +4,17 @@ import { motion } from "framer-motion";
 const techAnimations = {
   initial: {
     opacity: 0,
-    y: -5
+    scaleY: 0,
+    scaleX: 0,
+    y: -5,
+    x: -30
   },
   animate: (index) => ({
     opacity: 1,
+    scaleY: 1,
+    scaleX: 1,
     y: 0,
+    x: 0,
     transition: {
       delay: 0.15 * index,
       duration: 0.2
@@ -29,9 +35,9 @@ export default function Slides({ title, description, techs, image, images, repos
 
   useEffect(() => {
     updateCarouselWidth();
-    window.addEventListener('resize', updateCarouselWidth);
+    window.addEventListener("resize", updateCarouselWidth);
     return () => {
-      window.removeEventListener('resize', updateCarouselWidth);
+      window.removeEventListener("resize", updateCarouselWidth);
     };
   }, []);
 
@@ -122,6 +128,6 @@ export default function Slides({ title, description, techs, image, images, repos
 
         </div>
       </div>
-    </article>    
+    </article>
   )
 }

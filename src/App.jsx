@@ -11,7 +11,7 @@ import "./tailwind.css";
 export default function App() {
 
   return (
-    <div>
+    <div className="font-['Poppins']">
       <NavBar />
       <Home />
       <ProjectsTwo />

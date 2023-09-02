@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import IconContainer from "./InconContainer";
 import { Github, Linkedin, Whatsapp, Email, Moon, Sun } from "./Icons";
 import { motion } from "framer-motion";
@@ -15,16 +15,24 @@ export default function NavBar() {
 
   const [dark, setDark] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [navShadow, setNavShadow] = useState(false);
+
+  useEffect(() => {
+    const handleShadow = () => {
+      if (window.scrollY >= 55) {
+        setNavShadow(true);
+      } else {
+        setNavShadow(false);
+      }
+    };
+    window.addEventListener("scroll", handleShadow);
+  }, []);
 
   return (
-    <header className="fixed shadow-xl w-full z-50 items-center py-2 backdrop-blur-3xl">
+    <header className={`fixed w-full z-50 items-center py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl" : ""}`}>
       <nav className="flex max-w-7xl mx-auto justify-between items-center px-5 lg:px-7 xl:px-10">
 
-        <div className="hidden text-base font-['Poppins'] font-medium items-center gap-5 md:flex">
-        {/* <div className="hidden text-lg font-['Alegreya_Sans_SC'] font-medium items-center gap-5 md:flex"> */}
-        {/* <div className="hidden text-base font-['Philosopher'] font-bold items-center gap-5 md:flex"> */}
-        {/* <div className="hidden text-base font-['Lexend_Deca'] font-normal items-center gap-5 md:flex"> */}
-        {/* <div className="hidden text-xl font-['Sansita'] font-normal items-center gap-5 md:flex"> */}
+        <div className="hidden text-base font-medium items-center gap-5 md:flex">
           <CustomLink title="Inicio" />
           <CustomLink title="Sobre mi" />
           <CustomLink title="Tecnologías" />
@@ -129,3 +137,8 @@ export default function NavBar() {
     </header>
   )
 }
+
+//  <div className="hidden text-lg font-['Alegreya_Sans_SC'] font-medium items-center gap-5 md:flex">
+//  <div className="hidden text-base font-['Philosopher'] font-bold items-center gap-5 md:flex">
+//  <div className="hidden text-base font-['Lexend_Deca'] font-normal items-center gap-5 md:flex">
+//  <div className="hidden text-xl font-['Sansita'] font-normal items-center gap-5 md:flex">
