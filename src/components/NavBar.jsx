@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import IconContainer from "./InconContainer";
+import Framer from "./Framer";
 import { Github, Linkedin, Whatsapp, Email, Moon, Sun } from "./Icons";
 import { motion } from "framer-motion";
 
 const CustomLink = ({title}) => {
   return (
     <p className="relative cursor-pointer uppercase group">{title}
-      <span className="h-[2.5px] inline-block w-0 rounded-full bg-blue-500 absolute left-0 -bottom-1 group-hover:w-full transition-[width] ease duration-500">&nbsp;</span>
+      <span className="absolute left-0 -bottom-1 w-0 h-[2.5px] inline-block rounded-full bg-blue-500 group-visited:w-full transition-[width] ease-in-out duration-500">&nbsp;</span>
     </p>
   )
 }
@@ -18,19 +19,20 @@ export default function NavBar() {
   const [navShadow, setNavShadow] = useState(false);
 
   useEffect(() => {
-    const handleShadow = () => {
-      if (window.scrollY >= 55) {
-        setNavShadow(true);
-      } else {
-        setNavShadow(false);
-      }
-    };
+    const handleShadow = () => { window.scrollY >= 50 ? setNavShadow(true) : setNavShadow(false) };
     window.addEventListener("scroll", handleShadow);
   }, []);
 
   return (
-    <header className={`fixed w-full z-50 items-center py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl" : ""}`}>
+    <header className={`fixed w-full h-20 z-40 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl" : ""}`}>
+    {/* <header className={`fixed w-full z-40 items-center py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl" : ""}`}>  ANTES */}
+    {/* <header className="fixed w-full z-40 items-center py-2 transition-shadow ease-in-out duration-300"> */}
       <nav className="flex max-w-7xl mx-auto justify-between items-center px-5 lg:px-7 xl:px-10">
+
+        {/* MOBILE MENU */}
+        <div className="flex md:hidden">
+          <Framer />
+        </div>
 
         <div className="hidden text-base font-medium items-center gap-5 md:flex">
           <CustomLink title="Inicio" />
@@ -97,13 +99,15 @@ export default function NavBar() {
         </div>
 
         {/* MOBILE MENU */}
-        <nav className="flex md:hidden">
+        <div className="flex md:hidden">
+          {/* BURGER ICON */}
           <button className="flex flex-col justify-center items-center md:hidden" onClick={() => setMenu(!menu)}>
             <span className={`bg-black block transition-all duration-500 ease-out h-0.5 w-6 rounded-full -translate-y-0.5 ${menu ? "rotate-45 translate-y-[10px]" : "-translate-y-0.5"}`}></span>
             <span className={`bg-black block transition-all duration-500 ease-out h-0.5 w-6 rounded-full my-0.5 ${menu ? "opacity-0" : "opacity-100"}`}></span>
             <span className={`bg-black block transition-all duration-500 ease-out h-0.5 w-6 rounded-full translate-y-0.5 ${menu ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}></span>
           </button>
 
+          {/* LISTA */}
           <div className={menu ? "fixed right-0 top-[55px] w-full h-screen bg-black/50 transition-all duration-500 ease-out" : ""}>
             <div className={menu ? "fixed flex flex-col justify-evenly items-center right-0 top-[54px] w-3/4 h-screen bg-white p-10 ease-in duration-500 sm:w-2/3 md:w-1/2" : "fixed -right-full h-full top-14 p-10 ease-in duration-500"}>
               <ul className="w-full text-lg font-bold text-black uppercase tracking-widest m-4">
@@ -131,7 +135,7 @@ export default function NavBar() {
               </div>
             </div>
           </div>
-        </nav>
+        </div>
 
       </nav>
     </header>

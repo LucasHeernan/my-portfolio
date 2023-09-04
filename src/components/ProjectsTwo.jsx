@@ -36,7 +36,7 @@ export default function ProjectsTwo() {
   const goToSlide = (slideIndex) => setCurr(slideIndex);
 
   return (
-    <section className="w-full h-screen cursor-default md:bg-yellow-300 lg:bg-violet-300 xl:bg-white">
+    <section className="w-full h-screen cursor-default">
       <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-5 lg:px-7 xl:px-10">
         <h2 className="text-2xl font-bold pt-14 sm:text-3xl tracking-widest uppercase lg:text-4xl lg:pt-14">Proyectos</h2>
         <p className="text-base font-normal md:pt-1 lg:text-lg lg:font-normal lg:pr-20">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore sint dolorum dolor. Recusandae, quam! Est alias aliquam labore doloribus, ducimus facere ullam corporis recusandae reprehenderit quaerat consectetur vitae ipsum accusamus!</p>
