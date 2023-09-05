@@ -27,19 +27,9 @@ export default function Framer() {
   const scope = useMenuAnimation(isOpen);
 
   return (
-    <div className="relative z-50 bg-violet-400" ref={scope}>
-    {/* <div className="absolute flex flex-col justify-center items-center z-50 bg-black" ref={scope}> */}
-      <Menu isOpen={isOpen} />
+    <div ref={scope}>
+      <Menu />
       <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
-    // <div className="text-white relative w-full h-screen max-w-md mx-auto overflow-hidden bg-violet-400">
-    //   <div
-    //     className="absolute p-20 flex items-center justify-center bg-yellow-200"
-    //     ref={scope}
-    //   >
-    //     <Menu />
-    //     <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
-    //   </div>
-    // </div>
   );
 }

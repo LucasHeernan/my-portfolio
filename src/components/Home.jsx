@@ -10,8 +10,9 @@ export default function Home() {
 
   return (
     <main className="w-full h-screen cursor-default">
-      <div className="w-full h-full max-w-7xl mx-auto px-5 py-36 lg:py-24 xl:py-20 flex flex-col justify-between lg:px-7 xl:px-10">
-        <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60 bg-green-300 sm:bg-yellow-200 md:bg-orange-400 lg:bg-red-400 xl:bg-fuchsia-400">
+      <div className="w-full h-full max-w-7xl mx-auto flex flex-col justify-between px-5 py-36 lg:px-7 lg:py-24 xl:px-10 xl:py-28">
+        <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60">
+        {/* <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60 bg-green-300 sm:bg-yellow-200 md:bg-orange-400 lg:bg-red-400 xl:bg-fuchsia-400"> */}
           <h1 className="uppercase text-[25px] font-black sm:text-[37px] md:text-[46px] lg:text-[61px] xl:text-[76px]">
             <AnimatedLetters
               text={name}

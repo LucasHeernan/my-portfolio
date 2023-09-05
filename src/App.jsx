@@ -7,7 +7,6 @@ import ProjectsTwo from "./components/ProjectsTwo";
 import Carousel from "./components/Carousel";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Framer from "./components/Framer";
 import "./tailwind.css";
 
 export default function App() {
@@ -18,11 +17,11 @@ export default function App() {
       <Barra />
       <Home />
       <ProjectsTwo />
+      <Contact />
+      <Footer />
       {/* <Carousel /> */}
       {/* <Technologies /> */}
-      <Contact />
       {/* <Framer /> */}
-      <Footer />
     </div>
   )
 }
