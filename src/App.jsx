@@ -1,10 +1,8 @@
 import React from "react";
 import NavBar from "./components/NavBar";
-import Barra from "./components/Barra";
 import Home from "./components/Home";
+import Projects from "./components/Projects";
 import Technologies from "./components/Technologies";
-import ProjectsTwo from "./components/ProjectsTwo";
-import Carousel from "./components/Carousel";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./tailwind.css";
@@ -13,15 +11,12 @@ export default function App() {
 
   return (
     <div className="font-['Poppins']">
-      {/* <NavBar /> */}
-      <Barra />
+      <NavBar />
       <Home />
-      <ProjectsTwo />
+      <Projects />
+      {/* <Technologies /> */}
       <Contact />
       <Footer />
-      {/* <Carousel /> */}
-      {/* <Technologies /> */}
-      {/* <Framer /> */}
     </div>
   )
 }

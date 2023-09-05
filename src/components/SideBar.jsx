@@ -10,10 +10,10 @@ function useMenuAnimation(isOpen) {
     isOpen ? 
     animate([
       [ "nav", { transform: "translateX(0%)" }, { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.5 } ],
-      [ "li", { transform: "scale(1)", opacity: 1, filter: "blur(0px)" }, { delay: stagger(0.05) } ]
+      [ "a", { transform: "scale(1)", opacity: 1, filter: "blur(0px)" }, { delay: stagger(0.05) } ]
     ]) :
     animate([
-      [ "li", { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" }, { delay: stagger(0.05, { from: "last" }) } ],
+      [ "a", { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" }, { delay: stagger(0.05, { from: "last" }) } ],
       [ "nav", { transform: "translateX(-100%)" } ]
     ])
   }, [isOpen]);
@@ -21,7 +21,7 @@ function useMenuAnimation(isOpen) {
   return scope;
 }
 
-export default function Framer() {
+export default function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const scope = useMenuAnimation(isOpen);

@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <main className="w-full h-screen cursor-default">
       <div className="w-full h-full max-w-7xl mx-auto flex flex-col justify-between px-5 py-36 lg:px-7 lg:py-24 xl:px-10 xl:py-28">
-        <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60">
-        {/* <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60 bg-green-300 sm:bg-yellow-200 md:bg-orange-400 lg:bg-red-400 xl:bg-fuchsia-400"> */}
+        {/* <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60"> */}
+        <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60 bg-green-300 sm:bg-yellow-200 md:bg-orange-400 lg:bg-red-400 xl:bg-fuchsia-400">
           <h1 className="uppercase text-[25px] font-black sm:text-[37px] md:text-[46px] lg:text-[61px] xl:text-[76px]">
             <AnimatedLetters
               text={name}
@@ -50,10 +50,6 @@ export default function Home() {
           </div>
         </div>
         {/* <div className="mx-auto w-full h-20 mt-7 flex justify-end items-center bg-violet-400">
-          <a href="#" className="relative mr-7 bg-transparent text-black px-3 py-1 rounded-md overflow-hidden border-[2px] border-black group hover:text-white duration-700">
-            <span className="absolute rounded-[4px] w-0 group-hover:w-[98%] transition-all ease-out duration-700 h-[95%] bg-black top-[1px] left-[1px]"></span>
-            <span className="relative uppercase font-semibold">Contacto</span>
-          </a>
           <div className="mx-4 flex flex-col">
             <button className="px-4 h-10 rounded bg-[#c60202] z-10 border-b-[3px] border-[#800202] transition-all duration-100 ease-out
             hover:translate-y-[1px] active:scale-95">
@@ -61,10 +57,6 @@ export default function Home() {
             </button>
             <span className="h-[3px] w-[95%] mx-auto rounded-bl rounded-br bg-[#212121]" />
           </div>
-          <a href="#" className="relative bg-transparent text-black px-3 py-1 rounded-md overflow-hidden border-[2px] border-black group hover:text-white duration-700">
-            <span className="absolute w-0 rounded-[4px] group-hover:w-[99%] transition-all ease-out duration-700 h-[95%] bg-black top-[1px] right-[1px]"></span>
-            <span className="relative uppercase font-semibold">Descargar CV</span>
-          </a>
         </div> */}
       </div>
     </main>
