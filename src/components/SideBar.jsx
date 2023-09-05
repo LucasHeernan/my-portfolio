@@ -1,35 +1,51 @@
-import React, { useState, useEffect } from "react";
-import { useAnimate, stagger } from "framer-motion";
-import MenuToggle from "./MenuToggle";
-import Menu from "./Menu";
-
-function useMenuAnimation(isOpen) {
-  const [scope, animate] = useAnimate();
-
-  useEffect(() => {
-    isOpen ? 
-    animate([
-      [ "nav", { transform: "translateX(0%)" }, { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.5 } ],
-      [ "a", { transform: "scale(1)", opacity: 1, filter: "blur(0px)" }, { delay: stagger(0.05) } ]
-    ]) :
-    animate([
-      [ "a", { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" }, { delay: stagger(0.05, { from: "last" }) } ],
-      [ "nav", { transform: "translateX(-100%)" } ]
-    ])
-  }, [isOpen]);
-
-  return scope;
-}
+import React from "react";
 
 export default function SideBar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const scope = useMenuAnimation(isOpen);
 
   return (
-    <div ref={scope}>
-      <Menu />
-      <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
-    </div>
+    <nav className="fixed top-0 left-0 bottom-0 w-3/4 h-screen pt-12 transform transition-[width] -translate-x-full will-change-transform bg-[#ff0066]">
+      <ul className="flex flex-col gap-1 px-2 pb-10 h-full">
+        <a
+          href="#"
+          className="text-white flex will-change-transform transform origin-left font-bold text-5xl p-2
+          items-center text-center w-[90%] max-w-xl my-0 mx-auto h-1/4 relative bg-[#fe0222] overflow-hidden
+          transition-colors duration-300 ease-in-out delay-150
+          before:absolute before:top-0 before:left-0 before:h-[75%] before:w-full before:-z-10 before:-translate-x-full before:transition-all before:duration-300 before:ease-in-out before:hover:translate-x-0 before:bg-violet-400
+          after:absolute after:bottom-0 after:left-0 after:h-[75%] after:w-full after:-z-20 after:translate-x-full after:transition-all after:duration-300 after:ease-in-out after:delay-75 after:hover:translate-x-0 after:bg-violet-500"
+        >
+          <span className="block w-full text-center">Inicio</span>
+        </a>
+        <a
+          href="#"
+          className="text-white flex will-change-transform transform origin-left font-bold text-5xl p-2
+          items-center text-center w-[90%] max-w-xl my-0 mx-auto h-1/4 relative bg-[#fe0222] overflow-hidden
+          transition-colors duration-300 ease-in-out delay-150
+          before:absolute before:top-0 before:left-0 before:h-[75%] before:w-full before:-z-10 before:-translate-x-full before:transition-all before:duration-300 before:ease-in-out before:hover:translate-x-0 before:bg-violet-400
+          after:absolute after:bottom-0 after:left-0 after:h-[75%] after:w-full after:-z-20 after:translate-x-full after:transition-all after:duration-300 after:ease-in-out after:delay-75 after:hover:translate-x-0 after:bg-violet-500"
+        >
+          <span className="block w-full text-center">Sobre mi</span>
+        </a>
+        <a
+          href="#"
+          className="text-white flex will-change-transform transform origin-left font-bold text-5xl p-2
+          items-center text-center w-[90%] max-w-xl my-0 mx-auto h-1/4 relative bg-[#fe0222] overflow-hidden
+          transition-colors duration-300 ease-in-out delay-150
+          before:absolute before:top-0 before:left-0 before:h-[75%] before:w-full before:-z-10 before:-translate-x-full before:transition-all before:duration-300 before:ease-in-out before:hover:translate-x-0 before:bg-violet-400
+          after:absolute after:bottom-0 after:left-0 after:h-[75%] after:w-full after:-z-20 after:translate-x-full after:transition-all after:duration-300 after:ease-in-out after:delay-75 after:hover:translate-x-0 after:bg-violet-500"
+        >
+          <span className="block w-full text-center">Proyectos</span>
+        </a>
+        <a
+          href="#"
+          className="text-white flex will-change-transform transform origin-left font-bold text-5xl p-2
+          items-center text-center w-[90%] max-w-xl my-0 mx-auto h-1/4 relative bg-[#fe0222] overflow-hidden
+          transition-colors duration-300 ease-in-out delay-150
+          before:absolute before:top-0 before:left-0 before:h-[75%] before:w-full before:-z-10 before:-translate-x-full before:transition-all before:duration-300 before:ease-in-out before:hover:translate-x-0 before:bg-violet-400
+          after:absolute after:bottom-0 after:left-0 after:h-[75%] after:w-full after:-z-20 after:translate-x-full after:transition-all after:duration-300 after:ease-in-out after:delay-75 after:hover:translate-x-0 after:bg-violet-500"
+        >
+          <span className="block w-full text-center">Contacto</span>
+        </a>
+      </ul>
+    </nav>
   );
 }

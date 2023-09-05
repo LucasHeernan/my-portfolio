@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Moon, Sun } from "./Icons";
-import SideBar from "./SideBar";
+import MobileMenu from "./MobileMenu";
 
 const CustomLink = ({title}) => {
   return (
@@ -33,7 +33,7 @@ export default function NavBar() {
         </div>
 
         <div className="flex md:hidden">
-          <SideBar />
+          <MobileMenu />
         </div>
 
         <button
