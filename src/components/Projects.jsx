@@ -37,7 +37,7 @@ export default function Projects() {
 
   return (
     <section className="w-full h-screen cursor-default">
-      <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-5 lg:px-7 xl:px-10">
+      <div className="max-w-7xl w-full h-full flex flex-col mx-auto text-black dark:text-white px-5 lg:px-7 xl:px-10">
         <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Proyectos</h2>
         <p className="text-base font-normal md:pt-1 lg:text-lg lg:font-normal lg:pr-20">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore sint dolorum dolor. Recusandae, quam! Est alias aliquam labore doloribus, ducimus facere ullam corporis recusandae reprehenderit quaerat consectetur vitae ipsum accusamus!</p>
         <div className="w-full h-full flex relative overflow-hidden">
@@ -65,8 +65,8 @@ export default function Projects() {
             onMouseLeave={() => setLeft(false)}
           >
             <em className={`absolute block h-8 w-8 top-1/2 left-3 transition-transform duration-200 ease-out delay-200 xl:left-5 xl:h-9 xl:w-9
-            before:-rotate-${left ? "[25deg]" : 45} before:absolute before:left-0 before:h-full before:w-[5px] before:bg-slate-700 before:origin-top-left before:duration-200 before:ease-out
-            after:-rotate-${left ? "[155deg]" : "[135deg]"} after:absolute after:-left-[5px] after:h-full after:w-[5px] after:bg-slate-700 after:origin-top-right after:duration-200 after:ease-out
+            before:-rotate-${left ? "[25deg]" : 45} before:absolute before:left-0 before:h-full before:w-[5px] before:bg-slate-700 before:dark:bg-slate-300 before:origin-top-left before:duration-200 before:ease-out
+            after:-rotate-${left ? "[155deg]" : "[135deg]"} after:absolute after:-left-[5px] after:h-full after:w-[5px] after:bg-slate-700 after:dark:bg-slate-300 after:origin-top-right after:duration-200 after:ease-out
             ${arrowL ? "before:animate-leftDown after:bottom-[5px] after:animate-leftUp" : ""}`}
             />
           </button>
@@ -77,8 +77,8 @@ export default function Projects() {
             onMouseLeave={() => setRight(false)}
           >
             <em className={`absolute block h-8 w-8 top-1/2 right-3 transition-transform duration-200 ease-out delay-200 xl:right-5 xl:h-9 xl:w-9
-            before:rotate-${right ? "[25deg]" : 45} before:absolute before:right-0 before:h-full before:w-[5px] before:bg-slate-700 before:origin-top-right before:duration-200 before:ease-out
-            after:rotate-${right ? "[155deg]" : "[135deg]"} after:absolute after:-right-[5px] after:h-full after:w-[5px] after:bg-slate-700 after:origin-top-left after:duration-200 after:ease-out
+            before:rotate-${right ? "[25deg]" : 45} before:absolute before:right-0 before:h-full before:w-[5px] before:bg-slate-700 before:dark:bg-slate-300 before:origin-top-right before:duration-200 before:ease-out
+            after:rotate-${right ? "[155deg]" : "[135deg]"} after:absolute after:-right-[5px] after:h-full after:w-[5px] after:bg-slate-700 after:dark:bg-slate-300 after:origin-top-left after:duration-200 after:ease-out
             ${arrowR ? "before:animate-rightDown after:bottom-[5px] after:animate-rightUp" : ""}`}
             />
           </button>
@@ -88,7 +88,7 @@ export default function Projects() {
               {
                 slides.map((_, i) => (
                   <div
-                    className={`w-3 h-3 rounded-full cursor-pointer transition-all bg-gray-600 md:w-4 md:h-4 ${curr === i ? "p-[10px] md:p-3" : "bg-opacity-50"}`}
+                    className={`w-3 h-3 rounded-full cursor-pointer transition-all bg-gray-600 dark:bg-slate-300 md:w-4 md:h-4 ${curr === i ? "p-[10px] md:p-3" : "bg-opacity-50 dark:bg-opacity-50"}`}
                     onClick={() => goToSlide(i)}
                     key={i}
                   />

@@ -2,7 +2,7 @@ import React from "react";
 import Lottie from "lottie-react";
 import contactAnimation from "../assets/contact-animation.json";
 
-export default function ContactHand() {
+export default function Contact() {
 
   return (
     <div className="w-full py-4 px-2 max-w-7xl mx-auto bg-green-400 md:h-screen">

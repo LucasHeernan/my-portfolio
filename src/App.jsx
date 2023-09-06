@@ -10,7 +10,7 @@ import "./tailwind.css";
 export default function App() {
 
   return (
-    <div className="font-['Poppins']">
+    <div className="font-['Poppins'] bg-white transition-colors duration-500 ease-in-out delay-75 dark:bg-black">
       <NavBar />
       <Home />
       <Projects />

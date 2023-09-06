@@ -65,7 +65,7 @@ export default function Slides({ title, description, techs, image, images, repos
             onMouseEnter={handleHover}
             onMouseLeave={handleLeave}
           >
-            <h3 className="absolute top-0 left-1 p-3 sm:left-4 z-10 text-xl sm:text-[22px] font-medium sm:font-semibold uppercase text-white blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] md:hidden">{title}</h3>
+            <h3 className="absolute top-0 left-1 p-3 sm:left-4 z-10 text-xl sm:text-[22px] font-medium sm:font-semibold uppercase blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] md:hidden">{title}</h3>
             <img src={image} alt="pepe" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"} blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] md:group-hover:blur-0`}/>
             <div className="absolute w-full h-full -top-full opacity-100 transition-all duration-200 ease-in-out bg-slate-700 group-hover:opacity-80 group-hover:top-0 md:group-hover:hidden"/>
 
@@ -105,7 +105,7 @@ export default function Slides({ title, description, techs, image, images, repos
             </div>
           </section>
 
-          <section className={`hidden md:flex w-[55%] h-full flex-col justify-evenly py-10 ${!phone ? "md:pl-5" : ""} lg:pl-8 lg:py-5 bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100`}>
+          <section className={`hidden md:flex w-[55%] h-full flex-col justify-evenly py-10 text-white dark:text-black ${!phone ? "md:pl-5" : ""} lg:pl-8 lg:py-5 bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100`}>
             <h3 className="uppercase md:text-2xl md:font-semibold lg:text-3xl">{title}</h3>
             <p className="text-base xl:text-lg font-normal pr-4">{description}</p>
             <div className="w-full flex">
