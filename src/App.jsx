@@ -20,7 +20,7 @@ export default function App() {
   )
 }
 
-/* Home -- { AnimatedLetters } -- ¿ About/Skills ? -- Proyects -- { ProjectItem } -- Contact -- Footer */
+/* Home { AnimatedLetters } -- ¿ About/Skills ? -- Proyects { ProjectItem } -- Contact -- Footer */
 
 // ABOUT
 // Hola! Soy Lucas, desarrollador en Javascript, con fluidez tanto en frontend como en backend.
