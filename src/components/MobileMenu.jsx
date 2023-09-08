@@ -32,7 +32,7 @@ export default function MobileMenu() {
   return (
     <div ref={scope}>
       <div className={`transform transition-colors ease-in-out duration-500 md:hidden ${isOpen ? "fixed left-0 top-0 w-full h-screen bg-black/70" : ""}`} />
-      <SideBar />
+      <SideBar handleMenu={handleMenu} />
       <BurgerToggle isOpen={isOpen} handleMenu={handleMenu} />
     </div>
   );

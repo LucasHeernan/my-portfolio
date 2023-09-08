@@ -6,48 +6,21 @@ import Technologies from "./components/Technologies";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./tailwind.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />
-  },
-  {
-    path: "/projects",
-    element: <Projects />,
-    // children: [{
-    //   path:"projects/:projectId",
-    //   element: <h1>PROYECTO PEPE</h1>
-    // }]
-  },
-  {
-    path: "/contact",
-    element: <Contact />
-  }
-]);
 
 export default function App() {
-
   return (
     <div className="font-['Poppins'] bg-white transition-colors duration-500 ease-in-out delay-75 dark:bg-black">
       <NavBar />
-      <RouterProvider router={router} />
+      <Home />
+      <Projects />
+      {/* <Technologies /> */}
+      <Contact />
+      <Footer />
     </div>
   )
-  // return (
-  //   <div className="font-['Poppins'] bg-white transition-colors duration-500 ease-in-out delay-75 dark:bg-black">
-  //     <NavBar />
-  //     <Home />
-  //     <Projects />
-  //     {/* <Technologies /> */}
-  //     <Contact />
-  //     <Footer />
-  //   </div>
-  // )
 }
 
-/* Home -- AnimatedLetters -- * About * -- Skills -- Proyects -- ProjectItem -- Contact -- Footer */
+/* Home -- { AnimatedLetters } -- ¿ About/Skills ? -- Proyects -- { ProjectItem } -- Contact -- Footer */
 
 // ABOUT
 // Hola! Soy Lucas, desarrollador en Javascript, con fluidez tanto en frontend como en backend.

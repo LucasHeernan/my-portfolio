@@ -31,11 +31,11 @@ export default function NavBar() {
       <nav className="relative flex max-w-7xl mx-auto justify-between px-5 lg:px-7 xl:px-10">
 
         <div className="hidden text-base font-medium items-center gap-5 text-black dark:text-white md:flex">
-          <CustomLink title="Inicio" />
-          <CustomLink title="Sobre mi" />
-          <CustomLink title="Tecnologías" />
-          <CustomLink title="Proyectos" />
-          <CustomLink title="Contacto" />
+          <a href="#home"><CustomLink title="Inicio" /></a>
+          <a href="#"><CustomLink title="Sobre mi" /></a>
+          <a href="#"><CustomLink title="Tecnologías" /></a>
+          <a href="#projects"><CustomLink title="Proyectos" /></a>
+          <a href="#contact"><CustomLink title="Contacto" /></a>
         </div>
 
         <div className="flex md:hidden">
