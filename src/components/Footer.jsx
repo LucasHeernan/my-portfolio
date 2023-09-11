@@ -55,7 +55,7 @@ export default function Footer() {
 
       <section className="flex justify-between items-center py-1 px-1 text-xs font-medium font-['Poppins'] md:pl-8 lg:text-sm">
         <div>
-          <p>Copyright © 2023 | All rights reserved.</p>
+          <p>Copyright &copy; © 2023 | All rights reserved.</p>
         </div>
         <div className="flex items-center pr-1 lg:pr-2">
           <p className="pr-[3px] lg:pr-[5px]">Contact me</p>

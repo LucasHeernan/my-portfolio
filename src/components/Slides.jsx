@@ -65,7 +65,7 @@ export default function Slides({ title, description, techs, image, images, repos
             onMouseEnter={handleHover}
             onMouseLeave={handleLeave}
           >
-            <h3 className="absolute top-0 left-1 p-3 sm:left-4 z-10 text-xl sm:text-[22px] font-medium sm:font-semibold uppercase blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] md:hidden">{title}</h3>
+            <h3 className="absolute top-0 left-1 p-3 sm:left-4 z-10 text-xl text-white sm:text-[22px] font-medium sm:font-semibold uppercase blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] md:hidden">{title}</h3>
             <img src={image} alt="pepe" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"} blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] md:group-hover:blur-0`}/>
             <div className="absolute w-full h-full -top-full opacity-100 transition-all duration-200 ease-in-out bg-slate-700 group-hover:opacity-80 group-hover:top-0 md:group-hover:hidden"/>
 

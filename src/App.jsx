@@ -4,16 +4,18 @@ import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Technologies from "./components/Technologies";
 import Contact from "./components/Contact";
+import ContactTwo from "./components/ContactTwo";
 import Footer from "./components/Footer";
 import "./tailwind.css";
 
 export default function App() {
   return (
-    <div className="font-['Poppins'] bg-white transition-colors duration-500 ease-in-out delay-75 dark:bg-black">
+    <div className="font-['Poppins'] bg-white transition-colors duration-500 ease-in-out delay-75 dark:bg-[#2a2a2a]">
       <NavBar />
       <Home />
       <Projects />
       {/* <Technologies /> */}
+      <ContactTwo />
       <Contact />
       <Footer />
     </div>

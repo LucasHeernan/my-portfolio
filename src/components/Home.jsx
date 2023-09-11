@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div id="home" className="w-full h-screen cursor-default">
-      <div className="w-full h-full max-w-7xl mx-auto flex flex-col px-5 pt-36 text-black dark:text-white md:pt-32 lg:px-7 xl:px-10 xl:pt-32">
+      <div className="w-full h-full max-w-7xl mx-auto flex flex-col px-5 pt-36 text-[#2a2a2a] dark:text-white md:pt-32 lg:px-7 xl:px-10 xl:pt-32">
         <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60">
         {/* <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60 bg-green-200 sm:bg-yellow-200 md:bg-orange-300 lg:bg-red-300 xl:bg-fuchsia-400"> */}
           <h1 className="uppercase text-[25px] font-black sm:text-[37px] md:text-[46px] lg:text-[61px] xl:text-[76px]">

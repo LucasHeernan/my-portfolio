@@ -30,7 +30,7 @@ export default function NavBar() {
     <header className={`fixed w-full z-40 items-center py-1 md:py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl dark:shadow-lg dark:shadow-neutral-900" : ""}`}>
       <nav className="relative flex max-w-7xl mx-auto justify-between px-5 lg:px-7 xl:px-10">
 
-        <div className="hidden text-base font-medium items-center gap-5 text-black dark:text-white md:flex">
+        <div className="hidden text-base font-medium items-center gap-5 text-[#2a2a2a] dark:text-white md:flex">
           <CustomLink href="#" title="Inicio" />
           <CustomLink href="#" title="Sobre mi" />
           <CustomLink href="#" title="Tecnologías" />
