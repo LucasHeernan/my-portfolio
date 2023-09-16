@@ -11,9 +11,9 @@ const CustomLink = ({ href, title }) => {
   return (
     <a href={href} className="relative cursor-pointer uppercase group" onMouseEnter={handleHover} onMouseLeave={handleHoverLeave}>{title}
       <span className={`absolute ${hover} -bottom-0.5 w-0 h-0.5 inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full bg-blue-400`}>&nbsp;</span>
-      {/* <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full group-hover:right-0 bg-blue-400">&nbsp;</span> */}
     </a>
   )
+  // <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full group-hover:right-0 bg-blue-400">&nbsp;</span>
 }
 
 export default function NavBar() {
@@ -43,10 +43,10 @@ export default function NavBar() {
         </div>
 
         <button
-          className={`flex rounded-full w-8 p-1 ${mode === "dark" ? "bg-white" : "bg-blue-400"}`}
+          className={`flex rounded-full w-8 p-1 ${mode === "dark" ? "bg-gradient-to-tr from-cyan-300 via-blue-400 to-blue-500" : "bg-gradient-to-tr from-blue-950 via-indigo-950 to-slate-950"}`}
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
         >
-          { mode === "dark" ? <Sun className={"text-black"} /> : <Moon className={"text-white"} /> }
+          { mode === "dark" ? <Sun className={"text-white"} /> : <Moon className={"text-white"} /> }
         </button>
       </nav>
     </header>

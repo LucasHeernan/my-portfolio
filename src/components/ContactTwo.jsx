@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import IconContainer from "./InconContainer";
 import { Github, Linkedin, Whatsapp, Email } from "./Icons";
 import { motion } from "framer-motion";
 
-const CustomLink = ({ href, Icon, name, nickname }) => {
+const CustomLink = ({ href, Icon, name, username }) => {
   const [hover, setHover] = useState("right-0");
-  const [fill, setFill] = useState("black");
-  const handleHover = () => {
-    setHover("left-0");
-    setFill("white");
-  };
-  const handleHoverLeave = () => { setHover("right-0"); setFill("black"); }
+  const handleHover = () => setHover("left-0");
+  const handleHoverLeave = () => setHover("right-0");
 
   return (
     <a
@@ -18,40 +13,16 @@ const CustomLink = ({ href, Icon, name, nickname }) => {
       target="_blank"
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
-      className="relative flex flex-row justify-between items-baseline border-b border-blue-950 pb-2 mb-2 transition-colors duration-200 ease-in-out group"
+      className="relative flex flex-row justify-between items-baseline my-6 mr-5 lg:mr-10 lg:my-[22px] xl:my-6 xl:mr-20 border-b border-slate-600/20 pb-2 transition-colors duration-200 ease-in-out group"
     >
-      <span className={`absolute ${hover} bottom-0 w-0 h-0.5 transform transition-[width] ease-in-out duration-300 group-hover:w-full bg-blue-400`}>&nbsp;</span>
-      <div className="flex gap-4 font-normal">
-        <Icon fill={fill} className="w-5 h-5 z-10" />
+      <span className={`absolute ${hover} -bottom-px w-0 h-0.5 transform transition-[width] ease-in-out duration-300 group-hover:w-full bg-blue-400`}>&nbsp;</span>
+      <div className="flex gap-3 text-[15px] text-black dark:text-white lg:text-lg">
+        <Icon className="w-5 h-5 z-10 text-white" />
         <p>{name}</p>
       </div>
-      <p>{nickname}</p>
+      <p className="text-[15px] text-black dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:transition-all group-hover:ease-in-out group-hover:duration-300 dark:group-focus:bg-slate-500 group-hover:bg-slate-800">{username}</p>
     </a>
   )
-}
-
-const pepe = (delay) => {
-  return {
-    initial: {
-      y: 40,
-      opacity: 0,
-      transition: {
-        delay: delay,
-        duration: 1,
-        ease: [0.25, 0.6, 0.3, 0.8]
-      }
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: delay,
-        duration: 1,
-        ease: [0.25, 0.25, 0.25, 0.75],
-        repeat: 0
-      }
-    }
-  }
 }
 
 const container = {
@@ -74,26 +45,19 @@ const item = {
 
 export default function ContactTwo () {
 
-
   return (
-    <div className="w-full h-screen cursor-default bg-[#1B1C32]">
-      <div className="max-w-7xl w-full h-full mx-auto px-5 flex flex-col md:flex-row bg-white sm:bg-yellow-200 md:bg-orange-500 lg:bg-red-200 xl:bg-fuchsia-400">
+    <div id="contact" className="w-full h-screen cursor-default">
+      <div className="max-w-7xl w-full h-full mx-auto px-5 flex flex-col md:flex-row lg:px-7 xl:px-10">
+      {/* <div className="max-w-7xl w-full h-full mx-auto px-5 flex flex-col md:flex-row lg:px-7 xl:px-10 bg-white sm:bg-yellow-200 md:bg-white lg:bg-red-200 xl:bg-white"> */}
 
-        <section className="md:flex md:flex-col md:w-1/2">
-          <h2 className="text-2xl font-bold pt-14 pb-1 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Contacto</h2>
-          <p className="text-base font-normal md:pt-1 lg:text-lg lg:font-normal lg:pr-20">No dudes en avisarme sobre posibles proyectos, colaboraciones o simplemente para saludar.</p>
-          <ul className="hidden md:flex flex-col bg-orange-300">
-            {/* <a href="#"
-              className="relative flex flex-row justify-between items-baseline border-b border-blue-950 pb-2 mb-2 transition-colors duration-200 ease-in-out
-              before:absolute before:w-0 before:h-1 before:bottom-0 before:left-0 before:bg-red-700 before:transform before:origin-left hover:before:w-full"
-            >
-              <p>Email</p>
-              <p>@pepe</p>
-            </a> */}
-            <CustomLink href={"#"} Icon={Email} name={"Email"} nickname={"lhbenitez2@gmail.com"} />
-            <CustomLink href={"#"} Icon={Linkedin} name={"Linkedin"} nickname={"LucasHeernan"} />
-            <CustomLink href={"#"} Icon={Github} name={"Github"} nickname={"@LucasHeernan"} />
-            <CustomLink href={"#"} Icon={Whatsapp} name={"WhatsApp"} nickname={"+5491134921341"} />
+        <section className="md:flex md:flex-col md:w-1/2 text-black dark:text-white">
+          <h2 className="text-2xl font-bold pt-12 pb-1 tracking-widest uppercase sm:text-3xl md:pt-14 lg:text-4xl xl:pt-16">Contacto</h2>
+          <p className="text-base font-normal md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:font-normal lg:pr-10">No dudes en avisarme sobre posibles proyectos, colaboraciones o simplemente para saludar pepe.</p>
+          <ul className="hidden md:flex flex-col py-2 md:py-4 xl:py-5">
+            <CustomLink href={"#"} Icon={Email} name={"Email"} username={"lhbenitez2@gmail.com"} />
+            <CustomLink href={"#"} Icon={Linkedin} name={"Linkedin"} username={"LucasHeernan"} />
+            <CustomLink href={"#"} Icon={Github} name={"Github"} username={"LucasHeernan"} />
+            <CustomLink href={"#"} Icon={Whatsapp} name={"WhatsApp"} username={"+5491134921341"} />
           </ul>
         </section>
 
@@ -102,19 +66,15 @@ export default function ContactTwo () {
           initial="hidden"
           animate="show"
           viewport={{ once: true }}
-          className="w-full flex flex-col items-center md:w-1/2 md:justify-end md:h-full md:pb-10"
+          className="w-full flex flex-col items-center md:w-1/2 md:justify-end md:pb-8"
         >
           
           <motion.div
             variants={item}
-            // variants={pepe(0)}
-            // initial="initial"
-            // whileInView="animate"
-            // viewport={{ once: true }}
-            className="relative w-full mb-3 mt-4 overflow-hidden rounded-sm"
+            className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none peer/contact"
+              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-slate-300 peer/contact"
               type="text"
               placeholder="Nombre"
             />
@@ -122,14 +82,10 @@ export default function ContactTwo () {
           </motion.div>
           <motion.div
             variants={item}
-            // variants={pepe(0.1)}
-            // initial="initial"
-            // whileInView="animate"
-            // viewport={{ once: true }}
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none peer/contact"
+              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-slate-300 peer/contact"
               type="email"
               placeholder="Correo electrónico"
             />
@@ -138,14 +94,10 @@ export default function ContactTwo () {
           
           <motion.div
             variants={item}
-            // variants={pepe(0.2)}
-            // initial="initial"
-            // whileInView="animate"
-            // viewport={{ once: true }}
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none peer/contact"
+              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-slate-300 peer/contact"
               type="text"
               placeholder="Asunto"
             />
@@ -154,25 +106,65 @@ export default function ContactTwo () {
           
           <motion.div
             variants={item}
-            // variants={pepe(0.3)}
-            // initial="initial"
-            // whileInView="animate"
-            // viewport={{ once: true }}
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
-            <textarea className="w-full p-3 px-5 text-base font-normal rounded-sm resize-none bg-slate-600/20 placeholder:text-black focus:outline-none peer/contact" name="mensaje" placeholder="Mensaje" rows="5" />
+            <textarea className="w-full pt-3 px-5 text-base font-normal rounded-sm resize-none bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-slate-300 peer/contact" name="mensaje" placeholder="Mensaje" rows="6" />
             <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
           </motion.div>
-          <motion.button
+          <motion.div
             variants={item}
-            // initial={{ opacity: 0.2 }}
-            // whileInView={{ opacity: 1, transition:{ duration: 0.5 } }}
-            // viewport={{ once: true }}
-            className="self-center w-2/5 my-3 py-3 text-base text-black border-2 border-black rounded-md font-semibold bg-slate-600/20" type="submit">Enviar mensaje
-          </motion.button>
+            className="relative z-10 group
+            self-center w-40 mt-2 md:mt-5 md:self-end"
+          >
+            <button
+              type="submit"
+              className="px-4 py-2 rounded bg-slate-300 border-b-[3px] border-r-2 border-slate-400 shadow-sm shadow-black transition-all duration-100 ease-out
+              group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5">
+              <span className="uppercase text-sm font-semibold text-black">Enviar mensaje</span>
+            </button>
+            <span
+              className="absolute -z-10 top-1 left-[3px] w-[calc(100%-8px)] h-full rounded-bl-md rounded-br-md rounded-tr-md bg-slate-800 dark:bg-black
+              group-hover:w-[calc(100%-9px)] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[calc(100%-14px)]
+              uppercase text-sm font-semibold">
+            </span>
+          </motion.div>
           
         </motion.ul>
       </div>
     </div>
   )
 }
+
+// const pepe = (delay) => {
+//   return {
+//     initial: {
+//       y: 40,
+//       opacity: 0,
+//       transition: {
+//         delay: delay,
+//         duration: 1,
+//         ease: [0.25, 0.6, 0.3, 0.8]
+//       }
+//     },
+//     animate: {
+//       y: 0,
+//       opacity: 1,
+//       transition: {
+//         delay: delay,
+//         duration: 1,
+//         ease: [0.25, 0.25, 0.25, 0.75],
+//         repeat: 0
+//       }
+//     }
+//   }
+// }
+
+// variants={pepe(0.3)}
+// initial="initial"
+// whileInView="animate"
+// viewport={{ once: true }}
+
+// <motion.button
+//   variants={item}
+//   className="self-center w-2/5 mt-2 py-3 text-base font-medium md:mt-5 text-black border-2 border-slate-600/50 rounded-md bg-slate-600/20 md:self-end" type="submit">Enviar mensaje
+// </motion.button>
