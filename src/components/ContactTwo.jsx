@@ -13,35 +13,33 @@ const CustomLink = ({ href, Icon, name, username }) => {
       target="_blank"
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
-      className="relative flex flex-row justify-between items-baseline my-6 mr-5 lg:mr-10 lg:my-[22px] xl:my-6 xl:mr-20 border-b border-slate-600/20 pb-2 transition-colors duration-200 ease-in-out group"
+      className="relative flex flex-row justify-between items-baseline my-6 mr-5 lg:mr-10 lg:my-[22px] xl:my-6 xl:mr-20 border-b border-slate-600/20 dark:border-slate-400 pb-2 transition-colors duration-200 ease-in-out group"
     >
       <span className={`absolute ${hover} -bottom-px w-0 h-0.5 transform transition-[width] ease-in-out duration-300 group-hover:w-full bg-blue-400`}>&nbsp;</span>
       <div className="flex gap-3 text-[15px] text-black dark:text-white lg:text-lg">
         <Icon className="w-5 h-5 z-10 text-white" />
         <p>{name}</p>
       </div>
-      <p className="text-[15px] text-black dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:transition-all group-hover:ease-in-out group-hover:duration-300 dark:group-focus:bg-slate-500 group-hover:bg-slate-800">{username}</p>
+      <p className="text-[15px] text-black dark:text-white">{username}</p>
     </a>
   )
 }
 
 const container = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
+  initial: { opacity: 0, y: 60 },
+  animate: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 1,
       staggerChildren: 0.3,
-      delayChildren: 0.1
+      delayChildren: 0.1,
+      ease: [0.25, 0.6, 0.3, 0.8]
     }
   }
 }
 
-const item = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 }
-}
+const item = {initial: { opacity: 0 }, animate: { opacity: 1, transition: { duration: 1, ease: [0.25, 0.25, 0.25, 0.75] } }};
 
 export default function ContactTwo () {
 
@@ -51,7 +49,7 @@ export default function ContactTwo () {
       {/* <div className="max-w-7xl w-full h-full mx-auto px-5 flex flex-col md:flex-row lg:px-7 xl:px-10 bg-white sm:bg-yellow-200 md:bg-white lg:bg-red-200 xl:bg-white"> */}
 
         <section className="md:flex md:flex-col md:w-1/2 text-black dark:text-white">
-          <h2 className="text-2xl font-bold pt-12 pb-1 tracking-widest uppercase sm:text-3xl md:pt-14 lg:text-4xl xl:pt-16">Contacto</h2>
+          <h2 className="text-2xl font-bold pt-14 pb-1 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Contacto</h2>
           <p className="text-base font-normal md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:font-normal lg:pr-10">No dudes en avisarme sobre posibles proyectos, colaboraciones o simplemente para saludar pepe.</p>
           <ul className="hidden md:flex flex-col py-2 md:py-4 xl:py-5">
             <CustomLink href={"#"} Icon={Email} name={"Email"} username={"lhbenitez2@gmail.com"} />
@@ -61,10 +59,10 @@ export default function ContactTwo () {
           </ul>
         </section>
 
-        <motion.ul
+        <motion.section
           variants={container}
-          initial="hidden"
-          animate="show"
+          initial="initial"
+          whileInView="animate"
           viewport={{ once: true }}
           className="w-full flex flex-col items-center md:w-1/2 md:justify-end md:pb-8"
         >
@@ -74,7 +72,7 @@ export default function ContactTwo () {
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-slate-300 peer/contact"
+              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-indigo-100 peer/contact"
               type="text"
               placeholder="Nombre"
             />
@@ -85,7 +83,7 @@ export default function ContactTwo () {
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-slate-300 peer/contact"
+              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-indigo-100 peer/contact"
               type="email"
               placeholder="Correo electrónico"
             />
@@ -97,7 +95,7 @@ export default function ContactTwo () {
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-slate-300 peer/contact"
+              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-indigo-100 peer/contact"
               type="text"
               placeholder="Asunto"
             />
@@ -108,7 +106,7 @@ export default function ContactTwo () {
             variants={item}
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
-            <textarea className="w-full pt-3 px-5 text-base font-normal rounded-sm resize-none bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-slate-300 peer/contact" name="mensaje" placeholder="Mensaje" rows="6" />
+            <textarea className="w-full pt-3 px-5 text-base font-normal rounded-sm resize-none bg-slate-600/20 placeholder:text-black focus:outline-none dark:bg-indigo-100 peer/contact" name="mensaje" placeholder="Mensaje" rows="6" />
             <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
           </motion.div>
           <motion.div
@@ -118,18 +116,18 @@ export default function ContactTwo () {
           >
             <button
               type="submit"
-              className="px-4 py-2 rounded bg-slate-300 border-b-[3px] border-r-2 border-slate-400 shadow-sm shadow-black transition-all duration-100 ease-out
+              className="px-4 py-2 rounded bg-indigo-100 border-b-[3px] border-r-2 border-indigo-300 shadow-sm shadow-black transition-all duration-100 ease-out
               group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5">
               <span className="uppercase text-sm font-semibold text-black">Enviar mensaje</span>
             </button>
             <span
-              className="absolute -z-10 top-1 left-[3px] w-[calc(100%-8px)] h-full rounded-bl-md rounded-br-md rounded-tr-md bg-slate-800 dark:bg-black
-              group-hover:w-[calc(100%-9px)] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[calc(100%-14px)]
+              className="absolute -z-10 top-1 left-[3px] w-[calc(100%-8px)] h-full rounded-bl-md rounded-br-md rounded-tr-md bg-slate-800 dark:bg-slate-950
+              group-hover:w-[calc(100%-9px)] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[calc(100%-12px)]
               uppercase text-sm font-semibold">
             </span>
           </motion.div>
           
-        </motion.ul>
+        </motion.section>
       </div>
     </div>
   )

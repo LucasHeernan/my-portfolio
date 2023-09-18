@@ -57,10 +57,10 @@ export default function Slides({ title, description, techs, image, images, repos
       style={{ transform: `translateX(-${curr * currentWidth}px)` }}
     >
       <div className="absolute flex inset-y-4 pb-4 md:inset-y-5 md:px-3 md:pb-3 lg:inset-x-14 xl:inset-x-16">
-        <div className="hidden absolute left-6 top-3 w-[calc(100%-24px)] h-[calc(100%-13px)] rounded-sm bg-slate-700 md:block"/>
+        <div className="hidden absolute left-6 top-3 w-[calc(100%-24px)] h-[calc(100%-13px)] rounded bg-slate-700 dark:bg-slate-950 md:block"/>
         <div className="w-full h-full flex z-10 rounded-sm overflow-hidden md:shadow-lg md:shadow-black">
           <section
-            className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500
+            className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500 dark:from-indigo-300 dark:via-indigo-200 dark:to-indigo-100
             before:absolute before:-z-10 before:top-2 before:left-2 before:w-full before:h-full before:rounded-sm before:bg-slate-700 sm:before:top-3 sm:before:left-3 md:before:hidden"
             onMouseEnter={handleHover}
             onMouseLeave={handleLeave}
@@ -105,7 +105,7 @@ export default function Slides({ title, description, techs, image, images, repos
             </div>
           </section>
 
-          <section className={`hidden md:flex w-[55%] h-full flex-col justify-evenly py-10 text-white dark:text-black ${!phone ? "md:pl-5" : ""} lg:pl-8 lg:py-5 bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100`}>
+          <section className={`hidden md:flex w-[55%] h-full flex-col justify-evenly py-10 text-black dark:text-white ${!phone ? "md:pl-5" : ""} lg:pl-8 lg:py-5 bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100 dark:from-indigo-300 dark:via-indigo-400 dark:to-indigo-500`}>
             <h3 className="uppercase md:text-2xl md:font-semibold lg:text-3xl">{title}</h3>
             <p className="text-base xl:text-lg font-normal pr-4">{description}</p>
             <div className="w-full flex">
