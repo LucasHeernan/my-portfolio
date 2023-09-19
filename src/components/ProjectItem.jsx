@@ -1,5 +1,4 @@
 import React from "react";
-import ProjectImage from "./ProjectImage";
 import insta from "../assets/projectsImages/gimpInsta2.png";
 import portfolio from "../assets/projectsImages/gimpPoke3.png";
 

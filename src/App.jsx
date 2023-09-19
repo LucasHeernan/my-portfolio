@@ -1,23 +1,19 @@
 import React from "react";
-import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import Projects from "./components/Projects";
-import Technologies from "./components/Technologies";
-import Contact from "./components/Contact";
-import ContactTwo from "./components/ContactTwo";
-import Footer from "./components/Footer";
+import Root from "./components/Root";
+import ProjectItem from "./components/ProjectItem";
+import { Routes, Route } from "react-router-dom";
 import "./tailwind.css";
 
 export default function App() {
   return (
     <div className="font-['Poppins'] bg-white transition-colors duration-500 ease-in-out delay-75 dark:bg-[#2a2a2a]">
-      <NavBar />
-      <Home />
-      <Projects />
-      {/* <Technologies /> */}
-      <ContactTwo />
-      {/* <Contact /> */}
-      <Footer />
+      <Routes>
+        <Route path="/" element={ <Root /> } />
+        <Route
+          path="/:id"
+          element={ <ProjectItem /> }
+        />
+      </Routes>
     </div>
   )
 }
