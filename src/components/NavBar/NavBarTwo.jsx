@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import IconContainer from "./InconContainer";
-import { Github, Linkedin, Whatsapp, Email, Moon, Sun } from "./Icons";
+import IconContainer from "../InconContainer";
+import { Github, Linkedin, Whatsapp, Email, Moon, Sun } from "../Icons";
 import { motion } from "framer-motion";
 
 const CustomLink = ({title}) => {

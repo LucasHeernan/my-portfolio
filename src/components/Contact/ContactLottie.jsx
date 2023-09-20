@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "lottie-react";
-import contactAnimation from "../assets/contact-animation.json";
+import contactAnimation from "../../assets/contact-animation.json";
 
 export default function ContactLottie() {
 

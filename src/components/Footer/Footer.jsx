@@ -1,8 +1,8 @@
 import React from "react";
-import IconContainer from "./InconContainer";
-import { Github, Linkedin, Whatsapp, Email } from "./Icons";
+import IconContainer from "../Technologies/InconContainer";
+import { Github, Linkedin, Whatsapp, Email } from "../Technologies/Icons";
+import profilePicture from "../../assets/profile-picture.jpg";
 import { motion } from "framer-motion";
-import profilePicture from "../assets/profile-picture.jpg";
 
 export default function Footer() {
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Github, Linkedin, Whatsapp, Email } from "./Icons";
+import { Github, Linkedin, Whatsapp, Email } from "../Technologies/Icons";
 import { motion } from "framer-motion";
 
 const CustomLink = ({ href, Icon, name, username }) => {

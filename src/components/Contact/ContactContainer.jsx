@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from "../../ThemeSwitcher";
 
 export default function ContactContainer({ children }) {
 

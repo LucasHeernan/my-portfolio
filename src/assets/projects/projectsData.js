@@ -18,6 +18,7 @@ import dpower8 from "../projectsImages/DpowerProfile.png";
 
 export const projectsData = [
   {
+    id: 1,
     title: "Instagram clone",
     description: "Proyecto que replica la interfaz visual de Instagram en la se puede hacer un recorrido por todas las pantallas y ver lo similar que es al original. La aplicación fue construida completamente con React Native.",
     techs: ["Javascript", "React Native", "CSS"],
@@ -26,6 +27,7 @@ export const projectsData = [
     phone: true,
   },
   {
+    id: 2,
     title: "Portfolio",
     description: "",
     techs: ["Javascript", "ReactJS", "TailwindCSS"],
@@ -34,6 +36,7 @@ export const projectsData = [
     phone: false,
   },
   {
+    id: 3,
     title: "Dpower App",
     description: "Aplicación móvil estilo red social hecha con React Native con funcionalidades de Autentificación, MarketPlace, Pasarela de pago, publicar desde galería, entre otras.",
     techs: ["React Native", "Redux", "NodeJS", "Express", "Sequelize", "PostgreSQL"],
@@ -42,6 +45,7 @@ export const projectsData = [
     phone: true,
   },
   {
+    id: 4,
     title: "Poke App",
     description: "Diseñar y desarrollar una App de pokemon que incluía: búsquedas, filtrados combinados, ordenamientos y creación.",
     techs: ["ReactJS", "Redux", "NodeJS", "Express", "Sequelize", "PostgreSQL"],

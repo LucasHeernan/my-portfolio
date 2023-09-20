@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Moon, Sun } from "./Icons";
+import { Moon, Sun } from "../Technologies/Icons";
 import MobileMenu from "./MobileMenu";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from "../../ThemeSwitcher";
 import { Link } from "react-scroll";
 
 const CustomLink = ({ to, title }) => {

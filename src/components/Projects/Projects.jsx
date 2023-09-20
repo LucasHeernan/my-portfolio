@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Slides from "./Slides";
-import { projectsData } from "../assets/projects/projectsData";
-import insta from "../assets/projectsImages/gimpInsta2.png";
-import portfolio from "../assets/projectsImages/gimpPoke3.png";
-import dpower from "../assets/projectsImages/gimpDpower.png";
-import pokemon from "../assets/projectsImages/gimpPoke3.png";
+import ProjectCard from "./ProjectCard";
+import { projectsData } from "../../assets/projects/projectsData";
+import insta from "../../assets/projectsImages/gimpInsta2.png";
+import portfolio from "../../assets/projectsImages/gimpPoke3.png";
+import dpower from "../../assets/projectsImages/gimpDpower.png";
+import pokemon from "../../assets/projectsImages/gimpPoke3.png";
 
 const slides = [ insta, portfolio, dpower, pokemon ];
 
@@ -44,8 +44,9 @@ export default function Projects() {
 
           {
             projectsData?.map((project, index) => (
-              <Slides
+              <ProjectCard
                 key={index}
+                id={project.id}
                 title={project.title}
                 description={project.description}
                 techs={project.techs}

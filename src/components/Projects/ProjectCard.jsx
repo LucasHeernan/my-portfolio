@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const techAnimations = {
   initial: {
@@ -22,7 +23,7 @@ const techAnimations = {
   })
 }
 
-export default function Slides({ title, description, techs, image, images, repository, phone, curr }) {
+export default function ProjectCard({ id, title, description, techs, image, images, repository, phone, curr }) {
 
   const [more, setMore] = useState();
   const carouselRef = useRef(null);
@@ -109,20 +110,23 @@ export default function Slides({ title, description, techs, image, images, repos
             <h3 className="uppercase md:text-2xl md:font-semibold lg:text-3xl">{title}</h3>
             <p className="text-base xl:text-lg font-normal pr-4">{description}</p>
             <div className="w-full flex">
-              <div
+              <Link
+                to={`/:${id}`}
                 className="inline-block px-3 py-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-[15px] tracking-wider shadow-md shadow-[rgba(0,0,0,.75)] mr-7 relative overflow-hidden cursor-pointer
                 before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                 after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
               >
                 <span className="relative z-20">ver más</span>
-              </div>
-              <div
+              </Link>
+              <a
+                href={repository}
+                target="_blank"
                 className="inline-block px-3 py-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-[15px] tracking-wider shadow-md shadow-[rgba(0,0,0,.50)] relative overflow-hidden cursor-pointer
                 before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                 after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
               >
                 <span className="relative z-20">repositorio</span>
-              </div>
+              </a>
             </div>
           </section>
 

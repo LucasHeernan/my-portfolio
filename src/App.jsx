@@ -1,6 +1,6 @@
 import React from "react";
 import Root from "./components/Root";
-import ProjectItem from "./components/ProjectItem";
+import ProjectItem from "./components/Projects/ProjectItem";
 import { Routes, Route } from "react-router-dom";
 import "./tailwind.css";
 

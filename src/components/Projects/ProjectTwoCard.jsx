@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectImage from "./ProjectImage";
-import { Github } from "./Icons";
+import { Github } from "../Icons";
 import { motion } from "framer-motion";
 
 const techAnimations = {
