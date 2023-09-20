@@ -51,7 +51,6 @@ export default function Projects() {
                 description={project.description}
                 techs={project.techs}
                 image={slides[index]}
-                images={project.images}
                 repository={project.repository}
                 phone={project.phone}
                 curr={curr}

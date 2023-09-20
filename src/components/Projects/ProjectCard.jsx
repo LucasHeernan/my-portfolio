@@ -23,7 +23,7 @@ const techAnimations = {
   })
 }
 
-export default function ProjectCard({ id, title, description, techs, image, images, repository, phone, curr }) {
+export default function ProjectCard({ id, title, description, techs, image, repository, phone, curr }) {
 
   const [more, setMore] = useState();
   const carouselRef = useRef(null);
@@ -96,13 +96,14 @@ export default function ProjectCard({ id, title, description, techs, image, imag
             </div>
 
             <div className={`hidden absolute bottom-10 left-[calc(50%-45px)] z-10 ${more ? "group-hover:block" : "" } group-hover:animate-bounceInUp md:group-hover:hidden`}>
-              <div
+              <Link
+                to={`/:${id}`}
                 className="inline-block p-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] ml-2 relative overflow-hidden box-border cursor-pointer
                 before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                 after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
               >
                 <span className="relative z-20">ver más</span>
-              </div>
+              </Link>
             </div>
           </section>
 
