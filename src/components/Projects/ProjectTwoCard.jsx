@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectImage from "./ProjectImage";
-import { Github } from "../Icons";
+import { Github } from "../Technologies/Icons";
 import { motion } from "framer-motion";
 
 const techAnimations = {
@@ -18,7 +18,7 @@ const techAnimations = {
   })
 }
 
-export default function ProjectCard({ title, description, techs, images, repository, phone }) {
+export default function ProjectsTwoCard({ title, description, techs, images, repository, phone }) {
 
   return (
     <motion.div

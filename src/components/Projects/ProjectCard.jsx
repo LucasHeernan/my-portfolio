@@ -58,15 +58,16 @@ export default function ProjectCard({ id, title, description, techs, image, repo
       style={{ transform: `translateX(-${curr * currentWidth}px)` }}
     >
       <div className="absolute flex inset-y-4 pb-4 md:inset-y-5 md:px-3 md:pb-3 lg:inset-x-14 xl:inset-x-16">
-        <div className="hidden absolute left-6 top-3 w-[calc(100%-24px)] h-[calc(100%-13px)] rounded bg-slate-700 dark:bg-slate-950 md:block"/>
-        <div className="w-full h-full flex z-10 rounded-sm overflow-hidden md:shadow-lg md:shadow-black">
+        <div className="hidden absolute left-6 top-3 w-[calc(100%-24px)] h-[calc(100%-12px)] bg-slate-700 dark:bg-slate-950 md:block"/>
+        <div className="w-full h-full flex z-10 overflow-hidden md:shadow-lg md:shadow-black">
           <section
             className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500 dark:from-indigo-300 dark:via-indigo-200 dark:to-indigo-100
             before:absolute before:-z-10 before:top-2 before:left-2 before:w-full before:h-full before:rounded-sm before:bg-slate-700 sm:before:top-3 sm:before:left-3 md:before:hidden"
             onMouseEnter={handleHover}
             onMouseLeave={handleLeave}
           >
-            <h3 className="absolute top-0 left-1 p-3 sm:left-4 z-10 text-xl text-white sm:text-[22px] font-medium sm:font-semibold uppercase blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] md:hidden">{title}</h3>
+            <h3 className="absolute top-0 left-1 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-black dark:text-indigo-200 sm:text-[22px] sm:font-bold sm:py-6 blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] group-hover:hidden md:hidden">{title}</h3>
+            <h3 className="absolute -top-[2px] left-0.5 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-indigo-200 dark:text-black sm:text-[22px] sm:font-bold sm:py-6 blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] group-hover:text-[#2a2a2a] md:hidden">{title}</h3>
             <img src={image} alt="pepe" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"} blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] md:group-hover:blur-0`}/>
             <div className="absolute w-full h-full -top-full opacity-100 transition-all duration-200 ease-in-out bg-slate-700 group-hover:opacity-80 group-hover:top-0 md:group-hover:hidden"/>
 

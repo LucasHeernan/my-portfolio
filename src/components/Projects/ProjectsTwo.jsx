@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectCard from "./ProjectCard";
+import ProjectsTwoCard from "./ProjectTwoCard";
 import { projectsData } from "../../assets/projects/projectsData";
 
 export default function ProjectsTwo() {
@@ -12,7 +12,7 @@ export default function ProjectsTwo() {
         <div className="flex flex-col">
           {
             projectsData?.map((project, index) => (
-              <ProjectCard
+              <ProjectsTwoCard
                 key={index}
                 title={project.title}
                 description={project.description}

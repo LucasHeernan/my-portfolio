@@ -161,8 +161,3 @@ export default function Contact () {
 // initial="initial"
 // whileInView="animate"
 // viewport={{ once: true }}
-
-// <motion.button
-//   variants={item}
-//   className="self-center w-2/5 mt-2 py-3 text-base font-medium md:mt-5 text-black border-2 border-slate-600/50 rounded-md bg-slate-600/20 md:self-end" type="submit">Enviar mensaje
-// </motion.button>

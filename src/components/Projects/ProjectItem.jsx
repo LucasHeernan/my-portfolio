@@ -15,17 +15,27 @@ export default function ProjectItem() {
 
   return (
     <div className="w-full h-screen cursor-default">
-      <div className="max-w-7xl w-full h-full mx-auto px-5 flex flex-col md:flex-row lg:px-7 xl:px-10">
-        <h2 className="text-2xl font-bold pt-14 pb-1 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">{project.title}</h2>
-        <p className="text-base font-normal md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:font-normal lg:pr-10">{project.description}</p>
-        <div className="w-full flex flex-row">
-          <section className="w-1/2 h-96">
-            <ProjectImage
-              images={project.images}
-              phone={project.phone}
-            />
-          </section>
-          <section className="w-1/2 h-96"></section>
+      <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-5 text-[#2a2a2a] dark:text-white lg:px-7 xl:px-10">
+      {/* <div className="max-w-7xl w-full h-full flex flex-col mx-auto text-[#2a2a2a] dark:text-white px-5 lg:px-7 xl:px-10"> */}
+        <h2 className="text-2xl font-bold pt-10 pb-1 tracking-widest uppercase sm:text-3xl lg:text-4xl">{project.title}</h2>
+        <p className="text-base font-normal pr-32 md:pb-5 lg:text-lg lg:font-normal bg-violet-100">{project.description}</p>
+        <div className="flex flex-col">
+          <div className="w-full flex flex-row">
+            <section className="w-2/5 h-96">
+              <ProjectImage
+                images={project.images}
+                phone={project.phone}
+              />
+            </section>
+            <section className="w-3/5 h-96">
+              <div className="w-full h-full bg-stone-200">
+                <div className="relative font-['Poppins] uppercase z-0">
+                  <h3 className="text-4xl font-bold text-black">Mi Título</h3>
+                  <h3 className="text-4xl font-bold absolute text-violet-400 top-[3px] -z-10">Mi Título</h3>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>
