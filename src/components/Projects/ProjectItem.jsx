@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProjectImage from "./ProjectImage";
 import ProjectItemNavBar from "./ProjectItemNavBar";
+import ProjectItemFooter from "./ProjectItemFooter";
 import { projectsData } from "../../assets/projects/projectsData";
 import { Github } from "../Technologies/Icons";
 import { useParams } from "react-router-dom";
@@ -25,22 +26,22 @@ export default function ProjectItem() {
   const { id } = useParams();
   const project = projectsData.find((project) => project.id === Number(id.replace(":", "")));
 
-  // if (!project) {
-  //   console.log(id);
-  //   console.log(project);
-  //   return <p>Proyecto no encontrado.</p>
-  // }
-
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
+  }, []);
+  
   return (
     <div className="w-full cursor-default font-['Montserrat']">
       <ProjectItemNavBar />
       <div className="max-w-7xl w-full flex flex-col mx-auto px-10 text-[#2a2a2a] dark:text-white">
         <div className="relative z-0">
-          <h2 className="text-2xl font-bold pt-20 pb-1 tracking-wider uppercase sm:text-3xl lg:text-4xl">{project.title}</h2>
-          <h2 className="text-2xl font-bold pt-20 pb-1 tracking-wider uppercase absolute text-rose-300 top-[3px] -z-10 sm:text-3xl lg:text-4xl">{project.title}</h2>
+          <h2 className="text-2xl font-bold pt-10 pb-1 tracking-wider uppercase sm:text-3xl lg:text-4xl">{project.title}</h2>
+          <h2 className="text-2xl font-bold pt-10 pb-1 tracking-wider uppercase absolute text-rose-300 top-[3px] -z-10 sm:text-3xl lg:text-4xl">{project.title}</h2>
         </div>
         <p className="text-base font-normal pr-32 md:pb-5 lg:text-lg lg:font-normal">{project.description}</p>
-        <div className={`w-full ${project.phone ? "h-[580px]" : "h-96"} flex my-5 bg-red-200`}>
+        <div className={`w-full ${project.phone ? "h-[580px]" : "h-96"} flex py-5`}>
             
           <div className={`${project.phone ? "w-2/5" : "w-[45%]" } relative h-full before:w-full before:h-full before:absolute before:left-2 before:top-2 before:bg-slate-700`}>
             <ProjectImage images={project.images} phone={project.phone} />
@@ -90,26 +91,8 @@ export default function ProjectItem() {
           </div>
           
         </div>
-        {/* <div className="flex flex-col">
-          <div className="w-full flex flex-row">
-            <section className="w-2/5 h-96">
-              <ProjectImage
-                images={project.images}
-                phone={project.phone}
-              />
-            </section>
-            <section className="w-3/5 h-96">
-              <div className="w-full h-full bg-stone-200">
-              </div>
-            </section>
-          </div>
-        </div> */}
       </div>
+      <ProjectItemFooter />
     </div>
   )
 }
-
-// <div className="relative font-['Poppins] uppercase z-0">
-//   <h3 className="text-4xl font-bold text-black">Mi Título</h3>
-//   <h3 className="text-4xl font-bold absolute text-violet-400 top-[3px] -z-10">Mi Título</h3>
-// </div>
