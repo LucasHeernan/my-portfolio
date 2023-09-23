@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AnimatedContainer({ words, a }) {
+export default function AnimatedContainer({ words }) {
 
   return (
     <span className="inline-block relative box-border
@@ -8,7 +8,7 @@ export default function AnimatedContainer({ words, a }) {
       after:bg-[#3f3f3f] after:absolute after:right-0 after:bottom-0 after:h-1/2 after:w-0 after:transition-all after:duration-300 after:ease-in-out after:delay-100 after:z-10 hover:after:w-full"
     >
       {
-        a ? <a href="mailto:lhbenitez2@gmail.com" target="_blank" className="relative block z-20 text-[#9A9A9A] font-bold">{words}</a> :
+        words === "lhbenitez2@gmail.com" ? <a href="mailto:lhbenitez2@gmail.com" target="_blank" className="relative block z-20 text-[#9A9A9A] font-bold">{words}</a> :
         <span className="relative block z-20 text-[#9A9A9A] font-bold">{words}</span>
       }
     </span>

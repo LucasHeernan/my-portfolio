@@ -9,8 +9,8 @@ export default function ProjectItemNavBar() {
   const [mode, setMode] = ThemeSwitcher();
 
   return (
-    <header className="fixed w-full z-50 pt-3">
-      <nav className="relative flex justify-between pl-5 pr-10">
+    <header className="fixed w-full z-50 pt-5">
+      <nav className="relative flex justify-between px-10">
         <button onClick={() => { navigate(-1) }}>
           <div className="w-9 h-9 rounded-full bg-indigo-400" />
         </button>
