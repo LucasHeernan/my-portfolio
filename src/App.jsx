@@ -30,10 +30,3 @@ export default function App() {
 // aplicaciones web y mobile en Javascript
 // con ReactJS, React Native, Redux, 
 // NodeJS, Express, PostgreSQL
-
-// Let's talk
-// Wanna get in touch or talk about a project?
-// Feel free to contact me via email at
-// rafael@caferati.me
-// or drop a line in the form at the
-// contact page
