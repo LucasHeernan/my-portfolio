@@ -44,6 +44,7 @@ export default function Home() {
             mobile en Javascript con ReactJS, React Native, Redux, NodeJS, Express, <AnimatedContainer words={"PostgreSQL"} />
           </p>
         </div>
+        
         <div className="w-full pt-2">
           <div className="w-full flex">
             <Link
@@ -60,8 +61,8 @@ export default function Home() {
               <span
                 className="absolute -z-10 top-1 left-[3px] w-40 h-full rounded-bl-md rounded-br-md rounded-tr-md bg-slate-800 dark:bg-slate-950
                 group-hover:w-[159px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[155px]
-                uppercase text-sm font-semibold">
-              </span>
+                uppercase text-sm font-semibold"
+              />
             </Link>
             <div className="relative z-10 mt-2 group md:mt-5">
               <button
@@ -73,8 +74,8 @@ export default function Home() {
               <span
                 className="absolute -z-10 top-1 left-[3px] w-40 h-full rounded-bl-md rounded-br-md rounded-tr-md bg-slate-800 dark:bg-slate-950
                 group-hover:w-[159px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[155px]
-                uppercase text-sm font-semibold">
-              </span>
+                uppercase text-sm font-semibold"
+              />
             </div>
           </div>
         </div>

@@ -120,19 +120,20 @@ export default function Contact () {
           <motion.div
             variants={item}
             className="relative z-10 group
-            self-center w-40 mt-2 md:mt-5 md:self-end"
+            self-center mt-2 md:mt-5 md:self-end"
           >
             <button
               type="submit"
-              className="px-4 py-2 rounded bg-gradient-to-t from-indigo-100 to-indigo-200 border-b-[3px] border-r-2 border-indigo-300 shadow-sm shadow-black transition-all duration-100 ease-out
-              group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:bg-gradient-to-t group-active:from-indigo-200 group-active:to-indigo-200">
+              className="w-44 px-4 py-2 rounded bg-gradient-to-t from-indigo-100 to-indigo-200 border-b-[3px] border-r-2 border-indigo-300 shadow-sm shadow-black transition-all duration-100 ease-out
+              group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:bg-gradient-to-t group-active:from-indigo-200 group-active:to-indigo-200"
+            >
               <span className="uppercase text-sm font-semibold text-black">Enviar mensaje</span>
             </button>
             <span
-              className="absolute -z-10 top-1 left-[3px] w-[calc(100%-8px)] h-full rounded-bl-md rounded-br-md rounded-tr-md bg-slate-800 dark:bg-slate-950
-              group-hover:w-[calc(100%-9px)] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[calc(100%-12px)]
-              uppercase text-sm font-semibold">
-            </span>
+              className="absolute w-44 -z-10 top-1 left-[3px] h-full rounded-bl-md rounded-br-md rounded-tr-md bg-slate-800 dark:bg-slate-950
+              group-hover:w-[175px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[171px]
+              uppercase text-sm font-semibold"
+            />
           </motion.div>
           
         </motion.section>

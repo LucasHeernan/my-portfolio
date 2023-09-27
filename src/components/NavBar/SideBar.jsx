@@ -4,8 +4,8 @@ import { Link } from "react-scroll";
 export default function SideBar({ handleMenu }) {
 
   return (
-    <nav className="fixed top-0 left-0 bottom-0 w-3/4 h-screen pt-12 transform transition-[width] -translate-x-full will-change-transform bg-stone-900">
-    {/* <nav className="fixed top-0 left-0 right-0 w-full h-screen pt-12 transform transition-[height] -translate-y-full will-change-transform bg-sky-900"> */}
+    <nav className="fixed top-0 left-0 right-0 w-full h-screen pt-12 transform transition-[height] -translate-y-full will-change-transform bg-stone-900">
+      {/* <nav className="fixed top-0 left-0 bottom-0 w-3/4 h-screen pt-12 transform transition-[width] -translate-x-full will-change-transform bg-stone-900"> */}
       <ul className="flex flex-col gap-1 px-2 pb-10 h-full">
         <Link
           to="home"

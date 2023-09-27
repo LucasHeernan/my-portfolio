@@ -6,7 +6,7 @@ import "./tailwind.css";
 
 export default function App() {
   return (
-    <div className="font-['Poppins'] bg-white transition-colors duration-500 ease-in-out delay-75 dark:bg-[#2a2a2a]">
+    <div className="font-['Montserrat'] bg-white transition-colors duration-500 ease-in-out delay-75 dark:bg-[#2a2a2a]">
       <Routes>
         <Route path="/" element={ <Root /> } />
         <Route
