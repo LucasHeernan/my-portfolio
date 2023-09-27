@@ -28,6 +28,12 @@ export default function ProjectCard({ id, title, description, techs, image, repo
   const [more, setMore] = useState();
   const carouselRef = useRef(null);
   const [currentWidth, setCurrentWidth] = useState(0);
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const isMobile = window.matchMedia("(hover: none)").matches;
+    isMobile ? setMobile(true) : setMobile(false);
+  }, []);
 
   const updateCarouselWidth = () => {
     const carouselWidth = carouselRef.current.getBoundingClientRect().width;
@@ -53,11 +59,11 @@ export default function ProjectCard({ id, title, description, techs, image, repo
   
   return (
     <article
-      className="relative w-full h-full md:h-[calc(100%-24px)] flex shrink-0 transition-transform ease-in-out duration-700"
+      className="relative w-full h-full md:h-[calc(100%-24px)] flex shrink-0 transition-transform ease-in-out duration-700 bg-green-200"
       ref={carouselRef}
       style={{ transform: `translateX(-${curr * currentWidth}px)` }}
     >
-      <div className="absolute flex inset-y-4 pb-4 md:inset-y-5 md:px-3 md:pb-3 lg:inset-x-14 xl:inset-x-16">
+      <div className="absolute flex inset-y-4 pb-4 md:inset-y-5 md:px-3 md:pb-3 lg:inset-x-14 xl:inset-x-16 bg-green-300">
         <div className="hidden absolute left-6 top-3 w-[calc(100%-24px)] h-[calc(100%-12px)] bg-slate-700 dark:bg-slate-950 md:block"/>
         <div className="w-full h-full flex z-10 overflow-hidden md:shadow-lg md:shadow-black">
           <section

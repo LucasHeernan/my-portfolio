@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
-export default function ProjectImage({ images, phone }) {
+export default function ProjectImage({ images, phone, currentImg, setCurrentImg }) {
 
   const [left, setLeft] = useState(false);
   const [right, setRight] = useState(false);
-  const [currentImg, setCurrentImg] = useState(0);
   const [arrowL, setArrowL] = useState(false);
   const [arrowR, setArrowR] = useState(false);
 

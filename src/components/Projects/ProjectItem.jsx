@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ProjectImage from "./ProjectImage";
 import ProjectItemNavBar from "./ProjectItemNavBar";
 import ProjectItemFooter from "./ProjectItemFooter";
@@ -23,6 +23,8 @@ const techAnimations = {
 }
 
 export default function ProjectItem() {
+  
+  const [currentImg, setCurrentImg] = useState(0);
   const { id } = useParams();
   const project = projectsData.find((project) => project.id === Number(id.replace(":", "")));
 
@@ -33,12 +35,12 @@ export default function ProjectItem() {
   }, []);
   
   return (
-    <div className="w-full cursor-default font-['Montserrat']">
+    <div className="w-full cursor-default font-['Montserrat'] transition-colors duration-75 ease-in-out bg-white dark:bg-[#2a2a2a]">
       <ProjectItemNavBar />
-      <div className="max-w-7xl w-full flex flex-col mx-auto px-20 py-10 text-[#2a2a2a] dark:text-white">
-        <div className="relative z-0 flex items-center">
-          <h2 className="text-2xl font-bold pt-5 pb-5 tracking-wider uppercase sm:text-3xl lg:text-4xl">{project.title}</h2>
-          <h2 className="text-2xl font-bold pt-5 pb-5 tracking-wider uppercase absolute text-rose-300 top-[3px] -z-10 sm:text-3xl lg:text-4xl">{project.title}</h2>
+      <div className="max-w-7xl w-full flex flex-col mx-auto py-10 px-5 sm:px-10 md:px-16 lg:px-20 text-[#2a2a2a] dark:text-[#8a8a8a]">
+        <section className="relative z-0 w-full flex items-center">
+          <h2 className="text-3xl font-bold pt-5 pb-5 tracking-wider uppercase scale-y-110 text-[#2a2a2a] dark:text-[#cacaca] lg:scale-y-100 lg:text-4xl">{project.title}</h2>
+          {/* <h2 className="text-3xl font-bold pt-5 pb-5 tracking-wider uppercase scale-y-110 lg:scale-y-100 absolute text-white top-[3px] -z-10 lg:text-4xl">{project.title}</h2> */}
           <a
             href={`${project.repository}`}
             target="_blank"
@@ -46,37 +48,41 @@ export default function ProjectItem() {
           >
             <Github fill={"white"} className="w-6 h-6" />
           </a>
-          <div className="relative z-10 ml-5 group">
-            <a
-              href={`${project.repository}`}
-              target="_blank"
-              className="flex justify-center items-center p-1 rounded-full bg-gradient-to-tl from-indigo-100 to-indigo-200 border-b-2 border-r border-indigo-400 shadow-sm shadow-black transition-all duration-100 ease-out
-              group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:border-b group-active:border-r-0 group-active:to-indigo-300"
-            >
-              <Github className="w-6 h-6" />
-            </a>
-            <span
-              className="absolute flex justify-center items-center p-1 -z-10 top-px left-px w-[calc(100%+1px)] h-[calc(100%+1px)] rounded-full bg-slate-800 dark:bg-slate-950 transform transition-all ease-in-out duration-100
-              group-active:w-full group-active:h-full group-active:scale-90"
-            >
-              <Github className="w-6 h-6" />
-            </span>
-          </div>
-        </div>
-        <p className="text-base font-normal pr-32 pb-5 lg:text-lg lg:font-medium">{project.description}</p>
+        </section>
 
-        <div className={`w-full ${project.phone ? "h-[600px]" : "h-[380px]"} flex`}>
-          
-          <div className={`${project.phone ? "w-[45%]" : "w-1/2" } relative h-full before:w-full before:h-full before:absolute before:left-3 before:top-3 before:bg-slate-700`}>
-            <ProjectImage images={project.images} phone={project.phone} />
+        <p className="text-base font-medium pb-5 pr-5 md:text-lg md:pr-10 lg:pr-32">{project.description}</p>
+
+        <section className={`flex flex-col items-center ${project.phone ? "lg:h-[600px] lg:flex lg:flex-row lg:items-stretch" : "xl:h-[380px] xl:flex xl:flex-row xl:items-stretch"}`}>
+
+          <div className={`relative w-full mb-12 sm:mb-14 md:mb-20 ${project.phone ? "h-[480px] sm:w-4/6 sm:h-[490px] md:w-[60%] md:h-[510px] lg:w-[45%] lg:h-full" : "h-[315px] sm:w-[90%] sm:h-[380px] md:w-full md:h-[480px] lg:w-4/5 xl:w-1/2 xl:h-full" } before:w-full before:h-full before:absolute before:left-3 before:top-3 before:bg-slate-700 dark:before:bg-slate-950`}>
+            <ProjectImage
+              images={project.images}
+              phone={project.phone}
+              currentImg={currentImg}
+              setCurrentImg={setCurrentImg}
+            />
+            <div className="h-10 flex items-end justify-center sm:h-11 md:h-14">
+              <div className="flex items-center justify-center gap-4">
+                {
+                  project.images?.map((_, i) => (
+                    <div
+                      className={`w-3 h-3 rounded-full cursor-pointer transition-all bg-gray-600 dark:bg-slate-300 ${currentImg === i ? "p-[10px]" : "hover:scale-110 bg-opacity-50 dark:bg-opacity-50"}`}
+                      onClick={() => setCurrentImg(i)}
+                      key={i}
+                    />
+                  ))
+                }
+              </div>
+            </div>
           </div>
-          <div className={`${project.phone ? "w-[55%] pl-20" : "w-1/2 px-10"} h-full flex flex-col justify-around text-left`}>
-            <h3 className="text-4xl font-bold tracking-wide">Sobre este proyecto</h3>
-            <p className="text-lg font-medium">{project.description}</p>
+
+          <div className={`w-full flex flex-col text-left ${project.phone ? "lg:w-[55%] lg:pl-20 lg:justify-around" : "xl:w-1/2 xl:px-10 xl:justify-evenly"}`}>
+            <h3 className="text-3xl font-bold tracking-wide pb-2 text-[#2a2a2a] dark:text-[#cacaca] lg:pb-0">Sobre este proyecto</h3>
+            <p className="text-base md:text-lg font-medium">{project.description}</p>
             <div className="flex flex-col">
-              <h4 className="text-3xl font-bold tracking-wide py-3">Tecnologías</h4>
+              <h4 className="text-3xl font-bold tracking-wide py-3 lg:py-0 text-[#2a2a2a] dark:text-[#cacaca]">Tecnologías</h4>
               <div className="relative">
-                <div className="absolute truncate">
+                <div className="absolute">
                   {
                     project.techs.map((el, index) => {
                       return (
@@ -87,7 +93,7 @@ export default function ProjectItem() {
                           whileInView="animate"
                           custom={index}
                           viewport={{ once: true }}
-                          className="inline-block p-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] mr-3 relative overflow-hidden box-border
+                          className="inline-block p-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-sm shadow-sm shadow-[rgba(0,0,0,.25)] mr-3 md:mr-4 relative overflow-hidden box-border
                           before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                           after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
                         >
@@ -100,13 +106,31 @@ export default function ProjectItem() {
               </div>
             </div>
           </div>
-          
-        </div>
+
+        </section>
         <ProjectItemFooter />
       </div>
     </div>
   )
 }
+
+//                                           BOTON HECHO POR MÍ
+// <div className="relative z-10 ml-5 group">
+//   <a
+//     href={`${project.repository}`}
+//     target="_blank"
+//     className="flex justify-center items-center p-1 rounded-full bg-gradient-to-tl from-indigo-100 to-indigo-200 border-b-2 border-r border-indigo-400 shadow-sm shadow-black transition-all duration-100 ease-out
+//     group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:border-b group-active:border-r-0 group-active:to-indigo-300"
+//   >
+//     <Github className="w-6 h-6" />
+//   </a>
+//   <span
+//     className="absolute flex justify-center items-center p-1 -z-10 top-px left-px w-[calc(100%+1px)] h-[calc(100%+1px)] rounded-full bg-slate-800 dark:bg-slate-950 transform transition-all ease-in-out duration-100
+//     group-active:w-full group-active:h-full group-active:scale-90"
+//   >
+//     <Github className="w-6 h-6" />
+//   </span>
+// </div>
 
 // <motion.a
 //   href={`${project.repository}`}

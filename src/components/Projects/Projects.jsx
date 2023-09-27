@@ -88,7 +88,7 @@ export default function Projects() {
               {
                 slides.map((_, i) => (
                   <div
-                    className={`w-3 h-3 rounded-full cursor-pointer transition-all bg-gray-600 dark:bg-slate-300 md:w-4 md:h-4 ${curr === i ? "p-[10px] md:p-3" : "bg-opacity-50 dark:bg-opacity-50"}`}
+                    className={`w-3 h-3 rounded-full cursor-pointer transition-all bg-gray-600 dark:bg-slate-300 ${curr === i ? "p-[10px]" : "hover:scale-110 bg-opacity-50 dark:bg-opacity-50"}`}
                     onClick={() => goToSlide(i)}
                     key={i}
                   />

@@ -4,7 +4,7 @@ import AnimatedContainer from "../Home/AnimatedContainer";
 export default function () {
 
   return (
-    <footer className="pt-20 text-center font-['Montserrat']">
+    <footer className="w-full pt-32 text-center cursor-default font-['Montserrat']">
       <h4 className="text-[#2a2a2a] dark:text-[#CACACA] text-xl font-bold mb-0.5">Let's talk</h4>
       <p className="text-[#2a2a2a] dark:text-[#8A8A8A] text-base font-medium">
         Wanna get in touch or talk about a project?

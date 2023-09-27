@@ -25,7 +25,7 @@ export default function Home() {
           {/* <h1 className="uppercase text-[25px] font-black sm:text-[37px] md:text-[46px] lg:text-[61px] xl:text-[76px]"> */}
           {/* <h1 className="uppercase text-[25px] font-['Roboto'] font-black sm:text-[39px] md:text-[48px] lg:text-[64px] xl:text-[78px]"> */}
           {/* <h1 className="uppercase text-3xl font-['Roboto_Condensed'] font-bold sm:text-[45px] sm:leading-tight md:text-[56px] lg:text-[74px] xl:text-[92px]"> */}
-          <h1 className="uppercase text-[16px] font-['Montserrat'] font-black sm:text-[34px] md:text-[41px] lg:text-[54px] xl:text-[68px]">
+          <h1 className="uppercase text-[20px] font-['Montserrat'] font-black sm:text-[34px] md:text-[41px] lg:text-[54px] xl:text-[68px]">
             <AnimatedLetters
               text={name}
               time={0}
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
         
         <div className="w-full py-2">
-          <p className="text-sm font-medium sm:w-5/6 sm:text-base md:w-5/6 md:font-semibold lg:text-xl lg:leading-[1.95rem] lg:w-5/6 xl:w-5/6">
+          <p className="text-sm font-medium sm:w-5/6 sm:text-base md:w-5/6 lg:text-xl lg:leading-[1.95rem] lg:w-5/6 xl:w-5/6">
             Full Stack developer orientado al <AnimatedContainer words={"Front end"} /> con
             experiencia en desarrollo de <AnimatedContainer words={"aplicaciones web"} /> y
             mobile en Javascript con ReactJS, React Native, Redux, NodeJS, Express, <AnimatedContainer words={"PostgreSQL"} />
