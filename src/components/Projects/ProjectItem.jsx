@@ -26,7 +26,7 @@ export default function ProjectItem() {
   
   const [currentImg, setCurrentImg] = useState(0);
   const { id } = useParams();
-  const project = projectsData.find((project) => project.id === Number(id.replace(":", "")));
+  const project = projectsData.find((project) => project.id === Number(id));
 
   useEffect(() => {
     setTimeout(() => {

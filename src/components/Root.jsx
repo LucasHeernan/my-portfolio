@@ -16,3 +16,7 @@ export default function Root() {
     </div>
   )
 }
+
+// snap-y ---> snap-mandatory ---> AL CONTENEDOR
+// snap-start ---> A CADA COMPONENTE
+// snap-always ---> PARA MOBILE QUE RESPETE EL SCROLL

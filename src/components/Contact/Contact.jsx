@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Whatsapp, Email } from "../Technologies/Icons";
 import { motion } from "framer-motion";
 
-const CustomLink = ({ href, Icon, name, username }) => {
+const CustomLink = ({ href, name, username }) => {
   const [hover, setHover] = useState("right-0");
   const handleHover = () => setHover("left-0");
   const handleHoverLeave = () => setHover("right-0");
@@ -13,14 +12,12 @@ const CustomLink = ({ href, Icon, name, username }) => {
       target="_blank"
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
-      className="relative flex flex-row justify-between items-baseline my-6 mr-5 lg:mr-10 lg:my-[22px] xl:my-6 xl:mr-20 border-b border-slate-600/20 dark:border-slate-400 pb-2 transition-colors duration-200 ease-in-out group"
+      className="relative flex flex-row justify-between items-baseline font-['Poppins'] my-6 mr-5 pb-2 border-b border-slate-600/20 text-base text-[#2a2a2a] dark:text-white
+      transition-colors duration-200 ease-in-out lg:mr-10 lg:my-[22px] xl:my-6 xl:mr-20 dark:border-slate-400 group"
     >
-      <span className={`absolute ${hover} -bottom-px w-0 h-0.5 transform transition-[width] ease-in-out duration-300 group-hover:w-full ${name === "Email" ? "bg-black" : name === "Linkedin" ? "bg-blue-400" : name === "Github" ? "bg-violet-500" : "bg-green-500" }`}>&nbsp;</span>
-      {/* <div className="flex gap-3 text-[15px] text-black dark:text-white lg:text-lg"> */}
-        {/* <Icon className="w-5 h-5 z-10 text-white" /> */}
-        <p>{name}</p>
-      {/* </div> */}
-      <p className="text-[15px] text-black dark:text-white">{username}</p>
+      <span className={`absolute ${hover} -bottom-px w-0 h-0.5 transform transition-[width] ease-in-out duration-300 group-hover:w-full ${name === "Email" ? "bg-black dark:bg-white" : name === "Linkedin" ? "bg-blue-400" : name === "Github" ? "bg-violet-500" : "bg-green-500" }`}>&nbsp;</span>
+      <p>{name}</p>
+      <p>{username}</p>
     </a>
   )
 }
@@ -54,16 +51,16 @@ export default function Contact () {
   return (
     <div name="contact" className="w-full h-screen cursor-default">
       <div className="max-w-7xl w-full h-full mx-auto px-5 flex flex-col md:flex-row lg:px-7 xl:px-10">
-      {/* <div className="max-w-7xl w-full h-full mx-auto px-5 flex flex-col md:flex-row lg:px-7 xl:px-10 bg-white sm:bg-yellow-200 md:bg-white lg:bg-red-200 xl:bg-white"> */}
+      {/* bg-white sm:bg-yellow-200 md:bg-white lg:bg-red-200 xl:bg-white */}
 
-        <section className="md:flex md:flex-col md:w-1/2 text-black dark:text-white">
+        <section className="md:flex md:flex-col md:w-1/2 text-[#2a2a2a] dark:text-white">
           <h2 className="text-2xl font-bold pt-14 pb-1 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Contacto</h2>
-          <p className="text-base font-normal md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:font-normal lg:pr-10">No dudes en avisarme sobre posibles proyectos, colaboraciones o simplemente para saludar pepe.</p>
+          <p className="text-base font-medium md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:pr-10">No dudes en avisarme sobre posibles proyectos, colaboraciones o simplemente para saludar pepe.</p>
           <ul className="hidden md:flex flex-col py-2 md:py-4 xl:py-5">
-            <CustomLink href={"mailto:lhbenitez2@gmail.com"} Icon={Email} name={"Email"} username={"lhbenitez2@gmail.com"} />
-            <CustomLink href={"https://www.linkedin.com/in/lucas-h-benitez"} Icon={Linkedin} name={"Linkedin"} username={"LucasHeernan"} />
-            <CustomLink href={"https://github.com/LucasHeernan"} Icon={Github} name={"Github"} username={"LucasHeernan"} />
-            <CustomLink href={link} Icon={Whatsapp} name={"Whatsapp"} username={"+5491134921341"} />
+            <CustomLink href={"mailto:lhbenitez2@gmail.com"} name={"Email"} username={"lhbenitez2@gmail.com"} />
+            <CustomLink href={"https://www.linkedin.com/in/lucas-h-benitez"} name={"Linkedin"} username={"LucasHeernan"} />
+            <CustomLink href={"https://github.com/LucasHeernan"} name={"Github"} username={"LucasHeernan"} />
+            <CustomLink href={link} name={"Whatsapp"} username={"+5491134921341"} />
           </ul>
         </section>
 
@@ -72,15 +69,14 @@ export default function Contact () {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="w-full flex flex-col items-center md:w-1/2 md:justify-end md:pb-8"
+          className="w-full flex flex-col items-center text-base font-medium md:w-1/2 md:justify-end md:pb-8"
         >
-          
           <motion.div
             variants={item}
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact"
+              className="w-full py-3 px-5 bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact"
               type="text"
               placeholder="Nombre"
             />
@@ -91,30 +87,28 @@ export default function Contact () {
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact"
+              className="w-full py-3 px-5 bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact"
               type="email"
               placeholder="Correo electrónico"
             />
             <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
           </motion.div>
-          
           <motion.div
             variants={item}
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 text-base font-normal bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact"
+              className="w-full py-3 px-5 bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact"
               type="text"
               placeholder="Asunto"
             />
             <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
           </motion.div>
-          
           <motion.div
             variants={item}
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
-            <textarea className="w-full pt-3 px-5 text-base font-normal rounded-sm resize-none bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact" name="mensaje" placeholder="Mensaje" rows="6" />
+            <textarea className="w-full pt-3 px-5 rounded-sm resize-none bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact" name="mensaje" placeholder="Mensaje" rows="6" />
             <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
           </motion.div>
           <motion.div

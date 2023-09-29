@@ -39,7 +39,7 @@ export default function Projects() {
     <div name="projects" className="w-full h-screen cursor-default">
       <div className="max-w-7xl w-full h-full flex flex-col mx-auto text-[#2a2a2a] dark:text-white px-5 lg:px-7 xl:px-10">
         <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Proyectos</h2>
-        <p className="text-base font-normal md:pt-1 lg:text-lg lg:font-normal lg:pr-20">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore sint dolorum dolor. Recusandae, quam! Est alias aliquam labore doloribus, ducimus facere ullam corporis recusandae reprehenderit quaerat consectetur vitae ipsum accusamus!</p>
+        <p className="text-base font-medium md:pt-1 lg:text-lg lg:pr-20">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore sint dolorum dolor. Recusandae, quam! Est alias aliquam labore doloribus, ducimus facere ullam corporis recusandae reprehenderit quaerat consectetur vitae ipsum accusamus!</p>
         <div className="w-full h-full flex relative overflow-hidden">
 
           {
