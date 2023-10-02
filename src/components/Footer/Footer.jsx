@@ -14,12 +14,12 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="w-full cursor-default font-['Montserrat']">
+    <footer className="w-full cursor-default font-montserrat">
       <div className="max-w-7xl w-full mx-auto px-5 pb-7 pt-20 text-[#2a2a2a] dark:text-white lg:px-7 lg:pt-28 xl:px-10">
         <section className="flex justify-between items-center">
           <div className="flex items-center">
             <img className="w-10 h-10 rounded-full -rotate-[18deg] object-scale-down bg-gradient-to-bl from-indigo-300 via-purple-400 to-sky-900 shadow-sm shadow-black lg:w-14 lg:h-14" src={profilePicture} alt="profile picture" />
-            <p className="text-base font-normal font-['Poppins'] uppercase pl-2 lg:text-2xl">Lucas Benitez</p>
+            <p className="text-base font-normal font-poppins uppercase pl-2 lg:text-2xl">Lucas Benitez</p>
           </div>
           <div className="flex items-center opacity-90">
             <motion.a
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
         </section>
 
-        <section className="flex justify-between items-center font-['Poppins'] py-1">
+        <section className="flex justify-between items-center font-poppins py-1">
           {/* <div className="text-xs font-medium lg:text-sm lg:font-light"> */}
           <div className="text-xs font-medium lg:text-sm lg:font-light">
             <p>Copyright &copy; 2023 | All rights reserved.</p>

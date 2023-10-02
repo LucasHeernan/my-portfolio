@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProjectImage from "./ProjectImage";
-import ProjectItemNavBar from "./ProjectItemNavBar";
+import ProjectNavBar from "./ProjectNavBar";
 import ProjectItemFooter from "./ProjectItemFooter";
 import { Github } from "../Technologies/Icons";
 import { projectsData } from "../../assets/projects/projectsData";
@@ -36,7 +36,7 @@ export default function ProjectItem() {
   
   return (
     <div className="w-full cursor-default font-['Montserrat'] transition-colors duration-75 ease-in-out bg-white dark:bg-[#2a2a2a]">
-      <ProjectItemNavBar />
+      <ProjectNavBar />
       <div className="max-w-7xl w-full flex flex-col mx-auto py-10 px-5 sm:px-10 md:px-16 lg:px-20 text-[#2a2a2a] dark:text-[#8a8a8a]">
         <section className="relative z-0 w-full flex items-center">
           <h2 className="text-3xl font-bold pt-5 pb-5 tracking-wider uppercase scale-y-110 text-[#2a2a2a] dark:text-[#cacaca] lg:scale-y-100 lg:text-4xl">{project.title}</h2>

@@ -4,7 +4,7 @@ import ThemeSwitcher from "../../ThemeSwitcher";
 import { useNavigate } from "react-router-dom";
 import { ArrowBack } from "../Technologies/Icons";
 
-export default function ProjectItemNavBar() {
+export default function ProjectNavBar() {
 
   const navigate = useNavigate();
   const [mode, setMode] = ThemeSwitcher();
@@ -16,7 +16,7 @@ export default function ProjectItemNavBar() {
           onClick={() => { navigate(-1) }}
           className="w-8 h-8 rounded-full flex justify-center items-center md:w-9 md:h-9"
         >
-          <ArrowBack className={"w-8 h-8 p-1 rounded-full bg-violet-300 active:bg-violet-400 md:w-9 md:h-9 dark:bg-black"} arrow={"#fff"} />
+          <ArrowBack className={"w-8 h-8 p-1 rounded-full md:w-9 md:h-9 active:bg-violet-300 dark:active:bg-slate-400"} arrow={ mode === "dark" ? "white" : "#2a2a2a"} />
           {/* <ArrowBack className={"w-8 h-8 p-1 rounded-full bg-violet-300 active:bg-violet-400 md:w-9 md:h-9 dark:bg-black"} arrow={"#2a2a2a"} /> */}
         </button>
         <button

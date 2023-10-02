@@ -12,7 +12,7 @@ const CustomLink = ({ href, name, username }) => {
       target="_blank"
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
-      className="relative flex flex-row justify-between items-baseline font-['Poppins'] my-6 mr-5 pb-2 border-b border-slate-600/20 text-base text-[#2a2a2a] dark:text-white
+      className="relative flex flex-row justify-between items-baseline font-poppins my-6 mr-5 pb-2 border-b border-slate-600/20 text-base text-[#2a2a2a] dark:text-white
       transition-colors duration-200 ease-in-out lg:mr-10 lg:my-[22px] xl:my-6 xl:mr-20 dark:border-slate-400 group"
     >
       <span className={`absolute ${hover} -bottom-px w-0 h-0.5 transform transition-[width] ease-in-out duration-300 group-hover:w-full ${name === "Email" ? "bg-black dark:bg-white" : name === "Linkedin" ? "bg-blue-400" : name === "Github" ? "bg-violet-500" : "bg-green-500" }`}>&nbsp;</span>
