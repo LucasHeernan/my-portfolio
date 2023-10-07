@@ -1,7 +1,7 @@
 import React from "react";
 import AnimatedContainer from "../Home/AnimatedContainer";
 
-export default function () {
+export default function ProjectFooter () {
 
   return (
     <footer className="w-full pt-32 text-center cursor-default font-montserrat">

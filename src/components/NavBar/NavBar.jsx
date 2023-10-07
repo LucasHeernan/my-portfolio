@@ -16,7 +16,7 @@ const CustomLink = ({ to, title }) => {
       duration={500}
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
-      className="relative cursor-pointer text-base font-medium uppercase font-['Poppins'] group">{title}
+      className="relative cursor-pointer text-base font-medium uppercase font-poppins group">{title}
       <span className={`absolute ${hover} -bottom-0.5 w-0 h-0.5 inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full bg-blue-400`}>&nbsp;</span>
     </Link>
   )
@@ -37,9 +37,9 @@ export default function NavBar() {
     <header className={`fixed w-full z-40 items-center py-1 md:py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl dark:shadow-lg dark:shadow-neutral-900" : ""}`}>
       <nav className="relative flex max-w-7xl mx-auto justify-between px-5 lg:px-7 xl:px-10">
 
-        <div className="hidden items-center gap-5 text-[#2a2a2a] dark:text-white md:flex">
+        <div className="hidden items-center gap-5 text-[#2a2a2a] dark:text-[#fff] md:flex">
           <CustomLink to="home" title="Inicio" />
-          <CustomLink to="home" title="Sobre mi" />
+          {/* <CustomLink to="home" title="Sobre mi" /> */}
           <CustomLink to="home" title="Tecnologías" />
           <CustomLink to="projects" title="Proyectos" />
           <CustomLink to="contact" title="Contacto" />

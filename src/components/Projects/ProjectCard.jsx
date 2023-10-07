@@ -84,7 +84,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
                 onMouseEnter={handleHover}
                 onMouseLeave={handleLeave}
               >
-                <h3 className="absolute top-0 left-1 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-indigo-200 sm:text-[22px] sm:font-bold sm:py-6 blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] group-hover:hidden md:hidden">{title}</h3>
+                <h3 className="absolute top-0 left-1 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-[#cacaca] sm:text-[22px] sm:font-bold sm:py-6 blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] group-hover:hidden md:hidden">{title}</h3>
                 <h3 className="absolute -top-[2px] left-0.5 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-black sm:text-[22px] sm:font-bold sm:py-6 blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] group-hover:text-[#2a2a2a] md:hidden">{title}</h3>
                 <Link to={`/${id}`}>
                   <img src={image} alt="pepe" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"} blur-0 transition-all duration-200 ease-linear group-hover:blur-[1px] md:group-hover:blur-0 group-hover:scale-105`}/>
@@ -93,7 +93,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
 
                 <div className="absolute block top-0 left-0 right-0 mx-auto w-4/5 h-0 sm:w-1/2 group-hover:h-full md:group-hover:hidden">
                   <div className="hidden relative w-full h-full group-hover:flex group-hover:items-center">
-                    <ul className="block text-center relative">
+                    <ul className="block text-center relative font-poppins">
                       {
                         techs.map((el, index) => {
                           return (
@@ -103,7 +103,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
                               initial="initial"
                               whileInView="animate"
                               custom={index}
-                              className="inline-block p-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] mx-2 relative overflow-hidden box-border
+                              className="inline-block p-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] mx-2 relative overflow-hidden box-border
                               before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                               after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
                             >
@@ -119,24 +119,24 @@ export default function ProjectCard({ id, title, description, techs, image, repo
                 <div className={`hidden absolute bottom-10 left-[calc(50%-45px)] z-10 ${more ? "group-hover:block" : "" } group-hover:animate-bounceInUp md:group-hover:hidden`}>
                   <Link
                     to={`/${id}`}
-                    className="inline-block p-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] ml-2 relative overflow-hidden box-border cursor-pointer
+                    className="inline-block p-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] ml-2 relative overflow-hidden box-border cursor-pointer
                     before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                     after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
                   >
-                    <span className="relative z-20">ver más</span>
+                    <span className="relative z-20 font-poppins">ver más</span>
                   </Link>
                 </div>
               </section>
             )
           }
 
-          <section className={`hidden md:flex w-[55%] h-full flex-col justify-evenly py-10 text-black dark:text-white ${!phone ? "md:pl-5" : ""} lg:pl-8 lg:py-5 bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100 dark:from-indigo-300 dark:via-indigo-400 dark:to-indigo-500`}>
+          <section className={`hidden md:flex w-[55%] h-full flex-col justify-evenly py-10 text-[#2a2a2a] ${!phone ? "md:pl-5" : ""} lg:pl-8 lg:py-5 bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100 dark:from-indigo-300 dark:via-indigo-400 dark:to-indigo-500`}>
             <h3 className="uppercase md:text-2xl md:font-semibold lg:text-3xl">{title}</h3>
-            <p className="text-base xl:text-lg font-normal pr-4">{description}</p>
-            <div className="w-full flex">
+            <p className="text-base font-normal pr-4 xl:text-lg lg:font-medium">{description}</p>
+            <div className="w-full flex font-poppins">
               <Link
                 to={`/${id}`}
-                className="inline-block px-3 py-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-[15px] tracking-wider shadow-md shadow-[rgba(0,0,0,.75)] mr-7 relative overflow-hidden cursor-pointer
+                className="inline-block px-3 py-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-[15px] tracking-wider shadow-sm shadow-[rgba(0,0,0,.75)] mr-7 relative overflow-hidden cursor-pointer
                 before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                 after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
               >
@@ -145,7 +145,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
               <a
                 href={repository}
                 target="_blank"
-                className="inline-block px-3 py-1 bg-[#313131] text-[#999] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-[15px] tracking-wider shadow-md shadow-[rgba(0,0,0,.50)] relative overflow-hidden cursor-pointer
+                className="inline-block px-3 py-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-[15px] tracking-wider shadow-sm shadow-[rgba(0,0,0,.50)] relative overflow-hidden cursor-pointer
                 before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                 after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
               >

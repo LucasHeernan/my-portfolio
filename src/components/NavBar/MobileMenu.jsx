@@ -7,15 +7,13 @@ function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
-    isOpen ? 
+    isOpen ?
     animate([
-      // [ "nav", { transform: "translateX(0%)" }, { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.5 } ],
       [ "nav", { transform: "translateY(0%)" }, { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.5 } ],
-      [ "a", { transform: "scale(1)", opacity: 1, filter: "blur(0px)" }, { delay: stagger(0.05) } ]
+      [ "a", { transform: "scaleX(1) scaleY(1)", opacity: 1, filter: "blur(0px)" }, { delay: stagger(0.05) } ]
     ]) :
     animate([
-      [ "a", { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" }, { delay: stagger(0.05, { from: "last" }) } ],
-      // [ "nav", { transform: "translateX(-100%)" } ]
+      [ "a", { transform: "scaleX(0) scaleY(0)", opacity: 0, filter: "blur(10px)" }, { delay: stagger(0.05, { from: "last" }) } ],
       [ "nav", { transform: "translateY(-100%)" } ]
     ])
   }, [isOpen]);

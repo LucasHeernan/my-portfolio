@@ -19,13 +19,10 @@ export default function Home() {
 
   return (
     <div name="home" className="w-full h-screen cursor-default">
-      <div className="w-full h-full max-w-7xl mx-auto flex flex-col px-5 pt-36 text-[#2a2a2a] dark:text-white md:pt-32 lg:px-7 xl:px-10 xl:pt-32">
-        <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60">
-        {/* <div className="w-full h-24 sm:h-32 md:h-40 lg:h-52 xl:h-60 bg-green-200 sm:bg-yellow-200 md:bg-orange-300 lg:bg-red-300 xl:bg-fuchsia-400"> */}
-          {/* <h1 className="uppercase text-[25px] font-black sm:text-[37px] md:text-[46px] lg:text-[61px] xl:text-[76px]"> */}
-          {/* <h1 className="uppercase text-[25px] font-['Roboto'] font-black sm:text-[39px] md:text-[48px] lg:text-[64px] xl:text-[78px]"> */}
-          {/* <h1 className="uppercase text-3xl font-['Roboto_Condensed'] font-bold sm:text-[45px] sm:leading-tight md:text-[56px] lg:text-[74px] xl:text-[92px]"> */}
-          <h1 className="uppercase text-[20px] font-montserrat font-black sm:text-[34px] md:text-[41px] lg:text-[54px] xl:text-[68px]">
+      <div className="w-full h-full max-w-7xl mx-auto flex flex-col px-5 pt-36 text-[#2a2a2a] dark:text-[#fff] md:pt-32 lg:px-7 xl:px-10 xl:pt-32">
+      {/* bg-green-200 sm:bg-green-300 md:bg-green-500 lg:bg-sky-300 xl:bg-purple-300 */}
+        <div className="w-full h-24 sm:h-32 md:h-40 lg:h-48 xl:h-56">
+          <h1 className="uppercase text-[20px] font-extrabold sm:text-[34px] md:text-[41px] lg:text-[54px] xl:text-[68px]">
             <AnimatedLetters
               text={name}
               time={0}
@@ -37,20 +34,19 @@ export default function Home() {
           </h1>
         </div>
         
-        <div className="w-full py-2">
-          <p className="text-sm font-medium sm:w-5/6 sm:text-base md:w-5/6 lg:text-xl lg:leading-[1.95rem] lg:w-5/6 xl:w-5/6">
+        <div className="w-full py-10 lg:py-5 text-[#2a2a2a] dark:text-[#9a9a9a]">
+          <p className="text-base font-medium w-[90%] sm:w-5/6 md:text-lg lg:text-xl lg:leading-[1.95rem]">
             Full Stack developer orientado al <AnimatedContainer words={"Front end"} /> con
             experiencia en desarrollo de <AnimatedContainer words={"aplicaciones web"} /> y
-            mobile en Javascript con ReactJS, React Native, Redux, NodeJS, Express, <AnimatedContainer words={"PostgreSQL"} />
+            mobile en Javascript con ReactJS, React Native, Redux, NodeJS, Express, <AnimatedContainer words={"PostgreSQL"} />.
           </p>
         </div>
         
-        <div className="w-full pt-2">
-          <div className="w-full flex">
-            <Link
-              to="contact"
-              smooth={true}
-              duration={500}
+        <div className="w-full py-6">
+          <div className="w-full flex font-poppins">
+            {/* <a
+              href="mailto:lhbenitez2@gmail.com"
+              target="_blank"
               className="relative z-10 mt-2 mr-5 group md:mt-5"
             >
               <button
@@ -63,16 +59,35 @@ export default function Home() {
                 group-hover:w-[159px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[155px]
                 uppercase text-sm font-semibold"
               />
+            </a> */}
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              className="relative z-10 mt-2 mr-5 group md:mt-5 sm:mr-8 lg:mr-10"
+            >
+              <button
+                className="w-40 py-2 rounded bg-gradient-to-b from-[#DB8472] to-[#9E6271] border-b-[3px] border-r-2 border-[#5A4757] shadow-sm shadow-black transition-all duration-100 ease-out
+                group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:bg-gradient-to-t group-active:from-indigo-200 group-active:to-indigo-200"
+              >
+                <span className="uppercase text-sm font-semibold text-[#fff]">contacto</span>
+              </button>
+              <span
+                className="absolute -z-10 top-1 left-[3px] w-40 h-full rounded bg-[#2A2A2A] dark:bg-slate-950
+                group-hover:w-[159px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[155px]
+                uppercase text-sm font-semibold"
+              />
             </Link>
             <div className="relative z-10 mt-2 group md:mt-5">
               <button
                 onClick={downloadPdf}
-                className="w-40 py-2 rounded bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-[3px] border-r-2 border-indigo-300 shadow-sm shadow-black transition-all duration-100 ease-out
-                group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:bg-gradient-to-t group-active:from-indigo-200 group-active:to-indigo-200">
-                <span className="uppercase text-sm font-semibold text-black">descargar cv</span>
+                className="w-40 py-2 rounded bg-gradient-to-b from-[#DB8472] to-[#9E6271] border-b-[3px] border-r-2 border-[#5A4757] shadow-sm shadow-black transition-all duration-100 ease-out
+                group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:bg-gradient-to-t group-active:from-indigo-200 group-active:to-indigo-200"
+              >
+                <span className="uppercase text-sm font-semibold text-[#fff]">descargar cv</span>
               </button>
               <span
-                className="absolute -z-10 top-1 left-[3px] w-40 h-full rounded-bl-md rounded-br-md rounded-tr-md bg-slate-800 dark:bg-slate-950
+                className="absolute -z-10 top-1 left-[3px] w-40 h-full rounded bg-[#2A2A2A] dark:bg-slate-950
                 group-hover:w-[159px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[155px]
                 uppercase text-sm font-semibold"
               />

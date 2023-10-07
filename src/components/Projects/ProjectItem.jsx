@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProjectImage from "./ProjectImage";
 import ProjectNavBar from "./ProjectNavBar";
-import ProjectItemFooter from "./ProjectItemFooter";
+import ProjectFooter from "./ProjectFooter";
 import { Github } from "../Technologies/Icons";
 import { projectsData } from "../../assets/projects/projectsData";
 import { useParams } from "react-router-dom";
@@ -39,8 +39,8 @@ export default function ProjectItem() {
       <ProjectNavBar />
       <div className="max-w-7xl w-full flex flex-col mx-auto py-10 px-5 sm:px-10 md:px-16 lg:px-20 text-[#2a2a2a] dark:text-[#8a8a8a]">
         <section className="relative z-0 w-full flex items-center">
-          <h2 className="text-3xl font-bold pt-5 pb-5 tracking-wider uppercase scale-y-110 text-[#2a2a2a] dark:text-[#cacaca] lg:scale-y-100 lg:text-4xl">{project.title}</h2>
-          {/* <h2 className="text-3xl font-bold pt-5 pb-5 tracking-wider uppercase scale-y-110 lg:scale-y-100 absolute text-white top-[3px] -z-10 lg:text-4xl">{project.title}</h2> */}
+          <h2 className="text-3xl font-bold pt-5 pb-5 tracking-wider uppercase scale-y-110 lg:scale-y-100 lg:text-4xl text-[#2a2a2a] dark:text-[#cacaca]">{project.title}</h2>
+          <h2 className="text-3xl font-bold pt-5 pb-5 tracking-wider uppercase scale-y-110 lg:scale-y-100 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">{project.title}</h2>
           <a
             href={`${project.repository}`}
             target="_blank"
@@ -80,7 +80,7 @@ export default function ProjectItem() {
             <h3 className="text-3xl font-bold tracking-wide pb-2 text-[#2a2a2a] dark:text-[#cacaca] lg:pb-0">Sobre este proyecto</h3>
             <p className="text-base md:text-lg font-medium">{project.description}</p>
             <div className="flex flex-col">
-              <h4 className="text-3xl font-bold tracking-wide py-3 lg:py-0 text-[#2a2a2a] dark:text-[#cacaca]">Tecnologías</h4>
+              <h4 className="text-3xl font-bold tracking-wide py-3 text-[#2a2a2a] dark:text-[#cacaca]">Tecnologías</h4>
               <div className="relative">
                 <div className="absolute">
                   {
@@ -97,7 +97,7 @@ export default function ProjectItem() {
                           before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                           after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
                         >
-                          <span className="relative z-20">{el}</span>
+                          <span className="relative z-20 font-poppins">{el}</span>
                         </motion.div>
                       )
                     })
@@ -108,7 +108,7 @@ export default function ProjectItem() {
           </div>
 
         </section>
-        <ProjectItemFooter />
+        <ProjectFooter />
       </div>
     </div>
   )

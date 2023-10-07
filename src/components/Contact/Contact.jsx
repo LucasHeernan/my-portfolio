@@ -12,8 +12,8 @@ const CustomLink = ({ href, name, username }) => {
       target="_blank"
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
-      className="relative flex flex-row justify-between items-baseline font-poppins my-6 mr-5 pb-2 border-b border-slate-600/20 text-base text-[#2a2a2a] dark:text-white
-      transition-colors duration-200 ease-in-out lg:mr-10 lg:my-[22px] xl:my-6 xl:mr-20 dark:border-slate-400 group"
+      className="relative flex flex-row justify-between items-baseline font-poppins my-6 mr-5 pb-2 border-b border-[#9a9a9a] text-base text-[#2a2a2a] dark:text-[#cacaca]
+      transition-colors duration-200 ease-in-out lg:mr-10 lg:my-[22px] xl:my-6 xl:mr-20 dark:border-[#8a8a8a] group"
     >
       <span className={`absolute ${hover} -bottom-px w-0 h-0.5 transform transition-[width] ease-in-out duration-300 group-hover:w-full ${name === "Email" ? "bg-black dark:bg-white" : name === "Linkedin" ? "bg-blue-400" : name === "Github" ? "bg-violet-500" : "bg-green-500" }`}>&nbsp;</span>
       <p>{name}</p>
@@ -36,26 +36,52 @@ const container = {
   }
 }
 
-const item = {initial: { opacity: 0 }, animate: { opacity: 1, transition: { duration: 1, ease: [0.25, 0.25, 0.25, 0.75] } }};
+const item = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 1, ease: [0.25, 0.25, 0.25, 0.75] } }
+};
 
 export default function Contact () {
 
   const [link, setLink] = useState("");
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  function handleChange(e) {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(input);
+    setInput({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
+  }
 
   useEffect(() => {
     const isMobile = window.matchMedia("(hover: none)").matches;
     isMobile ? setLink("whatsapp://send?text=Hola! 👋🏼&phone=5491134921341") : setLink("https://web.whatsapp.com/send?phone=5491134921341&text=Hola! 👋🏼");
   }, []);
 
-
   return (
     <div name="contact" className="w-full h-screen cursor-default">
       <div className="max-w-7xl w-full h-full mx-auto px-5 flex flex-col md:flex-row lg:px-7 xl:px-10">
-      {/* bg-white sm:bg-yellow-200 md:bg-white lg:bg-red-200 xl:bg-white */}
 
-        <section className="md:flex md:flex-col md:w-1/2 text-[#2a2a2a] dark:text-white">
+        <section className="relative z-0 md:flex md:flex-col md:w-1/2">
           <h2 className="text-2xl font-bold pt-14 pb-1 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Contacto</h2>
-          <p className="text-base font-medium md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:pr-10">No dudes en avisarme sobre posibles proyectos, colaboraciones o simplemente para saludar pepe.</p>
+          <h2 className="text-2xl font-bold pt-14 pb-1 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Contacto</h2>
+          <p className="text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:pr-10">No dudes en avisarme sobre posibles proyectos, colaboraciones o simplemente para saludar pepe.</p>
           <ul className="hidden md:flex flex-col py-2 md:py-4 xl:py-5">
             <CustomLink href={"mailto:lhbenitez2@gmail.com"} name={"Email"} username={"lhbenitez2@gmail.com"} />
             <CustomLink href={"https://www.linkedin.com/in/lucas-h-benitez"} name={"Linkedin"} username={"LucasHeernan"} />
@@ -64,19 +90,22 @@ export default function Contact () {
           </ul>
         </section>
 
-        <motion.section
+        <motion.form
+          onSubmit={handleSubmit}
           variants={container}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="w-full flex flex-col items-center text-base font-medium md:w-1/2 md:justify-end md:pb-8"
+          className="w-full flex flex-col items-center text-[#2a2a2a] text-base font-medium md:w-1/2 md:justify-end md:pb-8"
         >
           <motion.div
             variants={item}
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact"
+              name="name"
+              onChange={(e) => handleChange(e)}
+              className="w-full py-3 px-5 bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] peer/contact"
               type="text"
               placeholder="Nombre"
             />
@@ -87,7 +116,9 @@ export default function Contact () {
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact"
+              name="email"
+              onChange={(e) => handleChange(e)}
+              className="w-full py-3 px-5 bg-indigo-100 placeholder:text-black/60 focus:outline-none peer/contact"
               type="email"
               placeholder="Correo electrónico"
             />
@@ -98,7 +129,9 @@ export default function Contact () {
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
             <input
-              className="w-full py-3 px-5 bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact"
+              name="subject"
+              onChange={(e) => handleChange(e)}
+              className="w-full py-3 px-5 bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] peer/contact"
               type="text"
               placeholder="Asunto"
             />
@@ -108,7 +141,11 @@ export default function Contact () {
             variants={item}
             className="relative w-full my-3 overflow-hidden rounded-sm"
           >
-            <textarea className="w-full pt-3 px-5 rounded-sm resize-none bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-indigo-100 peer/contact" name="mensaje" placeholder="Mensaje" rows="6" />
+            <textarea
+              name="message"
+              onChange={(e) => handleChange(e)}
+              className="w-full pt-3 px-5 rounded-sm resize-none bg-indigo-100 placeholder:text-black/60 focus:outline-none peer/contact" placeholder="Mensaje" rows="6"
+            />
             <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
           </motion.div>
           <motion.div
@@ -130,7 +167,7 @@ export default function Contact () {
             />
           </motion.div>
           
-        </motion.section>
+        </motion.form>
       </div>
     </div>
   )
