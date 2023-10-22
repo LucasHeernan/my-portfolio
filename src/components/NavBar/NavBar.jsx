@@ -13,7 +13,7 @@ const CustomLink = ({ to, title }) => {
     <Link
       to={to}
       smooth={true}
-      duration={500}
+      duration={200}
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
       className="relative cursor-pointer text-base font-medium uppercase font-poppins group">{title}
@@ -37,9 +37,8 @@ export default function NavBar() {
     <header className={`fixed w-full z-40 items-center py-1 md:py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl dark:shadow-lg dark:shadow-neutral-900" : ""}`}>
       <nav className="relative flex max-w-7xl mx-auto justify-between px-5 lg:px-7 xl:px-10">
 
-        <div className="hidden items-center gap-5 text-[#2a2a2a] dark:text-[#fff] md:flex">
+        <div className={`hidden items-center gap-5 text-[#2a2a2a] ${navShadow ? "dark:text-[#ebebeb]" : "dark:text-[#cacaca]"} md:flex`}>
           <CustomLink to="home" title="Inicio" />
-          {/* <CustomLink to="home" title="Sobre mi" /> */}
           <CustomLink to="home" title="Tecnologías" />
           <CustomLink to="projects" title="Proyectos" />
           <CustomLink to="contact" title="Contacto" />

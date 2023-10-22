@@ -68,8 +68,8 @@ export default function Projects() {
             onMouseLeave={() => setLeft(false)}
           >
             <em className={`absolute block h-8 w-8 top-1/2 left-3 transition-transform duration-200 ease-out delay-200 xl:left-5 xl:h-9 xl:w-9
-            before:-rotate-${left ? "[25deg]" : 45} before:absolute before:left-0 before:h-full before:w-[5px] before:bg-slate-700 before:dark:bg-slate-300 before:origin-top-left before:duration-200 before:ease-out
-            after:-rotate-${left ? "[155deg]" : "[135deg]"} after:absolute after:-left-[5px] after:h-full after:w-[5px] after:bg-slate-700 after:dark:bg-slate-300 after:origin-top-right after:duration-200 after:ease-out
+            before:-rotate-${left ? "[25deg]" : 45} before:absolute before:left-0 before:h-full before:w-[5px] before:bg-slate-700 before:dark:bg-[#dfdfdf] before:origin-top-left before:duration-200 before:ease-out
+            after:-rotate-${left ? "[155deg]" : "[135deg]"} after:absolute after:-left-[5px] after:h-full after:w-[5px] after:bg-slate-700 after:dark:bg-[#dfdfdf] after:origin-top-right after:duration-200 after:ease-out
             ${arrowL ? "before:animate-leftDown after:bottom-[5px] after:animate-leftUp" : ""}`}
             />
           </button>
@@ -80,8 +80,8 @@ export default function Projects() {
             onMouseLeave={() => setRight(false)}
           >
             <em className={`absolute block h-8 w-8 top-1/2 right-3 transition-transform duration-200 ease-out delay-200 xl:right-5 xl:h-9 xl:w-9
-            before:rotate-${right ? "[25deg]" : 45} before:absolute before:right-0 before:h-full before:w-[5px] before:bg-slate-700 before:dark:bg-slate-300 before:origin-top-right before:duration-200 before:ease-out
-            after:rotate-${right ? "[155deg]" : "[135deg]"} after:absolute after:-right-[5px] after:h-full after:w-[5px] after:bg-slate-700 after:dark:bg-slate-300 after:origin-top-left after:duration-200 after:ease-out
+            before:rotate-${right ? "[25deg]" : 45} before:absolute before:right-0 before:h-full before:w-[5px] before:bg-slate-700 before:dark:bg-[#dfdfdf] before:origin-top-right before:duration-200 before:ease-out
+            after:rotate-${right ? "[155deg]" : "[135deg]"} after:absolute after:-right-[5px] after:h-full after:w-[5px] after:bg-slate-700 after:dark:bg-[#dfdfdf] after:origin-top-left after:duration-200 after:ease-out
             ${arrowR ? "before:animate-rightDown after:bottom-[5px] after:animate-rightUp" : ""}`}
             />
           </button>

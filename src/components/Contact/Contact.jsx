@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import ContactForm from "./ContactForm";
 
 const CustomLink = ({ href, name, username }) => {
   const [hover, setHover] = useState("right-0");
@@ -22,52 +22,9 @@ const CustomLink = ({ href, name, username }) => {
   )
 }
 
-const container = {
-  initial: { opacity: 0, y: 60 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.3,
-      delayChildren: 0.1,
-      ease: [0.25, 0.6, 0.3, 0.8]
-    }
-  }
-}
-
-const item = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 1, ease: [0.25, 0.25, 0.25, 0.75] } }
-};
-
 export default function Contact () {
 
   const [link, setLink] = useState("");
-  const [input, setInput] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  function handleChange(e) {
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value
-    });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(input);
-    setInput({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
-  }
 
   useEffect(() => {
     const isMobile = window.matchMedia("(hover: none)").matches;
@@ -90,84 +47,8 @@ export default function Contact () {
           </ul>
         </section>
 
-        <motion.form
-          onSubmit={handleSubmit}
-          variants={container}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="w-full flex flex-col items-center text-[#2a2a2a] text-base font-medium md:w-1/2 md:justify-end md:pb-8"
-        >
-          <motion.div
-            variants={item}
-            className="relative w-full my-3 overflow-hidden rounded-sm"
-          >
-            <input
-              name="name"
-              onChange={(e) => handleChange(e)}
-              className="w-full py-3 px-5 bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] peer/contact"
-              type="text"
-              placeholder="Nombre"
-            />
-            <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
-          </motion.div>
-          <motion.div
-            variants={item}
-            className="relative w-full my-3 overflow-hidden rounded-sm"
-          >
-            <input
-              name="email"
-              onChange={(e) => handleChange(e)}
-              className="w-full py-3 px-5 bg-indigo-100 placeholder:text-black/60 focus:outline-none peer/contact"
-              type="email"
-              placeholder="Correo electrónico"
-            />
-            <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
-          </motion.div>
-          <motion.div
-            variants={item}
-            className="relative w-full my-3 overflow-hidden rounded-sm"
-          >
-            <input
-              name="subject"
-              onChange={(e) => handleChange(e)}
-              className="w-full py-3 px-5 bg-slate-600/20 placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] peer/contact"
-              type="text"
-              placeholder="Asunto"
-            />
-            <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
-          </motion.div>
-          <motion.div
-            variants={item}
-            className="relative w-full my-3 overflow-hidden rounded-sm"
-          >
-            <textarea
-              name="message"
-              onChange={(e) => handleChange(e)}
-              className="w-full pt-3 px-5 rounded-sm resize-none bg-indigo-100 placeholder:text-black/60 focus:outline-none peer/contact" placeholder="Mensaje" rows="6"
-            />
-            <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 peer-focus/contact:w-full" />
-          </motion.div>
-          <motion.div
-            variants={item}
-            className="relative z-10 group
-            self-center mt-2 md:mt-5 md:self-end"
-          >
-            <button
-              type="submit"
-              className="w-44 px-4 py-2 rounded bg-gradient-to-t from-indigo-100 to-indigo-200 border-b-[3px] border-r-2 border-indigo-300 shadow-sm shadow-black transition-all duration-100 ease-out
-              group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:bg-gradient-to-t group-active:from-indigo-200 group-active:to-indigo-200"
-            >
-              <span className="uppercase text-sm font-semibold text-black">Enviar mensaje</span>
-            </button>
-            <span
-              className="absolute w-44 -z-10 top-1 left-[3px] h-full rounded-bl-md rounded-br-md rounded-tr-md bg-slate-800 dark:bg-slate-950
-              group-hover:w-[175px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[171px]
-              uppercase text-sm font-semibold"
-            />
-          </motion.div>
-          
-        </motion.form>
+        <ContactForm />
+        
       </div>
     </div>
   )
