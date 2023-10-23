@@ -4,6 +4,8 @@ import emailjs from '@emailjs/browser';
 const serviceId = import.meta.env.SERVICE_ID;
 const templateId = import.meta.env.TEMPLATE_ID;
 const publicKey = import.meta.env.PUBLIC_KEY;
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const regexs = { email: /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/ }
 
@@ -56,9 +58,10 @@ export default function ContactForm() {
   })
 
   function handleChange(e) {
+    const { name, value } = e.target;
     setInput({
       ...input,
-      [e.target.name]: e.target.value
+      [name]: value
     });
     setErrors(validate(input));
   }
@@ -75,7 +78,7 @@ export default function ContactForm() {
 
     emailjs.sendForm(serviceId, templateId, templateParams, publicKey )
       .then((result) => {
-        if (!Object.keys(errors).length) {
+        if (Object.keys(errors).length === 0 && Object.values(input).every(el => el !== "")) {
           console.log("Email sent successfully!", result);
           alert('YOUR EMAIL HAS BEEN SENT SUCCESSFULLY');
           setInput({
@@ -94,15 +97,22 @@ export default function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("INPUT -> ", input);
-    console.log("ERRORS ->", errors);
-    setInput({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
-    e.target.reset();
+    if (Object.keys(errors).length === 0 && Object.values(input).every(el => el !== "")) {
+      console.log("INPUT -> ", input);
+      console.log("ERRORS ->", errors);
+      toast.success("Correo enviado con exito!");
+      setInput({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
+      e.target.reset();
+    } else {
+      toast.error("No se pudo enviar el correo, intente nuevamente");
+      console.log("INPUT -> ", input);
+      console.log("ERRORS ->", errors);
+    }
   }
 
   return (
@@ -115,6 +125,7 @@ export default function ContactForm() {
       // viewport={{ once: true }}
       className="w-full flex flex-col items-center text-[#2a2a2a] text-base font-medium md:w-1/2 md:justify-end md:pb-8"
     >
+      <ToastContainer />
       <div
         // variants={item}
         className="relative w-full my-3 rounded-sm"
@@ -123,7 +134,7 @@ export default function ContactForm() {
           name="name"
           onChange={(e) => handleChange(e)}
           value={input.name}
-          className={`w-full py-3 px-5 bg-slate-600/20 border border-transparent placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.name ? "border-[#ff0000]" : ""}`}
+          className={`w-full py-3 px-5 bg-slate-600/20 border border-transparent placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.name ? "border-[rgb(255,0,0)]" : ""}`}
           type="text"
           // autoComplete="off"
           placeholder="Nombre"
@@ -138,7 +149,7 @@ export default function ContactForm() {
           name="email"
           onChange={(e) => handleChange(e)}
           value={input.email}
-          className={`w-full py-3 px-5 bg-slate-600/20 border border-transparent placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.email ? "border-[#ff0000]" : ""}`}
+          className={`w-full py-3 px-5 bg-slate-600/20 border border-transparent placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.email ? "border-[rgb(255,0,0)]" : ""}`}
           type="email"
           // autoComplete="off"
           placeholder="Correo electrónico"
@@ -153,7 +164,7 @@ export default function ContactForm() {
           name="subject"
           onChange={(e) => handleChange(e)}
           value={input.subject}
-          className={`w-full py-3 px-5 bg-slate-600/20 border border-transparent placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.subject ? "border-[#ff0000]" : ""}`}
+          className={`w-full py-3 px-5 bg-slate-600/20 border border-transparent placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.subject ? "border-[rgb(255,0,0)]" : ""}`}
           type="text"
           // autoComplete="off"
           placeholder="Asunto"
@@ -168,7 +179,7 @@ export default function ContactForm() {
           name="message"
           onChange={(e) => handleChange(e)}
           value={input.message}
-          className={`w-full pt-3 px-5 rounded-sm resize-none bg-slate-600/20 border border-transparent placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.message ? "border-[#ff0000]" : ""}`} placeholder="Mensaje" rows="6"
+          className={`w-full pt-3 px-5 rounded-sm resize-none bg-slate-600/20 border border-transparent placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.message ? "border-[rgb(255,0,0)]" : ""}`} placeholder="Mensaje" rows="6"
         />
         <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-400 dark:border-blue-600 peer-focus/contact:w-full" />
       </div>
@@ -187,7 +198,7 @@ export default function ContactForm() {
         </button>
         <span
           className={`absolute w-44 -z-10 top-1 left-[3px] h-full rounded rounded-br-[5px] bg-[rgb(0,0,0,.80)] dark:bg-[#1d1c1c]
-          ${Object.keys(errors).length || Object.values(input).every(el => el === "") ? "" : "group-active:transform group-active:transition-all group-active:left-1 group-active:w-[171px]"}`}
+          ${Object.keys(errors).length || Object.values(input).every(el => el === "") ? "" : "group-active:transform group-active:transition-all group-active:left-1 group-active:w-[174px]"}`}
         />
       </div>
     </form>

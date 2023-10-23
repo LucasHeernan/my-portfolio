@@ -74,7 +74,7 @@ export default function Home() {
               </button>
               <span
                 className="absolute -z-10 top-1 left-[3px] w-40 h-full rounded rounded-br-[5px] bg-slate-800 dark:bg-slate-950
-                group-hover:w-[159px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[155px]
+                group-hover:w-[159px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[158px]
                 uppercase text-sm font-semibold"
               />
             </Link>
@@ -88,7 +88,7 @@ export default function Home() {
               </button>
               <span
                 className="absolute -z-10 top-1 left-[3px] w-40 h-full rounded bg-[#2A2A2A] dark:bg-slate-950
-                group-hover:w-[159px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[155px]
+                group-hover:w-[159px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[158px]
                 uppercase text-sm font-semibold"
               />
             </div>
