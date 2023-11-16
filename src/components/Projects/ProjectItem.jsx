@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProjectImage from "./ProjectImage";
 import ProjectNavBar from "./ProjectNavBar";
 import ProjectFooter from "./ProjectFooter";
-import { Github } from "../Technologies/Icons";
+import { Github, Youtube, Android } from "../Technologies/Icons";
 import { projectsData } from "../../assets/projects/projectsData";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -20,13 +20,19 @@ const techAnimations = {
       duration: 0.2 * index
     }
   })
-}
+};
 
 export default function ProjectItem() {
   
+  const [apk, setApk] = useState(false);
   const [currentImg, setCurrentImg] = useState(0);
   const { id } = useParams();
   const project = projectsData.find((project) => project.id === Number(id));
+
+  useEffect(() => {
+    const isMobile = window.matchMedia("(hover: none)").matches;
+    isMobile ? setApk(true) : null;
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -38,23 +44,59 @@ export default function ProjectItem() {
     <div className="w-full cursor-default font-['Montserrat'] transition-colors duration-75 ease-in-out bg-white dark:bg-[#2a2a2a]">
       <ProjectNavBar />
       <div className="max-w-7xl w-full flex flex-col mx-auto py-10 px-5 sm:px-10 md:px-16 lg:px-20 text-[#2a2a2a] dark:text-[#8a8a8a]">
-        <section className="relative z-0 w-full flex items-center">
-          <h2 className="text-3xl font-bold pt-5 pb-5 tracking-wider uppercase scale-y-110 lg:scale-y-100 lg:text-4xl text-[#2a2a2a] dark:text-[#cacaca]">{project.title}</h2>
-          <h2 className="text-3xl font-bold pt-5 pb-5 tracking-wider uppercase scale-y-110 lg:scale-y-100 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">{project.title}</h2>
-          <a
-            href={`${project.repository}`}
-            target="_blank"
-            className="w-9 h-9 mt-1 rounded-full flex justify-center items-center ml-5 shadow-sm shadow-black/30 bg-gradient-to-tl from-slate-900 to-slate-500 border-b-[3px] border-r-2 border-slate-950"
-          >
-            <Github fill={"white"} className="w-6 h-6" />
-          </a>
+        {/* bg-green-400 xs:bg-orange-400 sm:bg-violet-400 md:bg-green-400 lg:bg-sky-400 xl:bg-red-400 */}
+        <section className="flex flex-col md:flex-row">
+          <div className="relative z-0 pr-8 mt-5 mb-3">
+            <h2 className="text-3xl font-bold tracking-wider uppercase scale-y-110 lg:scale-y-100 lg:text-4xl text-[#2a2a2a] dark:text-[#cacaca]">{project.title}</h2>
+            <h2 className="text-3xl font-bold tracking-wider uppercase scale-y-110 lg:scale-y-100 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">{project.title}</h2>
+          </div>
+          <div className="flex items-center mb-4 md:mb-0 md:pt-2">
+            <div className="relative z-10">
+              <a
+                href={`${project.repository}`}
+                target="_blank"
+                className="w-9 h-9 flex justify-center items-center rounded-full bg-gradient-to-tl from-slate-800 to-slate-500 border-b-2 border-r border-slate-900 shadow-sm shadow-black"
+              >
+                <Github fill={"white"} className="w-6" />
+              </a>
+              <span className="absolute w-[calc(100%+1px)] h-[calc(100%+1px)] -z-10 top-px left-px rounded-full bg-[rgb(0,0,0,.70)] dark:bg-[#1d1c1c]" />
+            </div>
+
+            {
+              project.android && apk ?
+                <div className="relative z-10 ml-5">
+                  <a
+                    href={`${project.android}`}
+                    target="_blank"
+                    className="w-9 h-9 flex justify-center items-center rounded-full bg-[#83c610] border-b-2 border-r border-lime-700 shadow-sm shadow-black"
+                  >
+                    <Android fill={"white"} className="w-6 mt-px" />
+                  </a>
+                  <span className="absolute w-[calc(100%+1px)] h-[calc(100%+1px)] -z-10 top-px left-px rounded-full bg-[rgb(0,0,0,.70)] dark:bg-[#1d1c1c]"/>
+                </div>
+              : project.youtube ?
+                <div className="relative z-10 ml-5">
+                  <a
+                    href={`${project.youtube}`}
+                    target="_blank"
+                    className="w-9 h-9 flex justify-center items-center rounded-full bg-[#ce1312] border-b-2 border-r border-[rgb(159,18,57)] shadow-sm shadow-black"
+                  >
+                    <Youtube fill={"white"} className="w-[22px] ml-px mt-px" />
+                  </a>
+                  <span className="absolute w-[calc(100%+1px)] h-[calc(100%+1px)] -z-10 top-px left-px rounded-full bg-[rgb(0,0,0,.70)] dark:bg-[#1d1c1c]"/>
+                </div>
+              : null
+            }
+
+          </div>
+          
         </section>
 
-        <p className="text-base font-medium pb-5 pr-5 md:text-lg md:pr-10 lg:pr-32">{project.description}</p>
+        <p className="text-base font-medium mb-7 pr-5 md:text-lg md:pr-10 lg:pr-32">{project.subtitle}</p>
 
         <section className={`flex flex-col items-center ${project.phone ? "lg:h-[600px] lg:flex lg:flex-row lg:items-stretch" : "xl:h-[380px] xl:flex xl:flex-row xl:items-stretch"}`}>
 
-          <div className={`relative w-full mb-12 sm:mb-14 md:mb-20 ${project.phone ? "h-[480px] sm:w-4/6 sm:h-[490px] md:w-[60%] md:h-[510px] lg:w-[45%] lg:h-full" : "h-[315px] sm:w-[90%] sm:h-[380px] md:w-full md:h-[480px] lg:w-4/5 xl:w-1/2 xl:h-full" } before:w-full before:h-full before:absolute before:left-3 before:top-3 before:bg-slate-700 dark:before:bg-slate-950`}>
+          <div className={`relative w-full mb-14 md:mb-20 ${project.phone ? "h-[480px] sm:w-4/6 sm:h-[490px] md:w-[60%] md:h-[510px] lg:w-[45%] lg:h-full" : "h-[315px] sm:w-[90%] sm:h-[380px] md:w-full md:h-[480px] lg:w-4/5 xl:w-1/2 xl:h-full" } before:w-full before:h-full before:absolute before:left-3 before:top-3 before:bg-slate-700 dark:before:bg-slate-950`}>
             <ProjectImage
               images={project.images}
               phone={project.phone}
@@ -76,11 +118,14 @@ export default function ProjectItem() {
             </div>
           </div>
 
-          <div className={`w-full flex flex-col text-left ${project.phone ? "lg:w-[55%] lg:pl-20 lg:justify-around" : "xl:w-1/2 xl:px-10 xl:justify-evenly"}`}>
-            <h3 className="text-3xl font-bold tracking-wide pb-2 text-[#2a2a2a] dark:text-[#cacaca] lg:pb-0">Sobre este proyecto</h3>
-            <p className="text-base md:text-lg font-medium">{project.description}</p>
+          <div className={`w-full flex flex-col text-left ${project.phone ? "lg:w-[55%] lg:pl-20 lg:justify-around" : "xl:w-1/2 xl:pl-10 xl:justify-evenly"}`}>
+            <h3 className="text-3xl font-bold tracking-wide mb-2 xl:mb-0 text-[#2a2a2a] dark:text-[#cacaca]">Sobre este proyecto</h3>
+            <div className="text-base md:text-lg font-medium">
+              <p>{project.description}</p>
+              <p>{project.description2}</p>
+            </div>
             <div className="flex flex-col">
-              <h4 className="text-3xl font-bold tracking-wide py-3 text-[#2a2a2a] dark:text-[#cacaca]">Tecnologías</h4>
+              <h3 className="text-3xl font-bold tracking-wide py-3 xl:py-0 xl:pb-3 text-[#2a2a2a] dark:text-[#cacaca]">Tecnologías</h3>
               <div className="relative">
                 <div className="absolute">
                   {
@@ -112,70 +157,4 @@ export default function ProjectItem() {
       </div>
     </div>
   )
-}
-
-//                                           BOTON HECHO POR MÍ
-// <div className="relative z-10 ml-5 group">
-//   <a
-//     href={`${project.repository}`}
-//     target="_blank"
-//     className="flex justify-center items-center p-1 rounded-full bg-gradient-to-tl from-indigo-100 to-indigo-200 border-b-2 border-r border-indigo-400 shadow-sm shadow-black transition-all duration-100 ease-out
-//     group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:border-b group-active:border-r-0 group-active:to-indigo-300"
-//   >
-//     <Github className="w-6 h-6" />
-//   </a>
-//   <span
-//     className="absolute flex justify-center items-center p-1 -z-10 top-px left-px w-[calc(100%+1px)] h-[calc(100%+1px)] rounded-full bg-slate-800 dark:bg-slate-950 transform transition-all ease-in-out duration-100
-//     group-active:w-full group-active:h-full group-active:scale-90"
-//   >
-//     <Github className="w-6 h-6" />
-//   </span>
-// </div>
-
-// <motion.a
-//   href={`${project.repository}`}
-//   target="_blank"
-//   className="w-11 h-11 rounded-full flex justify-center items-center cursor-pointer bg-slate-800 border-solid border-t-0 border-r-[3px] border-b-4 border-l-0 border-slate-900
-//   hover:bg-gradient-to-br from-black to-slate-500 hover:shadow hover:shadow-gray-500"
-//   transition={{ duration: 0.2 }}
-//   whileHover={{ scale: 1.1 }}
-//   whileTap={{ scale: 0.9 }}
-// >
-//   <Github
-//     fill={"white"}
-//     className="w-7 h-w-7 ml-[3px]"
-//   />
-// </motion.a>
-
-// {/* AWESOME BUTTON */}
-// <div className="z-10 float-right mr-2 mb-2 font-bold uppercase font-['Montserrat'] group">
-// {/* SOMBRA BOTTOM */}
-//   <a
-//     href=""
-//     className="box-border inline-block align-middle h-[47px] pt-[3px] relative bg-transparent text-xs leading-6 font-semibold tracking-normal text-center bg-orange-500
-//     before:left-[3px] before:w-[calc(100%-6px)] before:bg-[rgba(0,0,0,0.3)] before:h-[calc(100%-4px)] before:-bottom-[1px] before:absolute before:rounded-[3px] before:z-10 before:bg-red-600
-//     before:transform before:transition-all before:ease-out before:duration-150 group-hover:before:-translate-y-[1px]"
-//   >
-//     <span className="block h-full bg-white">
-//       <span className="relative flex items-stretch w-full h-[calc(100%-3px)] -mt-[3px] bg-yellow-200
-//       before:bg-violet-700 before:rounded-[3px] before:top-auto before:bottom-[3px] before:z-50 before:absolute
-//       after:bg-green-700 after:rounded-[3px] after:z-50 after:w-0 after:top-[1px] after:absolute"
-//       >
-//       {/* <span className="relative flex items-stretch w-full h-[calc(100%-3px)] -mt-[3px]
-//       before:bg-[rgb(0,109,150)] before:rounded-[3px] before:top-auto before:-bottom-[3px] before:z-10
-//       after:bg-[rgba(0,0,0,0.15)] after:rounded-[3px] after:z-30 after:w-0 after:top-[1px]"
-//       > */}
-//         <span className="bg-[rgb(0,172,237)] relative flex items-center justify-center rounded-[3px] z-30 overflow-hidden py-0 px-4
-//         transform transition-all ease-out group-hover:translate-y-0.5">
-//           {/* NO IMPORTA ESTE */}
-//           <span className="block
-//             before:bg-[rgba(0,0,0,0.1)] before:transform before:transition-opacity before:ease-out before:duration-300 before:opacity-0 before:z-10
-//             group-hover:before:opacity-100"
-//           >
-//             <Github className="w-5 h-5 align-middle" fill={"white"} />
-//           </span>
-//         </span>
-//       </span>
-//     </span>
-//   </a>
-// </div>
+};

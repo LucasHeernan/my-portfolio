@@ -5,14 +5,16 @@ export default function ProjectFooter () {
 
   return (
     <footer className="w-full pt-32 text-center cursor-default font-montserrat">
-      <h4 className="text-[#2a2a2a] dark:text-[#CACACA] text-xl font-bold mb-0.5">Let's talk</h4>
+      <h4 className="text-[#2a2a2a] dark:text-[#CACACA] text-xl font-bold mb-0.5">Hablemos</h4>
       <p className="text-[#2a2a2a] dark:text-[#8A8A8A] text-base font-medium">
-        Wanna get in touch or talk about a project?
+        ¿Estás buscando un desarrollador?
         <br />
-        Feel free to contact me via email at <AnimatedContainer words={"lhbenitez2@gmail.com"} />
+        No dude en escribirme por
         <br />
-        or drop a line in the form at the <AnimatedContainer words={"contact section"} />
+        correo electrónico a <AnimatedContainer words={"lhbenitez2@gmail.com"} />
+        <br />
+        o completa el formulario en la <AnimatedContainer words={"sección de contacto"} />.
       </p>
     </footer>
   )
-}
+};

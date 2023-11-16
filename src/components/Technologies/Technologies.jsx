@@ -176,4 +176,4 @@ export default function Technologies() {
       </div>
     </div>
   )
-}
+};

@@ -29,17 +29,16 @@ export default function NavBar() {
   const [navShadow, setNavShadow] = useState(false);
   
   useEffect(() => {
-    const handleShadow = () => { window.scrollY >= 50 ? setNavShadow(true) : setNavShadow(false) };
+    const handleShadow = () => { window.scrollY >= 40 ? setNavShadow(true) : setNavShadow(false) };
     window.addEventListener("scroll", handleShadow);
   }, []);
 
   return (
     <header className={`fixed w-full z-40 items-center py-1 md:py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl dark:shadow-lg dark:shadow-neutral-900" : ""}`}>
-      <nav className="relative flex max-w-7xl mx-auto justify-between px-5 lg:px-7 xl:px-10">
+      <nav className="relative flex max-w-7xl mx-auto justify-between px-[10px] xs:px-5 lg:px-7 xl:px-10">
 
         <div className={`hidden items-center gap-5 text-[#2a2a2a] ${navShadow ? "dark:text-[#ebebeb]" : "dark:text-[#cacaca]"} md:flex`}>
           <CustomLink to="home" title="Inicio" />
-          <CustomLink to="home" title="Tecnologías" />
           <CustomLink to="projects" title="Proyectos" />
           <CustomLink to="contact" title="Contacto" />
         </div>
@@ -57,4 +56,4 @@ export default function NavBar() {
       </nav>
     </header>
   )
-}
+};

@@ -13,7 +13,7 @@ export default function AnimatedContainer({ words }) {
       }
     </span>
   )
-}
+};
 
 // Generic Gradient
 // #2A2A2A --- #5A4757 --- #9E6271 --- #DB8472

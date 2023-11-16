@@ -19,7 +19,7 @@ function useMenuAnimation(isOpen) {
   }, [isOpen]);
 
   return scope;
-}
+};
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,5 +33,5 @@ export default function MobileMenu() {
       <SideBar handleMenu={handleMenu} />
       <BurgerToggle isOpen={isOpen} handleMenu={handleMenu} />
     </div>
-  );
-}
+  )
+};

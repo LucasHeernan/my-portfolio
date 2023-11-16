@@ -14,14 +14,14 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="w-full cursor-default font-montserrat">
-      <div className="max-w-7xl w-full mx-auto px-5 pb-7 pt-20 lg:px-7 lg:pt-28 xl:px-10">
+    <footer className="w-full pt-24 pb-10 lg:pt-28 cursor-default">
+      <div className="max-w-7xl w-full mx-auto px-[10px] xs:px-5 lg:px-7 xl:px-10">
         <section className="flex justify-between items-center">
           <div className="flex items-center text-[#2a2a2a] dark:text-[#cacaca]">
-            <img className="w-10 h-10 rounded-full -rotate-[18deg] object-scale-down bg-gradient-to-bl from-indigo-300 via-purple-400 to-sky-900 shadow-sm shadow-black lg:w-14 lg:h-14" src={profilePicture} alt="profile picture" />
+            <img className="hidden xs:inline-block w-10 h-10 rounded-full -rotate-[18deg] object-scale-down bg-gradient-to-bl from-indigo-300 via-purple-400 to-sky-900 shadow-sm shadow-black lg:w-14 lg:h-14" src={profilePicture} alt="profile picture" />
             <section className="relative z-0">
-              <h4 className="text-base font-medium font-poppins uppercase pl-3 tracking-wide lg:text-2xl">Lucas Benitez</h4>
-              <h4 className="text-base font-medium font-poppins uppercase pl-3 tracking-wide lg:text-2xl absolute text-[rgba(0,0,0,.20)] top-px left-px lg:top-0.5 lg:left-0.5 -z-10 w-full">Lucas Benitez</h4>
+              <h4 className="text-lg font-medium font-poppins uppercase tracking-wide xs:pl-3 lg:text-2xl">Lucas Benitez</h4>
+              <h4 className="text-lg font-medium font-poppins uppercase tracking-wide xs:pl-3 lg:text-2xl absolute text-[rgba(0,0,0,.20)] top-px left-px lg:top-0.5 lg:left-0.5 -z-10 w-full">Lucas Benitez</h4>
             </section>
           </div>
           <div className="flex items-center">
@@ -64,17 +64,17 @@ export default function Footer() {
           </div>
         </section>
 
-        <section className="flex justify-between items-center py-1 text-[#2a2a2a] dark:text-[#9A9A9A]">
+        <section className="flex justify-between items-center py-1 text-[#2a2a2a] dark:text-[#9a9a9a]">
           <div className="text-xs font-medium lg:text-sm lg:font-medium">
-            <p>Copyright &copy; 2023 | All rights reserved.</p>
-            {/* © */}
+          <span className="hidden xs:inline-block">Copyright</span><span> &copy; 2023 | All rights reserved.</span>
+          {/* © */}
           </div>
           <div className="flex items-center">
             <p className="text-xs font-medium lg:text-sm pr-[3px] lg:pr-[5px]">Contact me</p>
-            <p className="relative text-base bottom-[2px] lg:text-lg">☝🏻</p>
+            <p className="hidden xs:inline-block relative text-base bottom-[2px] lg:text-lg">☝🏻</p>
           </div>
         </section>
       </div>
     </footer>
   )
-}
+};

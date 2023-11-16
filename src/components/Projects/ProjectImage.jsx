@@ -14,7 +14,7 @@ export default function ProjectImage({ images, phone, currentImg, setCurrentImg 
     setTimeout(() => {
       setArrowL(false);
     }, 500);
-  }
+  };
 
   const nextImg = () => {
     const newIndex = currentImg === images.length - 1 ? 0 : currentImg + 1;
@@ -23,7 +23,7 @@ export default function ProjectImage({ images, phone, currentImg, setCurrentImg 
     setTimeout(() => {
       setArrowR(false)
     }, 500);
-  }
+  };
 
   return (
     <div className="relative z-10 overflow-hidden flex w-full h-full shadow-black shadow-md">
@@ -67,4 +67,4 @@ export default function ProjectImage({ images, phone, currentImg, setCurrentImg 
       }
     </div>
   )
-}
+};

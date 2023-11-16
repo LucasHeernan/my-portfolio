@@ -18,4 +18,4 @@ export default function TechContainer({ children }) {
       { React.cloneElement(children, { isHovered: isHovered }) }
     </motion.div>
   );
-}
+};

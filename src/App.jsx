@@ -16,17 +16,4 @@ export default function App() {
       </Routes>
     </div>
   )
-}
-
-/* Home { AnimatedLetters } -- ¿ About/Skills ? -- Proyects { ProjectItem } -- Contact -- Footer */
-
-// ABOUT
-// Hola! Soy Lucas, desarrollador en Javascript, con fluidez tanto en frontend como en backend.
-// Uso principalmente React, React Native, Redux, Node, Express y Sequalize. Pero me encanta 
-// aprender cosas nuevas!
-
-// Full Stack developer orientado al Front end 
-// con experiencia en desarrollo de 
-// aplicaciones web y mobile en Javascript
-// con ReactJS, React Native, Redux, 
-// NodeJS, Express, PostgreSQL
+};

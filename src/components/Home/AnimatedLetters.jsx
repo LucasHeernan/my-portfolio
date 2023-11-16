@@ -36,16 +36,16 @@ export default function AnimatedLetters({ text, time }) {
     setTimeout(() => {
       setShown(true);
     }, time * 100)
-  }, [])
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
       setFirts("");
     }, 4000)
-  }, [])
+  }, []);
 
   return (
-    <div className="pb-3 md:pb-2 xl:pb-0 transition-all ease-in-out duration-100 scale-y-150 sm:scale-y-125 md:scale-y-110 lg:scale-y-100">
+    <div className="pb-3 md:pb-2 xl:pb-0 transition-all ease-in-out duration-100 scale-y-125 md:scale-y-110 lg:scale-y-100">
       {
         letras.map((letra, idx) => {
           const uniqueId = `${letra}-${idx}`;
@@ -62,5 +62,5 @@ export default function AnimatedLetters({ text, time }) {
         })
       }
     </div>
-  );
+  )
 };

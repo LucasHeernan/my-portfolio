@@ -21,7 +21,7 @@ const techAnimations = {
       duration: 0.2
     }
   })
-}
+};
 
 export default function ProjectCard({ id, title, description, techs, image, repository, phone, curr }) {
 
@@ -103,7 +103,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
                               initial="initial"
                               whileInView="animate"
                               custom={index}
-                              className="inline-block p-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] mx-2 relative overflow-hidden box-border
+                              className="inline-block p-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.50)] mx-2 relative overflow-hidden box-border
                               before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                               after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
                             >
@@ -119,7 +119,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
                 <div className={`hidden absolute bottom-10 left-[calc(50%-45px)] z-10 ${more ? "group-hover:block" : "" } group-hover:animate-bounceInUp md:group-hover:hidden`}>
                   <Link
                     to={`/${id}`}
-                    className="inline-block p-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.25)] ml-2 relative overflow-hidden box-border cursor-pointer
+                    className="inline-block p-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded uppercase font-semibold text-sm shadow-md shadow-[rgba(0,0,0,.55)] ml-2 relative overflow-hidden box-border cursor-pointer
                     before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                     after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
                   >
@@ -132,11 +132,11 @@ export default function ProjectCard({ id, title, description, techs, image, repo
 
           <section className={`hidden md:flex w-[55%] h-full flex-col justify-evenly py-10 text-[#2a2a2a] ${!phone ? "md:pl-5" : ""} lg:pl-8 lg:py-5 bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100 dark:from-indigo-300 dark:via-indigo-400 dark:to-indigo-500`}>
             <h3 className="uppercase md:text-2xl md:font-semibold lg:text-3xl">{title}</h3>
-            <p className="text-base font-normal pr-4 xl:text-lg lg:font-medium">{description}</p>
+            <p className="text-base font-normal pr-4 line-clamp-3 lg:pr-10 lg:font-medium xl:text-lg">{description}</p>
             <div className="w-full flex font-poppins">
               <Link
                 to={`/${id}`}
-                className="inline-block px-3 py-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-[15px] tracking-wider shadow-sm shadow-[rgba(0,0,0,.75)] mr-7 relative overflow-hidden cursor-pointer
+                className="inline-block px-3 py-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-[15px] tracking-wider shadow-md shadow-[rgba(0,0,0,.50)] mr-7 relative overflow-hidden cursor-pointer
                 before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                 after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
               >
@@ -145,7 +145,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
               <a
                 href={repository}
                 target="_blank"
-                className="inline-block px-3 py-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-[15px] tracking-wider shadow-sm shadow-[rgba(0,0,0,.50)] relative overflow-hidden cursor-pointer
+                className="inline-block px-3 py-1 bg-[#313131] text-[#cacaca] border-solid border-t-[1px] border-r-2 border-b-[3px] border-l-[1px] border-[#222] rounded-sm uppercase font-semibold text-[15px] tracking-wider shadow-md shadow-[rgba(0,0,0,.50)] relative overflow-hidden cursor-pointer
                 before:bg-[#515151] before:top-0 before:left-0 before:w-0 before:h-1/2 hover:before:w-full before:block before:absolute before:z-10 before:duration-200 before:ease-in-out
                 after:bg-[#3f3f3f] after:bottom-0 after:right-0 after:w-0 after:h-1/2 hover:after:w-full after:block after:absolute after:z-10 after:transition-all after:duration-200 after:ease-in-out after:delay-100"
               >
@@ -158,4 +158,4 @@ export default function ProjectCard({ id, title, description, techs, image, repo
       </div>
     </article>
   )
-}
+};

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function ThemeSwitcher () {
 
@@ -47,4 +47,4 @@ export default function ThemeSwitcher () {
   }, [mode]);
 
   return [mode, setMode]
-}
+};

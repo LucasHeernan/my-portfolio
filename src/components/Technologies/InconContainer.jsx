@@ -16,4 +16,4 @@ export default function IconContainer({ custom, children }) {
       {React.cloneElement(children, { fill: fill })}
     </div>
   );
-}
+};

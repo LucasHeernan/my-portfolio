@@ -1,8 +1,7 @@
 import React from "react";
-import { Moon, Sun } from "../Technologies/Icons";
+import { Moon, Sun, ArrowBack } from "../Technologies/Icons";
 import ThemeSwitcher from "../../ThemeSwitcher";
 import { useNavigate } from "react-router-dom";
-import { ArrowBack } from "../Technologies/Icons";
 
 export default function ProjectNavBar() {
 
@@ -14,10 +13,9 @@ export default function ProjectNavBar() {
       <nav className="relative flex justify-between px-5 lg:px-7 xl:px-10">
         <button
           onClick={() => { navigate(-1) }}
-          className="w-8 h-8 rounded-full flex justify-center items-center md:w-9 md:h-9"
+          className="w-8 h-8 rounded-full md:w-9 md:h-9"
         >
-          <ArrowBack className={"w-8 h-8 p-1 rounded-full md:w-9 md:h-9 active:bg-violet-300 dark:active:bg-slate-400"} arrow={ mode === "dark" ? "white" : "#2a2a2a"} />
-          {/* <ArrowBack className={"w-8 h-8 p-1 rounded-full bg-violet-300 active:bg-violet-400 md:w-9 md:h-9 dark:bg-black"} arrow={"#2a2a2a"} /> */}
+          <ArrowBack className={"w-9 h-9 p-1 rounded-full active:bg-slate-200 dark:active:bg-slate-500"} arrow={ mode === "dark" ? "white" : "#2a2a2a"} />
         </button>
         <button
           className={`flex rounded-full w-8 p-1 md:w-9 ${mode === "dark" ? "bg-gradient-to-tr from-cyan-300 via-blue-400 to-blue-500" : "bg-gradient-to-tr from-blue-950 via-indigo-950 to-slate-950"}`}
@@ -28,4 +26,4 @@ export default function ProjectNavBar() {
       </nav>
     </header>
   )
-}
+};

@@ -15,7 +15,7 @@ export default function Root() {
       <Footer />
     </div>
   )
-}
+};
 
 // snap-y ---> snap-mandatory ---> AL CONTENEDOR
 // snap-start ---> A CADA COMPONENTE

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
 
-const CustomLink = ({ href, name, username }) => {
+const CustomLink = ({ href, media, username }) => {
   const [hover, setHover] = useState("right-0");
   const handleHover = () => setHover("left-0");
   const handleHoverLeave = () => setHover("right-0");
@@ -15,12 +15,12 @@ const CustomLink = ({ href, name, username }) => {
       className="relative flex flex-row justify-between items-baseline font-poppins my-6 mr-5 pb-2 border-b border-[#9a9a9a] text-base text-[#2a2a2a] dark:text-[#cacaca]
       transition-colors duration-200 ease-in-out lg:mr-10 lg:my-[22px] xl:my-6 xl:mr-20 dark:border-[#8a8a8a] group"
     >
-      <span className={`absolute ${hover} -bottom-px w-0 h-0.5 transform transition-[width] ease-in-out duration-300 group-hover:w-full ${name === "Email" ? "bg-black dark:bg-white" : name === "Linkedin" ? "bg-blue-400" : name === "Github" ? "bg-violet-500" : "bg-green-500" }`}>&nbsp;</span>
-      <p>{name}</p>
+      <span className={`absolute ${hover} -bottom-px w-0 h-0.5 transform transition-[width] ease-in-out duration-300 group-hover:w-full ${media === "Email" ? "bg-black dark:bg-white" : media === "Linkedin" ? "bg-blue-400" : media === "Github" ? "bg-violet-500" : "bg-green-500" }`}>&nbsp;</span>
+      <p>{media}</p>
       <p>{username}</p>
     </a>
   )
-}
+};
 
 export default function Contact () {
 
@@ -33,17 +33,19 @@ export default function Contact () {
 
   return (
     <div name="contact" className="w-full h-screen cursor-default">
-      <div className="max-w-7xl w-full h-full mx-auto px-5 flex flex-col md:flex-row lg:px-7 xl:px-10">
+      <div className="max-w-7xl w-full h-full mx-auto px-[10px] xs:px-5 flex flex-col md:flex-row lg:px-7 xl:px-10">
 
         <section className="relative z-0 md:flex md:flex-col md:w-1/2">
-          <h2 className="text-2xl font-bold pt-14 pb-1 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Contacto</h2>
-          <h2 className="text-2xl font-bold pt-14 pb-1 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Contacto</h2>
-          <p className="text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:pr-10">No dudes en avisarme sobre posibles proyectos, colaboraciones o simplemente para saludar pepe.</p>
+          <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Contacto</h2>
+          <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Contacto</h2>
+          <p className="text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:pr-10">
+            Si estas interesado en un proyecto, queres saber más sobre mi trabajo o estás buscando un desarrollador, no dudes en contactarme.
+          </p>
           <ul className="hidden md:flex flex-col py-2 md:py-4 xl:py-5">
-            <CustomLink href={"mailto:lhbenitez2@gmail.com"} name={"Email"} username={"lhbenitez2@gmail.com"} />
-            <CustomLink href={"https://www.linkedin.com/in/lucas-h-benitez"} name={"Linkedin"} username={"LucasHeernan"} />
-            <CustomLink href={"https://github.com/LucasHeernan"} name={"Github"} username={"LucasHeernan"} />
-            <CustomLink href={link} name={"Whatsapp"} username={"+5491134921341"} />
+            <CustomLink href={"mailto:lhbenitez2@gmail.com"} media={"Email"} username={"lhbenitez2@gmail.com"} />
+            <CustomLink href={"https://www.linkedin.com/in/lucas-h-benitez"} media={"Linkedin"} username={"LucasHeernan"} />
+            <CustomLink href={"https://github.com/LucasHeernan"} media={"Github"} username={"LucasHeernan"} />
+            <CustomLink href={link} media={"Whatsapp"} username={"+5491134921341"} />
           </ul>
         </section>
 
@@ -52,7 +54,7 @@ export default function Contact () {
       </div>
     </div>
   )
-}
+};
 
 // const pepe = (delay) => {
 //   return {
