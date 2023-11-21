@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
+import { useInView } from "framer-motion";
 import { projectsData } from "../../assets/projects/projectsData";
 import insta from "../../assets/projectsImages/gimpInsta2.png";
 import portfolio from "../../assets/projectsImages/gimpPoke3.png";
@@ -7,6 +8,27 @@ import dpower from "../../assets/projectsImages/gimpDpower.png";
 import pokemon from "../../assets/projectsImages/gimpPoke3.png";
 
 const slides = [ insta, portfolio, dpower, pokemon ];
+
+function SubTitle({ children }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  // const isInView = useInView(ref, { once: true });
+
+  return (
+    <section ref={ref}>
+      <div
+        style={{
+          transform: isInView ? "none" : "translateY(25px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+        }}
+      >
+        {children}
+        {/* { React.cloneElement(children) } */}
+      </div>
+    </section>
+  )
+};
 
 export default function Projects() {
 
@@ -39,15 +61,21 @@ export default function Projects() {
     <div name="projects" className="w-full h-screen cursor-default">
       <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-[10px] xs:px-5 lg:px-7 xl:px-10">
         <section className="relative z-0">
-          <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Proyectos</h2>
-          <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Proyectos</h2>
-          <p className="text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] sm:w-[90%] md:pt-1 md:w-[85%] lg:text-lg lg:w-[75%]">
-            Estos son algunos de los proyectos web y móviles en los que he trabajado, cada uno diseñado para adaptarse a diferentes dispositivos y necesidades.
-          </p>
+          <SubTitle>
+            <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Proyectos</h2>
+            <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Proyectos</h2>
+          </SubTitle>
+          <SubTitle>
+            <p className="text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] sm:w-[90%] md:pt-1 md:w-[85%] lg:text-lg lg:w-[75%]">
+              Estos son algunos de los proyectos web y móviles en los que he trabajado, cada uno diseñado para adaptarse a diferentes dispositivos y necesidades.
+            </p>
+          </SubTitle>
         </section>
         <div className="w-full h-full flex relative overflow-hidden">
 
           {
+
+            
             projectsData?.map((project, index) => (
               <ProjectCard
                 key={index}

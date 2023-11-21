@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import ContactForm from "./ContactForm";
 import { useInView } from "framer-motion";
+import useAnimation from "./useAnimation";
 
 function SubTitle({ children }) {
   const ref = useRef(null);
@@ -11,17 +12,17 @@ function SubTitle({ children }) {
     <section ref={ref}>
       <div
         style={{
-          transform: isInView ? "none" : "translateY(50px)",
+          transform: isInView ? "none" : "translateY(25px)",
           opacity: isInView ? 1 : 0,
-          transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+          transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
         }}
       >
         {children}
         {/* { React.cloneElement(children) } */}
       </div>
     </section>
-  );
-}
+  )
+};
 
 const CustomLink = ({ href, media, username }) => {
   const [hover, setHover] = useState("right-0");
@@ -47,6 +48,7 @@ const CustomLink = ({ href, media, username }) => {
 export default function Contact () {
 
   const [link, setLink] = useState("");
+  const scope = useAnimation();
 
   useEffect(() => {
     const isMobile = window.matchMedia("(hover: none)").matches;
@@ -67,7 +69,7 @@ export default function Contact () {
               Si estas interesado en un proyecto, queres saber más sobre mi trabajo o estás buscando un desarrollador, no dudes en contactarme.
             </p>
           </SubTitle>
-          <ul className="hidden md:flex flex-col py-2 md:py-4 xl:py-5">
+          <ul ref={scope} className="hidden md:flex flex-col py-2 md:py-4 xl:py-5">
             <CustomLink href={"mailto:lhbenitez2@gmail.com"} media={"Email"} username={"lhbenitez2@gmail.com"} />
             <CustomLink href={"https://www.linkedin.com/in/lucas-h-benitez"} media={"Linkedin"} username={"LucasHeernan"} />
             <CustomLink href={"https://github.com/LucasHeernan"} media={"Github"} username={"LucasHeernan"} />

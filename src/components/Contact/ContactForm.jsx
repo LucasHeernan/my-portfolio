@@ -12,20 +12,16 @@ function useMenuAnimation() {
   useEffect(() => {
     isInView ?
     animate([
-      [ "section", { opacity: 1 }, { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.5 } ],
-      // [ "nav", { transform: "translateY(0%)" }, { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.5 } ],
-      [ "div", { transform: "translateY(50px)", opacity: 1, filter: "blur(0px)" }, { delay: stagger(0.05) } ]
-      // [ "a", { transform: "scaleX(1) scaleY(1)", opacity: 1, filter: "blur(0px)" }, { delay: stagger(0.05) } ]
+      [ "section", { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1], duration: 1 } ],
+      [ "div", { transform: "translateY(0)", opacity: 1 }, { delay: stagger(0.2), ease: [0.17, 0.55, 0.55, 1], duration: 1 } ]
     ]) :
     animate([
       [ "section", { opacity: 0 } ],
-      // [ "nav", { transform: "translateY(-100%)" } ]
-      [ "div", { transform: "translateY(-50px)", opacity: 0, filter: "blur(10px)" }, { delay: stagger(0.05) } ]
-      // [ "a", { transform: "scaleX(0) scaleY(0)", opacity: 0, filter: "blur(10px)" }, { delay: stagger(0.05, { from: "last" }) } ],
+      [ "div", { transform: "translateY(25px)", opacity: 0 } ]
     ])
   }, [isInView])
 
-  return scope
+  return scope;
 };
 
 const initialForm = {
@@ -76,10 +72,13 @@ export default function ContactForm() {
     <form
       ref={emailRef}
       onSubmit={handleSubmit}
-      className="w-full flex flex-col items-center text-[#2a2a2a] text-base font-medium md:w-1/2 md:justify-end md:pb-8"
+      className="w-full flex flex-col items-center md:justify-end md:w-1/2 md:pb-8"
     >
       <ToastContainer autoClose={3000}/>
-      <section ref={scope}>
+      <section
+        ref={scope}
+        className="w-full flex flex-col text-[#2a2a2a] text-base font-medium"
+      >
         <div className="relative w-full my-3">
           <input
             name="name"
