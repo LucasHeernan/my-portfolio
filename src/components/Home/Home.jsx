@@ -2,6 +2,36 @@ import React from "react";
 import AnimatedLetters from "./AnimatedLetters";
 import AnimatedContainer from "./AnimatedContainer";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+
+const pepe = (delay) => {
+  return {
+    initial: {
+      y: 15,
+      opacity: 0,
+      transition: {
+        // delay: delay,
+        duration: 1,
+        ease: [0.25, 0.6, 0.3, 0.8]
+      }
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: delay,
+        duration: 1,
+        ease: [0.25, 0.25, 0.25, 0.75],
+        repeat: 0
+      }
+    }
+  }
+}
+
+// variants={pepe(0.3)}
+// initial="initial"
+// whileInView="animate"
+// viewport={{ once: true }}
 
 export default function Home() {
 
@@ -10,9 +40,9 @@ export default function Home() {
   // TERCERO - SUBTITULO DE ABAJO TRANQUI
   // CUARTO - BOTONES DE ABAJO TRANQUI
 
-  const hi = "Hola !";
-  const name = "Soy Lucas Benitez,";
-  const work = "desarrollador Full Stack.";
+  const hi = "Hola !"; /* 6 */
+  const name = "Soy Lucas Benitez,"; /* 24 */
+  const work = "desarrollador Full Stack."; /* 49 */
   
   const downloadPdf = () => window.open("https://drive.google.com/file/d/1CtxGHdipwQVDOI8Mj18n7PJQSUHew5xC/view?usp=sharing", "_blank");
 
@@ -31,12 +61,18 @@ export default function Home() {
             />
             <AnimatedLetters
               text={work}
-              time={22}
+              time={20}
             />
           </h1>
         </div>
         
-        <div className="w-full py-10 md:py-5 text-[#2a2a2a] dark:text-[#9a9a9a]">
+        <motion.div
+          className="w-full py-10 md:py-5 text-[#2a2a2a] dark:text-[#9a9a9a]"
+          variants={pepe(2)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
           <p className="text-base font-medium w-full sm:w-[90%] md:text-lg lg:text-xl lg:leading-[1.95rem] lg:w-[95%]">
           {/* bg-green-300 xs:bg-orange-300 sm:bg-violet-300 md:bg-green-400 lg:bg-sky-400 xl:bg-red-400 */}
             Full Stack developer orientado al <AnimatedContainer words={"Front end"} /> con
@@ -44,10 +80,16 @@ export default function Home() {
             Soy una persona proactiva, siempre dispuesta a colaborar, <AnimatedContainer aplicaciones words={"aprender"} /> cosas
             nuevas y por sobre todo con ganas de trabajar en equipo.
           </p>
-        </div>
+        </motion.div>
         
         <div className="w-full mt-5 py-6 sm:mt-0 lg:py-0 xl:py-3">
-          <div className="w-full flex font-poppins">
+          <motion.div
+            className="w-full flex font-poppins"
+            variants={pepe(3)}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {/* <a
               href="mailto:lhbenitez2@gmail.com"
               target="_blank"
@@ -98,7 +140,7 @@ export default function Home() {
               />
 
             </div>
-          </div>
+          </motion.div>
         </div>
         
       </div>

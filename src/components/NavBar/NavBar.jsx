@@ -3,6 +3,23 @@ import { Moon, Sun } from "../Technologies/Icons";
 import MobileMenu from "./MobileMenu";
 import ThemeSwitcher from "../../ThemeSwitcher";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+
+const navAnimation = {
+  initial: {
+    opacity: 0,
+    y: -25,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 4,
+      ease: [0.17, 0.55, 0.55, 1],
+      duration: 1
+    }
+  }
+};
 
 const CustomLink = ({ to, title }) => {
   const [hover, setHover] = useState("right-0");
@@ -35,7 +52,13 @@ export default function NavBar() {
 
   return (
     <header className={`fixed w-full z-40 items-center py-1 md:py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl dark:shadow-lg dark:shadow-neutral-900" : ""}`}>
-      <nav className="relative flex max-w-7xl mx-auto justify-between px-[10px] xs:px-5 lg:px-7 xl:px-10">
+      <motion.nav
+        className="relative flex max-w-7xl mx-auto justify-between px-[10px] xs:px-5 lg:px-7 xl:px-10"
+        variants={navAnimation}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+      >
 
         <div className={`hidden items-center gap-5 text-[#2a2a2a] ${navShadow ? "dark:text-[#ebebeb]" : "dark:text-[#cacaca]"} md:flex`}>
           <CustomLink to="home" title="Inicio" />
@@ -53,7 +76,7 @@ export default function NavBar() {
         >
           { mode === "dark" ? <Sun className={"text-white"} /> : <Moon className={"text-white"} /> }
         </button>
-      </nav>
+      </motion.nav>
     </header>
   )
 };

@@ -1,28 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
-import { useInView } from "framer-motion";
-import useAnimation from "./useAnimation";
+import { Text } from "../Contact/useAnimation";
+import { useList } from "./useAnimation";
 
-function SubTitle({ children }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  // const isInView = useInView(ref, { once: true });
-
-  return (
-    <section ref={ref}>
-      <div
-        style={{
-          transform: isInView ? "none" : "translateY(25px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
-        }}
-      >
-        {children}
-        {/* { React.cloneElement(children) } */}
-      </div>
-    </section>
-  )
-};
 
 const CustomLink = ({ href, media, username }) => {
   const [hover, setHover] = useState("right-0");
@@ -48,7 +28,7 @@ const CustomLink = ({ href, media, username }) => {
 export default function Contact () {
 
   const [link, setLink] = useState("");
-  const scope = useAnimation();
+  const scope = useList({ first:"ul", second:"a" });
 
   useEffect(() => {
     const isMobile = window.matchMedia("(hover: none)").matches;
@@ -60,15 +40,15 @@ export default function Contact () {
       <div className="max-w-7xl w-full h-full mx-auto px-[10px] xs:px-5 flex flex-col md:flex-row lg:px-7 xl:px-10">
 
         <section className="relative z-0 md:flex md:flex-col md:w-1/2">
-          <SubTitle>
+          <Text>
             <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Contacto</h2>
             <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Contacto</h2>
-          </SubTitle>
-          <SubTitle>
+          </Text>
+          <Text>
             <p className="text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:pr-10">
               Si estas interesado en un proyecto, queres saber más sobre mi trabajo o estás buscando un desarrollador, no dudes en contactarme.
             </p>
-          </SubTitle>
+          </Text>
           <ul ref={scope} className="hidden md:flex flex-col py-2 md:py-4 xl:py-5">
             <CustomLink href={"mailto:lhbenitez2@gmail.com"} media={"Email"} username={"lhbenitez2@gmail.com"} />
             <CustomLink href={"https://www.linkedin.com/in/lucas-h-benitez"} media={"Linkedin"} username={"LucasHeernan"} />
