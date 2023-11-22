@@ -16,7 +16,7 @@ const navAnimation = {
     transition: {
       delay: 4,
       ease: [0.17, 0.55, 0.55, 1],
-      duration: 1
+      duration: 0.4
     }
   }
 };

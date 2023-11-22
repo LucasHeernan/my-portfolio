@@ -16,15 +16,14 @@ export default function Footer() {
   const footerAnimation = {
     initial: {
       opacity: 0,
-      y: 15,
+      
     },
     animate: {
       opacity: 1,
-      y: 0,
       transition: {
         delay: 0.3,
         ease: [0.17, 0.55, 0.55, 1],
-        duration: 1
+        duration: 2
       }
     }
   };

@@ -63,32 +63,3 @@ export default function Contact () {
     </div>
   )
 };
-
-// const pepe = (delay) => {
-//   return {
-//     initial: {
-//       y: 40,
-//       opacity: 0,
-//       transition: {
-//         delay: delay,
-//         duration: 1,
-//         ease: [0.25, 0.6, 0.3, 0.8]
-//       }
-//     },
-//     animate: {
-//       y: 0,
-//       opacity: 1,
-//       transition: {
-//         delay: delay,
-//         duration: 1,
-//         ease: [0.25, 0.25, 0.25, 0.75],
-//         repeat: 0
-//       }
-//     }
-//   }
-// }
-
-// variants={pepe(0.3)}
-// initial="initial"
-// whileInView="animate"
-// viewport={{ once: true }}

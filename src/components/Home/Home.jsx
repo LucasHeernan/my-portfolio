@@ -8,30 +8,21 @@ const pepe = (delay) => {
   return {
     initial: {
       y: 15,
-      opacity: 0,
-      transition: {
-        // delay: delay,
-        duration: 1,
-        ease: [0.25, 0.6, 0.3, 0.8]
-      }
+      opacity: 0
     },
     animate: {
       y: 0,
       opacity: 1,
       transition: {
         delay: delay,
-        duration: 1,
-        ease: [0.25, 0.25, 0.25, 0.75],
-        repeat: 0
+        duration: 0.5,
+        // ease: [0.25, 0.25, 0.25, 0.75],
+        // ease: [0.08, 0.65, 0.53, 0.96],
+        ease: [0.17, 0.55, 0.55, 1],
       }
     }
   }
 }
-
-// variants={pepe(0.3)}
-// initial="initial"
-// whileInView="animate"
-// viewport={{ once: true }}
 
 export default function Home() {
 
@@ -40,9 +31,9 @@ export default function Home() {
   // TERCERO - SUBTITULO DE ABAJO TRANQUI
   // CUARTO - BOTONES DE ABAJO TRANQUI
 
-  const hi = "Hola !"; /* 6 */
-  const name = "Soy Lucas Benitez,"; /* 24 */
-  const work = "desarrollador Full Stack."; /* 49 */
+  const hi = "Hola !"; /* (0.5 = 3) | (0.75 = 4.5) | (1 = 6) */
+  const name = "Soy Lucas Benitez,"; /* (0.75 = 12) | (0.5 = 18) | (1 = 24) */
+  const work = "desarrollador Full Stack."; /* (0.5 = 24) | (0.75 = 36.75) | (1 = 49) */
   
   const downloadPdf = () => window.open("https://drive.google.com/file/d/1CtxGHdipwQVDOI8Mj18n7PJQSUHew5xC/view?usp=sharing", "_blank");
 

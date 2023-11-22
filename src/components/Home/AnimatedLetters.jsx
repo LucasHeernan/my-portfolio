@@ -24,24 +24,24 @@ export default function AnimatedLetters({ text, time }) {
   
           return [...prevLetras, text[nextIndex - 1]];
         });
-      }, 100);
+      }, 75);
   
       return () => {
         clearInterval(intervalId);
       };
-    }, time * 100);
+    }, time * 75);
   }, [text]);
 
   useEffect(() => {
     setTimeout(() => {
       setShown(true);
-    }, time * 100)
+    }, time * 75)
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
       setFirts("");
-    }, 4900)
+    }, 4000)
   }, []);
 
   return (
