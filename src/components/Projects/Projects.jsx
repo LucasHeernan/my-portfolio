@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
 import { Text } from "../Contact/useAnimation";
@@ -16,7 +16,6 @@ export default function Projects() {
   const [right, setRight] = useState(false);
   const [arrowL, setArrowL] = useState(false);
   const [arrowR, setArrowR] = useState(false);
-
   const [curr, setCurr] = useState(0);
 
   const prev = () => {

@@ -56,12 +56,14 @@ export default function ProjectImage({ images, phone, currentImg, setCurrentImg 
           <img
             src={images[currentImg]}
             alt="image"
+            title="imagen"
             className="w-full h-full object-contain"
           />
         </div> :
         <img
           src={images[currentImg]}
           alt="image"
+          title="imagen"
           className="w-full h-full object-cover"
         />
       }

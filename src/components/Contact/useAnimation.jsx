@@ -26,8 +26,8 @@ export function useList({ first, second }) {
   useEffect(() => {
     isInView ?
     animate([
-      [ `${first}`, { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1], duration: 1 } ],
-      [ `${second}`, { transform: "translateY(0)", opacity: 1 }, { delay: stagger(0.3), ease: [0.17, 0.55, 0.55, 1], duration: 1 } ]
+      [ `${first}`, { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1] } ],
+      [ `${second}`, { transform: "translateY(0)", opacity: 1 }, { delay: stagger(0.3), ease: [0.17, 0.55, 0.55, 1], duration: 0.75 } ]
     ]) :
     animate([
       [ `${first}`, { opacity: 0 } ],
@@ -56,25 +56,3 @@ export function Text({ children }) {
     </section>
   )
 };
-
-// export function useTexts() {
-//   const [scope, animate] = useAnimate();
-//   const isInView = useInView(scope);
-//   const isInView = useInView(scope, { once: true });
-
-//   useEffect(() => {
-//     isInView ?
-//     animate([
-//       [ "section", { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1], duration: 0.3 } ],
-//       [ "title", { transform: "translateY(0)", opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1], duration: 1 } ],
-//       [ "p", { transform: "translateY(0)", opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1], duration: 1 } ]
-//     ]) :
-//     animate([
-//       [ "section", { opacity: 0 } ],
-//       [ "title", { transform: "translateY(25px)", opacity: 0 } ],
-//       [ "p", { transform: "translateY(25px)", opacity: 0 } ]
-//     ])
-//   }, [isInView])
-
-//   return scope;
-// };

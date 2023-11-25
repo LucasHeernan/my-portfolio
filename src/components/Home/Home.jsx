@@ -4,7 +4,7 @@ import AnimatedContainer from "./AnimatedContainer";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 
-const pepe = (delay) => {
+const animation = (delay) => {
   return {
     initial: {
       y: 15,
@@ -16,13 +16,11 @@ const pepe = (delay) => {
       transition: {
         delay: delay,
         duration: 0.5,
-        // ease: [0.25, 0.25, 0.25, 0.75],
-        // ease: [0.08, 0.65, 0.53, 0.96],
         ease: [0.17, 0.55, 0.55, 1],
       }
     }
   }
-}
+};
 
 export default function Home() {
 
@@ -59,7 +57,7 @@ export default function Home() {
         
         <motion.div
           className="w-full py-10 md:py-5 text-[#2a2a2a] dark:text-[#9a9a9a]"
-          variants={pepe(2)}
+          variants={animation(2)}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
@@ -76,7 +74,7 @@ export default function Home() {
         <div className="w-full mt-5 py-6 sm:mt-0 lg:py-0 xl:py-3">
           <motion.div
             className="w-full flex font-poppins"
-            variants={pepe(3)}
+            variants={animation(3)}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -129,7 +127,6 @@ export default function Home() {
                 group-hover:w-[127px] group-hover:sm:w-[159px] group-active:transform group-active:transition-all group-active:left-1 group-active:w-[126px] group-active:sm:w-[158px]
                 uppercase text-sm font-semibold"
               />
-
             </div>
           </motion.div>
         </div>

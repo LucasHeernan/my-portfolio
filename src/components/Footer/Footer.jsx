@@ -14,16 +14,13 @@ export default function Footer() {
   }, []);
 
   const footerAnimation = {
-    initial: {
-      opacity: 0,
-      
-    },
+    initial: { opacity: 0 },
     animate: {
       opacity: 1,
       transition: {
         delay: 0.3,
         ease: [0.17, 0.55, 0.55, 1],
-        duration: 2
+        duration: 1
       }
     }
   };
