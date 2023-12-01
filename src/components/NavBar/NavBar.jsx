@@ -15,6 +15,7 @@ const navAnimation = {
     y: 0,
     transition: {
       delay: 4,
+      // delay: 3.3,
       ease: [0.17, 0.55, 0.55, 1],
       duration: 0.4
     }

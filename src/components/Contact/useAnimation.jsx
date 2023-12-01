@@ -1,5 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { useInView, useAnimate, stagger } from "framer-motion";
+// import AnimationsContext from "../../AnimationsContext";
+// import { useAnimationsContext } from '../../AnimationsContext';
+import { useAnimationsContext } from "../../AnimationsContext";
 
 export function useMenu(isOpen) {
   const [scope, animate] = useAnimate();
@@ -22,18 +25,33 @@ export function useMenu(isOpen) {
 export function useList({ first, second }) {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope, { once: true });
+  const { animationsCompleted, setAnimationsCompleted } = useAnimationsContext();
 
   useEffect(() => {
-    isInView ?
+    isInView && animationsCompleted ?
     animate([
-      [ `${first}`, { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1] } ],
-      [ `${second}`, { transform: "translateY(0)", opacity: 1 }, { delay: stagger(0.3), ease: [0.17, 0.55, 0.55, 1], duration: 0.75 } ]
-    ]) :
+      [ `${first}`, { opacity: 1 } ],
+      // [ `${second}`, { transform: "translateY(0px)", opacity: 1 } ]
+    ]) : !isInView && !animationsCompleted ?
     animate([
       [ `${first}`, { opacity: 0 } ],
       [ `${second}`, { transform: "translateY(25px)", opacity: 0 } ]
-    ])
-  }, [isInView])
+      ]) :
+    (animate([
+    [ `${first}`, { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1] } ],
+    [ `${second}`, { transform: "translateY(0px)", opacity: 1 }, { delay: stagger(0.3), ease: [0.17, 0.55, 0.55, 1], duration: 0.75 } ]
+    ]), setAnimationsCompleted(true))
+
+  //   isInView ?
+  //   animate([
+  //     [ `${first}`, { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1] } ],
+  //     [ `${second}`, { transform: "translateY(0)", opacity: 1 }, { delay: stagger(0.3), ease: [0.17, 0.55, 0.55, 1], duration: 0.75 } ]
+  //   ]) :
+  //   animate([
+  //     [ `${first}`, { opacity: 0 } ],
+  //     [ `${second}`, { transform: "translateY(25px)", opacity: 0 } ]
+  //   ])
+  }, [isInView, animationsCompleted])
 
   return scope;
 };

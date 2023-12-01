@@ -42,10 +42,12 @@ export default function AnimatedLetters({ text, time }) {
     setTimeout(() => {
       setFirts("");
     }, 4000)
+    // }, 3500)
   }, []);
 
   return (
     <div className="pb-3 md:pb-2 xl:pb-0 transition-all ease-in-out duration-100 scale-y-125 md:scale-y-110 lg:scale-y-100">
+    {/* <div className="pb-3 xs:pb-2 lg:pb-0 transition-all ease-in-out duration-100 scale-y-125 xs:scale-y-110 sm:scale-y-105 md:scale-y-100"> */}
       {
         letras.map((letra, idx) => {
           const uniqueId = `${letra}-${idx}`;

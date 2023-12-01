@@ -25,7 +25,6 @@ const techAnimations = {
 export default function ProjectItem() {
   
   const [apk, setApk] = useState(false);
-  const [currentImg, setCurrentImg] = useState(0);
   const { id } = useParams();
   const project = projectsData.find((project) => project.id === Number(id));
 
@@ -96,27 +95,7 @@ export default function ProjectItem() {
 
         <section className={`flex flex-col items-center ${project.phone ? "lg:h-[600px] lg:flex lg:flex-row lg:items-stretch" : "xl:h-[380px] xl:flex xl:flex-row xl:items-stretch"}`}>
 
-          <div className={`relative w-full mb-14 md:mb-20 ${project.phone ? "h-[480px] sm:w-4/6 sm:h-[490px] md:w-[60%] md:h-[510px] lg:w-[45%] lg:h-full" : "h-[315px] sm:w-[90%] sm:h-[380px] md:w-full md:h-[480px] lg:w-4/5 xl:w-1/2 xl:h-full" } before:w-full before:h-full before:absolute before:left-3 before:top-3 before:bg-slate-700 dark:before:bg-slate-950`}>
-            <ProjectImage
-              images={project.images}
-              phone={project.phone}
-              currentImg={currentImg}
-              setCurrentImg={setCurrentImg}
-            />
-            <div className="h-10 flex items-end justify-center sm:h-11 md:h-14">
-              <div className="flex items-center justify-center gap-4">
-                {
-                  project.images?.map((_, i) => (
-                    <div
-                      className={`w-3 h-3 rounded-full cursor-pointer transition-all bg-gray-600 dark:bg-slate-300 ${currentImg === i ? "p-[10px]" : "hover:scale-110 bg-opacity-50 dark:bg-opacity-50"}`}
-                      onClick={() => setCurrentImg(i)}
-                      key={i}
-                    />
-                  ))
-                }
-              </div>
-            </div>
-          </div>
+          <ProjectImage images={project.images} phone={project.phone} />
 
           <div className={`w-full flex flex-col text-left ${project.phone ? "lg:w-[55%] lg:pl-20 lg:justify-around" : "xl:w-1/2 xl:pl-10 xl:justify-evenly"}`}>
             <h3 className="text-3xl font-bold tracking-wide mb-2 xl:mb-0 text-[#2a2a2a] dark:text-[#cacaca]">Sobre este proyecto</h3>

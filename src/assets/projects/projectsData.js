@@ -34,9 +34,11 @@ export const projectsData = [
     id: 2,
     title: "Portfolio",
     subtitle: "Un portafolio web interactivo y responsivo construido con amor en React y estilizado con Tailwind.",
-    description: "Este sitio web es una muestra de mis proyectos recientes como desarrollador web Full-Stack.",
-    description2: "Intenté mantener la interfaz de usuario lo más simple posible",
-    techs: ["Javascript", "React", "TailwindCSS", "Framer"],
+    // description: "Este sitio web es una muestra de mis proyectos recientes como desarrollador web Full-Stack.",
+    description: "La idea detrás de este proyecto fue crear un sitio web que muestre en lo que he estado trabajando últimamente como desarrollador web Full-Stack, centrado en la experiencia del usuario.",
+    // description2: "Intenté mantener la interfaz de usuario lo más simple posible",
+    description2: "Intenté mantener el diseño lo más simple posible, cuidando cada detalle para garantizar una navegación sencilla y agradable.",
+    techs: ["Javascript", "React", "TailwindCSS", "Framer motion"],
     images: [pokemon1, pokemon2, pokemon3],
     repository: "https://github.com/LucasHeernan/my-portfolio",
     phone: false,
@@ -68,24 +70,34 @@ export const projectsData = [
 
 
 // PORTFOLIO WEB:
-// SUBTITLE: Un portafolio web interactivo y responsivo construido con amor en React y estilizado con Tailwind.
 
 // DESCRIPTION: Sumérgete en mi universo digital a través de este portafolio web meticulosamente diseñado y desarrollado en Javascript
 // con React y Tailwind para lograr un estilo moderno y atractivo. Centrado en la experiencia del usuario, cada detalle
 // ha sido cuidadosamente considerado para garantizar una navegación suave y agradable.
-
 // El proyecto se estructura en tres partes esenciales. La primera, una página de inicio que sirve como ventana a mi historia,
 // mis habilidades y mi pasión por el desarrollo. La segunda, una sección de proyectos, donde podrás explorar y
 // conocer más sobre las creaciones que han marcado mi trayectoria. Por último, la sección de contacto, que ofrece un formulario interactivo
 // para facilitar la comunicación directa, permitiéndote enviarme un correo electrónico de manera rápida y sencilla.
-
 // Desde su diseño hasta su implementación, este portafolio refleja mi dedicación al detalle y mi compromiso con la excelencia.
 // Explora, descubre y conecta. ¡Estoy emocionado de compartir mi viaje contigo!
 
+// CAFERATI.ME
 // Creado con componentes web VanillaJS personalizados y escrito íntegramente en Javascript,
 // este sitio web es una muestra de mis proyectos recientes como desarrollador web Full-Stack.
 // La idea detrás de este proyecto era crear una muestra de todo en lo que he trabajado en los últimos años.
 // Intenté mantener la interfaz de usuario lo más simple posible junto con las tecnologías web
 
-// este sitio web es una muestra de mis proyectos recientes como desarrollador web Full-Stack
+// Este sitio web es una muestra de mis proyectos recientes como desarrollador web Full-Stack
+// La idea detrás de este proyecto fue crear una muestra de lo que he estado trabajando últimamente
+// La idea detrás de este proyecto fue crear una muestra de mis trabajos más recientes, centrado en la experiencia del usuario.
+// La idea detrás de este proyecto fue crear una muestra de lo que he estado trabajando últimamente, centrado en la experiencia del usuario.
+// Intenté mantener el diseño lo más simple posible, cuidando cada detalle para garantizar una navegación sencilla y agradable.
 // Intenté mantener la interfaz de usuario lo más simple posible
+
+// Este sitio web es una muestra de mis proyectos recientes como desarrollador web Full-Stack
+// La idea detrás de este proyecto fue crear una muestra de lo que he estado trabajando últimamente, centrado en la experiencia del usuario.
+// Intenté mantener el diseño lo más simple posible, cuidando cada detalle para garantizar una navegación sencilla y agradable.
+
+// La idea detrás de este proyecto fue crear un sitio web que muestre en lo que he estado trabajando últimamente
+// como desarrollador web Full-Stack, centrado en la experiencia del usuario, desarrollado con las tecnologías más demandadas.
+// Intenté mantener el diseño lo más simple posible, cuidando cada detalle para garantizar una navegación sencilla y agradable.

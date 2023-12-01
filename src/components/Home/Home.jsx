@@ -24,14 +24,10 @@ const animation = (delay) => {
 
 export default function Home() {
 
-  // PRIMERO - LETRAS ANIMADAS
-  // SEGUNDO - BARRA DESDE ARRIBA
-  // TERCERO - SUBTITULO DE ABAJO TRANQUI
-  // CUARTO - BOTONES DE ABAJO TRANQUI
-
   const hi = "Hola !"; /* (0.5 = 3) | (0.75 = 4.5) | (1 = 6) */
-  const name = "Soy Lucas Benitez,"; /* (0.75 = 12) | (0.5 = 18) | (1 = 24) */
+  const name = "Soy Lucas Benitez,"; /* ( 0.5 = 12) | (0.75 = 18) | (1 = 24) */
   const work = "desarrollador Full Stack."; /* (0.5 = 24) | (0.75 = 36.75) | (1 = 49) */
+  // const work = "Full Stack developer."; /* (0.5 = 22) | (0.75 = 33.75) | (1 = 45) */
   
   const downloadPdf = () => window.open("https://drive.google.com/file/d/1CtxGHdipwQVDOI8Mj18n7PJQSUHew5xC/view?usp=sharing", "_blank");
 
@@ -40,6 +36,7 @@ export default function Home() {
       <div className="w-full h-full max-w-7xl mx-auto flex flex-col px-[10px] xs:px-5 pt-36 text-[#2a2a2a] dark:text-[#ebebeb] md:pt-32 lg:px-7 xl:px-10 xl:pt-28">
         <div className="w-full h-[120px] xs:h-36 sm:h-44 md:h-56 lg:h-64 xl:h-[270px]">
           <h1 className="uppercase font-extrabold text-[18px] xs:text-[25px] sm:text-[34px] md:text-[41px] lg:text-[54px] xl:text-[60px]">
+          {/* <h1 className="uppercase font-extrabold text-[21px] xs:text-[28px] sm:text-[38px] md:text-[42px] lg:text-[54px] xl:text-[60px]"> */}
             <AnimatedLetters
               text={hi}
               time={0}
@@ -135,16 +132,3 @@ export default function Home() {
     </div>
   )
 };
-
-// Hola! Soy Lucas, desarrollador en Javascript, con fluidez tanto en frontend como en backend.
-// Uso principalmente React, React Native, Redux, Node, Express y PostgreSQL. Pero me encanta 
-// aprender cosas nuevas!
-
-// Busco oportunidades que ayuden a mi desarrollo personal. Soy una persona proactiva,
-// siempre dispuesta a aprender cosas nuevas, y por sobre todo con ganas de trabajar en equipo.
-
-// colaborar, aprender cosas nuevas!
-
-// Full Stack developer orientado al Front-end con experiencia en el desarrollo de
-// aplicaciones web y móviles. Soy una persona proactiva, siempre dispuesta a colaborar,
-// aprender cosas nuevas y por sobre todo con ganas de trabajar en equipo.
