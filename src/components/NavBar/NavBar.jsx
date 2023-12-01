@@ -4,6 +4,7 @@ import MobileMenu from "./MobileMenu";
 import ThemeSwitcher from "../../ThemeSwitcher";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { useAnimationNavBar } from "../../AnimationsContext";
 
 const navAnimation = {
   initial: {
@@ -45,39 +46,67 @@ export default function NavBar() {
 
   const [mode, setMode] = ThemeSwitcher();
   const [navShadow, setNavShadow] = useState(false);
+  const { animation, setAnimation } = useAnimationNavBar();
   
   useEffect(() => {
     const handleShadow = () => { window.scrollY >= 40 ? setNavShadow(true) : setNavShadow(false) };
     window.addEventListener("scroll", handleShadow);
   }, []);
 
+  const onAnimationComplete = () => {
+    setAnimation(false)
+  };
+
   return (
     <header className={`fixed w-full z-40 items-center py-1 md:py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl dark:shadow-lg dark:shadow-neutral-900" : ""}`}>
-      <motion.nav
-        className="relative flex max-w-7xl mx-auto justify-between px-[10px] xs:px-5 lg:px-7 xl:px-10"
-        variants={navAnimation}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-      >
-
-        <div className={`hidden items-center gap-5 text-[#2a2a2a] ${navShadow ? "dark:text-[#ebebeb]" : "dark:text-[#cacaca]"} md:flex`}>
-          <CustomLink to="home" title="Inicio" />
-          <CustomLink to="projects" title="Proyectos" />
-          <CustomLink to="contact" title="Contacto" />
-        </div>
-
-        <div className="flex md:hidden">
-          <MobileMenu />
-        </div>
-
-        <button
-          className={`flex rounded-full w-8 p-1 ${mode === "dark" ? "bg-gradient-to-tr from-cyan-300 via-blue-400 to-blue-500" : "bg-gradient-to-tr from-blue-950 via-indigo-950 to-slate-950"}`}
-          onClick={() => setMode(mode === "light" ? "dark" : "light")}
+      {
+        !animation ?
+        <motion.nav
+          className="relative flex max-w-7xl mx-auto justify-between px-[10px] xs:px-5 lg:px-7 xl:px-10"
+          variants={navAnimation}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          onAnimationComplete={() => onAnimationComplete}
         >
-          { mode === "dark" ? <Sun className={"text-white"} /> : <Moon className={"text-white"} /> }
-        </button>
-      </motion.nav>
+
+          <div className={`hidden items-center gap-5 text-[#2a2a2a] ${navShadow ? "dark:text-[#ebebeb]" : "dark:text-[#cacaca]"} md:flex`}>
+            <CustomLink to="home" title="Inicio" />
+            <CustomLink to="projects" title="Proyectos" />
+            <CustomLink to="contact" title="Contacto" />
+          </div>
+
+          <div className="flex md:hidden">
+            <MobileMenu />
+          </div>
+
+          <button
+            className={`flex rounded-full w-8 p-1 ${mode === "dark" ? "bg-gradient-to-tr from-cyan-300 via-blue-400 to-blue-500" : "bg-gradient-to-tr from-blue-950 via-indigo-950 to-slate-950"}`}
+            onClick={() => setMode(mode === "light" ? "dark" : "light")}
+          >
+            { mode === "dark" ? <Sun className={"text-white"} /> : <Moon className={"text-white"} /> }
+          </button>
+        </motion.nav> :
+        <nav className="relative flex max-w-7xl mx-auto justify-between px-[10px] xs:px-5 lg:px-7 xl:px-10">
+
+          <div className={`hidden items-center gap-5 text-[#2a2a2a] ${navShadow ? "dark:text-[#ebebeb]" : "dark:text-[#cacaca]"} md:flex`}>
+            <CustomLink to="home" title="Inicio" />
+            <CustomLink to="projects" title="Proyectos" />
+            <CustomLink to="contact" title="Contacto" />
+          </div>
+
+          <div className="flex md:hidden">
+            <MobileMenu />
+          </div>
+
+          <button
+            className={`flex rounded-full w-8 p-1 ${mode === "dark" ? "bg-gradient-to-tr from-cyan-300 via-blue-400 to-blue-500" : "bg-gradient-to-tr from-blue-950 via-indigo-950 to-slate-950"}`}
+            onClick={() => setMode(mode === "light" ? "dark" : "light")}
+          >
+            { mode === "dark" ? <Sun className={"text-white"} /> : <Moon className={"text-white"} /> }
+          </button>
+        </nav>
+      }
     </header>
   )
 };

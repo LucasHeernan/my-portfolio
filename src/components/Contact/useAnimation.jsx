@@ -1,7 +1,5 @@
-import { useContext, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useInView, useAnimate, stagger } from "framer-motion";
-// import AnimationsContext from "../../AnimationsContext";
-// import { useAnimationsContext } from '../../AnimationsContext';
 import { useAnimationsContext } from "../../AnimationsContext";
 
 export function useMenu(isOpen) {
@@ -25,14 +23,13 @@ export function useMenu(isOpen) {
 export function useList({ first, second }) {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope, { once: true });
-  const { animationsCompleted, setAnimationsCompleted } = useAnimationsContext();
+  const { animation, setAnimation } = useAnimationsContext();
 
   useEffect(() => {
-    isInView && animationsCompleted ?
+    isInView && animation ?
     animate([
-      [ `${first}`, { opacity: 1 } ],
-      // [ `${second}`, { transform: "translateY(0px)", opacity: 1 } ]
-    ]) : !isInView && !animationsCompleted ?
+      [ `${first}`, { opacity: 1 } ]
+    ]) : !isInView && !animation ?
     animate([
       [ `${first}`, { opacity: 0 } ],
       [ `${second}`, { transform: "translateY(25px)", opacity: 0 } ]
@@ -40,18 +37,9 @@ export function useList({ first, second }) {
     (animate([
     [ `${first}`, { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1] } ],
     [ `${second}`, { transform: "translateY(0px)", opacity: 1 }, { delay: stagger(0.3), ease: [0.17, 0.55, 0.55, 1], duration: 0.75 } ]
-    ]), setAnimationsCompleted(true))
+    ]), setAnimation(true));
 
-  //   isInView ?
-  //   animate([
-  //     [ `${first}`, { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1] } ],
-  //     [ `${second}`, { transform: "translateY(0)", opacity: 1 }, { delay: stagger(0.3), ease: [0.17, 0.55, 0.55, 1], duration: 0.75 } ]
-  //   ]) :
-  //   animate([
-  //     [ `${first}`, { opacity: 0 } ],
-  //     [ `${second}`, { transform: "translateY(25px)", opacity: 0 } ]
-  //   ])
-  }, [isInView, animationsCompleted])
+  }, [isInView, animation]);
 
   return scope;
 };
