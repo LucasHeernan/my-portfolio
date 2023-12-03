@@ -3,16 +3,19 @@ import NavBar from "./NavBar/NavBar";
 import Home from "./Home/Home";
 import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
-import Footer from "./Footer/Footer";
+import Footer2 from "./Footer/Footer2";
+import { AnimationNavBarProvider } from "../AnimationsContext";
 
 export default function Root() {
   return (
     <div>
-      <NavBar />
+      <AnimationNavBarProvider>
+        <NavBar />
+      </AnimationNavBarProvider>
       <Home />
       <Projects />
       <Contact />
-      <Footer />
+      <Footer2 />
     </div>
   )
 };

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useInView, useAnimate, stagger } from "framer-motion";
-import { useAnimationsContext } from "../../AnimationsContext";
+import { useAnimationsContext, useAnimationFooter } from "../../AnimationsContext";
 
 export function useMenu(isOpen) {
   const [scope, animate] = useAnimate();
@@ -43,6 +43,58 @@ export function useList({ first, second }) {
 
   return scope;
 };
+
+
+
+// export function useFooter({ first, second }) {
+export function useFooter({ first }) {
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope, { once: true });
+  const { animation, setAnimation } = useAnimationFooter();
+
+  // Sí isInView && animation ??? opacity: 1 -----> QUIETO
+  // Sí !isInView && !animation ??? opacity: 0 ---> INVISIBLE
+  // Sí isInView && !animation ??? opacity: 1 ---> ANIMACIÓN
+
+  useEffect(() => {
+    isInView && animation ? (animate([[ `${first}`, { opacity: 1 } ]]), console.log("QUIETO")) :
+    !isInView && !animation ? (animate([[ `${first}`, { opacity: 0 } ]]), console.log("INVISIBLE")) :
+    (animate([[ `${first}`, { opacity: 1, ease: [0.17, 0.55, 0.55, 1], duration: 3 } ]]), setAnimation(true), console.log("ANIMACIÓN"));
+
+  }, [isInView, animation]);
+  // useEffect(() => {
+  //   isInView && animation ? (animate([ `${first}`, { opacity: 1 } ]), console.log("QUIETO")) :
+  //   !isInView && !animation ? (animate([[ `${first}`, { opacity: 0 } ], [ `${second}`, { transform: "translateY(25px)", opacity: 0 } ]]), console.log("INVISIBLE")) :
+  //   (animate([[ `${first}`, { opacity: 1, ease: [0.17, 0.55, 0.55, 1] } ], [ `${second}`, { transform: "translateY(0px)", opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1], duration: 3 } ]]), setAnimation(true), console.log("ANIMACIÓN"));
+
+  // }, [isInView, animation]);
+
+  return scope;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export function Text({ children }) {
   const ref = useRef(null);
