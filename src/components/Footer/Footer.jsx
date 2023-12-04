@@ -3,37 +3,21 @@ import IconContainer from "../Technologies/InconContainer";
 import { Github, Linkedin, Whatsapp, Email } from "../Technologies/Icons";
 import profilePicture from "../../assets/profile-picture.jpg";
 import { motion } from "framer-motion";
+import { useFooter } from "../Contact/useAnimation";
 
 export default function Footer() {
 
   const [link, setLink] = useState("");
+  const scope = useFooter({ first:"div" });
 
   useEffect(() => {
     const isMobile = window.matchMedia("(hover: none)").matches;
     isMobile ? setLink("whatsapp://send?text=Hola! 👋🏼&phone=5491134921341") : setLink("https://web.whatsapp.com/send?phone=5491134921341&text=Hola! 👋🏼");
   }, []);
 
-  const footerAnimation = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        delay: 0.3,
-        ease: [0.17, 0.55, 0.55, 1],
-        duration: 1
-      }
-    }
-  };
-
   return (
     <footer className="w-full pt-24 pb-10 lg:pt-28 cursor-default">
-      <motion.div
-        className="max-w-7xl w-full mx-auto px-[10px] xs:px-5 lg:px-7 xl:px-10"
-        variants={footerAnimation}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-      >
+      <div ref={scope} className="max-w-7xl w-full mx-auto px-[10px] xs:px-5 lg:px-7 xl:px-10">
         <section className="flex justify-between items-center">
           <div className="flex items-center text-[#2a2a2a] dark:text-[#cacaca]">
             <img className="hidden xs:inline-block w-10 h-10 rounded-full -rotate-[18deg] object-scale-down bg-gradient-to-bl from-indigo-300 via-purple-400 to-sky-900 shadow-sm shadow-black lg:w-14 lg:h-14" src={profilePicture} alt="profile picture" />
@@ -92,7 +76,7 @@ export default function Footer() {
             <p className="hidden xs:inline-block relative text-base bottom-[2px] lg:text-lg">☝🏻</p>
           </div>
         </section>
-      </motion.div>
+      </div>
     </footer>
   )
 };

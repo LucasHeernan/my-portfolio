@@ -4,7 +4,6 @@ import MobileMenu from "./MobileMenu";
 import ThemeSwitcher from "../../ThemeSwitcher";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { useAnimationNavBar } from "../../AnimationsContext";
 
 const navAnimation = {
   initial: {
@@ -46,7 +45,6 @@ export default function NavBar() {
 
   const [mode, setMode] = ThemeSwitcher();
   const [navShadow, setNavShadow] = useState(false);
-  const { animation, setAnimation } = useAnimationNavBar();
   
   useEffect(() => {
     const handleShadow = () => { window.scrollY >= 40 ? setNavShadow(true) : setNavShadow(false) };

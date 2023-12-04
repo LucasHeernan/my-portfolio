@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
-import { Text } from "../Contact/useAnimation";
-import { useList } from "./useAnimation";
+import { useList, useText } from "./useAnimation";
 
 
 const CustomLink = ({ href, media, username }) => {
@@ -29,6 +28,8 @@ export default function Contact () {
 
   const [link, setLink] = useState("");
   const scope = useList({ first:"ul", second:"a" });
+  const title = useText({ first:"h2" });
+  const subtitle = useText({ first:"p" });
 
   useEffect(() => {
     const isMobile = window.matchMedia("(hover: none)").matches;
@@ -40,15 +41,15 @@ export default function Contact () {
       <div className="max-w-7xl w-full h-full mx-auto px-[10px] xs:px-5 flex flex-col md:flex-row lg:px-7 xl:px-10">
 
         <section className="relative z-0 md:flex md:flex-col md:w-1/2">
-          <Text>
+          <div ref={title}>
             <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Contacto</h2>
             <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Contacto</h2>
-          </Text>
-          <Text>
+          </div>
+          <div ref={subtitle}>
             <p className="text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] md:pt-4 md:pb-5 md:pr-5 md:w-[90%] lg:pb-2 lg:text-lg lg:pr-10">
               Si estas interesado en un proyecto, queres saber más sobre mi trabajo o estás buscando un desarrollador, no dudes en contactarme.
             </p>
-          </Text>
+          </div>
           <ul ref={scope} className="hidden md:flex flex-col py-2 md:py-4 xl:py-5">
             <CustomLink href={"mailto:lhbenitez2@gmail.com"} media={"Email"} username={"lhbenitez2@gmail.com"} />
             <CustomLink href={"https://www.linkedin.com/in/lucas-h-benitez"} media={"Linkedin"} username={"LucasHeernan"} />

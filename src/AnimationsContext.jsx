@@ -1,16 +1,16 @@
 import { createContext, useContext, useState } from "react";
 
-const AnimationsContext = createContext();
-
-export const AnimationsProvider = ({ children }) => {
+const AnimationList = createContext();
+export const AnimationListProvider = ({ children }) => {
   const [animation, setAnimation] = useState(false);
   return (
-    <AnimationsContext.Provider value={{ animation, setAnimation }}>
+    <AnimationList.Provider value={{ animation, setAnimation }}>
       {children}
-    </AnimationsContext.Provider>
+    </AnimationList.Provider>
   );
 };
-export const useAnimationsContext = () => useContext(AnimationsContext);
+export const useAnimationList = () => useContext(AnimationList);
+
 
 const AnimationNavBar = createContext();
 export const AnimationNavBarProvider = ({ children }) => {
@@ -23,6 +23,7 @@ export const AnimationNavBarProvider = ({ children }) => {
 };
 export const useAnimationNavBar = () => useContext(AnimationNavBar);
 
+
 const AnimationFooter = createContext();
 export const AnimationFooterProvider = ({ children }) => {
   const [animation, setAnimation] = useState(false);
@@ -33,3 +34,15 @@ export const AnimationFooterProvider = ({ children }) => {
   );
 };
 export const useAnimationFooter = () => useContext(AnimationFooter);
+
+
+const AnimationText = createContext();
+export const AnimationTextProvider = ({ children }) => {
+  const [animation, setAnimation] = useState(false);
+  return (
+    <AnimationText.Provider value={{ animation, setAnimation }}>
+      {children}
+    </AnimationText.Provider>
+  );
+};
+export const useAnimationText = () => useContext(AnimationText);

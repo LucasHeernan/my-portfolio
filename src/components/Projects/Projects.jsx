@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
-import { Text } from "../Contact/useAnimation";
+import { useText } from "../Contact/useAnimation";
 import { projectsData } from "../../assets/projects/projectsData";
 import insta from "../../assets/projectsImages/gimpInsta2.png";
 import portfolio from "../../assets/projectsImages/gimpPoke3.png";
@@ -17,6 +17,9 @@ export default function Projects() {
   const [arrowL, setArrowL] = useState(false);
   const [arrowR, setArrowR] = useState(false);
   const [curr, setCurr] = useState(0);
+
+  const title = useText({ first:"h2" });
+  const subtitle = useText({ first:"p" });
 
   const prev = () => {
     setCurr( curr => curr === 0 ? slides.length - 1 : curr - 1 );
@@ -55,15 +58,15 @@ export default function Projects() {
     <div name="projects" className="w-full h-screen cursor-default">
       <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-[10px] xs:px-5 lg:px-7 xl:px-10">
         <section className="relative z-0">
-          <Text>
+          <div ref={title}>
             <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Proyectos</h2>
             <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Proyectos</h2>
-          </Text>
-          <Text>
+          </div>
+          <div ref={subtitle}>
             <p className="text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] sm:w-[90%] md:pt-1 md:w-[85%] lg:text-lg lg:w-[75%]">
               Estos son algunos de los proyectos web y móviles en los que he trabajado, cada uno diseñado para adaptarse a diferentes dispositivos y necesidades.
             </p>
-          </Text>
+          </div>
         </section>
         <motion.div
           className="w-full h-full flex relative overflow-hidden"
