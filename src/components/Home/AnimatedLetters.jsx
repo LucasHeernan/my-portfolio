@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useAnimationTitle } from "../../AnimationsContext";
 
 export default function AnimatedLetters({ text, time }) {
   const [first, setFirts] = useState("animate-fadeInDown");
@@ -9,6 +10,8 @@ export default function AnimatedLetters({ text, time }) {
 
   const handleHover = (index) => setIsHovered(index);
   const handleHoverOut = () => setIsHovered(null);
+
+  const { animation, setAnimation } = useAnimationTitle();
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,8 +44,15 @@ export default function AnimatedLetters({ text, time }) {
   useEffect(() => {
     setTimeout(() => {
       setFirts("");
-    }, 4000)
-    // }, 3500)
+    // }, 4000)
+    }, 3500)
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimation(true);
+    // }, 5000)
+    }, 3700)
   }, []);
 
   return (
@@ -51,16 +61,23 @@ export default function AnimatedLetters({ text, time }) {
       {
         letras.map((letra, idx) => {
           const uniqueId = `${letra}-${idx}`;
-          return (
-            <span
-              key={idx}
-              className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
-              onMouseEnter={ first === "" ? () => handleHover(uniqueId) : null }
-              onMouseLeave={handleHoverOut}
-            >
-              {letra}
-            </span>
-          )
+          return animation ?
+          <span
+            key={idx}
+            className={`inline-block min-w-[7px] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
+            onMouseEnter={ first === "" ? () => handleHover(uniqueId) : null }
+            onMouseLeave={handleHoverOut}
+          >
+            {letra}
+          </span> :
+          <span
+            key={idx}
+            className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
+            onMouseEnter={ first === "" ? () => handleHover(uniqueId) : null }
+            onMouseLeave={handleHoverOut}
+          >
+            {letra}
+          </span>
         })
       }
     </div>

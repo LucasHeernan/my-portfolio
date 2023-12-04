@@ -46,3 +46,27 @@ export const AnimationTextProvider = ({ children }) => {
   );
 };
 export const useAnimationText = () => useContext(AnimationText);
+
+
+const AnimationTitle = createContext();
+export const AnimationTitleProvider = ({ children }) => {
+  const [animation, setAnimation] = useState(false);
+  return (
+    <AnimationTitle.Provider value={{ animation, setAnimation }}>
+      {children}
+    </AnimationTitle.Provider>
+  );
+};
+export const useAnimationTitle = () => useContext(AnimationTitle);
+
+
+const AnimationProject = createContext();
+export const AnimationProjectProvider = ({ children }) => {
+  const [animation, setAnimation] = useState(false);
+  return (
+    <AnimationProject.Provider value={{ animation, setAnimation }}>
+      {children}
+    </AnimationProject.Provider>
+  );
+};
+export const useAnimationProject = () => useContext(AnimationProject);
