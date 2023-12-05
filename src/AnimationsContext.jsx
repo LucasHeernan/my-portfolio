@@ -1,16 +1,5 @@
 import { createContext, useContext, useState } from "react";
 
-const AnimationList = createContext();
-export const AnimationListProvider = ({ children }) => {
-  const [animation, setAnimation] = useState(false);
-  return (
-    <AnimationList.Provider value={{ animation, setAnimation }}>
-      {children}
-    </AnimationList.Provider>
-  );
-};
-export const useAnimationList = () => useContext(AnimationList);
-
 
 const AnimationNavBar = createContext();
 export const AnimationNavBarProvider = ({ children }) => {
@@ -22,30 +11,6 @@ export const AnimationNavBarProvider = ({ children }) => {
   );
 };
 export const useAnimationNavBar = () => useContext(AnimationNavBar);
-
-
-const AnimationFooter = createContext();
-export const AnimationFooterProvider = ({ children }) => {
-  const [animation, setAnimation] = useState(false);
-  return (
-    <AnimationFooter.Provider value={{ animation, setAnimation }}>
-      {children}
-    </AnimationFooter.Provider>
-  );
-};
-export const useAnimationFooter = () => useContext(AnimationFooter);
-
-
-const AnimationText = createContext();
-export const AnimationTextProvider = ({ children }) => {
-  const [animation, setAnimation] = useState(false);
-  return (
-    <AnimationText.Provider value={{ animation, setAnimation }}>
-      {children}
-    </AnimationText.Provider>
-  );
-};
-export const useAnimationText = () => useContext(AnimationText);
 
 
 const AnimationTitle = createContext();
@@ -60,6 +25,30 @@ export const AnimationTitleProvider = ({ children }) => {
 export const useAnimationTitle = () => useContext(AnimationTitle);
 
 
+const AnimationSubtitle = createContext();
+export const AnimationSubtitleProvider = ({ children }) => {
+  const [animation, setAnimation] = useState(false);
+  return (
+    <AnimationSubtitle.Provider value={{ animation, setAnimation }}>
+      {children}
+    </AnimationSubtitle.Provider>
+  );
+};
+export const useAnimationSubtitle = () => useContext(AnimationSubtitle);
+
+
+const AnimationText = createContext();
+export const AnimationTextProvider = ({ children }) => {
+  const [animation, setAnimation] = useState(false);
+  return (
+    <AnimationText.Provider value={{ animation, setAnimation }}>
+      {children}
+    </AnimationText.Provider>
+  );
+};
+export const useAnimationText = () => useContext(AnimationText);
+
+
 const AnimationProject = createContext();
 export const AnimationProjectProvider = ({ children }) => {
   const [animation, setAnimation] = useState(false);
@@ -70,3 +59,27 @@ export const AnimationProjectProvider = ({ children }) => {
   );
 };
 export const useAnimationProject = () => useContext(AnimationProject);
+
+
+const AnimationList = createContext();
+export const AnimationListProvider = ({ children }) => {
+  const [animation, setAnimation] = useState(false);
+  return (
+    <AnimationList.Provider value={{ animation, setAnimation }}>
+      {children}
+    </AnimationList.Provider>
+  );
+};
+export const useAnimationList = () => useContext(AnimationList);
+
+
+const AnimationFooter = createContext();
+export const AnimationFooterProvider = ({ children }) => {
+  const [animation, setAnimation] = useState(false);
+  return (
+    <AnimationFooter.Provider value={{ animation, setAnimation }}>
+      {children}
+    </AnimationFooter.Provider>
+  );
+};
+export const useAnimationFooter = () => useContext(AnimationFooter);

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
-import { motion } from "framer-motion";
 import { useText } from "../Contact/useAnimation";
 import { projectsData } from "../../assets/projects/projectsData";
 import insta from "../../assets/projectsImages/gimpInsta2.png";
 import portfolio from "../../assets/projectsImages/gimpPoke3.png";
 import dpower from "../../assets/projectsImages/gimpDpower.png";
 import pokemon from "../../assets/projectsImages/gimpPoke3.png";
+import { useProject } from "../Contact/useAnimation";
 
 const slides = [ insta, portfolio, dpower, pokemon ];
 
@@ -39,27 +39,7 @@ export default function Projects() {
 
   const goToSlide = (slideIndex) => setCurr(slideIndex);
 
-  const cardAnimation = {
-    initial: { opacity: 0.4, y: 15 },
-    animate: {
-      opacity: 1, y: 0,
-      transition: { ease: [0.17, 0.55, 0.55, 1], duration: 0.3 }
-    }
-  };
-  // const cardAnimation = {
-  //   initial: {
-  //     opacity: 0,
-  //     scaleY: 0.7,
-  //   },
-  //   animate: {
-  //     opacity: 1,
-  //     scaleY: 1,
-  //     transition: {
-  //       ease: [0.17, 0.55, 0.55, 1],
-  //       duration: 1
-  //     }
-  //   }
-  // };
+  const card = useProject({ card:"div" });
 
   return (
     <div name="projects" className="w-full h-screen cursor-default">
@@ -70,18 +50,13 @@ export default function Projects() {
             <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Proyectos</h2>
           </div>
           <div ref={subtitle}>
-            <p className="text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] sm:w-[90%] md:pt-1 md:w-[85%] lg:text-lg lg:w-[75%]">
+            <p className="text-sm xs:text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] sm:w-[90%] md:pt-1 md:w-[85%] lg:text-lg lg:w-[75%]">
               Estos son algunos de los proyectos web y móviles en los que he trabajado, cada uno diseñado para adaptarse a diferentes dispositivos y necesidades.
             </p>
           </div>
         </section>
-        <motion.div
-          className="w-full h-full flex relative overflow-hidden"
-          variants={cardAnimation}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-        >
+
+        <div ref={card} className="w-full h-full flex relative overflow-hidden">
 
           {
             projectsData?.map((project, index) => (
@@ -124,7 +99,7 @@ export default function Projects() {
             />
           </button>
 
-          <div className="absolute bottom-[10px] sm:bottom-2 md:bottom-3 right-0 left-0">
+          <section className="absolute bottom-[10px] sm:bottom-2 md:bottom-3 right-0 left-0">
             <div className="flex items-center justify-center gap-5 lg:gap-6">
               {
                 slides.map((_, i) => (
@@ -136,9 +111,9 @@ export default function Projects() {
                 ))
               }
             </div>
-          </div>
+          </section>
 
-        </motion.div>
+        </div>
       </div>
     </div>
   )

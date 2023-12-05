@@ -56,8 +56,8 @@ export default function AnimatedLetters({ text, time }) {
   }, []);
 
   return (
-    <div className="pb-3 md:pb-2 xl:pb-0 transition-all ease-in-out duration-100 scale-y-125 md:scale-y-110 lg:scale-y-100">
-    {/* <div className="pb-3 xs:pb-2 lg:pb-0 transition-all ease-in-out duration-100 scale-y-125 xs:scale-y-110 sm:scale-y-105 md:scale-y-100"> */}
+    <div className="pb-3 xs:pb-2 lg:pb-0 transition-all ease-in-out duration-100 scale-y-125 xs:scale-y-110 sm:scale-y-105 md:scale-y-100">
+    {/* <div className="pb-3 md:pb-2 xl:pb-0 transition-all ease-in-out duration-100 scale-y-125 md:scale-y-110 lg:scale-y-100"> */}
       {
         letras.map((letra, idx) => {
           const uniqueId = `${letra}-${idx}`;
@@ -72,7 +72,8 @@ export default function AnimatedLetters({ text, time }) {
           </span> :
           <span
             key={idx}
-            className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
+            // className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
+            className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
             onMouseEnter={ first === "" ? () => handleHover(uniqueId) : null }
             onMouseLeave={handleHoverOut}
           >

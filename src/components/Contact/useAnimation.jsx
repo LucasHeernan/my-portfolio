@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useInView, useAnimate, stagger } from "framer-motion";
-import { useAnimationList, useAnimationFooter, useAnimationNavBar, useAnimationText } from "../../AnimationsContext";
+import { useAnimationList, useAnimationFooter, useAnimationText, useAnimationProject } from "../../AnimationsContext";
 
 export function useMenu(isOpen) {
   const [scope, animate] = useAnimate();
@@ -49,10 +49,6 @@ export function useFooter({ first }) {
   const isInView = useInView(scope, { once: true });
   const { animation, setAnimation } = useAnimationFooter();
 
-  // Sí isInView && animation ??? opacity: 1 -----> QUIETO
-  // Sí !isInView && !animation ??? opacity: 0 ---> INVISIBLE
-  // Sí isInView && !animation ??? opacity: 1 ---> ANIMACIÓN
-
   useEffect(() => {
     isInView && animation ? animate([[ first, { opacity: 1, transform: "translateY(0px)" }, { delay: 0.3, ease: [0.17, 0.55, 0.55, 1], duration: 0.4 } ]]) :
     !isInView && !animation ? animate([[ first, { opacity: 0, transform: "translateY(10px)" } ]]) :
@@ -78,75 +74,20 @@ export function useText({ first, delay }) {
   return scope;
 };
 
-const animation = (delay) => {
-  return {
-    initial: { y: 15, opacity: 0 },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: delay,
-        duration: 0.5,
-        ease: [0.17, 0.55, 0.55, 1],
-      }
-    }
-  }
-};
-
-
-{/* DIV(contenedor) > article(ProjectCard) > button(lados) > div(puntitos) */}
-export function useProject({ conteiner, article, butons, points }) {
+export function useProject({ card }) {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope, { once: true });
-  const { animation, setAnimation } = useAnimationList();
+  const { animation, setAnimation } = useAnimationProject();
 
   useEffect(() => {
-    isInView && animation ?
-    animate([
-      [ conteiner, { opacity: 1 } ],
-      [ article, { opacity: 1 } ],
-      [ butons, { opacity: 1 } ],
-      [ points, { opacity: 1 } ],
-    ]) : !isInView && !animation ?
-    animate([
-      [ conteiner, { opacity: 0 } ],
-      // [ article, { transform: "scaleY(0.7)", opacity: 0, filter: "blur(10px)" } ],
-      [ article, { transform: "ranslateY(15px)", opacity: 0, filter: "blur(15px)" } ],
-      [ butons, { transform: "translateY(15px)", opacity: 0 } ],
-      [ points, { transform: "translateY(15px)", opacity: 0 } ]
-      ]) :
-    (animate([
-    [ conteiner, { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1] } ],
-    // [ article, { transform: "scaleY(1)", opacity: 1, filter: "blur(0px)" }, { delay: 0.2, ease: [0.17, 0.55, 0.55, 1], duration: 0.3 } ],
-    [ article, { transform: "translateY(0px)", opacity: 1, filter: "blur(0px)" }, { delay: 0.1, ease: [0.17, 0.55, 0.55, 1], duration: 0.3 } ],
-    [ butons, { transform: "translateY(0px)", opacity: 1 }, { delay: stagger(1), ease: [0.17, 0.55, 0.55, 1], duration: 2 } ],
-    [ points, { transform: "translateY(0px)", opacity: 1 }, { delay: 3, ease: [0.17, 0.55, 0.55, 1], duration: 0.3 } ]
-    ]), setAnimation(true));
+    isInView && animation ? animate([[ card, { transform: "translateY(0px) scaleY(1)", opacity: 1 }, { delay: 0.1, ease: [0.17, 0.55, 0.55, 1], duration: 0.5 } ]]) :
+    !isInView && !animation ? animate([[ card, { transform: "translateY(15px) scaleY(0.7)", opacity: 0 } ]]) :
+    setAnimation(true);
 
   }, [isInView, animation]);
 
   return scope;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export function Text({ children }) {
   const ref = useRef(null);
