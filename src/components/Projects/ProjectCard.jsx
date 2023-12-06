@@ -71,7 +71,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
             mobile ? (
               <Link
                 to={`/${id}`}
-                className="relative w-[calc(100%-6px)] h-[calc(100%-6px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500 dark:from-indigo-300 dark:via-indigo-200 dark:to-indigo-100
+                className="relative w-[calc(100%-6px)] h-[calc(100%-6px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-teal-300 via-teal-400 to-teal-500 dark:from-teal-300 dark:via-teal-200 dark:to-teal-100
                 before:absolute before:-z-10 before:top-2 before:left-2 before:w-full before:h-full before:rounded-sm before:bg-slate-700 sm:before:top-3 sm:before:left-3 md:before:hidden"
                 // className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500 dark:from-indigo-300 dark:via-indigo-200 dark:to-indigo-100
                 // before:absolute before:-z-10 before:top-2 before:left-2 before:w-full before:h-full before:rounded-sm before:bg-slate-700 sm:before:top-3 sm:before:left-3 md:before:hidden"
