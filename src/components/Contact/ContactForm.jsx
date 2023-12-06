@@ -64,7 +64,7 @@ export default function ContactForm() {
             name="name"
             onChange={(e) => handleChange(e)}
             value={form.name}
-            className={`w-full py-3 px-5 rounded-sm bg-slate-600/20 border border-transparent placeholder:text-black/60 placeholder:text-sm placeholder:xs:text-base focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.name ? "border-[#ff0000]" : ""}`}
+            className={`w-full py-3 px-5 rounded-sm bg-slate-600/20 border border-transparent placeholder:text-black/60 placeholder:text-sm placeholder:xs:text-base focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.name ? "border-[rgb(255,0,0)]" : ""}`}
             type="text"
             autoComplete="off"
             placeholder="Nombre"
@@ -77,7 +77,7 @@ export default function ContactForm() {
             name="email"
             onChange={(e) => handleChange(e)}
             value={form.email}
-            className={`w-full py-3 px-5 rounded-sm bg-slate-600/20 border border-transparent placeholder:text-black/60 placeholder:text-sm placeholder:xs:text-base focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.email ? "border-[#ff0000]" : ""}`}
+            className={`w-full py-3 px-5 rounded-sm bg-slate-600/20 border border-transparent placeholder:text-black/60 placeholder:text-sm placeholder:xs:text-base focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.email ? "border-[rgb(255,0,0)]" : ""}`}
             type="email"
             autoComplete="off"
             placeholder="Correo electrónico"
@@ -90,7 +90,7 @@ export default function ContactForm() {
             name="subject"
             onChange={(e) => handleChange(e)}
             value={form.subject}
-            className={`w-full py-3 px-5 rounded-sm bg-slate-600/20 border border-transparent placeholder:text-black/60 placeholder:text-sm placeholder:xs:text-base focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.subject ? "border-[#ff0000]" : ""}`}
+            className={`w-full py-3 px-5 rounded-sm bg-slate-600/20 border border-transparent placeholder:text-black/60 placeholder:text-sm placeholder:xs:text-base focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.subject ? "border-[rgb(255,0,0)]" : ""}`}
             type="text"
             autoComplete="off"
             placeholder="Asunto"
@@ -103,7 +103,7 @@ export default function ContactForm() {
             name="message"
             onChange={(e) => handleChange(e)}
             value={form.message}
-            className={`w-full pt-3 px-5 rounded-sm resize-none bg-slate-600/20 border border-transparent placeholder:text-black/60 placeholder:text-sm placeholder:xs:text-base focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.message ? "border-[#ff0000]" : ""}`}
+            className={`w-full pt-3 px-5 rounded-sm resize-none bg-slate-600/20 border border-transparent placeholder:text-black/60 placeholder:text-sm placeholder:xs:text-base focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.message ? "border-[rgb(255,0,0)]" : ""}`}
             rows="6"
             placeholder="Mensaje"
             required
