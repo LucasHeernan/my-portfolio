@@ -68,7 +68,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
         <div className="hidden absolute left-6 top-3 w-[calc(100%-24px)] h-[calc(100%-12px)] bg-slate-700 dark:bg-slate-950 md:block"/>
         <div className="w-full h-full flex z-10 overflow-hidden md:shadow-lg md:shadow-black">
           {
-            !mobile ? (
+            mobile ? (
               <Link
                 to={`/${id}`}
                 className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-teal-300 via-teal-400 to-teal-500 dark:from-teal-300 dark:via-teal-200 dark:to-teal-100
