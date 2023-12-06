@@ -79,7 +79,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
                 <h3 className="absolute top-0 left-1 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-black dark:text-indigo-200 sm:text-[22px] sm:font-bold sm:py-6 transition-all duration-300 ease-linear md:hidden">{title}</h3>
                 <h3 className="absolute -top-[2px] left-0.5 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-indigo-200 dark:text-black sm:text-[22px] sm:font-bold sm:py-6 transition-all duration-300 ease-linear md:hidden">{title}</h3>
                 <img src={image} alt="pepe" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"}`}/>
-                {/* <img src={pokemonImg} alt="pepe" className={`w-full h-full invisible object-contain ${phone ? "py-4" : "px-2"}`}/> */}
+                <img src={pokemonImg} alt="pepe" className={`w-full h-full invisible object-contain ${phone ? "py-4" : "px-2"}`}/>
                 {/* <img src={image} alt="pepe" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"} blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] md:group-hover:blur-0`}/> */}
               </Link>
             ) : (
