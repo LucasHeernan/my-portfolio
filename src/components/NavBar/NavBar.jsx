@@ -4,7 +4,7 @@ import MobileMenu from "./MobileMenu";
 import ThemeSwitcher from "../../ThemeSwitcher";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { useAnimationNavBar } from "../../AnimationsContext";
+import { useAnimations } from "../../Context";
 
 const navAnimation = (animation) => {
   return {
@@ -38,19 +38,19 @@ const CustomLink = ({ to, title }) => {
     </Link>
   )
   // <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full group-hover:right-0 bg-blue-400">&nbsp;</span>
-}
+};
 
 export default function NavBar() {
 
   const [mode, setMode] = ThemeSwitcher();
   const [navShadow, setNavShadow] = useState(false);
-  const { animation, setAnimation } = useAnimationNavBar();
+  const { navBar, setNavBar } = useAnimations();
   
   useEffect(() => {
     const handleShadow = () => { window.scrollY >= 40 ? setNavShadow(true) : setNavShadow(false) };
     window.addEventListener("scroll", handleShadow);
     setTimeout(() => {
-      setAnimation(true);
+      setNavBar(true);
     }, 4000);
   }, []);
 
@@ -58,10 +58,10 @@ export default function NavBar() {
     <header className={`fixed w-full z-40 items-center py-1 md:py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl dark:shadow-lg dark:shadow-neutral-900" : ""}`}>
       <motion.nav
         className="relative flex max-w-7xl mx-auto justify-between px-[10px] xs:px-5 lg:px-7 xl:px-10"
-        variants={navAnimation(animation)}
+        variants={navAnimation(navBar)}
         initial="initial"
         animate="animate"
-        custom={animation}
+        custom={navBar}
         viewport={{ once: true }}
       >
 

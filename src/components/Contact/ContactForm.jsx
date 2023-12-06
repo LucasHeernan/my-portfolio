@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useForm } from "./useForm";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useList } from "./useAnimation";
+import { useList } from "../Animations/Animations";
 
 const initialForm = {
   name: "",

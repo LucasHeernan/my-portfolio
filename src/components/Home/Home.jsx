@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import AnimatedLetters from "./AnimatedLetters";
-import AnimatedContainer from "./AnimatedContainer";
+import AnimatedLetters from "../Animations/AnimatedLetters";
+import AnimatedContainer from "../Animations/AnimatedContainer";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { useAnimationSubtitle } from "../../AnimationsContext";
+import { useAnimations } from "../../Context";
 
 const subtitle = (animation) => {
   return {
@@ -40,25 +40,22 @@ export default function Home() {
   const hi = "Hola !"; /* (0.5 = 3) | (0.75 = 4.5) | (1 = 6) */
   const name = "Soy Lucas Benitez,"; /* ( 0.5 = 12) | (0.75 = 18) | (1 = 24) */
   const work = "Full Stack developer."; /* (0.5 = 22) | (0.75 = 33.75) | (1 = 45) */
-  // const work = "desarrollador Full Stack."; /* (0.5 = 24) | (0.75 = 36.75) | (1 = 49) */
   
   const downloadPdf = () => window.open("https://drive.google.com/file/d/1CtxGHdipwQVDOI8Mj18n7PJQSUHew5xC/view?usp=sharing", "_blank");
 
-  const { animation, setAnimation } = useAnimationSubtitle();
+  const { home, setHome } = useAnimations();
 
   useEffect(() => {
     setTimeout(() => {
-      setAnimation(true);
+      setHome(true);
     }, 3000);
   }, []);
-
 
   return (
     <div name="home" className="w-full h-screen cursor-default">
       <div className="w-full h-full max-w-7xl mx-auto flex flex-col px-[10px] xs:px-5 pt-36 text-[#2a2a2a] dark:text-[#ebebeb] md:pt-32 lg:px-7 xl:px-10 xl:pt-28">
         <div className="w-full h-32 xs:h-36 sm:h-44 md:h-56 lg:h-64 xl:h-[270px]">
           <h1 className="uppercase font-extrabold text-[21px] xs:text-[28px] sm:text-[38px] md:text-[42px] lg:text-[54px] xl:text-[60px]">
-          {/* <h1 className="uppercase font-extrabold text-[18px] xs:text-[25px] sm:text-[34px] md:text-[41px] lg:text-[54px] xl:text-[60px]"> */}
             <AnimatedLetters
               text={hi}
               time={0}
@@ -77,10 +74,10 @@ export default function Home() {
         <motion.div
           // className="w-full py-10 md:py-5 text-[#2a2a2a] dark:text-[#9a9a9a]"
           className="w-full py-10 xs:py-0 xs:pt-10 xs:pb-4 md:py-5 text-[#2a2a2a] dark:text-[#9a9a9a]"
-          variants={subtitle(animation)}
+          variants={subtitle(home)}
           initial="initial"
           animate="animate"
-          custom={animation}
+          custom={home}
           viewport={{ once: true }}
         >
           <p className="text-sm font-medium w-full xs:text-base sm:w-[90%] md:text-lg lg:text-xl lg:leading-[1.95rem] lg:w-[95%]">
@@ -96,10 +93,10 @@ export default function Home() {
         {/* <div className="w-full mt-5 py-6 sm:mt-0 lg:py-0 xl:py-3"> */}
           <motion.div
             className="w-full flex font-poppins"
-            variants={contact(animation)}
+            variants={contact(home)}
             initial="initial"
             animate="animate"
-            custom={animation}
+            custom={home}
             viewport={{ once: true }}
           >
             {/* <a
@@ -129,7 +126,7 @@ export default function Home() {
                 className="w-28 xs:w-32 sm:w-40 py-1 xs:py-[6px] sm:py-2 rounded bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-[3px] border-r-2 border-indigo-300 shadow-sm shadow-black transition-all duration-100 ease-out
                 group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:bg-gradient-to-t group-active:from-indigo-200 group-active:to-indigo-300"
               >
-                <span className="uppercase text-sm font-semibold text-[#2a2a2a]">contacto</span>
+                <span className="uppercase text-[13px] xs:text-sm font-semibold text-[#2a2a2a]">contacto</span>
               </button>
               <span
                 className="absolute -z-10 top-1 left-[3px] w-28 xs:w-32 sm:w-40 h-[35px] xs:h-full rounded rounded-br-[5px] bg-[rgb(0,0,0,.75)] dark:bg-[#1d1c1c]
@@ -143,7 +140,7 @@ export default function Home() {
                 className="w-32 sm:w-40 py-1 xs:py-[6px] sm:py-2 rounded bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-[3px] border-r-2 border-indigo-300 shadow-sm shadow-black transition-all duration-100 ease-out
                 group-hover:translate-y-[1px] group-active:translate-y-0.5 group-active:translate-x-0.5 group-active:bg-gradient-to-t group-active:from-indigo-200 group-active:to-indigo-300"
               >
-                <span className="uppercase text-sm font-semibold text-[#2a2a2a]">descargar cv</span>
+                <span className="uppercase text-[13px] xs:text-sm font-semibold text-[#2a2a2a]">descargar cv</span>
               </button>
               <span
                 className="absolute -z-10 top-1 left-[3px] w-32 sm:w-40 h-full rounded rounded-br-[5px] bg-[rgb(0,0,0,.75)] dark:bg-[#1d1c1c]

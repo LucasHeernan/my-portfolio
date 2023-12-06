@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
-import { useList, useText } from "./useAnimation";
+import { useList, useText } from "../Animations/Animations";
 
 
 const CustomLink = ({ href, media, username }) => {

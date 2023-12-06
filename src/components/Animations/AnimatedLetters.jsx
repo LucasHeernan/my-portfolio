@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useAnimationTitle } from "../../AnimationsContext";
+import { useAnimations } from "../../Context";
 
 export default function AnimatedLetters({ text, time }) {
   const [first, setFirts] = useState("animate-fadeInDown");
@@ -11,7 +11,7 @@ export default function AnimatedLetters({ text, time }) {
   const handleHover = (index) => setIsHovered(index);
   const handleHoverOut = () => setIsHovered(null);
 
-  const { animation, setAnimation } = useAnimationTitle();
+  const { title, setTitle } = useAnimations();
 
   useEffect(() => {
     setTimeout(() => {
@@ -44,24 +44,21 @@ export default function AnimatedLetters({ text, time }) {
   useEffect(() => {
     setTimeout(() => {
       setFirts("");
-    // }, 4000)
     }, 3500)
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
-      setAnimation(true);
-    // }, 5000)
+      setTitle(true);
     }, 3700)
   }, []);
 
   return (
     <div className="pb-3 xs:pb-2 lg:pb-0 transition-all ease-in-out duration-100 scale-y-125 xs:scale-y-110 sm:scale-y-105 md:scale-y-100">
-    {/* <div className="pb-3 md:pb-2 xl:pb-0 transition-all ease-in-out duration-100 scale-y-125 md:scale-y-110 lg:scale-y-100"> */}
       {
         letras.map((letra, idx) => {
           const uniqueId = `${letra}-${idx}`;
-          return animation ?
+          return title ?
           <span
             key={idx}
             className={`inline-block min-w-[7px] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}

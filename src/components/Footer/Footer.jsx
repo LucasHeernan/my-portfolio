@@ -3,12 +3,12 @@ import IconContainer from "../Technologies/InconContainer";
 import { Github, Linkedin, Whatsapp, Email } from "../Technologies/Icons";
 import profilePicture from "../../assets/profile-picture.jpg";
 import { motion } from "framer-motion";
-import { useFooter } from "../Contact/useAnimation";
+import { useFooter } from "../Animations/Animations";
 
 export default function Footer() {
 
   const [link, setLink] = useState("");
-  const scope = useFooter({ first:"div" });
+  const scope = useFooter({ down:"div" });
 
   useEffect(() => {
     const isMobile = window.matchMedia("(hover: none)").matches;

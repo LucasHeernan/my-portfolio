@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
-import { useText } from "../Contact/useAnimation";
 import { projectsData } from "../../assets/projects/projectsData";
 import insta from "../../assets/projectsImages/gimpInsta2.png";
 import portfolio from "../../assets/projectsImages/gimpPoke3.png";
 import dpower from "../../assets/projectsImages/gimpDpower.png";
 import pokemon from "../../assets/projectsImages/gimpPoke3.png";
-import { useProject } from "../Contact/useAnimation";
+import { useText, useProject } from "../Animations/Animations";
 
 const slides = [ insta, portfolio, dpower, pokemon ];
 
@@ -18,6 +17,7 @@ export default function Projects() {
   const [arrowR, setArrowR] = useState(false);
   const [curr, setCurr] = useState(0);
 
+  const work = useProject({ work:"div" });
   const title = useText({ first:"h2", delay: 0.3 });
   const subtitle = useText({ first:"p", delay: 0.2 });
 
@@ -39,8 +39,6 @@ export default function Projects() {
 
   const goToSlide = (slideIndex) => setCurr(slideIndex);
 
-  const card = useProject({ card:"div" });
-
   return (
     <div name="projects" className="w-full h-screen cursor-default">
       <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-[10px] xs:px-5 lg:px-7 xl:px-10">
@@ -56,7 +54,7 @@ export default function Projects() {
           </div>
         </section>
 
-        <div ref={card} className="w-full h-full flex relative overflow-hidden">
+        <div ref={work} className="w-full h-full flex relative overflow-hidden">
 
           {
             projectsData?.map((project, index) => (

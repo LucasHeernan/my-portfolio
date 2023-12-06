@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useMenu } from "../Contact/useAnimation";
+import { useMenu } from "../Animations/Animations";
 import BurgerToggle from "./BurgerToggle";
 import SideBar from "./SideBar";
 

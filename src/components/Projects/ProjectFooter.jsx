@@ -1,5 +1,5 @@
 import React from "react";
-import AnimatedContainer from "../Home/AnimatedContainer";
+import AnimatedContainer from "../Animations/AnimatedContainer";
 
 export default function ProjectFooter () {
 
