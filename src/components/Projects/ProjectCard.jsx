@@ -71,16 +71,13 @@ export default function ProjectCard({ id, title, description, techs, image, repo
             mobile ? (
               <Link
                 to={`/${id}`}
-                className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-teal-300 via-teal-400 to-teal-500 dark:from-teal-300 dark:via-teal-200 dark:to-teal-100
+                className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500 dark:from-indigo-300 dark:via-indigo-200 dark:to-indigo-100
                 before:absolute before:-z-10 before:top-2 before:left-2 before:w-full before:h-full before:rounded-sm before:bg-slate-700 sm:before:top-3 sm:before:left-3 md:before:hidden"
-                // className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500 dark:from-indigo-300 dark:via-indigo-200 dark:to-indigo-100
-                // before:absolute before:-z-10 before:top-2 before:left-2 before:w-full before:h-full before:rounded-sm before:bg-slate-700 sm:before:top-3 sm:before:left-3 md:before:hidden"
               >
-                <h3 className="absolute top-0 left-1 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-black dark:text-indigo-200 sm:text-[22px] sm:font-bold sm:py-6 transition-all duration-300 ease-linear md:hidden">{title}</h3>
-                <h3 className="absolute -top-[2px] left-0.5 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-indigo-200 dark:text-black sm:text-[22px] sm:font-bold sm:py-6 transition-all duration-300 ease-linear md:hidden">{title}</h3>
-                <img src={image} alt="pepe" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"}`}/>
-                <img src={pokemonImg} alt="pepe" className={`w-full h-full invisible object-contain ${phone ? "py-4" : "px-2"}`}/>
-                {/* <img src={image} alt="pepe" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"} blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] md:group-hover:blur-0`}/> */}
+                <h3 className="absolute top-0 left-1 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-black dark:text-indigo-200 sm:text-[22px] sm:font-bold sm:py-6 transition-all duration-300 ease-linear group-active:blur-[1px] md:hidden">{title}</h3>
+                <h3 className="absolute -top-[2px] left-0.5 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-indigo-100 dark:text-black sm:text-[22px] sm:font-bold sm:py-6 transition-all duration-300 ease-linear group-active:text-[#fff] group-active:dark:text-[#2a2a2a] md:hidden">{title}</h3>
+                <img src={image} alt="project image" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"} group-active:blur-[2px]`}/>
+                <img src={pokemonImg} alt="project image" className={`w-full h-full invisible object-contain ${phone ? "py-4" : "px-2"}`}/>
               </Link>
             ) : (
               <section
@@ -92,7 +89,7 @@ export default function ProjectCard({ id, title, description, techs, image, repo
                 <h3 className="absolute top-0 left-1 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-[#cacaca] sm:text-[22px] sm:font-bold sm:py-6 blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] group-hover:hidden md:hidden">{title}</h3>
                 <h3 className="absolute -top-[2px] left-0.5 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-black sm:text-[22px] sm:font-bold sm:py-6 blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] group-hover:text-[#fff] md:hidden">{title}</h3>
                 <Link to={`/${id}`}>
-                  <img src={image} alt="pepe" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"} blur-0 transition-all duration-200 ease-linear group-hover:blur-[1px] md:group-hover:blur-0 group-hover:scale-105`}/>
+                  <img src={image} alt="project image" className={`w-full h-full object-contain ${phone ? "py-4" : "px-2"} blur-0 transition-all duration-200 ease-linear group-hover:blur-[1px] md:group-hover:blur-0 group-hover:scale-105`}/>
                 </Link>
                 <div className="absolute w-full h-full -top-full opacity-100 transition-all duration-200 ease-in-out bg-slate-700/50 group-hover:top-0 md:group-hover:hidden"/>
 
