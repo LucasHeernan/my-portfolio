@@ -54,23 +54,21 @@ export default function Projects() {
 
         <div ref={work} className="w-full h-full flex relative overflow-hidden">
 
-          <div className="w-full h-full">
-            {
-              projectsData?.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  id={project.id}
-                  title={project.title}
-                  description={project.description}
-                  techs={project.techs}
-                  image={slides[index]}
-                  repository={project.repository}
-                  phone={project.phone}
-                  curr={curr}
-                />
-              ))
-            }
-          </div>
+          {
+            projectsData?.map((project, index) => (
+              <ProjectCard
+                key={index}
+                id={project.id}
+                title={project.title}
+                description={project.description}
+                techs={project.techs}
+                image={slides[index]}
+                repository={project.repository}
+                phone={project.phone}
+                curr={curr}
+              />
+            ))
+          }
 
           <button
             onClick={prev}
