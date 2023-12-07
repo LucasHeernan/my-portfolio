@@ -55,7 +55,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <header className={`fixed w-full overflow-hidden z-40 items-center py-1 md:py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl dark:shadow-lg dark:shadow-neutral-900" : ""}`}>
+    <header className={`fixed w-full z-40 items-center py-1 md:py-2 transition-shadow ease-in-out duration-300 ${navShadow ? "shadow-xl backdrop-blur-3xl dark:shadow-lg dark:shadow-neutral-900" : ""}`}>
       <motion.nav
         className="relative flex max-w-7xl mx-auto justify-between px-[10px] xs:px-5 lg:px-7 xl:px-10"
         variants={navAnimation(navBar)}
