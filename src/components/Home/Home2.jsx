@@ -44,7 +44,8 @@ export default function Home2() {
   const downloadPdf = () => window.open("https://drive.google.com/file/d/1CtxGHdipwQVDOI8Mj18n7PJQSUHew5xC/view?usp=sharing", "_blank");
 
   const { home, setHome } = useAnimations();
-  const [alturaViewport, setAlturaViewport] = useState(window.innerHeight);
+  // const [alturaViewport, setAlturaViewport] = useState(window.innerHeight);
+  const [alturaViewport, setAlturaViewport] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
@@ -53,18 +54,28 @@ export default function Home2() {
   }, []);
 
   useEffect(() => {
-    const actualizarAlturaViewport = () => {
+    const obtenerAlturaViewport = () => {
       setAlturaViewport(window.innerHeight);
     };
-
-    // Agregar un event listener para manejar cambios en el tamaño de la ventana
-    window.addEventListener('resize', actualizarAlturaViewport);
-
-    // Limpiar el event listener cuando el componente se desmonta
-    return () => {
-      window.removeEventListener('resize', actualizarAlturaViewport);
-    };
+    // Obtener la altura del viewport cuando el componente se monta
+    obtenerAlturaViewport();
+    // Limpiar el manejador de eventos después de obtener la altura inicial
+    // window.removeEventListener('resize', obtenerAlturaViewport);
+    // Nota: Si no deseas eliminar el manejador de eventos,
+    // simplemente omite la línea window.removeEventListener.
   }, []);
+
+  // useEffect(() => {
+  //   const actualizarAlturaViewport = () => {
+  //     setAlturaViewport(window.innerHeight);
+  //   };
+  //   // Agregar un event listener para manejar cambios en el tamaño de la ventana
+  //   window.addEventListener('resize', actualizarAlturaViewport);
+  //   // Limpiar el event listener cuando el componente se desmonta
+  //   return () => {
+  //     window.removeEventListener('resize', actualizarAlturaViewport);
+  //   };
+  // }, []);
 
   return (
     <div
