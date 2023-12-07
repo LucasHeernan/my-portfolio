@@ -52,11 +52,11 @@ export default function Home2() {
   }, []);
 
   return (
-    <div name="home" className="w-full h-screen cursor-default">
-      <div className="w-full h-full max-w-7xl mx-auto flex flex-col px-[10px] xs:px-5 pt-36 text-[#2a2a2a] dark:text-[#ebebeb] sm:pt-32 lg:px-7 xl:px-10 xl:pt-28">
+    <div name="home" className="w-full h-screen bg-yellow-500 cursor-default">
+      <div className="w-full h-full bg-yellow-200 max-w-7xl mx-auto flex flex-col px-[10px] xs:px-5 pt-36 text-[#2a2a2a] dark:text-[#ebebeb] sm:pt-32 lg:px-7 xl:px-10 xl:pt-28">
         <div className="w-full h-40 sm:h-48 md:h-52 lg:h-64 xl:h-[270px] bg-green-200 xs:bg-orange-300 sm:bg-violet-300 md:bg-green-400 lg:bg-sky-400 xl:bg-red-400"> {/* MINUSCULA */}
         {/* <div className="w-full h-32 xs:h-36 sm:h-44 md:h-56 lg:h-64 xl:h-[270px] bg-green-300 xs:bg-orange-300 sm:bg-violet-300 md:bg-green-400 lg:bg-sky-400 xl:bg-red-400"> */}
-          <h1 className="font-extrabold text-[35px] sm:text-[45px] md:text-[45px] lg:text-[58px] xl:text-[62px]"> {/* MINUSCULA */}
+          <h1 className="font-extrabold text-[34px] xs:text-[37px] sm:text-[45px] md:text-[45px] lg:text-[58px] xl:text-[62px]"> {/* MINUSCULA */}
           {/* <h1 className="uppercase font-extrabold text-[21px] xs:text-[28px] sm:text-[38px] md:text-[42px] lg:text-[54px] xl:text-[60px]"> */}
             <AnimatedLetters
               text={hi}
@@ -74,7 +74,6 @@ export default function Home2() {
         </div>
         
         <motion.div
-          // className="w-full py-10 md:py-5 text-[#2a2a2a] dark:text-[#9a9a9a]"
           // className="w-full py-10 xs:py-0 xs:pt-10 xs:pb-4 md:py-5 text-[#2a2a2a] dark:text-[#9a9a9a]"
           className="w-full py-5 my-7 text-[#2a2a2a] dark:text-[#9a9a9a] bg-red-200 xs:bg-sky-300 sm:bg-green-300 md:bg-violet-400 lg:bg-orange-300 xl:bg-green-300"
           variants={subtitle(home)}
@@ -84,8 +83,6 @@ export default function Home2() {
           viewport={{ once: true }}
         >
           <p className="text-[15px] font-medium w-full xs:text-base sm:w-[90%] md:text-lg lg:text-xl lg:leading-[1.95rem] lg:w-[95%]">
-          {/* <p className="text-sm font-normal font-poppins w-full xs:text-base sm:w-[90%] md:text-lg lg:text-xl lg:leading-[1.95rem] lg:w-[95%]"> */}
-          {/* bg-green-300 xs:bg-orange-300 sm:bg-violet-300 md:bg-green-400 lg:bg-sky-400 xl:bg-red-400 */}
             Full Stack developer orientado al <AnimatedContainer words={"Front end"} /> con
             experiencia en el desarrollo de aplicaciones <AnimatedContainer words={"web y móviles."} /> <br/>
             Soy una persona proactiva, siempre dispuesta a colaborar, <AnimatedContainer aplicaciones words={"aprender"} /> cosas
@@ -93,7 +90,7 @@ export default function Home2() {
           </p>
         </motion.div>
         
-        <div className="w-full py-6 md:mt-1 lg:mt-0 lg:py-0 xl:py-3 bg-green-200 xs:bg-orange-300 sm:bg-violet-300 md:bg-green-400 lg:bg-sky-400 xl:bg-red-400">
+        <div className="w-full py-5 mt-10 xs:mt-5 md:mt-1 lg:mt-0 lg:py-0 xl:py-3 bg-green-200 xs:bg-orange-300 sm:bg-violet-300 md:bg-green-400 lg:bg-sky-400 xl:bg-red-400">
         {/* <div className="w-full mt-5 py-6 sm:mt-0 lg:py-0 xl:py-3"> */}
           <motion.div
             className="w-full flex font-poppins"
@@ -159,3 +156,9 @@ export default function Home2() {
     </div>
   )
 };
+
+
+// Como desarrollador orientado al <AnimatedContainer words={"Front end"} /> cuento con
+// experiencia en el desarrollo de aplicaciones <AnimatedContainer words={"web y móviles."} /> <br/>
+// Soy una persona proactiva, siempre dispuesta a colaborar, <AnimatedContainer aplicaciones words={"aprender"} /> cosas
+// nuevas y por sobre todo con ganas de trabajar en equipo.

@@ -16,7 +16,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="w-full pt-24 pb-10 lg:pt-28 cursor-default">
+    <footer className="w-full bg-orange-300 pt-24 pb-10 lg:pt-28 cursor-default">
       <div ref={scope} className="max-w-7xl w-full mx-auto px-[10px] xs:px-5 lg:px-7 xl:px-10">
         <section className="flex justify-between items-center">
           <div className="flex items-center text-[#2a2a2a] dark:text-[#cacaca]">
