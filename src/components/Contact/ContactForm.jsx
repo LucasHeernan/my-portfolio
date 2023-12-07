@@ -52,7 +52,7 @@ export default function ContactForm() {
     <form
       ref={emailRef}
       onSubmit={handleSubmit}
-      className="w-full flex flex-col items-center md:justify-end md:w-1/2 md:pb-8"
+      className="w-full h-full flex flex-col items-center md:justify-end md:w-1/2 md:pb-8"
     >
       <ToastContainer autoClose={3000}/>
       <section
