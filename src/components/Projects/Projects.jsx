@@ -46,7 +46,7 @@ export default function Projects() {
             <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Proyectos</h2>
           </div>
           <div ref={subtitle}>
-            <p className="text-[15px] xs:text-base font-medium text-[#2a2a2a] dark:text-[#9a9a9a] sm:w-[90%] md:pt-1 md:w-[85%] lg:text-lg lg:w-[75%]">
+            <p className="text-[15px] xs:text-base font-medium pt-1 text-[#2a2a2a] dark:text-[#9a9a9a] sm:w-[90%] md:pt-2 md:w-[85%] lg:text-lg lg:w-[75%]">
               Estos son algunos de los proyectos web y móviles en los que he trabajado, cada uno diseñado para adaptarse a diferentes dispositivos y necesidades.
             </p>
           </div>

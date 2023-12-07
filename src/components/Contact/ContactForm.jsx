@@ -52,14 +52,14 @@ export default function ContactForm() {
     <form
       ref={emailRef}
       onSubmit={handleSubmit}
-      className="w-full h-full flex flex-col items-center md:justify-end md:w-1/2 md:pb-8"
+      className="w-full flex flex-col items-center md:justify-end md:w-1/2 md:pb-8"
     >
       <ToastContainer autoClose={3000}/>
       <section
         ref={scope}
-        className="w-full h-full flex flex-col text-[#2a2a2a] text-base font-medium"
+        className="w-full flex flex-col text-[#2a2a2a] text-base font-medium"
       >
-        <div className="relative w-full my-3">
+        <div className="relative w-full mt-6 my-3">
           <input
             name="name"
             onChange={(e) => handleChange(e)}
@@ -77,7 +77,7 @@ export default function ContactForm() {
             name="email"
             onChange={(e) => handleChange(e)}
             value={form.email}
-            className={`w-full py-3 px-5 rounded-sm bg-slate-600/20 border border-transparent placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.email ? "border-[rgb(255,0,0)]" : ""}`}
+            className={`w-full py-3 px-5 rounded-sm bg-slate-600/20 border border-transparent placeholder:text-black/60 placeholder:text-sm placeholder:xs:text-base focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.email ? "border-[rgb(255,0,0)]" : ""}`}
             type="email"
             autoComplete="off"
             placeholder="Correo electrónico"
