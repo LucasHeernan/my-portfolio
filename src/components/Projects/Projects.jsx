@@ -42,8 +42,8 @@ export default function Projects() {
       <div className="max-w-7xl w-full h-full flex flex-col mx-auto px-[10px] xs:px-5 lg:px-7 xl:px-10">
         <section className="relative z-0">
           <div ref={title}>
-            <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Proyectos</h2>
-            <h2 className="text-2xl font-bold pt-14 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Proyectos</h2>
+            <h2 className="text-2xl font-bold pt-10 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl">Proyectos</h2>
+            <h2 className="text-2xl font-bold pt-10 tracking-widest uppercase sm:text-3xl md:pt-16 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">Proyectos</h2>
           </div>
           <div ref={subtitle}>
             <p className="text-[15px] xs:text-base font-medium pt-1 text-[#2a2a2a] dark:text-[#9a9a9a] sm:w-[90%] md:pt-2 md:w-[85%] lg:text-lg lg:w-[75%]">

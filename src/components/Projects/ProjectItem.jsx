@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProjectImage from "./ProjectImage";
 import ProjectNavBar from "./ProjectNavBar";
 import ProjectFooter from "./ProjectFooter";
-import { Github, Youtube, Android } from "../Technologies/Icons";
+import { Github, Youtube } from "../Technologies/Icons";
 import { projectsData } from "../../assets/projects/projectsData";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -62,18 +62,7 @@ export default function ProjectItem() {
             </div>
 
             {
-              project.android && apk ?
-                <div className="relative z-10 ml-5">
-                  <a
-                    href={`${project.android}`}
-                    target="_blank"
-                    className="w-9 h-9 flex justify-center items-center rounded-full bg-[#83c610] border-b-2 border-r border-lime-700 shadow-sm shadow-black"
-                  >
-                    <Android fill={"white"} className="w-6 mt-px" />
-                  </a>
-                  <span className="absolute w-[calc(100%+1px)] h-[calc(100%+1px)] -z-10 top-px left-px rounded-full bg-[rgb(0,0,0,.70)] dark:bg-[#1d1c1c]"/>
-                </div>
-              : project.youtube ?
+              project.youtube ?
                 <div className="relative z-10 ml-5">
                   <a
                     href={`${project.youtube}`}
