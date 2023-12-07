@@ -69,11 +69,11 @@ export default function Home2() {
   return (
     <div
       style={{ height: `${alturaViewport}px` }}
-      className="w-full h-full bg-violet-500 cursor-default"
+      className="w-full bg-violet-500 cursor-default"
       name="home"
     >
     {/* <div name="home" className="w-full h-full bg-violet-500 cursor-default"> */}
-      <div className="w-full bg-yellow-200 max-w-7xl mx-auto flex flex-col px-[10px] xs:px-5 pt-36 text-[#2a2a2a] dark:text-[#ebebeb] sm:pt-32 lg:px-7 xl:px-10 xl:pt-28">
+      <div className="w-full h-full bg-yellow-200 max-w-7xl mx-auto flex flex-col px-[10px] xs:px-5 pt-36 text-[#2a2a2a] dark:text-[#ebebeb] sm:pt-32 lg:px-7 xl:px-10 xl:pt-28">
         <div className="w-full h-40 sm:h-48 md:h-52 lg:h-64 xl:h-[270px] bg-green-200 xs:bg-orange-300 sm:bg-violet-300 md:bg-green-400 lg:bg-sky-400 xl:bg-red-400"> {/* MINUSCULA */}
         {/* <div className="w-full h-32 xs:h-36 sm:h-44 md:h-56 lg:h-64 xl:h-[270px] bg-green-300 xs:bg-orange-300 sm:bg-violet-300 md:bg-green-400 lg:bg-sky-400 xl:bg-red-400"> */}
           <h1 className="font-extrabold text-[34px] xs:text-[37px] sm:text-[45px] md:text-[45px] lg:text-[58px] xl:text-[62px]"> {/* MINUSCULA */}
