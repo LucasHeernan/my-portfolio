@@ -77,7 +77,7 @@ export default function ContactForm() {
             name="email"
             onChange={(e) => handleChange(e)}
             value={form.email}
-            className={`w-full py-3 px-5 rounded-sm bg-slate-600/20 border border-transparent placeholder:text-black/60 placeholder:text-sm placeholder:xs:text-base focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.email ? "border-[rgb(255,0,0)]" : ""}`}
+            className={`w-full py-3 px-5 rounded-sm bg-slate-600/20 border border-transparent placeholder:text-black/60 focus:outline-none dark:bg-[#cacaca] transform transition-all duration-500 ease-linear peer/contact ${errors.email ? "border-[rgb(255,0,0)]" : ""}`}
             type="email"
             autoComplete="off"
             placeholder="Correo electrónico"
