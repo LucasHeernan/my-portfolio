@@ -57,7 +57,7 @@ export default function ContactForm() {
       <ToastContainer autoClose={3000}/>
       <section
         ref={scope}
-        className="w-full flex flex-col text-[#2a2a2a] text-base font-medium"
+        className="w-full h-full flex flex-col text-[#2a2a2a] text-base font-medium"
       >
         <div className="relative w-full my-3">
           <input
