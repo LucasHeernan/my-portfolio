@@ -41,8 +41,8 @@ export function useProject({ work }) {
   const { card, setCard } = useAnimations();
 
   useEffect(() => {
-    isInView && card ? animate([[ work, { opacity: 1 }, { delay: 0.4, ease: [0.17, 0.55, 0.55, 1], duration: 1 } ]]) :
-    !isInView && !card ? animate([[ work, { opacity: 0 } ]]) :
+    isInView && card ? animate([[ work, { transform: "translateY(0px)", opacity: 1 }, { delay: 0.2, ease: [0.17, 0.55, 0.55, 1], duration: 1 } ]]) :
+    !isInView && !card ? animate([[ work, { transform: "translateY(25px)", opacity: 0 } ]]) :
     setCard(true);
 
   }, [isInView, card]);

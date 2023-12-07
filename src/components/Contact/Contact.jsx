@@ -38,7 +38,7 @@ export default function Contact () {
 
   return (
     <div name="contact" className="w-full h-screen cursor-default">
-      <div className="max-w-7xl w-full h-full bg-violet-300 mx-auto px-[10px] xs:px-5 flex flex-col md:flex-row lg:px-7 xl:px-10">
+      <div className="max-w-7xl w-full h-full mx-auto px-[10px] xs:px-5 flex flex-col md:flex-row lg:px-7 xl:px-10">
 
         <section className="relative z-0 md:flex md:flex-col md:w-1/2">
           <div ref={title}>
