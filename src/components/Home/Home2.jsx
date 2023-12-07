@@ -44,7 +44,7 @@ export default function Home2() {
   const downloadPdf = () => window.open("https://drive.google.com/file/d/1CtxGHdipwQVDOI8Mj18n7PJQSUHew5xC/view?usp=sharing", "_blank");
 
   const { home, setHome } = useAnimations();
-  const [viewportHeight, setViewportHeight] = useState(500);
+  const [viewportHeight, setViewportHeight] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
@@ -81,7 +81,7 @@ export default function Home2() {
             custom={home}
             viewport={{ once: true }}
           >
-            Full Stack developer orientado al <AnimatedContainer words={"Front end"} /> con
+            Full Stack developer {viewportHeight} orientado al <AnimatedContainer words={"Front end"} /> con
             experiencia en el desarrollo de aplicaciones <AnimatedContainer words={"web y móviles."} /> <br/>
             Soy una persona proactiva, siempre dispuesta a colaborar, <AnimatedContainer aplicaciones words={"aprender"} /> cosas
             nuevas y por sobre todo con ganas de trabajar en equipo.
