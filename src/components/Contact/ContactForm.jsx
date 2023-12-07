@@ -110,7 +110,7 @@ export default function ContactForm() {
           />
           <span className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-500 border-b-2 border-blue-400 dark:border-blue-600 peer-focus/contact:w-full" />
         </div>
-        <div className="relative z-10 group self-center mt-2 md:mt-5 md:self-end">
+        <div className="relative z-10 group self-center mt-10 md:mt-5 md:self-end">
           <button
             type="submit"
             disabled={Object.keys(errors).length || Object.values(form).every(el => el === "") ? true : false}
