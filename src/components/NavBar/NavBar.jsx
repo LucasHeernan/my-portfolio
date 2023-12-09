@@ -76,6 +76,7 @@ export default function NavBar() {
         </div>
 
         <button
+          style={{ touchAction: "none" }}
           className={`flex rounded-full w-8 p-1 ${mode === "dark" ? "bg-gradient-to-tr from-cyan-300 via-blue-400 to-blue-500" : "bg-gradient-to-tr from-blue-950 via-indigo-950 to-slate-950"}`}
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
         >
