@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const variants = {
   initial: (direction) => {
-    return { x: direction }
+    return { x: direction > 100 ? 1000 : -1000 }
   },
   animate: { x: 0 },
   exit: (direction) => {
-    return { x: direction }
+    return { x: direction < -100 ? 1000 : -1000 }
   }
 };
 
@@ -78,44 +78,30 @@ export default function ProjectImage({ images, phone }) {
           </div>
         </button>
         <AnimatePresence initial={false} custom={direction}>
-          { phone ?
-            <div className="w-full h-full bg-white">
-              <motion.img
-                key={currentImg}
-                src={images[currentImg]}
-                alt="image"
-                title="imagen"
-                className="w-full h-full object-contain"
-                custom={direction}
-                variants={variants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  duration: 5
-                }}
-              />
-            </div> :
-            <div className="w-full h-full bg-slate-300">
-              <motion.img
-                key={currentImg}
-                src={images[currentImg]}
-                alt="image"
-                title="imagen"
-                className="w-full h-full object-cover"
-                custom={direction}
-                variants={variants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  duration: 1
-                }}
-              />
-            </div>
-          }
+          <div className={`w-full h-full ${phone ? "bg-white" : "bg-slate-300"}`}>
+            <motion.img
+              key={currentImg}
+              src={images[currentImg]}
+              alt="project image"
+              title="project image"
+              className={`w-full h-full ${phone ? "object-contain" : "object-cover"}`}
+              custom={direction}
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                duration: 1
+              }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.6}
+              onDragEnd={(e, {offset}) => {
+                offset.x < -125? next() : offset.x > 125 ? prev() : null;
+              }}
+            />
+          </div>
         </AnimatePresence>
       </div>
       <div className="h-10 flex items-end justify-center sm:h-11 md:h-14">
@@ -134,3 +120,16 @@ export default function ProjectImage({ images, phone }) {
     </section>
   )
 };
+
+
+// ¿CÓMO MANEJO EL CASO DE QUE VAYA PARA "ATRAS"?
+
+// const swipe = 500 -----> PUNTO DE REFERENCIA
+// DE -500 A 500 EL MISMO + || - de eso === el mismo
+
+// drag -> X
+// dragConstraints={{ left: 0, right: 0 }} ???
+// dragElastic={0.5}
+// onDragEnd={(e, {offset}) =>
+// offset < -100 ? prev() : offset < 100 ? next() : null
+// }}

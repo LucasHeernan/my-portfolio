@@ -45,8 +45,6 @@ export default function NavBar() {
   const [mode, setMode] = ThemeSwitcher();
   const [navShadow, setNavShadow] = useState(false);
   const { navBar, setNavBar } = useAnimations();
-
-  const handleTouch = (e) => e.preventDefault();
   
   useEffect(() => {
     const handleShadow = () => { window.scrollY >= 40 ? setNavShadow(true) : setNavShadow(false) };
@@ -73,15 +71,13 @@ export default function NavBar() {
           <CustomLink to="contact" title="Contacto" />
         </div>
 
-        <div style={{ touchAction: "none" }} className="flex md:hidden">
+        <div className="flex md:hidden">
           <MobileMenu />
         </div>
 
         <button
-          // style={{ touchAction: "none" }}
           className={`flex rounded-full w-8 p-1 ${mode === "dark" ? "bg-gradient-to-tr from-cyan-300 via-blue-400 to-blue-500" : "bg-gradient-to-tr from-blue-950 via-indigo-950 to-slate-950"}`}
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
-          onTouchStart={handleTouch}
         >
           { mode === "dark" ? <Sun className={"text-white"} /> : <Moon className={"text-white"} /> }
         </button>
