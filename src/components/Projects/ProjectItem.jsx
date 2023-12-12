@@ -44,7 +44,7 @@ export default function ProjectItem() {
       <ProjectNavBar />
       <div className="max-w-7xl w-full flex flex-col mx-auto pb-10 px-5 xs:px-10 sm:px-16 md:px-20 text-[#2a2a2a] dark:text-[#8a8a8a]">
         <section className="flex md:flex-row">
-          <div className="relative z-0 pr-8 mt-8 mb-3 sm:mt-10">
+          <div className="relative z-0 pr-5 mt-8 mb-3 xs:pr-8 sm:mt-10">
             <h2 className="text-2xl font-bold tracking-wider uppercase scale-y-110 md:scale-y-100 xs:text-[27px] md:text-4xl text-[#2a2a2a] dark:text-[#cacaca]">{project.title}</h2>
             <h2 className="text-2xl font-bold tracking-wider uppercase scale-y-110 md:scale-y-100 xs:text-[27px] md:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">{project.title}</h2>
           </div>

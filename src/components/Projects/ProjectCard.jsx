@@ -70,6 +70,7 @@ export default function ProjectCard({ curr, image, prev, next, direction }) {
           }}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.6}
           onDragEnd={(e, {offset}) => {
             offset.x < -200 ? next() : offset.x > 200 ? prev() : null;
           }}

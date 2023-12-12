@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAnimations } from "../../Context";
 
 export default function AnimatedLetters({ text, time }) {
-  const [first, setFirts] = useState("animate-fadeInDown");
+  const [first, setFirts] = useState("animate-fadeIn");
   const [letras, setLetras] = useState([]);
   const [indice, setIndice] = useState(0);
   const [shown, setShown] = useState(false);
@@ -51,7 +51,7 @@ export default function AnimatedLetters({ text, time }) {
     setTimeout(() => {
       setTitle(true);
     }, 3700)
-  }, []);
+  }, [title]);
 
   return (
     <div className="transition-all ease-in-out duration-100 scale-y-110 sm:scale-y-105 md:scale-y-100"> {/* MINUSCULA */}
@@ -65,15 +65,19 @@ export default function AnimatedLetters({ text, time }) {
             className={`inline-block min-w-[7px] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[15px]`}
             onMouseEnter={ first === "" ? () => handleHover(uniqueId) : null }
             onMouseLeave={handleHoverOut}
+            onTouchStart={ first === "" ? () => handleHover(uniqueId) : null }
+            onTouchCancelCapture={handleHoverOut}
           >
             {letra}
           </span> :
           <span
             key={idx}
             // className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
-            className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
+            className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
             onMouseEnter={ first === "" ? () => handleHover(uniqueId) : null }
             onMouseLeave={handleHoverOut}
+            onTouchStart={ first === "" ? () => handleHover(uniqueId) : null }
+            onTouchCancelCapture={handleHoverOut}
           >
             {letra}
           </span>
