@@ -42,14 +42,14 @@ export default function ProjectItem() {
   return (
     <div className="w-full cursor-default font-['Montserrat'] transition-colors duration-75 ease-in-out bg-white dark:bg-[#2a2a2a]">
       <ProjectNavBar />
-      <div className="max-w-7xl w-full flex flex-col mx-auto py-10 px-5 sm:px-10 md:px-16 lg:px-20 text-[#2a2a2a] dark:text-[#8a8a8a]">
-        {/* bg-green-400 xs:bg-orange-400 sm:bg-violet-400 md:bg-green-400 lg:bg-sky-400 xl:bg-red-400 */}
-        <section className="flex flex-col md:flex-row">
-          <div className="relative z-0 pr-8 mt-5 mb-3">
-            <h2 className="text-3xl font-bold tracking-wider uppercase scale-y-110 lg:scale-y-100 lg:text-4xl text-[#2a2a2a] dark:text-[#cacaca]">{project.title}</h2>
-            <h2 className="text-3xl font-bold tracking-wider uppercase scale-y-110 lg:scale-y-100 lg:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">{project.title}</h2>
+      <div className="max-w-7xl w-full flex flex-col mx-auto pb-10 px-5 xs:px-10 sm:px-16 md:px-20 text-[#2a2a2a] dark:text-[#8a8a8a]">
+        <section className="flex md:flex-row">
+          <div className="relative z-0 pr-8 mt-8 mb-3 sm:mt-10">
+            <h2 className="text-2xl font-bold tracking-wider uppercase scale-y-110 md:scale-y-100 xs:text-[27px] md:text-4xl text-[#2a2a2a] dark:text-[#cacaca]">{project.title}</h2>
+            <h2 className="text-2xl font-bold tracking-wider uppercase scale-y-110 md:scale-y-100 xs:text-[27px] md:text-4xl absolute text-[rgba(0,0,0,.20)] top-0.5 left-0.5 dark:top-[3px] dark:left-[3px] -z-10">{project.title}</h2>
           </div>
-          <div className="flex items-center mb-4 md:mb-0 md:pt-2">
+
+          <div className="flex items-center pt-5 sm:pt-7">
             <div className="relative z-10">
               <a
                 href={`${project.repository}`}
@@ -75,7 +75,6 @@ export default function ProjectItem() {
                 </div>
               : null
             }
-
           </div>
           
         </section>
