@@ -69,6 +69,7 @@ export default function Projects() {
 
           <ProjectCard2
             image={slides[curr]}
+            direction={direction}
             curr={curr}
             prev={prev}
             next={next}

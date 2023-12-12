@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { projectsData } from "../../assets/projects/projectsData";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -39,6 +39,7 @@ export default function ProjectCard({ image, curr, prev, next, direction }) {
 
   const [more, setMore] = useState();
   const [mobile, setMobile] = useState(false);
+  const project = projectsData.find((project) => project.id === (curr + 1));
 
   useEffect(() => {
     const isMobile = window.matchMedia("(hover: none)").matches;
@@ -51,30 +52,10 @@ export default function ProjectCard({ image, curr, prev, next, direction }) {
       setMore(true);
     }, 800);
   };
-  const handleLeave = () => setMore(false);
-
-  const project = projectsData.find((project) => project.id === (curr + 1));
-  // const carouselRef = useRef(null);
-  // const [currentWidth, setCurrentWidth] = useState(0);
-  // const updateCarouselWidth = () => {
-  //   const carouselWidth = carouselRef.current.getBoundingClientRect().width;
-  //   setCurrentWidth(carouselWidth);
-  // };
-  // useEffect(() => {
-  //   updateCarouselWidth();
-  //   window.addEventListener("resize", updateCarouselWidth);
-  //   return () => {
-  //     window.removeEventListener("resize", updateCarouselWidth);
-  //   };
-  // }, []);
 
   return (
     
-    <article
-      className="relative w-full h-full md:h-[calc(100%-24px)] flex shrink-0 transition-transform ease-in-out duration-700"
-      // ref={carouselRef}
-      // style={{ transform: `translateX(-${curr * currentWidth}px)` }}
-    >
+    <article className="relative w-full h-full md:h-[calc(100%-24px)] flex shrink-0 transition-transform ease-in-out duration-700">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           className="absolute flex inset-y-4 pb-4 md:inset-y-5 md:px-3 md:pb-3 lg:inset-x-14 xl:inset-x-16"
@@ -85,41 +66,46 @@ export default function ProjectCard({ image, curr, prev, next, direction }) {
           animate="animate"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
+            x: { type: "spring", stiffness: 300, damping: 50 },
             duration: 1
           }}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           onDragEnd={(e, {offset}) => {
-            console.log(offset.x);
-            offset.x < -125? next() : offset.x > 125 ? prev() : null;
+            offset.x < -200 ? next() : offset.x > 200 ? prev() : null;
           }}
         >
           <div className="hidden absolute left-6 top-3 w-[calc(100%-24px)] h-[calc(100%-12px)] bg-slate-700 dark:bg-slate-950 md:block"/>
           <div className="w-full h-full flex z-10 overflow-hidden md:shadow-lg md:shadow-black">
             {
               mobile ? (
-                <div
-                  // to={`/${project.id}`}
-                  className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black z-30 group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500 dark:from-indigo-300 dark:via-indigo-200 dark:to-indigo-100
+                <Link
+                  to={`/${project.id}`}
+                  draggable="false"
+                  onDragStart={(e) => e.preventDefault()}
+                  className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500 dark:from-indigo-300 dark:via-indigo-200 dark:to-indigo-100
                   before:absolute before:-z-10 before:top-2 before:left-2 before:w-full before:h-full before:rounded-sm before:bg-slate-700 sm:before:top-3 sm:before:left-3 md:before:hidden"
                 >
                   <h3 className="absolute top-0 left-1 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-black dark:text-indigo-200 sm:text-[22px] sm:font-bold sm:py-6 transition-all duration-300 ease-linear group-active:blur-[1px] md:hidden">{project.title}</h3>
                   <h3 className="absolute -top-[2px] left-0.5 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-indigo-100 dark:text-black sm:text-[22px] sm:font-bold sm:py-6 transition-all duration-300 ease-linear group-active:text-[#fff] group-active:dark:text-[#2a2a2a] md:hidden">{project.title}</h3>
-                  <img src={image} alt="project image" className={`w-full h-full object-contain ${project.phone ? "py-4" : "px-2"}`}/>
-                  <img src={pokemonImg} alt="project image" className={`w-full h-full invisible object-contain ${project.phone ? "py-4" : "px-2"}`}/>
-                </div>
+                  <img src={image} alt="project image" className={`w-full h-full object-contain ${project.phone ? "py-4" : "px-2"}`} draggable="false"/>
+                  <img src={pokemonImg} alt="project image" className={`w-full h-full invisible object-contain ${project.phone ? "py-4" : "px-2"}`} draggable="false"/>
+                </Link>
               ) : (
                 <section
                   className="relative w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-sm shadow-md shadow-black group md:w-[45%] md:h-full md:rounded-none md:shadow-none lg:pl-3 lg:pt-1 bg-gradient-to-l from-indigo-300 via-indigo-400 to-indigo-500 dark:from-indigo-300 dark:via-indigo-200 dark:to-indigo-100
                   before:absolute before:-z-10 before:top-2 before:left-2 before:w-full before:h-full before:rounded-sm before:bg-slate-700 sm:before:top-3 sm:before:left-3 md:before:hidden"
                   onMouseEnter={handleHover}
-                  onMouseLeave={handleLeave}
+                  onMouseLeave={() => setMore(false)}
                 >
                   <h3 className="absolute top-0 left-1 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-[#cacaca] sm:text-[22px] sm:font-bold sm:py-6 blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] group-hover:hidden md:hidden">{project.title}</h3>
                   <h3 className="absolute -top-[2px] left-0.5 px-3 py-3 sm:left-4 z-10 text-xl font-semibold uppercase text-black sm:text-[22px] sm:font-bold sm:py-6 blur-0 transition-all duration-300 ease-linear group-hover:blur-[1px] group-hover:text-[#fff] md:hidden">{project.title}</h3>
-                  <Link to={`/${project.id}`}>
-                    <img src={image} alt="project image" className={`w-full h-full object-contain ${project.phone ? "py-4" : "px-2"} blur-0 transition-all duration-200 ease-linear`}/>
+                  <Link
+                    to={`/${project.id}`}
+                    draggable="false"
+                    onDragStart={(e) => e.preventDefault()}
+                  >
+                    <img src={image} alt="project image" draggable="false" className={`w-full h-full object-contain ${project.phone ? "py-4" : "px-2"} blur-0 transition-all duration-200 ease-linear`}/>
                   </Link>
                   <div className="absolute w-full h-full -top-full opacity-100 transition-all duration-200 ease-in-out bg-slate-700/50 group-hover:top-0 md:group-hover:hidden"/>
 
