@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import ProjectCard from "./ProjectCard";
-import { projectsData } from "../../assets/projects/projectsData";
+import ProjectCard2 from "./ProjectCard2";
 import insta from "../../assets/projectsImages/gimpInsta2.png";
 import portfolio from "../../assets/projectsImages/gimpPoke3.png";
 import dpower from "../../assets/projectsImages/gimpDpower.png";
@@ -14,6 +13,7 @@ export default function Projects() {
   const [arrowL, setArrowL] = useState(false);
   const [arrowR, setArrowR] = useState(false);
   const [curr, setCurr] = useState(0);
+  const [direction, setDirection] = useState(null);
 
   const work = useProject({ work:"div" });
   const title = useText({ first:"h2", delay: 0.3 });
@@ -22,6 +22,7 @@ export default function Projects() {
   const prev = () => {
     setCurr( curr => curr === 0 ? slides.length - 1 : curr - 1 );
     setArrowL(true);
+    setDirection(-1000);
     setTimeout(() => {
       setArrowL(false);
     }, 500);
@@ -30,12 +31,16 @@ export default function Projects() {
   const next = () => {
     setCurr( curr => curr === slides.length - 1 ? 0 : curr + 1 );
     setArrowR(true);
+    setDirection(1000);
     setTimeout(() => {
       setArrowR(false)
     }, 500);
   };
 
-  const goToSlide = (slideIndex) => setCurr(slideIndex);
+  const goToSlide = (slideIndex) => {
+    setDirection( slideIndex > curr ? 1000 : -1000 );
+    setCurr(slideIndex)
+  };
 
   return (
     <div name="projects" className="w-full h-screen cursor-default">
@@ -54,21 +59,13 @@ export default function Projects() {
 
         <div ref={work} className="w-full h-full flex relative overflow-hidden">
 
-          {
-            projectsData?.map((project, index) => (
-              <ProjectCard
-                key={index}
-                id={project.id}
-                title={project.title}
-                description={project.description}
-                techs={project.techs}
-                image={slides[index]}
-                repository={project.repository}
-                phone={project.phone}
-                curr={curr}
-              />
-            ))
-          }
+          <ProjectCard2
+            curr={curr}
+            image={slides[curr]}
+            prev={prev}
+            next={next}
+            direction={direction}
+          />
 
           <button
             onClick={prev}
