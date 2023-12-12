@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProjectCard2 from "./ProjectCard2";
+import ProjectCard from "./ProjectCard";
 import insta from "../../assets/projectsImages/gimpInsta2.png";
 import portfolio from "../../assets/projectsImages/gimpPoke3.png";
 import dpower from "../../assets/projectsImages/gimpDpower.png";
@@ -59,7 +59,7 @@ export default function Projects() {
 
         <div ref={work} className="w-full h-full flex relative overflow-hidden">
 
-          <ProjectCard2
+          <ProjectCard
             curr={curr}
             image={slides[curr]}
             prev={prev}
