@@ -27,18 +27,18 @@ export default function AnimatedLetters({ text, time }) {
   
           return [...prevLetras, text[nextIndex - 1]];
         });
-      }, 75);
+      }, 70);
   
       return () => {
         clearInterval(intervalId);
       };
-    }, time * 75);
+    }, time * 70);
   }, [text]);
 
   useEffect(() => {
     setTimeout(() => {
       setShown(true);
-    }, time * 75)
+    }, time * 70)
   }, []);
 
   useEffect(() => {
@@ -73,7 +73,7 @@ export default function AnimatedLetters({ text, time }) {
           <span
             key={idx}
             // className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
-            className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all duration-700 ease-in-out delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-100" : "animate-bounce delay-200"} sm:min-w-[10px] lg:min-w-[17px]`}
+            className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all duration-700 ease-in-out delay-["${(time + idx) * 70}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-100" : "animate-bounce delay-200"} sm:min-w-[10px] lg:min-w-[17px]`}
             onMouseEnter={ first ? () => handleHover(uniqueId) : null }
             onMouseLeave={handleHoverOut}
             onTouchStart={ first ? () => handleHover(uniqueId) : null }
