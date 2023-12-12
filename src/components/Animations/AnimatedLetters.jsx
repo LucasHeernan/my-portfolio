@@ -54,7 +54,7 @@ export default function AnimatedLetters({ text, time }) {
   }, []);
 
   return (
-    <div className="scale-y-110 sm:scale-y-105 md:scale-y-100"> {/* MINUSCULA */}
+    <div> {/* MINUSCULA */}
     {/* <div className="pb-3 xs:pb-2 lg:pb-0 transition-all ease-in-out duration-100 scale-y-125 xs:scale-y-110 sm:scale-y-105 md:scale-y-100"> */} {/* MAYUSCULA */}
       {
         letras.map((letra, idx) => {
