@@ -2,9 +2,9 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from '@emailjs/browser';
-const serviceId = import.meta.env.VITE_SERVICE_ID;
-const templateId = import.meta.env.VITE_TEMPLATE_ID;
-const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+const serviceId = import.meta.env.VITE_VERCEL_SERVICE_ID;
+const templateId = import.meta.env.VITE_VERCEL_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_VERCEL_PUBLIC_KEY;
 
 export const useForm = (initialForm, validate) => {
   const [form, setForm] = useState(initialForm);
@@ -31,9 +31,14 @@ export const useForm = (initialForm, validate) => {
     }
 
     if (Object.keys(errors).length === 0 && Object.values(templateParams).every(el => el !== "")) {
+      console.log("PUBLIC KEY ", publicKey);
       emailjs.send(serviceId, templateId, templateParams, publicKey)
         .then((result) => {
           console.log("Email sent successfully! ", result);
+          console.log("SERVICE ID ", serviceId);
+          console.log("TEMPLATE ID ", templateId);
+          console.log("TEMPLATE PARAMS", templateParams);
+          console.log("PUBLIC KEY ", publicKey);
           toast.success("Correo enviado con exito!");
           setForm({
             name: "",
@@ -44,6 +49,10 @@ export const useForm = (initialForm, validate) => {
           e.target.reset();
         }, function(error) {
           console.log("Missing data or errors in data loading. ", error);
+          console.log("SERVICE ID ", serviceId);
+          console.log("TEMPLATE ID ", templateId);
+          console.log("TEMPLATE PARAMS", templateParams);
+          console.log("PUBLIC KEY ", publicKey);
           toast.error("No se pudo enviar el correo, intente nuevamente");
           e.target.reset();
         });
