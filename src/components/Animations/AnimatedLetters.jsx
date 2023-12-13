@@ -27,21 +27,19 @@ export default function AnimatedLetters({ text, time }) {
   
           return [...prevLetras, text[nextIndex - 1]];
         });
-      }, 70);
-
-      setShown(true);
+      }, 75);
   
       return () => {
         clearInterval(intervalId);
       };
-    }, time * 70);
+    }, time * 75);
   }, [text]);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setShown(true);
-  //   }, time * 75)
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setShown(true);
+    }, time * 75)
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -56,7 +54,7 @@ export default function AnimatedLetters({ text, time }) {
   }, []);
 
   return (
-    <div> {/* MINUSCULA */}
+    <div> {/* MINUSCULA scale-y-110 sm:scale-y-105 md:scale-y-100 */}
     {/* <div className="pb-3 xs:pb-2 lg:pb-0 transition-all ease-in-out duration-100 scale-y-125 xs:scale-y-110 sm:scale-y-105 md:scale-y-100"> */} {/* MAYUSCULA */}
       {
         letras.map((letra, idx) => {
@@ -64,7 +62,7 @@ export default function AnimatedLetters({ text, time }) {
           return title ?
           <span
             key={idx}
-            className={`inline-block min-w-[7px] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-100" : "animate-bounce delay-200"} sm:min-w-[10px] lg:min-w-[15px]`}
+            className={`inline-block min-w-[7px] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-100" : "animate-bounce delay-200"} sm:min-w-[10px] lg:min-w-[15px] scale-y-110 sm:scale-y-105 md:scale-y-100`}
             onMouseEnter={ first ? () => handleHover(uniqueId) : null }
             onMouseLeave={handleHoverOut}
             onTouchStart={ first ? () => handleHover(uniqueId) : null }
@@ -75,7 +73,7 @@ export default function AnimatedLetters({ text, time }) {
           <span
             key={idx}
             // className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
-            className={`${shown ? "inline-block" : "hidden"} min-w-[7px] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-100" : "animate-bounce delay-200"} sm:min-w-[10px] lg:min-w-[17px]`}
+            className={`${shown ? "inline-block" : "hidden"} min-w-[7px] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-100" : "animate-bounce delay-200"} sm:min-w-[10px] lg:min-w-[17px] scale-y-110 sm:scale-y-105 md:scale-y-100`}
             onMouseEnter={ first ? () => handleHover(uniqueId) : null }
             onMouseLeave={handleHoverOut}
             onTouchStart={ first ? () => handleHover(uniqueId) : null }
