@@ -31,8 +31,6 @@ export const useForm = (initialForm, validate) => {
     }
 
     if (Object.keys(errors).length === 0 && Object.values(templateParams).every(el => el !== "")) {
-      console.log("PUBLIC KEY ", publicKey);
-      toast.promise("Validando datos...");
       emailjs.send(serviceId, templateId, templateParams, publicKey)
         .then((result) => {
           console.log("Email sent successfully! ", result);
@@ -46,10 +44,6 @@ export const useForm = (initialForm, validate) => {
           e.target.reset();
         }, function(error) {
           console.log("Missing data or errors in data loading. ", error);
-          console.log("SERVICE ID ", serviceId);
-          console.log("TEMPLATE ID ", templateId);
-          console.log("TEMPLATE PARAMS", templateParams);
-          console.log("PUBLIC KEY ", publicKey);
           toast.error("No se pudo enviar el correo, intente nuevamente");
           e.target.reset();
         });
