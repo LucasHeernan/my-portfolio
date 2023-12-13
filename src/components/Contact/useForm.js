@@ -20,59 +20,33 @@ export const useForm = (initialForm, validate) => {
     setErrors(validate(form));
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const templateParams = {
-  //     name: form.name,
-  //     email: form.email,
-  //     message: form.message,
-  //     subject: form.subject
-  //   }
-
-  //   if (Object.keys(errors).length === 0 && Object.values(templateParams).every(el => el !== "")) {
-  //     emailjs.send(serviceId, templateId, templateParams, publicKey)
-  //       .then((result) => {
-  //         console.log("Email sent successfully! ", result);
-  //         console.log("FORM -> ", form);
-  //         console.log("TEMPLATEPARAMS ->", templateParams);
-  //         toast.success("Correo enviado con exito!");
-  //         setForm({
-  //           name: "",
-  //           email: "",
-  //           subject: "",
-  //           message: "",
-  //         })
-  //         e.target.reset();
-  //       }, function(error) {
-  //         console.log("Missing data or errors in data loading. ", error);
-  //         console.log("FORM -> ", form);
-  //         console.log("TEMPLATEPARAMS ->", templateParams);
-  //         toast.error("No se pudo enviar el correo, intente nuevamente");
-  //         e.target.reset();
-  //       });
-  //   }
-  // };
-  
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (Object.keys(errors).length === 0 && Object.values(form).every(el => el !== "")) {
-      console.log("FORM -> ", form);
-      console.log("ERRORS ->", errors);
-      toast.success("Correo enviado con exito!");
-      setForm({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      })
-      e.target.reset();
-    } else {
-      console.log("FORM -> ", form);
-      console.log("ERRORS ->", errors);
-      toast.error("Se envio el correo con campos vacios");
-      e.target.reset();
+    const templateParams = {
+      name: form.name,
+      email: form.email,
+      message: form.message,
+      subject: form.subject
+    }
+
+    if (Object.keys(errors).length === 0 && Object.values(templateParams).every(el => el !== "")) {
+      emailjs.send(serviceId, templateId, templateParams, publicKey)
+        .then((result) => {
+          console.log("Email sent successfully! ", result);
+          toast.success("Correo enviado con exito!");
+          setForm({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          })
+          e.target.reset();
+        }, function(error) {
+          console.log("Missing data or errors in data loading. ", error);
+          toast.error("No se pudo enviar el correo, intente nuevamente");
+          e.target.reset();
+        });
     }
   };
 
@@ -83,3 +57,25 @@ export const useForm = (initialForm, validate) => {
     handleSubmit
   };
 };
+
+// function handleSubmit(e) {
+//   e.preventDefault();
+
+//   if (Object.keys(errors).length === 0 && Object.values(form).every(el => el !== "")) {
+//     console.log("FORM -> ", form);
+//     console.log("ERRORS ->", errors);
+//     toast.success("Correo enviado con exito!");
+//     setForm({
+//       name: "",
+//       email: "",
+//       subject: "",
+//       message: "",
+//     })
+//     e.target.reset();
+//   } else {
+//     console.log("FORM -> ", form);
+//     console.log("ERRORS ->", errors);
+//     toast.error("Se envio el correo con campos vacios");
+//     e.target.reset();
+//   }
+// };
