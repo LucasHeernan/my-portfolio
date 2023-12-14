@@ -101,5 +101,5 @@ export default {
       }
     },
   },
-  plugins: [ require('autoprefixer') ],
+  plugins: [],
 }
