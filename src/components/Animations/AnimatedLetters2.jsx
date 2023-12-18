@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-export default function AnimatedLetters2({ text, time }) {
-  const [first, setFirts] = useState("animate-fadeInDown");
+export default function AnimatedLetters2({ first, text, time }) {
+
   const [letras, setLetras] = useState([]);
   const [indice, setIndice] = useState(0);
   const [shown, setShown] = useState(false);
-  const [isHovered, setIsHovered] = useState(null);
-  const handleHover = (index) => setIsHovered(index);
-  const handleHoverOut = () => setIsHovered(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,12 +34,6 @@ export default function AnimatedLetters2({ text, time }) {
     }, time * 100)
   }, [])
 
-  useEffect(() => {
-    setTimeout(() => {
-      setFirts("");
-    }, 4000)
-  }, [])
-
   return (
     <div className="mb-3 md:mb-2 xl:mb-0 transition-all ease-in-out duration-100 scale-y-150 sm:scale-y-125 md:scale-y-110 lg:scale-y-100">
       {
@@ -51,9 +42,8 @@ export default function AnimatedLetters2({ text, time }) {
           return (
             <span
               key={idx}
-              className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
-              onMouseEnter={ first === "" ? () => handleHover(uniqueId) : null }
-              onMouseLeave={handleHoverOut}
+              className={`${first} ${shown ? "inline-block" : "hidden"} transition-all`}
+              // className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
             >
               {letra}
             </span>
