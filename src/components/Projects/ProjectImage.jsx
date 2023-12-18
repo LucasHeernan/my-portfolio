@@ -84,7 +84,7 @@ export default function ProjectImage({ images, phone }) {
               src={images[currentImg]}
               alt="project image"
               title="project image"
-              className={`w-full h-full ${phone ? "object-contain" : "object-cover"}`}
+              className={`w-full h-full ${phone ? "object-contain" : "object-cover"} active:cursor-grabbing`}
               custom={direction}
               variants={variants}
               initial="initial"

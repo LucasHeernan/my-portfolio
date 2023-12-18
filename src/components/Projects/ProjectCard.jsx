@@ -57,7 +57,7 @@ export default function ProjectCard({ curr, image, prev, next, direction }) {
     <AnimatePresence initial={false} custom={direction}>
       <article className="relative w-full h-full md:h-[calc(100%-24px)] flex shrink-0">
         <motion.div
-          className="absolute flex inset-y-4 pb-4 md:inset-y-5 md:px-3 md:pb-3 lg:inset-x-14 xl:inset-x-16"
+          className="absolute flex inset-y-4 pb-4 active:cursor-grabbing md:inset-y-5 md:px-3 md:pb-3 lg:inset-x-14 xl:inset-x-16"
           key={project.id}
           custom={direction}
           variants={variants}

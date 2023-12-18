@@ -88,3 +88,20 @@ export function useFooter({ down }) {
 
   return scope;
 };
+
+
+export function useHome({ top }) {
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope, { once: true });
+  const { title, setTitle } = useAnimations();
+
+  useEffect(() => {
+    isInView ? animate([ top, { opacity: 1 } ]) : setTitle(true);
+    // isInView && title ? animate([ top, { opacity: 1 } ]) :
+    // !isInView && !title ? animate([ top, { opacity: 0 } ]) :
+    // setTitle(true);
+
+  }, [isInView, title]);
+
+  return scope;
+};
