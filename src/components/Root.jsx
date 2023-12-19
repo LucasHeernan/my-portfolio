@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar/NavBar";
-import Home3 from "./Home/Home3";
+import Home from "./Home/Home";
 import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
 import Footer from "./Footer/Footer";
@@ -9,7 +9,7 @@ export default function Root() {
   return (
     <div>
       <NavBar />
-      <Home3 />
+      <Home />
       <Projects />
       <Contact />
       <Footer />

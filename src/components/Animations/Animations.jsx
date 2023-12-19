@@ -66,7 +66,7 @@ export function useList({ first, second }) {
       ]) :
     (animate([
     [ first, { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1] } ],
-    [ second, { transform: "translateY(0px)", opacity: 1 }, { delay: stagger(0.3), ease: [0.17, 0.55, 0.55, 1], duration: 0.75 } ]
+    [ second, { transform: "translateY(0px)", opacity: 1 }, { delay: stagger(0.3), ease: [0.17, 0.55, 0.55, 1], duration: 0.5 } ]
     ]), setList(true));
 
   }, [isInView, list]);
@@ -80,28 +80,11 @@ export function useFooter({ down }) {
   const { footer, setFooter } = useAnimations();
 
   useEffect(() => {
-    isInView && footer ? animate([[ down, { opacity: 1, transform: "translateY(0px)" }, { delay: 0.3, ease: [0.17, 0.55, 0.55, 1], duration: 0.4 } ]]) :
+    isInView && footer ? animate([[ down, { opacity: 1, transform: "translateY(0px)" }, { delay: 0.1, ease: [0.17, 0.55, 0.55, 1], duration: 0.4 } ]]) :
     !isInView && !footer ? animate([[ down, { opacity: 0, transform: "translateY(10px)" } ]]) :
     setFooter(true);
 
   }, [isInView, footer]);
-
-  return scope;
-};
-
-
-export function useHome({ top }) {
-  const [scope, animate] = useAnimate();
-  const isInView = useInView(scope, { once: true });
-  const { title, setTitle } = useAnimations();
-
-  useEffect(() => {
-    isInView ? animate([ top, { opacity: 1 } ]) : setTitle(true);
-    // isInView && title ? animate([ top, { opacity: 1 } ]) :
-    // !isInView && !title ? animate([ top, { opacity: 0 } ]) :
-    // setTitle(true);
-
-  }, [isInView, title]);
 
   return scope;
 };

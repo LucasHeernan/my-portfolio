@@ -28,8 +28,8 @@ export default function Contact () {
 
   const [link, setLink] = useState("");
   const scope = useList({ first:"ul", second:"a" });
-  const title = useText({ first:"h2", delay: 0.2 });
-  const subtitle = useText({ first:"p", delay: 0.3 });
+  const title = useText({ first:"h2", delay: 0.3 });
+  const subtitle = useText({ first:"p", delay: 0.2 });
 
   useEffect(() => {
     const isMobile = window.matchMedia("(hover: none)").matches;

@@ -6,7 +6,6 @@ const Animations = createContext();
 export const AnimationsProvider = ({ children }) => {
 
   const [navBar, setNavBar] = useState(false);
-  const [title, setTitle] = useState(false);
   const [home, setHome] = useState(false);
   const [text, setText] = useState(false);
   const [card, setCard] = useState(false);
@@ -14,7 +13,7 @@ export const AnimationsProvider = ({ children }) => {
   const [footer, setFooter] = useState(false);
 
   return (
-    <Animations.Provider value={{ navBar, setNavBar, title, setTitle, home, setHome, text, setText, card, setCard, list, setList, footer, setFooter }}>
+    <Animations.Provider value={{ navBar, setNavBar, home, setHome, text, setText, card, setCard, list, setList, footer, setFooter }}>
       {children}
     </Animations.Provider>
   );
