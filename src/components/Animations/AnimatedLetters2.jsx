@@ -39,13 +39,9 @@ export default function AnimatedLetters2({ text, time }) {
           return (
             <span
               key={idx}
-              className={`inline-block ${uniqueId === isHovered ? "animate__animated animate__rubberBand text-blue-500" : "animate-bounceLetter"} min-w-[7px] sm:min-w-[10px] lg:min-w-[17px] animate`}
-              // className={`${first} ${shown ? "inline-block" : "hidden"} transition-all ${uniqueId === isHovered ? "animate__animated animate__rubberBand delay-200" : ""}`}
-              // className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-500 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
+              className={`inline-block transform transition-all ease-in-out ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-300" : "animate-bounceLetter"} min-w-[7px] sm:min-w-[10px] lg:min-w-[17px] scale-y-110 sm:scale-y-105 md:scale-y-100`}
               onMouseEnter={() => handleHover(uniqueId)}
               onMouseLeave={handleHoverOut}
-              onTouchMove={() => handleHover(uniqueId)}
-              onTouchEnd={handleHoverOut}
             >
               {letra}
             </span>

@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useAnimations } from "../../Context";
 
-export default function AnimatedLetters({ text, time }) {
-  const [first, setFirts] = useState(false);
+export default function AnimatedLetters2({ text, time }) {
+
   const [letras, setLetras] = useState([]);
   const [indice, setIndice] = useState(0);
-  const [shown, setShown] = useState(false);
   const [isHovered, setIsHovered] = useState(null);
 
   const handleHover = (index) => setIsHovered(index);
   const handleHoverOut = () => setIsHovered(null);
-
-  const { title, setTitle } = useAnimations();
 
   useEffect(() => {
     setTimeout(() => {
@@ -32,57 +28,26 @@ export default function AnimatedLetters({ text, time }) {
       return () => {
         clearInterval(intervalId);
       };
-    }, time * 75);
+    }, time * 100);
   }, [text]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShown(true);
-    }, time * 75)
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setFirts(true);
-    }, 3500)
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setTitle(true);
-    }, 3700)
-  }, []);
-
   return (
-    <div> {/* MINUSCULA scale-y-110 sm:scale-y-105 md:scale-y-100 */}
-    {/* <div className="pb-3 xs:pb-2 lg:pb-0 transition-all ease-in-out duration-100 scale-y-125 xs:scale-y-110 sm:scale-y-105 md:scale-y-100"> */} {/* MAYUSCULA */}
+    <div>
       {
         letras.map((letra, idx) => {
           const uniqueId = `${letra}-${idx}`;
-          return title ?
-          <span
-            key={idx}
-            className={`inline-block min-w-[7px] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-100" : "animate-bounce delay-200"} sm:min-w-[10px] lg:min-w-[15px] scale-y-110 sm:scale-y-105 md:scale-y-100`}
-            onMouseEnter={ first ? () => handleHover(uniqueId) : null }
-            onMouseLeave={handleHoverOut}
-            onTouchStart={ first ? () => handleHover(uniqueId) : null }
-            onTouchEnd={handleHoverOut}
-          >
-            {letra}
-          </span> :
-          <span
-            key={idx}
-            // className={`${shown ? "inline-block" : "hidden"} min-w-[7px] transition-all ${first} delay-["${(time + idx) * 100}ms"] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-200" : "animate-bounce delay-300"} sm:min-w-[10px] lg:min-w-[17px]`}
-            className={`${shown ? "inline-block" : "hidden"} min-w-[7px] ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-100" : "animate-bounce delay-200"} sm:min-w-[10px] lg:min-w-[17px] scale-y-110 sm:scale-y-105 md:scale-y-100`}
-            onMouseEnter={ first ? () => handleHover(uniqueId) : null }
-            onMouseLeave={handleHoverOut}
-            onTouchStart={ first ? () => handleHover(uniqueId) : null }
-            onTouchEnd={handleHoverOut}
-          >
-            {letra}
-          </span>
+          return (
+            <span
+              key={idx}
+              className={`inline-block transform transition-all ease-in-out ${uniqueId === isHovered ? "animate-rubberBand text-blue-400 delay-300" : "animate-bounceLetter"} min-w-[7px] sm:min-w-[10px] lg:min-w-[17px] scale-y-110 sm:scale-y-105 md:scale-y-100`}
+              onMouseEnter={() => handleHover(uniqueId)}
+              onMouseLeave={handleHoverOut}
+            >
+              {letra}
+            </span>
+          )
         })
       }
     </div>
-  )
+  );
 };

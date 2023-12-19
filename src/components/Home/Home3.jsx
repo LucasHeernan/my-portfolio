@@ -40,10 +40,9 @@ const name = "Soy Lucas Benitez,"; /* ( 0.5 = 12) | (0.75 = 18) | (1 = 24) */
 const work = "Full Stack developer."; /* (0.5 = 22) | (0.75 = 33.75) | (1 = 45) */
 
 export default function Home3() {
-  
-  // const [first, setFirts] = useState("animado");
-  const [viewportHeight, setViewportHeight] = useState(800);
+
   const { home, setHome } = useAnimations();
+  const [viewportHeight, setViewportHeight] = useState(800);
   const downloadPdf = () => window.open("https://drive.google.com/file/d/1CtxGHdipwQVDOI8Mj18n7PJQSUHew5xC/view?usp=sharing", "_blank");
 
   useEffect(() => {
@@ -52,12 +51,6 @@ export default function Home3() {
     }, 3000);
   }, []);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setFirts("animado-hover");
-  //   }, 4000);
-  // }, []);
-
   useEffect(() => {
     const getHeight = () => setViewportHeight(window.innerHeight);
     getHeight();
@@ -65,7 +58,7 @@ export default function Home3() {
 
   return (
     <div name="home" style={{ height: `${viewportHeight}px` }} className="w-full cursor-default">
-      <div className="w-full h-full will-change-contents opacity-0 animate-fadeIn max-w-7xl mx-auto flex flex-col px-[10px] xs:px-5 pt-36 text-[#2a2a2a] dark:text-[#ebebeb] sm:pt-32 md:pt-28 lg:px-7 xl:px-10 xl:pt-28">
+      <div className="w-full h-full will-change-contents opacity-0 transition-all duration-1000 animate-fadeIn max-w-7xl mx-auto flex flex-col px-[10px] xs:px-5 pt-36 text-[#2a2a2a] dark:text-[#ebebeb] sm:pt-32 md:pt-28 lg:px-7 xl:px-10 xl:pt-28">
         <div className="w-full h-40 sm:h-52 md:h-56 lg:h-64 xl:h-[270px]">
           <h1 className="font-extrabold text-[34px] xs:text-[37px] sm:text-[47px] md:text-[54px] lg:text-[62px]">
             <AnimatedLetters2 text={hi} time={0} />
