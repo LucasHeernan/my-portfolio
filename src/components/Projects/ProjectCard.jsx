@@ -106,6 +106,7 @@ export default function ProjectCard({ curr, image, prev, next, direction }) {
                     onDragStart={(e) => e.preventDefault()}
                   >
                     <img src={image} alt="project image" draggable="false" className={`w-full h-full object-contain ${project.phone ? "py-4" : "px-2"} transition-all duration-200 ease-out group-hover:blur-[1px] md:group-hover:blur-0 group-hover:scale-105`}/>
+                    <img src={pokemonImg} alt="project image" draggable="false" className={`w-full h-full invisible object-contain ${project.phone ? "py-4" : "px-2"}`}/>
                   </Link>
                   <div className="absolute w-full h-full -top-full opacity-100 transition-all duration-200 ease-in-out bg-slate-700/50 group-hover:top-0 md:group-hover:hidden"/>
 

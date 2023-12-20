@@ -83,7 +83,7 @@ export default function ProjectItem() {
 
         <section className={`flex flex-col items-center ${project.phone ? "lg:h-[600px] lg:flex lg:flex-row lg:items-stretch" : "xl:h-[380px] xl:flex xl:flex-row xl:items-stretch"}`}>
 
-          <ProjectImage images={project.images} phone={project.phone} />
+          <ProjectImage images={project.images} phone={project.phone} id={project.id} />
 
           <div className={`w-full flex flex-col text-left ${project.phone ? "lg:w-[55%] lg:pl-20 lg:justify-around" : "xl:w-1/2 xl:pl-10 xl:justify-evenly"}`}>
             <h3 className="text-3xl font-bold tracking-wide mb-2 xl:mb-0 text-[#2a2a2a] dark:text-[#cacaca]">Sobre este proyecto</h3>

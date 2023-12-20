@@ -18,7 +18,7 @@ const variants = {
 // PROX - EXIT
 // animation: 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.15s 1 normal both running next-out;
 
-export default function ProjectImage({ images, phone }) {
+export default function ProjectImage({ images, phone, id }) {
 
   const [arrowL, setArrowL] = useState(false);
   const [arrowR, setArrowR] = useState(false);
@@ -78,13 +78,13 @@ export default function ProjectImage({ images, phone }) {
           </div>
         </button>
         <AnimatePresence initial={false} custom={direction}>
-          <div className={`w-full h-full ${phone ? "bg-white" : "bg-slate-300"}`}>
+          <div className={`w-full h-full ${phone ? "bg-white" : id === 2 ? "bg-sky-50" : "bg-slate-300"}`}>
             <motion.img
               key={currentImg}
               src={images[currentImg]}
               alt="project image"
               title="project image"
-              className={`w-full h-full ${phone ? "object-contain" : "object-cover"} active:cursor-grabbing`}
+              className={`w-full h-full ${phone ? "object-contain" : id === 2 ? "object-contain border border-t border-slate-200" : "object-cover"} active:cursor-grabbing`}
               custom={direction}
               variants={variants}
               initial="initial"

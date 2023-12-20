@@ -1,6 +1,9 @@
 import pokemon1 from "../projectsImages/PokemonHome.png";
 import pokemon2 from "../projectsImages/PokemonFilter.png";
 import pokemon3 from "../projectsImages/PokemonDetail.png";
+import portfolio1 from "../projectsImages/prueba2.png";
+import portfolio2 from "../projectsImages/prueba3.png";
+import portfolio3 from "../projectsImages/prueba4.png";
 import insta1 from "../projectsImages/InstaHome.png";
 import insta2 from "../projectsImages/InstaNotification.png";
 import insta3 from "../projectsImages/InstaContact.png";
@@ -39,7 +42,7 @@ export const projectsData = [
     // description2: "Intenté mantener la interfaz de usuario lo más simple posible",
     description2: "Intenté mantener el diseño lo más simple posible, cuidando cada detalle para garantizar una navegación sencilla y agradable.",
     techs: ["Javascript", "React", "TailwindCSS", "Framer motion"],
-    images: [pokemon1, pokemon2, pokemon3],
+    images: [portfolio1, portfolio2, portfolio3],
     repository: "https://github.com/LucasHeernan/my-portfolio",
     phone: false,
   },

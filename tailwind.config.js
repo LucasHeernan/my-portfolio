@@ -38,6 +38,14 @@ export default {
           '80%': { transform: 'scale3d(0.97, 0.97, 0.97)' },
           to: { transform: 'scale3d(1, 1, 1)' }
         },
+        bounceInUp: {
+          '0%': { opacity: '0', transform: 'translate3d(0, 100%, 0)' },
+          '30%': { opacity: '0.3' },
+          '50%': { opacity: '0.6', transform: 'translate3d(0, -2px, 0)' },
+          '70%': { opacity: '0.8', transform: 'translate3d(0, -4px, 0)' },
+          '90%': { opacity: '0.9', transform: 'translate3d(0, 1px, 0)' },
+          '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' }
+        },
         leftDown: {
           '0%': { transform: 'rotate(-35deg)' },
           '25%': { transform: 'rotate(-65deg)' },
@@ -71,6 +79,7 @@ export default {
         fadeIn: 'fadeIn 1000ms ease-in-out forwards',
         rubberBand: 'rubberBand 1000ms ease-in-out forwards',
         bounceLetter: 'bounceLetter calc(var(--animate-duration) * 0.75) forwards',
+        bounceInUp: 'bounceInUp 500ms ease-out forwards',
         leftDown: 'leftDown 500ms ease-out none',
         leftUp: 'leftUp 500ms ease-out none',
         rightDown: 'rightDown 500ms ease-out none',
