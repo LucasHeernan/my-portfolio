@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
-import insta from "../../assets/projectsImages/gimpInsta2.png";
-import portfolio from "../../assets/projectsImages/prueba3.png";
+import insta from "../../assets/projectsImages/gimpInsta.png";
+import portfolio from "../../assets/projectsImages/portfolio2.png";
 import dpower from "../../assets/projectsImages/gimpDpower.png";
-import pokemon from "../../assets/projectsImages/gimpPoke3.png";
+import pokemon from "../../assets/projectsImages/gimpPoke.png";
 import { useText, useProject } from "../Animations/Animations";
 
 const slides = [ insta, portfolio, dpower, pokemon ];

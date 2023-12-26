@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { projectsData } from "./assets/projects/projectsData";
 
 
 const Animations = createContext();
@@ -13,7 +14,7 @@ export const AnimationsProvider = ({ children }) => {
   const [footer, setFooter] = useState(false);
 
   return (
-    <Animations.Provider value={{ navBar, setNavBar, home, setHome, text, setText, card, setCard, list, setList, footer, setFooter }}>
+    <Animations.Provider value={{ navBar, setNavBar, home, setHome, text, setText, card, setCard, list, setList, footer, setFooter, projectsData }}>
       {children}
     </Animations.Provider>
   );

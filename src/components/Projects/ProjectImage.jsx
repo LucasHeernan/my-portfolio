@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const variants = {
@@ -20,6 +20,7 @@ const variants = {
 
 export default function ProjectImage({ images, phone, id }) {
 
+  const [video, setVideo] = useState(false);
   const [arrowL, setArrowL] = useState(false);
   const [arrowR, setArrowR] = useState(false);
   const [currentImg, setCurrentImg] = useState(0);
@@ -51,10 +52,7 @@ export default function ProjectImage({ images, phone, id }) {
   return (
     <section className={`relative w-full mb-14 md:mb-20 ${phone ? "h-[480px] sm:w-4/6 sm:h-[490px] md:w-[60%] md:h-[510px] lg:w-[45%] lg:h-full" : "h-[315px] sm:w-[90%] sm:h-[380px] md:w-full md:h-[480px] lg:w-4/5 xl:w-1/2 xl:h-full" } before:w-full before:h-full before:absolute before:left-3 before:top-3 before:bg-slate-700 dark:before:bg-slate-950`}>
       <div className="relative z-10 overflow-hidden flex w-full h-full shadow-black shadow-md">
-        <button
-          className="absolute group block w-1/4 h-full z-20 left-0"
-          onClick={prev}
-        >
+        <button onClick={prev} className={`absolute group block w-1/4 ${video ? "h-[calc(100%-40px)]" : "h-full"} z-20 left-0`}>
           <div className="w-full h-full bg-gradient-to-l from-transparent to-slate-700 transition-opacity duration-500 ease-out opacity-10 group-hover:opacity-50">
             <em className={`absolute block h-7 w-7 top-1/2 left-7 transition-transform duration-200 ease-out delay-200
             before:-rotate-45 before:absolute before:left-0 before:h-full before:w-1 before:bottom-[1px] before:bg-black before:origin-top before:duration-200 before:ease-out
@@ -64,10 +62,7 @@ export default function ProjectImage({ images, phone, id }) {
             />
           </div>
         </button>
-        <button
-          className={`absolute group block w-1/4 h-full z-20 right-0`}
-          onClick={next}
-        >
+        <button onClick={next} className={`absolute group block w-1/4 ${video ? "h-[calc(100%-40px)]" : "h-full"} z-20 right-0`}>
           <div className="w-full h-full bg-gradient-to-r from-transparent to-slate-700 transition-opacity duration-500 ease-out opacity-10 group-hover:opacity-50">
             <em className={`absolute block h-7 w-7 top-1/2 right-7 transition-transform duration-200 ease-out delay-200
             before:rotate-45 before:absolute before:right-0 before:h-full before:w-1 before:bottom-[1px] before:bg-black before:origin-top before:duration-200 before:ease-out
@@ -79,28 +74,65 @@ export default function ProjectImage({ images, phone, id }) {
         </button>
         <AnimatePresence initial={false} custom={direction}>
           <div className={`w-full h-full ${phone ? "bg-white" : id === 2 ? "bg-sky-50" : "bg-slate-300"}`}>
-            <motion.img
-              key={currentImg}
-              src={images[currentImg]}
-              alt="project image"
-              title="project image"
-              className={`w-full h-full ${phone ? "object-contain" : id === 2 ? "object-contain border border-t border-slate-200" : "object-cover"} active:cursor-grabbing`}
-              custom={direction}
-              variants={variants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                duration: 1
-              }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.6}
-              onDragEnd={(e, {offset}) => {
-                offset.x < -125? next() : offset.x > 125 ? prev() : null;
-              }}
-            />
+            {
+              typeof images[currentImg] === 'string' && images[currentImg].endsWith('.mp4') ?
+              (
+                useEffect(() => {
+                  setVideo(true);
+                }, [currentImg]),
+                <motion.video
+                  controls
+                  key={currentImg}
+                  alt="project video"
+                  title="project video"
+                  className={`w-full h-full object-contain active:cursor-grabbing`}
+                  custom={direction}
+                  variants={variants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    duration: 1
+                  }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.6}
+                  onDragEnd={(e, {offset}) => {
+                    offset.x < -125? next() : offset.x > 125 ? prev() : null;
+                  }}
+                >
+                  <source src={images[currentImg]} type="video/mp4" />
+                </motion.video>
+              ) :
+              (
+                useEffect(() => {
+                  setVideo(false);
+                }, [currentImg]),
+                <motion.img
+                  key={currentImg}
+                  src={images[currentImg]}
+                  alt="project image"
+                  title="project image"
+                  className={`w-full h-full ${phone ? "object-contain" : id === 2 ? "object-contain border border-t border-slate-200" : "object-cover"} active:cursor-grabbing`}
+                  custom={direction}
+                  variants={variants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    duration: 1
+                  }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.6}
+                  onDragEnd={(e, {offset}) => {
+                    offset.x < -125? next() : offset.x > 125 ? prev() : null;
+                  }}
+                />
+              )
+            }
           </div>
         </AnimatePresence>
       </div>
@@ -120,16 +152,3 @@ export default function ProjectImage({ images, phone, id }) {
     </section>
   )
 };
-
-
-// ¿CÓMO MANEJO EL CASO DE QUE VAYA PARA "ATRAS"?
-
-// const swipe = 500 -----> PUNTO DE REFERENCIA
-// DE -500 A 500 EL MISMO + || - de eso === el mismo
-
-// drag -> X
-// dragConstraints={{ left: 0, right: 0 }} ???
-// dragElastic={0.5}
-// onDragEnd={(e, {offset}) =>
-// offset < -100 ? prev() : offset < 100 ? next() : null
-// }}

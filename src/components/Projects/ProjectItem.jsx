@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import ProjectImage from "./ProjectImage";
 import ProjectNavBar from "./ProjectNavBar";
 import ProjectFooter from "./ProjectFooter";
 import { Github, Youtube } from "../Technologies/Icons";
-import { projectsData } from "../../assets/projects/projectsData";
+import { useAnimations } from "../../Context";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -24,14 +24,9 @@ const techAnimations = {
 
 export default function ProjectItem() {
   
-  const [apk, setApk] = useState(false);
   const { id } = useParams();
+  const { projectsData } = useAnimations();
   const project = projectsData.find((project) => project.id === Number(id));
-
-  useEffect(() => {
-    const isMobile = window.matchMedia("(hover: none)").matches;
-    isMobile ? setApk(true) : null;
-  }, []);
 
   useEffect(() => {
     setTimeout(() => {
