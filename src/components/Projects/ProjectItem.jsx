@@ -25,8 +25,8 @@ const techAnimations = {
 export default function ProjectItem() {
   
   const { id } = useParams();
-  const { projectsData } = useAnimations();
-  const project = projectsData.find((project) => project.id === Number(id));
+  const { projectsInfo } = useAnimations();
+  const project = projectsInfo.find((project) => project.id === Number(id));
 
   useEffect(() => {
     setTimeout(() => {

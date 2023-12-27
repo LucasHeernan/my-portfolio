@@ -10,6 +10,7 @@ import insta3 from "../projectsImages/InstaContact.png";
 import insta4 from "../projectsImages/InstaSearch.png";
 import insta5 from "../projectsImages/InstaReel.png";
 import insta6 from "../projectsImages/InstaProfile.png";
+import instaVideo from "../instaVideo.mp4";
 import dpower1 from "../projectsImages/DpowerHome.png";
 import dpower2 from "../projectsImages/DpowerPost.png";
 import dpower3 from "../projectsImages/DpowerMarket1.png";
@@ -28,7 +29,7 @@ export const projectsData = [
     description: "Esta aplicación es una réplica meticulosa, construida desde cero con React Native, estilos en CSS puro y compatible tanto con dispositivos Android como Apple, te llevará en un recorrido visual que te transportará instantáneamente a Instagram. Desde la pantalla de inicio con sus historias y notificaciones, pasando por las pantallas de busqueda y perfil de úsuario, hasta los reels.",
     description2: "Cada detalle recreado con precisión para ofrecer una experiencia auténtica con un toque original.",
     techs: ["Javascript", "React Native", "CSS"],
-    images: [insta1, insta2, insta3, insta4, insta5, insta6],
+    images: [insta1, insta2, insta3, insta4, insta5, insta6, instaVideo],
     repository: "https://github.com/LucasHeernan/my-instagram",
     expo: "xp://exp.host/@lucasheernan/my-instagram?release-channel=default",
     android: "https://expo.dev/artifacts/eas/cJ1aEV64ifHJHNEhwdqpbA.apk",
