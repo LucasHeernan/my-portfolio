@@ -133,12 +133,6 @@ export default function Home() {
   )
 };
 
-
-// Como desarrollador orientado al <AnimatedContainer words={"Front end"} /> cuento con
-// experiencia en el desarrollo de aplicaciones <AnimatedContainer words={"web y móviles."} /> <br/>
-// Soy una persona proactiva, siempre dispuesta a colaborar, <AnimatedContainer aplicaciones words={"aprender"} /> cosas
-// nuevas y por sobre todo con ganas de trabajar en equipo.
-
 // <a
 //   href="mailto:lhbenitez2@gmail.com"
 //   target="_blank"
