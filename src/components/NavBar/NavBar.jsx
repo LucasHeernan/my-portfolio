@@ -21,20 +21,22 @@ const navAnimation = (animation) => {
   }
 };
 
-const CustomLink = ({ to, title }) => {
+const CustomLink = ({ to, title, setActive, active }) => {
   const [hover, setHover] = useState("right-0");
   const handleHover = () => setHover("left-0");
   const handleHoverLeave = () => setHover("right-0");
+  const handleClick = () => setActive(to);
 
   return (
     <Link
       to={to}
       smooth={true}
       duration={200}
+      onClick={handleClick}
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
       className="relative cursor-pointer text-base font-medium uppercase font-poppins group">{title}
-      <span className={`absolute ${hover} -bottom-0.5 w-0 h-0.5 inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full bg-blue-400`}>&nbsp;</span>
+      <span className={`absolute ${hover} -bottom-0.5 w-0 h-px inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full ${active === to ? "w-full" : ""} bg-blue-400`}>&nbsp;</span>
     </Link>
   )
   // <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full group-hover:right-0 bg-blue-400">&nbsp;</span>
@@ -44,6 +46,7 @@ export default function NavBar() {
 
   const [mode, setMode] = ThemeSwitcher();
   const [navShadow, setNavShadow] = useState(false);
+  const [active, setActive] = useState("home");
   const { navBar, setNavBar } = useAnimations();
   
   useEffect(() => {
@@ -66,9 +69,9 @@ export default function NavBar() {
       >
 
         <div className={`hidden items-center gap-5 text-[#2a2a2a] ${navShadow ? "dark:text-[#ebebeb]" : "dark:text-[#cacaca]"} md:flex`}>
-          <CustomLink to="home" title="Inicio" />
-          <CustomLink to="projects" title="Proyectos" />
-          <CustomLink to="contact" title="Contacto" />
+          <CustomLink to="home" title="Inicio" setActive={setActive} active={active} />
+          <CustomLink to="projects" title="Proyectos" setActive={setActive} active={active} />
+          <CustomLink to="contact" title="Contacto" setActive={setActive} active={active} />
         </div>
 
         <div className="flex md:hidden">
