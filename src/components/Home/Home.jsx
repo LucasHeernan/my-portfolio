@@ -43,7 +43,7 @@ export default function Home() {
 
   const { home, setHome } = useAnimations();
   const [viewportHeight, setViewportHeight] = useState(800);
-  const downloadPdf = () => window.open("https://drive.google.com/file/d/1CtxGHdipwQVDOI8Mj18n7PJQSUHew5xC/view?usp=sharing", "_blank");
+  const downloadPdf = () => window.open("https://drive.google.com/file/d/1Na9BI60j0tynBqbUNYEoDRknY9dqKyFU/view?usp=sharing", "_blank");
 
   useEffect(() => {
     setTimeout(() => {

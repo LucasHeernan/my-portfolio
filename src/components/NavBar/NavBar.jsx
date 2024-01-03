@@ -36,7 +36,8 @@ const CustomLink = ({ to, title, setActive, active }) => {
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
       className="relative cursor-pointer text-base font-medium uppercase font-poppins group">{title}
-      <span className={`absolute ${hover} -bottom-0.5 w-0 h-px inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full ${active === to ? "w-full" : ""} bg-blue-400`}>&nbsp;</span>
+      {/* <span className={`absolute ${hover} -bottom-0.5 w-0 h-px inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full ${active === to ? "w-full" : ""} bg-blue-400`}>&nbsp;</span> */}
+      <span className={`absolute ${hover} -bottom-0.5 w-0 h-0.5 inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full bg-blue-400`}>&nbsp;</span>
     </Link>
   )
   // <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 inline-block rounded-full transform transition-[width] ease-in-out duration-300 group-hover:w-full group-hover:right-0 bg-blue-400">&nbsp;</span>
